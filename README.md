@@ -153,7 +153,7 @@ You may share and build on the documents with attribution.
 ## How to cite
 
 > Pitarn Rungsiyapornratana (2026). *The Loop Mega Universe, V3.13 — Consolidated
-> Mathematical & Empirical Pass.* Zenodo. DOI: `<ZENODO_CONCEPT_DOI>`
+> Mathematical & Empirical Pass.* Zenodo. DOI: `10.5281/zenodo.20692157`
 
 Replace `<ZENODO_CONCEPT_DOI>` with the concept DOI after the first Zenodo release.
 Structured metadata is in `CITATION.cff`.
