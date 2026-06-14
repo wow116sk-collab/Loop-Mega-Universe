@@ -11,7 +11,7 @@ license: "CC-BY-4.0"
 # Note: documents are CC-BY-4.0 (above); the code in this repo is MIT (see LICENSE).
 repository-code: "https://github.com/wow116sk-collab/Loop-Mega-Universe"   #
 url: "https://github.com/wow116sk-collab/Loop-Mega-Universe"               #
-# doi: "10.5281/zenodo.XXXXXXX"   # <-- uncomment and fill after the first Zenodo release
+# doi: "10.5281/zenodo.20692157"   #
 keywords:
   - "cosmology"
   - "conformal cyclic cosmology"
