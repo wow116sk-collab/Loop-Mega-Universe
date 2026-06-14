@@ -155,9 +155,6 @@ You may share and build on the documents with attribution.
 > Pitarn Rungsiyapornratana (2026). *The Loop Mega Universe, V3.13 — Consolidated
 > Mathematical & Empirical Pass.* Zenodo. DOI: `10.5281/zenodo.20692157`
 
-Replace `<ZENODO_CONCEPT_DOI>` with the concept DOI after the first Zenodo release.
-Structured metadata is in `CITATION.cff`.
-
 ---
 
 *Source of truth: `LMU_V3_13_consolidated.tex`. Version V3.13; V4.0 reserved for a physics verdict.*
