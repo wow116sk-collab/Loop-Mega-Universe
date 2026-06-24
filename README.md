@@ -3,7 +3,7 @@
 > A cosmological **lens / synthesis** — not a claimed predictive theory.
 
 **Authority.** The single source of truth for everything here is
-`LMU_V3_13_consolidated.tex` in this repository. Where this README (or any other
+`LMU_V3_17_consolidated.tex` in this repository. Where this README (or any other
 file) and the `.tex` disagree, **the `.tex` governs.**
 
 ---
@@ -44,9 +44,9 @@ Honest framing, stated up front:
 - Then the **`.tex`** for the rigorous spine: owned equations, LMU couplings,
   results, verification, and the proven/assumed audit.
 
-**Version.** This is **V3.13** of the consolidated mathematical work. The version
+**Version.** This is **V3.17** of the consolidated mathematical work. The version
 numbers track the equation-development line; the formalism has been built up to
-3.13, and the verbal/worldview side is not separately versioned. **V4.0** is
+3.17, and the verbal/worldview side is not separately versioned. **V4.0** is
 reserved for a physics verdict (a DESI-Y5 falsifier ~2027, an M87/BCG spin
 constraint, or a solved rebirth mechanism). The git tag `v3.13` refers to this
 document.
