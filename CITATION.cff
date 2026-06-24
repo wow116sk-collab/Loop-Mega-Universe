@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "If you use or refer to this work, please cite it as below."
 title: "The Loop Mega Universe (LMU) — Consolidated Mathematical & Empirical Pass"
-version: "3.13"
+version: "3.17"
 authors:
   - family-names: "Rungsiyapornratana"
     given-names: "Pitarn"
     orcid: "https://orcid.org/0009-0004-6411-2201"
-date-released: "2026-06-12"
+date-released: "2026-06-24"
 license: "CC-BY-4.0"
 # Note: documents are CC-BY-4.0 (above); the code in this repo is MIT (see LICENSE).
 repository-code: "https://github.com/wow116sk-collab/Loop-Mega-Universe"   #
