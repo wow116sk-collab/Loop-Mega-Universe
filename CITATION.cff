@@ -1,34 +1,54 @@
 cff-version: 1.2.0
-message: "If you use or refer to this work, please cite it as below."
-title: "The Loop Mega Universe (LMU) — Consolidated Mathematical & Empirical Pass"
-version: "3.17"
+message: "If you use or discuss this framework, please cite it as below."
+type: dataset
+title: "Loop Mega Universe (LMU): a cyclic black-hole cosmology framework"
+version: "3.25"
+date-released: "2026-07-02"
 authors:
   - family-names: "Rungsiyapornratana"
     given-names: "Pitarn"
     orcid: "https://orcid.org/0009-0004-6411-2201"
-date-released: "2026-06-24"
-license: "CC-BY-4.0"
-# Note: documents are CC-BY-4.0 (above); the code in this repo is MIT (see LICENSE).
-repository-code: "https://github.com/wow116sk-collab/Loop-Mega-Universe"   #
-url: "https://github.com/wow116sk-collab/Loop-Mega-Universe"               #
-# doi: "10.5281/zenodo.20692157"   #
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20692157
+    description: "Concept DOI — resolves to the latest version on Zenodo"
+  - type: url
+    value: "https://osf.io/2ac8x"
+    description: "OSF project"
+repository-code: "https://github.com/wow116sk-collab/Loop-Mega-Universe"
+license: CC-BY-4.0   # <-- confirm or replace before first tagged release
+abstract: >
+  A worldview-level synthesis wiring established physics into one cyclic
+  black-hole cosmology: aeons end cold and dilute; the last surviving black
+  hole's terminal Hawking flash seeds a catalyzed Coleman-De Luccia bounce at
+  its Planck-scale evaporation endpoint; one flash = one bubble = one new hot,
+  smooth, dense aeon, simultaneous on the interior slicing; the re-opened
+  entropy gap (the aeon's negentropy budget) re-arms the thermodynamic arrow.
+  Two axioms (substrate + Lambda), mandatory Fact / Fact-eq / Hypo labelling,
+  attribution to the owning literature throughout, and pre-registered
+  falsifier lines (DESI-Y5 dark energy; BHEX-era black-hole spin; LiteBIRD-era
+  tensor ratio r ~ 0.009).
 keywords:
-  - "cosmology"
-  - "conformal cyclic cosmology"
-  - "black hole cosmology"
-  - "dark energy"
-  - "quintessence"
-  - "DESI"
-  - "supermassive black holes"
-abstract: >-
-  The Loop Mega Universe (LMU) is a cosmological lens/synthesis — not a predictive
-  theory. It assembles established physics mechanisms into a per-island cyclic
-  cosmology built on two axioms (substrate + Lambda) and a real, co-existing L1–L4
-  size ladder in which the ultimate L1 black hole is defined by survival rather
-  than size. ~80–90% of the spine overlaps Penrose's Conformal Cyclic Cosmology,
-  with divergences stated explicitly; the single declared framework-level point of
-  failure is fork 5 (an unbounded L0). This consolidated record presents the owned
-  equations, the LMU couplings between them, the results of running the composed
-  system, and a proven/assumed audit, all under the R6 protocol (every number
-  recomputed, none inherited). The authoritative source is
-  LMU_V3_13_consolidated.tex.
+  - cosmology
+  - cyclic cosmology
+  - black holes
+  - dark energy
+  - quintessence
+  - DESI
+  - Hawking evaporation
+  - Page curve
+  - Coleman-De Luccia
+  - false vacuum decay
+  - entropy
+  - negentropy
+  - arrow of time
+  - aeon
+  - supermassive black holes
+  - relic galaxies
+  - gravitational waves
+  - GW231123
+  - pulsar timing array
+  - de Sitter stability
+  - measure problem
+  - Loop Mega Universe
+  - LMU

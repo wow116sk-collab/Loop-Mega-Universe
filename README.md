@@ -1,160 +1,92 @@
-# The Loop Mega Universe (LMU)
+# Loop Mega Universe (LMU) — a cyclic black-hole cosmology framework
 
-> A cosmological **lens / synthesis** — not a claimed predictive theory.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20692157.svg)](https://doi.org/10.5281/zenodo.20692157)
 
-**Authority.** The single source of truth for everything here is
-`LMU_V3_17_consolidated.tex` in this repository. Where this README (or any other
-file) and the `.tex` disagree, **the `.tex` governs.**
+**Current version: V3.25 (2026-07-02) — 104 pp, XeLaTeX.**
+Author: Pitarn Rungsiyapornratana ([ORCID 0009-0004-6411-2201](https://orcid.org/0009-0004-6411-2201)) · [Zenodo (all versions)](https://doi.org/10.5281/zenodo.20692157) · [OSF](https://osf.io/2ac8x)
 
----
+## What this is
 
-## What this is — and what it is not
+LMU is a **worldview-level synthesis, not a new predictive theory**: it wires *established, cited* physics into one coherent cyclic picture and then subjects the wiring to falsifiers. Every mechanism belongs to its published owner (attribution rule R7 is enforced throughout the document); the framework's own contributions are the conventions, the read-acrosses, and the wiring.
 
-LMU is a **lens/synthesis**, not a predictive theory. It assembles and chains
-*established* physics mechanisms into one cyclic-cosmology picture; it does not
-claim to derive new ones. Read it as a worldview with its seams shown, not as a
-rival to ΛCDM.
+**The cycle in one paragraph.** An aeon ends cold, dilute, and clumpy: structure funnels through a black-hole size ladder (L4 gas/stars → L3 galactic BH → L2 BCG BH → L1 the last survivor). The survivor stops spinning (Page), evaporates, and its terminal Hawking flash — at the post-evaporation Planck-scale endpoint, not the 10¹¹ M☉ body — seeds a catalyzed Coleman–De Luccia bounce (Gregory–Moss–Withers). One flash = one bubble = one aeon: on the interior slicing the hot start is simultaneous across the new aeon, homogeneous by instanton symmetry, with density arriving by in-place conversion of the latent vacuum energy (ρ ≈ ΔV; Guth's free lunch). The re-opened entropy gap (Frautschi) — the aeon's fresh negentropy budget — re-arms the thermodynamic arrow, and dilution into the unbounded substrate keeps the total ledger second-law-safe (Ijjas–Steinhardt-type resolution, strengthened to an actually infinite L0).
 
-Honest framing, stated up front:
+**Two axioms only:** the substrate (q) and Λ (a constant; no origin mechanism sought). Dark matter is *not* a given — it is re-created each aeon at the hot boundary as a collisionless thermal relic, symmetric with baryons.
 
-- **~80–90% of the spine overlaps Penrose's Conformal Cyclic Cosmology (CCC).**
-  Where LMU diverges from CCC, the divergence is stated explicitly, not hidden.
-- **Wherever the content is testable today, it is mainstream.** Nothing here that
-  can be checked against current data is exotic; the originality is in the
-  *wiring* and the *choices*, not in the equations (every equation has a named
-  owner).
-- **There is exactly one declared framework-level point of failure: fork 5**
-  (an unbounded `L0`). Every result that rides on it says so. This is the place
-  LMU is built to break.
+## Methodology (labels or it didn't happen)
 
-**Ten-second honesty check** (the crackpot filter, applied to itself):
+Every load-bearing statement in the document carries a label:
 
-1. Does it claim to overturn established physics? *No — it reuses it.*
-2. Does it hide where it disagrees with the mainstream? *No — divergences are flagged.*
-3. Does it make falsifiable, dated predictions? *Yes — see the appointment book below.*
-4. Does it mark what is unsolved? *Yes — see the `[Open]` items (G1, G2).*
-5. Does it credit its sources? *Yes — every borrowed equation carries its owner.*
+- **[Fact]** — measured / peer-reviewed / proven,
+- **[Fact-eq]** — derived from Fact with the checkable numbers shown,
+- **[Hypo]** — any assumption (the framework's own machinery included).
 
----
+Dead ends are kept, not deleted (failure logs); rebuttals are tested for wrong-population sampling (R8); "verdict right, numbers wrong" is treated as the worst failure mode (R6).
 
-## How to read it
+## Verification culture
 
-- Start with the **plain-language companion** (`LMU_Companion_draft_v0.1.md`) if
-  you want the picture before the mathematics.
-- Then the **`.tex`** for the rigorous spine: owned equations, LMU couplings,
-  results, verification, and the proven/assumed audit.
+Independent recomputation, not self-citation: the physics-constant spine is re-derived from CODATA (Hawking temperature, evaporation time, Bekenstein–Hawking and Zurek 4/3 entropies, Nariai ceiling); the dark-energy sector is re-integrated from the Klein–Gordon equation (6/6 (w₀, wₐ) rows reproduced to three decimals, no phantom crossing — Vikman); dimensional audits pass 14/14; the relic-galaxy statistics reproduce exactly from the published dynamical masses. Verification scripts live in `/code`.
 
-**Version.** This is **V3.17** of the consolidated mathematical work. The version
-numbers track the equation-development line; the formalism has been built up to
-3.17, and the verbal/worldview side is not separately versioned. **V4.0** is
-reserved for a physics verdict (a DESI-Y5 falsifier ~2027, an M87/BCG spin
-constraint, or a solved rebirth mechanism). The git tag `v3.13` refers to this
-document.
+## Pre-registered falsifier lines
 
----
+- **F1 — dark energy:** a canonical thawing field can match DESI DR2's w₀ *or* wₐ, not both (document shows the full m-scan); **DESI-Y5 (~2027)** sharpens or breaks this.
+- **F2 — black-hole spin:** survivor/BCG spin history; next-generation EHT / **BHEX era (2030s)**. Current inventory already logs M87* polarimetry (Wong et al. 2025) disfavouring high spin as an *offsetting* flag.
+- **F3 —** re-scoped: the P(k) re-initialization falsifier was ruled and re-scoped at V3.12 (see in-document revision history).
+- **F4 — single-instanton origin signature** ("Open, flat, smooth by one instanton — and a clean F4"): the 10¹⁶ GeV ignition scale gives r ≈ 0.009 (ε ≈ 5.7×10⁻⁴) against the current bound r < 0.036 (BICEP/Keck); **LiteBIRD-class** sensitivity tests it.
 
-## The tag system
+## Two load-bearing open problems (owned, not hidden)
 
-Every claim and every coupling carries an epistemic tag. They travel into the
-prose; they are not decoration.
+- **Problem A — relighting / de Sitter stability:** does the raised phase re-arm each cycle? Sharp form: Volovik (P>0, arXiv:2007.05988) vs Boddy–Carroll–Pollack (P=0, arXiv:1405.0298) — a field-wide unresolved question.
+- **fork-5 — unbounded L0:** the eternal-inflation **measure problem** (Olum 2012 no-go, arXiv:1202.3376; still open in the PDG Inflation review).
 
-| Tag | Meaning |
-|-----|---------|
-| **[Fact]** | measured / peer-reviewed |
-| **[Fact-theory]** | established theory |
-| **[Hypothesis]** | has literature support, not yet decisive |
-| **[Design]** | a structural choice, not a result |
-| **[Open]** | unsolved — no literature template exists |
-| **[Dead-end]** | tried, failed, logged in the graveyard |
+Both are deliberately homed to named field-wide problems (V3.23), not treated as LMU-private gaps.
 
-Borrowed equations carry their **owner** printed at the right margin in the `.tex`.
-Nothing inside an equation box is claimed by the author.
+## Empirical anchors in the current inventory (live-verified July 2026)
 
----
+DESI DR2 (arXiv:2503.14738) · six-relic compilation Cohn et al. 2025 (arXiv:2504.00172) + Walsh 2015–17, Cohn 2021–24 ALMA masses · NGC 384 · JWST over-massive BHs incl. A2744-QSO1 (Juodžbalis et al. 2026) · UHZ1 (contested) · **GW231123** (LVK 2025: 137+103 → 225 M☉, χ ~ 0.9/0.8 — mass-gap, merger-built; caveats logged) · nanohertz GW background, five concordant PTAs incl. MPTA (Miles et al. 2025) · Planck 2018 · BICEP/Keck.
 
-## The appointment book — how this gets falsified
+## Recent versions
 
-The framework names the instruments and dates that can kill it. These are
-**registered conditions, not moving goalposts.**
+| Version | Date | One-liner |
+|---|---|---|
+| 3.25 | 2026-07-02 | + GW231123 and five-array PTA rows (looked-at, not load-bearing) |
+| 3.24 | 2026-07-02 | Negentropy/arrow homing (Frautschi gap, Eddington arrow, timeless Coleman bridge, Page-returned scramble); one-flash-one-aeon convention; Boddy–Carroll–Pollack citation repair |
+| 3.23 | 2026-07-01 | Catalysis endpoint sharpened; the two open premises homed to the measure problem (Olum) and the Tolman conundrum (Steinhardt–Turok / Ijjas–Steinhardt / Pavlović–Sossich); Problem A sharpened to Volovik-P>0 vs Carroll-P=0 |
 
-| Instrument | ~When | Kill condition | What dies |
-|------------|-------|----------------|-----------|
-| **DESI-Y5** | ~2027 | dark energy sustains **w(z) < −1 at ≥ 3σ**, systematics resolved | the thawing-A-field identification (*Fork Y* in the `.tex`); the loop no longer closes — the ladder survives only as astrophysics |
-| **M87 / BCG spin** (ngEHT, BHEX) | early 2030s | a mature cluster-center SMBH is **confirmed at a★ ≳ 0.9** | the ladder's spin-down channel — currently **[Open]**; see the spin flag below |
-| **NewAthena** (~2037) **+ LISA** (~2035) | mid–late 2030s | the relic spin-axis alignment (prediction **C5**) is absent where the model expects it | the C5 relic spin-alignment prediction (selection-limited) |
-| **Hawking points** (CMB) | ongoing | a Hawking point / concentric-circle signal is **confirmed** | horizon exile — re-opens the dead branches. This is a **symmetric falsifier vs CCC**, which (per Meissner–Penrose 2025) now *requires* their presence |
+Full chain 3.4 → 3.25 lives inside the document's revision history.
 
-**Guards that keep this honest in both directions:** sub-3σ hints do **not** fire
-the DESI kill; the 3σ line is fixed and does not move; data that evolves but stays
-**w ≥ −1** does not falsify. These are the conditions as registered.
+## Repository layout
 
----
+```
+/tex         LaTeX source (LMU_V3_25_consolidated.tex and priors)
+/pdf         compiled PDFs
+/figures     the 22 PNG figures the build expects beside the .tex
+/logs        session handoff logs (.md) — decisions, failure logs
+/changesets  minimal-diff changeset specs per version
+/code        verification / stress-test scripts
+```
 
-## What's inside (the spine, briefly)
+## Building
 
-- **The ladder** — a real, co-existing size hierarchy L4→L1 (gas/stars →
-  galactic-center BHs → BCG BHs → the ultimate survivor BH per causally bound
-  island). L1 is defined by **survival**, not size.
-  ⚠️ **Open spin flag (mandatory wherever the ladder appears):** the ladder's one
-  distinctive claim is that merger-built cluster-center BHs spin *down*. For M87
-  (the canonical L2) it predicts **a★ ~ 0.5**. Published M87* spin estimates span
-  **a★ ≈ 0.1–0.98** and are strongly model-dependent (one 2025 method gives ~0.8
-  as a lower limit); the prediction is currently **consistent with everything and
-  discriminates nothing**. Status **[Open]** — only a *confirmed* near-maximal
-  spin (**a★ ≳ 0.9**) would tension the spin-down picture.
-- **The A-field "mountain"** — a thawing-quintessence dark-energy field
-  (V = ½m²A²) giving **w₀ ≈ −0.91, wₐ ≈ −0.15**, with the canonical **w ≥ −1**
-  bound holding. [Fact-theory] for the field equations; [Hypothesis] for the LMU
-  identification.
-- **The crossing** — aeon-end to hot Big Bang. The two genuinely original,
-  unsolved pieces live here: **G1** (perturbative gluing) and **G2**
-  (contaminated-bang well-posedness), both **[Open]** with no literature
-  precedent.
-- **DESI confrontation** — the thawing locus sits **2.69σ** from ΛCDM on the
-  released DR2 chains (chain-Gaussian; less disfavoured than ΛCDM itself on that
-  posterior). DESI's apparent phantom crossing is read as a likely parametrization
-  artifact.
-- **Relics** — six relic galaxies sit **+0.227±0.099 dex** on the M–σ relation
-  (Cohn et al. 2025), within scatter — LMU is *convergent with*, not ahead of,
-  the literature here.
+XeLaTeX, **twice** (TOC/refs settle on pass 2). Requires `fontspec` + Latin Modern OpenType fonts (do **not** use pdflatex; `lmodern.sty` is not assumed). Place the figure PNGs in the same directory as the `.tex`.
 
----
+```
+xelatex LMU_V3_25_consolidated.tex
+xelatex LMU_V3_25_consolidated.tex
+```
 
-## Attribution
+Expected: 0 errors, 104 pages, 26 numbered equations.
 
-LMU's **worldview and architecture** — the choice of which owned mechanisms are
-wired to which — are the author's (Pitarn Rungsiyapornratana). That architecture
-is itself a **hybrid**: every individual mechanism is owned by someone else and
-credited in the `.tex` attribution table (Part IX).
+## Cite
 
-The author is credited **specifically and only** for:
+See `CITATION.cff` (GitHub's "Cite this repository" button), or cite the concept DOI, which always resolves to the latest version:
 
-- the **eating-position (survival) ladder** framing;
-- the **survival-based definition of L1**;
-- the **V_min = 0 fork** and the **cascade-to-zero** mechanism;
-- the **no-Hawking-points stance** (LMU requires their *absence*);
-- the **dead-end logs** (the graveyard).
+> Rungsiyapornratana, P. (2026). *Loop Mega Universe (LMU): a cyclic black-hole cosmology framework* (V3.25). Zenodo. https://doi.org/10.5281/zenodo.20692157
 
-Everything else has a **named owner** with a literature citation in the `.tex`.
-Per the **R6 protocol**, all numbers in the document are recomputed from base
-constants — **none are inherited**.
+## บทคัดย่อ (ไทย)
 
----
+**Loop Mega Universe (LMU)** คือกรอบสังเคราะห์จักรวาลวิทยาเชิงวัฏจักรบนฟิสิกส์หลุมดำ: อิออนจบที่สภาพเย็น–เจือจาง–เป็นก้อน หลุมดำผู้รอด (L1) หยุดหมุน ระเหย และแฟลชสุดท้ายของมันจุดชนวน bounce แบบ Coleman–De Luccia ที่ปลายทางการระเหยระดับพลังค์ — หนึ่งแฟลช หนึ่งฟอง หนึ่งอิออนใหม่ ร้อน–เรียบ–หนาแน่นพร้อมกันทั้งใบบนผิวเวลาภายใน ช่องว่างเอนโทรปีที่เปิดใหม่ (งบเนเกนโทรปีของอิออน) ติดลูกศรเวลาอีกครั้ง กรอบนี้ประกาศตัวเป็น "เลนส์มอง" ไม่ใช่ทฤษฎีทำนายใหม่ ทุกกลไกอ้างเจ้าของในวรรณกรรม มีป้ายกำกับ [Fact]/[Fact-eq]/[Hypo] ทุกข้อเรียกร้อง และแนบตัวชี้ขาดล่วงหน้า (DESI-Y5, BHEX, LiteBIRD)
 
 ## License
 
-- **Documents** (`.tex`, companion, figures): **CC-BY-4.0** — see `LICENSE-docs`.
-- **Code** (Python scripts): **MIT** — see `LICENSE`.
-
-You may share and build on the documents with attribution.
-
----
-
-## How to cite
-
-> Pitarn Rungsiyapornratana (2026). *The Loop Mega Universe, V3.13 — Consolidated
-> Mathematical & Empirical Pass.* Zenodo. DOI: `10.5281/zenodo.20692157`
-
----
-
-*Source of truth: `LMU_V3_13_consolidated.tex`. Version V3.13; V4.0 reserved for a physics verdict.*
+CC-BY-4.0 *(⚠ confirm/replace before first release — see ABOUT_AND_TAGS.md)*
