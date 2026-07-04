@@ -16,8 +16,14 @@
 \usepackage{longtable}
 \usepackage{titlesec}
 \usepackage{caption}
-\usepackage[hidelinks,colorlinks=true,linkcolor=blue!45!black,urlcolor=teal!60!black]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=teal!60!black]{hyperref}
 \graphicspath{{figs/}}
+% hyperref anchors must stay unique although section/equation/figure counters reset at every \part
+\def\theHpart{\arabic{part}}
+\def\theHsection{p\arabic{part}.\arabic{section}}
+\def\theHsubsection{p\arabic{part}.\arabic{section}.\arabic{subsection}}
+\def\theHequation{p\arabic{part}.\arabic{equation}}
+\def\theHfigure{p\arabic{part}.\arabic{figure}}
 \captionsetup{font=small,labelfont=bf}
 \setlength{\parskip}{0.45em}\setlength{\parindent}{0pt}
 \titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
@@ -335,7 +341,7 @@ The single-population run fixes the mass-function \emph{shape} but calibrates th
 \end{itemize}
 
 % =====================================================================
-\section{Attribution}
+\section{Attribution --- the matter ladder}
 \begin{center}\small
 \begin{tabular}{@{}p{0.45\textwidth}p{0.49\textwidth}@{}}
 \toprule
@@ -587,7 +593,7 @@ Every SN combination's CPL central crosses below $-1$ in the past (at $z=0.5$, $
 \textbf{Merged bottom line (record $+$ archive).} The equations deliver $A\to\approx0$, $H\to0$; the reservoir reading of that endgame is the framework's interpretive layer; the field's quantitative fate is left, honestly, to DESI (Y5 falsifier above). \Auditor
 
 % ---------------------------------------------------------------------
-\section{Attribution}
+\section{Attribution --- the dark-energy field $A$}
 \begin{center}\small
 \begin{tabular}{@{}p{0.45\textwidth}p{0.49\textwidth}@{}}
 \toprule
@@ -773,7 +779,7 @@ Pair collapse beats evaporation by $\gtrsim\!10^{85}$ (Gunn--Gott on the dust er
 The left column is closed. The right column is one premise wearing several hats. It is undecidable in principle (beyond the horizon), and it is the toll the whole genre pays --- eternal inflation rests on the same infinite-measure assumption. The framework's contribution is to \emph{name} it as the single load-bearer and show that nothing else in the closure requires the impossible (a global low-entropy reset). \Open
 
 % =====================================================================
-\section{Attribution}
+\section{Attribution --- the $L0$ ledger}
 \begin{center}\small
 \begin{tabular}{@{}p{0.45\textwidth}p{0.49\textwidth}@{}}
 \toprule
@@ -1035,7 +1041,7 @@ The framework's one distinctive, falsifiable claim: over-massive \emph{isolated}
 
 \textbf{Verdict.} The distinctive spin signature is structurally robust --- mass-invariant (\S3), surviving the coefficient sweep and the coherence/axis refinement (\S4) --- yet \emph{empirically blocked for every object where it would discriminate}: the relics are quiescent (no spin) and M87's spin spans the whole allowed range (no constraint). The framework bets against the observed high-mass$\to$low-spin trend for its key objects, with no data able to settle it. Correct status: \Open, neither confirmed nor dead. Unlock routes: NewAthena ($\sim$2037, any weakly-accreting relic), LISA (merger-remnant spins), ngEHT (M87 via polarimetry). \Auditor
 
-\section{Attribution}
+\section{Attribution --- verification and empirical confrontation}
 \begin{center}\small
 \begin{tabular}{@{}p{0.45\textwidth}p{0.49\textwidth}@{}}
 \toprule
