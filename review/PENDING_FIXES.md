@@ -234,3 +234,10 @@
 **Certification (R29-C.4):** XeLaTeX ×2 · 0 errors · **103 pages** (ลดจาก 104 — การปิดกลุ่ม `{\small` ที่แตก (id99) ทำให้ revision history กลับไปตัวเล็กตามที่ตั้งใจ) · section destinations **75/75 distinct, 0 duplicates** (pypdf Names-tree walk)
 
 **เหลือ (human):** id12 (เลือกโครงสร้าง), id88 (มีแหล่ง 2026 จริงไหม — yes/no), C.1/C.2 (GitHub About / Zenodo, ทำมือ), C.3 eyeball (Attribution ×4 + `\Fact`→`\factth` ×3), V3.26 bundle + R25 stage-2 (ε 4.6e-2 recompute pass) + C.5 (`code/verify_all.py` — adjudicator ค้างส่ง)
+
+## Application record — Addendum 3, 2026-07-04
+
+- **R23-REVISED (id88):** สถานะ M87* spin → `[Open]` (contested, method-split) — Drew et al. 2025, ApJL 984 L31 (Doppler beaming, a*≳0.8 lower limit; **ยืนยันรายชื่อผู้เขียน/ผลจากหน้า DOI แล้ว**: Drew, Stanway, Patterson, Walton, Ward-Thompson) vs Wong et al. 2025 (polarimetry) · update note เขียนใหม่ตามถ้อยคำ ruling + fold-in ชี้ \S5 rows + [Open] line (id90) · เพิ่มแถว Drew ใน \S5 (prose + estimates row) · ตัดภาษา leaning-against ทุกจุด live (เหลือ 1 จุดใน revision history — append-only)
+- **R18-RESOLVED (id12, Option A):** ย้าย C7/C8 blocks (พร้อม anchor {#c7}/{#c8}) ไป §4 ต่อจาก D4; ทิ้ง stub `[derived → §4]` ที่ตำแหน่งเดิมใน §3 และ annotate แถว index §2
+- **Certification:** XeLaTeX ×2 · 0 errors · 103 pages · dests 75/75 distinct, 0 duplicates
+- **เหลือ (human):** eyeball (Attribution ×4 + \Fact→\factth ×3) → merge → V3.26 bundle (R25 stage-2 ε=4.6e-2 pass, C.5 verify_all.py, page-count 104→103 propagation ใน README/ABOUT)

@@ -47,8 +47,8 @@
 | C4 | METH | all four | `[declared]` (RM states it) | `[Design]` principle | "hit a structural wall → route around/exploit, never smash" |
 | C5 | METH | all four | `[declared]` | n/a (a practice) | Shared epistemic-tag system + decision-log discipline |
 | C6 | ONT | LMU ↔ CoE | `[declared]` | `[Fact-eq]` (mechanism); channel `[USER'S OWN]` | entropy-as-record = the *impersonal* continuity channel that passes the no-hair wall |
-| C7 | ONT | substrate ↔ L0 | `[derived]` this-analysis | structure `[Fact-eq]`; existence split — see D4 | L0 is the thermodynamic *face* of substrate seen from inside a cycle |
-| C8 | ONT-chain | RM → box | `[derived]` this-analysis | `[Fact-eq]` (by definition of ream) | Mining reaches the box via human → tool → tool-of-tool, far down the chain |
+| C7 | ONT | substrate ↔ L0 | `[derived → §4]` this-analysis | structure `[Fact-eq]`; existence split — see D4 | L0 is the thermodynamic *face* of substrate seen from inside a cycle |
+| C8 | ONT-chain | RM → box | `[derived → §4]` this-analysis | `[Fact-eq]` (by definition of ream) | Mining reaches the box via human → tool → tool-of-tool, far down the chain |
 
 Derived results (D1–D4) and the firewall map (§5) follow.
 
@@ -129,26 +129,10 @@ Each block below is written to stand alone if you copy it into its own `.md` in 
 
 ---
 
-### C7 — substrate = root of L0 {#c7}
-
-- **Type:** `ONT` **Status:** `[derived]` (worked out in analysis — **not** stated this way in the docs)
-- **Where it touches the docs:** CoE §4.13(h) (L0 = stacking axis); LMU prologue §3 + Part III §6 (L0 as reservoir).
-- **What the analysis found:** L0 and substrate are **not two neighbours that happen to be identified** — L0 is the **thermodynamic face** of the substrate *seen from inside a cycle*; substrate is the **ontological face** of the same layer *seen from outside time*. Same object, two viewing angles (mountain = "cliff to climb" to a climber, "fault line" to a geologist). This removes the coincidence of "two different pressures happening to land on one layer."
-- **Strength / caution (important):** this is `[derived]`, and the derivation does **not** raise substrate's strength — see **D4**. Thermodynamic `[Fact]` forces only *"a reservoir must exist"* (a *function*), never *"that reservoir is a pre-geometric ground"* (an *identity*). Fact that props the branch does not flow back down to prove the root.
-- **Grafts with:** C1 (this is the internal mechanics of the containment), D4 (the strength asymmetry).
-
+*C7 — substrate = root of L0: `[derived → §4]` (block moved to §4).*
 ---
 
-### C8 — Mining ∈ box via ontology-chain {#c8}
-
-- **Type:** `ONT-chain` **Status:** `[derived]` (this-analysis)
-- **What the analysis found:** RM connects to the box **through a long chain**, not by being a primitive of it:
-  `substrate → ream → slides → matter → life → human → human's tools → tools-of-tools = mining.`
-  This is exactly how **DNA traces down to H** [Fact] (H → nucleoside → nucleotide → DNA) — nobody requires DNA to be "built directly from H"; tracing down the chain is what ontological containment *means*. Distance along the chain does not void the connection.
-- **Reconciling with RM's "standalone":** RM's own line *"not part of LMU cosmology"* means **evidentially** separate (it borrows no LMU equation) — **not** ontologically outside the universe. Same structure as LMU⊂CoE: *in* the box (ontological), *firewalled* (evidential).
-- **Strength:** `[Fact]` — true by definition of `ream` (every physical process lives in the block). Needs no substrate posit — `ream`/block (Minkowski, `[ESTABLISHED]`) already connects every physical process.
-- **Grafts with:** C4 (RM's *other*, weaker link — the method), F2 (RM's evidential firewall).
-
+*C8 — Mining ∈ box via ontology-chain: `[derived → §4]` (block moved to §4).*
 ---
 
 ## 4. Derived results — analysis only, NOT in source docs
@@ -182,6 +166,26 @@ Each block below is written to stand alone if you copy it into its own `.md` in 
   - **Substrate's existence** hangs on the CoE posit "mind reads the block." Physics (`[Fact]`: LIGO GW energy; Casimir vacuum structure) only *excludes placements* (not spacetime, not vacuum) → tells you where the reader *would* sit *if* it exists; does **not** prove it exists.
 - **Split to keep intact:** `L0-as-function (reservoir)` = `[Fact]`-forced; `L0-as-face-of-substrate` = `[posit]` (the identification, C7). The `[Fact]` on the function does **not** climb down to prove the pre-geometric identity.
 - **Source's own honesty:** LMU tags this exactly — *"reservoir must exist"* = `[Fact]`; *"reservoir = unbounded L0"* = `[Design]`/`[Open]`, declared as **"the framework's one named point of failure (fork 5)."**
+
+### C7 — substrate = root of L0 {#c7}
+
+- **Type:** `ONT` **Status:** `[derived]` (worked out in analysis — **not** stated this way in the docs)
+- **Where it touches the docs:** CoE §4.13(h) (L0 = stacking axis); LMU prologue §3 + Part III §6 (L0 as reservoir).
+- **What the analysis found:** L0 and substrate are **not two neighbours that happen to be identified** — L0 is the **thermodynamic face** of the substrate *seen from inside a cycle*; substrate is the **ontological face** of the same layer *seen from outside time*. Same object, two viewing angles (mountain = "cliff to climb" to a climber, "fault line" to a geologist). This removes the coincidence of "two different pressures happening to land on one layer."
+- **Strength / caution (important):** this is `[derived]`, and the derivation does **not** raise substrate's strength — see **D4**. Thermodynamic `[Fact]` forces only *"a reservoir must exist"* (a *function*), never *"that reservoir is a pre-geometric ground"* (an *identity*). Fact that props the branch does not flow back down to prove the root.
+- **Grafts with:** C1 (this is the internal mechanics of the containment), D4 (the strength asymmetry).
+
+---
+
+### C8 — Mining ∈ box via ontology-chain {#c8}
+
+- **Type:** `ONT-chain` **Status:** `[derived]` (this-analysis)
+- **What the analysis found:** RM connects to the box **through a long chain**, not by being a primitive of it:
+  `substrate → ream → slides → matter → life → human → human's tools → tools-of-tools = mining.`
+  This is exactly how **DNA traces down to H** [Fact] (H → nucleoside → nucleotide → DNA) — nobody requires DNA to be "built directly from H"; tracing down the chain is what ontological containment *means*. Distance along the chain does not void the connection.
+- **Reconciling with RM's "standalone":** RM's own line *"not part of LMU cosmology"* means **evidentially** separate (it borrows no LMU equation) — **not** ontologically outside the universe. Same structure as LMU⊂CoE: *in* the box (ontological), *firewalled* (evidential).
+- **Strength:** `[Fact]` — true by definition of `ream` (every physical process lives in the block). Needs no substrate posit — `ream`/block (Minkowski, `[ESTABLISHED]`) already connects every physical process.
+- **Grafts with:** C4 (RM's *other*, weaker link — the method), F2 (RM's evidential firewall).
 
 ---
 
