@@ -5,6 +5,8 @@
 **Current version: V3.26 (2026-07-04) — 103 pp, XeLaTeX.**
 Author: Pitarn Rungsiyapornratana ([ORCID 0009-0004-6411-2201](https://orcid.org/0009-0004-6411-2201)) · [Zenodo (all versions)](https://doi.org/10.5281/zenodo.20692157) · [OSF](https://osf.io/2ac8x)
 
+**New here?** Read [**STORY.md**](STORY.md) first — the whole cycle in five acts, plain language, no equations, five minutes.
+
 ## What this is
 
 LMU is a **worldview-level synthesis, not a new predictive theory**: it wires *established, cited* physics into one coherent cyclic picture and then subjects the wiring to falsifiers. Every mechanism belongs to its published owner (attribution rule R7 is enforced throughout the document); the framework's own contributions are the conventions, the read-acrosses, and the wiring.
