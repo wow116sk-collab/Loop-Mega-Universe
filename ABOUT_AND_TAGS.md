@@ -1,4 +1,4 @@
-# ABOUT & TAGS — copy-paste pack (GitHub + Zenodo) — V3.25, 2026-07-02
+# ABOUT & TAGS — copy-paste pack (GitHub + Zenodo) — V3.26, 2026-07-04
 
 Everything below is paste-ready. License decision (made): **CC-BY-4.0** for documents and figures (`LICENSE-docs`), **MIT** for code (`LICENSE`).
 
@@ -8,7 +8,7 @@ Everything below is paste-ready. License decision (made): **CC-BY-4.0** for docu
 
 **Description (≤350 chars):**
 
-> Loop Mega Universe (LMU) — cyclic black-hole cosmology framework: aeons end cold & dilute; the last survivor BH's evaporation flash seeds a Coleman–De Luccia bounce → one flash, one bubble, one new hot smooth aeon. Two axioms, Fact/Hypothesis-labelled, pre-registered falsifiers (DESI-Y5, BHEX, LiteBIRD). V3.25, 104 pp.
+> Loop Mega Universe (LMU) — cyclic black-hole cosmology framework: aeons end cold & dilute; the last survivor BH's evaporation flash seeds a Coleman–De Luccia bounce → one flash, one bubble, one new hot smooth aeon. Two axioms, Fact/Hypothesis-labelled, pre-registered falsifiers (DESI-Y5, BHEX, LiteBIRD). V3.26, 103 pp.
 
 **Website:** `https://doi.org/10.5281/zenodo.20692157`
 
@@ -39,37 +39,35 @@ physics
 
 ---
 
-## 2) GitHub — release v3.25 (Releases → Draft new release)
+## 2) GitHub — release v3.26 (Releases → Draft new release)
 
-**Tag:** `v3.25` · **Title:** `LMU V3.25 — GW231123 + five-array PTA concordance`
+**Tag:** `v3.26` · **Title:** `LMU V3.26 — external review + adjudication pass (R1–R29)`
 
 **Release notes (paste):**
 
 ```
-V3.25 (2026-07-02) — canonical build, 104 pp, XeLaTeX ×2 clean, eq-env 26/26.
+V3.26 (2026-07-04) — canonical build, 103 pp, XeLaTeX ×2 clean, eq-env 26/26.
 
-Added (looked-at, not load-bearing):
-- GW231123 (LVK 2025): 137+103 → 225 M☉ mass-gap merger, χ ~ 0.9/0.8 —
-  measured support for non-stellar (merger/accretion) BH growth, the ladder's
-  L4→L3 rung in miniature. Caveats carried: waveform systematics; spins exceed
-  simple 2g remnants (accretion channel — Kiroğlu+ 2025); lensing reading
-  exists (Goyal+ 2025).
-- PTA row: nanohertz background now concordant across five arrays incl.
-  MeerKAT MPTA 4.5-yr (Miles+ 2025, MNRAS 536, 1489).
+External review + adjudication pass (PR #1, rulings R1–R29; records in /review):
+- PDF link plumbing repaired: hyperref anchors made part-unique (the V3.25 PDF
+  reused destination names across parts — TOC clicks landed in Part I);
+  Attribution titles disambiguated; revision-history small-print group closed
+  (page count 104 → 103).
+- ε_DESI = 4.6e-2 (chain covariance, V3.8 pull) adopted body-wide; the one
+  derived number moves: N_Q = 9.03e121 at the new threshold (crit tier
+  unchanged). Rerun-verified changeset in /review.
+- M87* spin status adjudicated [Open — contested by method]: Drew et al. 2025
+  (ApJL 984 L31, Doppler beaming, a* ≥ 0.8 lower limit) vs Wong et al. 2025
+  (polarimetry).
+- Result-2 endgame run named (m = 6 H0 demonstration); provenance script
+  code/lmu_endgame_repro.py; consolidated verification suite code/verify_all.py.
+- Tag legend synchronised with the rendered macro set; three prologue relabels
+  [Fact] → [Fact-theory].
 
-Carried from V3.23–V3.24 (same week):
-- Two open premises homed field-wide: measure problem (Olum 2012) and Tolman
-  conundrum (Steinhardt–Turok / Ijjas–Steinhardt / Pavlović–Sossich 2024);
-  Problem A sharpened to Volovik-P>0 vs Boddy–Carroll–Pollack-P=0.
-- Negentropy/arrow homing: Frautschi entropy gap as the aeon's negentropy
-  budget; thermodynamic arrow re-arming; timeless Coleman bridge;
-  Page-returned scramble; one-flash-one-aeon convention.
-- Citation repair: Boddy, Carroll & Pollack 2014 (arXiv:1405.0298).
-
-No spine change, no new axiom, no new falsifier across 3.23→3.25.
+No spine, axiom, or falsifier change.
 ```
 
-Attach to the release: `LMU_V3_25_consolidated.pdf` (and optionally the .tex).
+Attach to the release: `LMU_V3_26_consolidated.pdf` (and optionally the .tex).
 
 ---
 
@@ -78,14 +76,14 @@ Attach to the release: `LMU_V3_25_consolidated.pdf` (and optionally the .tex).
 (Zenodo → your record → **New version**; never a fresh deposit, so the concept DOI keeps resolving.)
 
 - **Resource type:** Publication → Preprint
-- **Title:** `Loop Mega Universe (LMU): a cyclic black-hole cosmology framework — V3.25`
+- **Title:** `Loop Mega Universe (LMU): a cyclic black-hole cosmology framework — V3.26`
 - **Authors:** Rungsiyapornratana, Pitarn — ORCID `0009-0004-6411-2201`
-- **Version:** `3.25` · **Publication date:** `2026-07-02` · **Language:** English
+- **Version:** `3.26` · **Publication date:** `2026-07-04` · **Language:** English
 - **License:** CC-BY-4.0
 - **Related identifiers:**
   - `https://github.com/wow116sk-collab/Loop-Mega-Universe` — *is supplemented by*
   - `https://osf.io/2ac8x` — *is supplemented by*
-- **Files:** `LMU_V3_25_consolidated.pdf`, `LMU_V3_25_consolidated.tex`
+- **Files:** `LMU_V3_26_consolidated.pdf`, `LMU_V3_26_consolidated.tex`
 
 **Description (paste):**
 
@@ -116,7 +114,7 @@ to named field-wide problems: the eternal-inflation measure problem (Olum
 Pavlović–Sossich 2024), with the relighting question sharpened to de Sitter
 stability (Volovik P>0 vs Boddy–Carroll–Pollack P=0).
 
-V3.25 empirical inventory (live-verified July 2026) includes DESI DR2, the
+V3.26 empirical inventory (live-verified July 2026) includes DESI DR2, the
 six-relic compilation (Cohn et al. 2025) with ALMA dynamical masses, JWST
 over-massive black holes (A2744-QSO1), GW231123 (LVK 2025), and the
 nanohertz gravitational-wave background across five pulsar timing arrays
@@ -154,6 +152,6 @@ problem, Loop Mega Universe, LMU.
 
 1. จัดไฟล์ตาม layout ใน README (ไฟล์ `.tex`/`.pdf`/`.md` ที่รูท, รูป PNG ทั้งหมดใน `figs/`) → `git add` → commit (ข้อความ commit อยู่แชท) → push
 2. GitHub: Settings → About → วาง Description + Website + Topics (ข้อ 1)
-3. GitHub: Releases → `v3.25` + notes (ข้อ 2) + แนบ PDF
-4. Zenodo: **New version** ใต้ record เดิม → วาง metadata (ข้อ 3) → publish → ได้ DOI ย่อยของ 3.25 (concept DOI เดิมชี้มาที่นี่อัตโนมัติ)
+3. GitHub: Releases → `v3.26` + notes (ข้อ 2) + แนบ PDF
+4. Zenodo: **New version** ใต้ record เดิม → วาง metadata (ข้อ 3) → publish → ได้ DOI ย่อยของ 3.26 (concept DOI เดิมชี้มาที่นี่อัตโนมัติ)
 5. OSF: อัพ PDF + ลิงก์ GitHub/Zenodo, title ให้มีวลี "Loop Mega Universe (LMU)"
