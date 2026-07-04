@@ -1,0 +1,544 @@
+77d76
+<     const unitCost = (its[0] && Number(its[0].cost)) ? Number(its[0].cost) : (Number(p.cost) || 0);
+78a78,85
+>     const consumed = sale && sale.fifo && Array.isArray(sale.fifo[p.id]) ? sale.fifo[p.id] : null;
+>     if (consumed && consumed.length) {
+>       // restore the exact FIFO slices this sale consumed (front of queue, original costs) — no cost drift on void/edit
+>       let backQty = 0;
+>       for (let i = consumed.length - 1; i >= 0; i--) { const cq = Number(consumed[i].qty) || 0; if (cq > 0) { layers.unshift({ qty: cq, unitCost: Number(consumed[i].unitCost) || 0 }); backQty += cq; } }
+>       return { ...p, layers, qty: (Number(p.qty) || 0) + backQty };
+>     }
+>     const unitCost = (its[0] && Number(its[0].cost)) ? Number(its[0].cost) : (Number(p.cost) || 0);
+159a167
+>   const consumed = []; // exact slices taken [{qty, unitCost}] — stored on the sale so void/edit restores true costs
+161,164c169,174
+<     if (need <= 0) { out.push({ qty: Number(L.qty) || 0, unitCost: Number(L.unitCost) || 0 }); continue; }
+<     const take = Math.min(Number(L.qty) || 0, need);
+<     cogs += take * (Number(L.unitCost) || 0);
+<     const rem = (Number(L.qty) || 0) - take;
+---
+>     const lq = Number(L.qty) || 0, lc = Number(L.unitCost) || 0;
+>     if (need <= 0) { out.push({ ...L, qty: lq, unitCost: lc }); continue; } // spread keeps srcId thread intact
+>     const take = Math.min(lq, need);
+>     cogs += take * lc;
+>     if (take > 0) consumed.push({ qty: take, unitCost: lc });
+>     const rem = lq - take;
+166c176
+<     if (rem > 0) out.push({ qty: rem, unitCost: Number(L.unitCost) || 0 });
+---
+>     if (rem > 0) out.push({ ...L, qty: rem, unitCost: lc });
+168c178
+<   return { layers: out, cogs };
+---
+>   return { layers: out, cogs, consumed };
+778c788,789
+< /* lightweight, non-cryptographic password hash for the LOCAL soft-gate (obfuscation, not real security) */
+---
+> /* LEGACY password hash (FNV-1a 32-bit) — kept ONLY to verify hashes created by older versions.
+>    New/changed passwords use PBKDF2-SHA256 below; a legacy hash upgrades the next time the password is set. */
+784a796,820
+> /* v2 password hash: PBKDF2-SHA256, 150k iterations, per-user random salt — stored as "v2:<saltHex>:<hashHex>".
+>    Still a LOCAL soft-gate (client-side data is readable with dev tools), but the stored hash is no longer
+>    reversible in milliseconds like the 32-bit FNV. */
+> const PW_ITER = 150000;
+> const bytesToHex = (buf) => Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, "0")).join("");
+> async function hashPwStrong(pw, saltHex) {
+>   const enc = new TextEncoder();
+>   const salt = saltHex
+>     ? Uint8Array.from(saltHex.match(/.{2}/g).map((h) => parseInt(h, 16)))
+>     : crypto.getRandomValues(new Uint8Array(16));
+>   const key = await crypto.subtle.importKey("raw", enc.encode(String(pw == null ? "" : pw)), "PBKDF2", false, ["deriveBits"]);
+>   const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt, iterations: PW_ITER }, key, 256);
+>   return "v2:" + bytesToHex(salt) + ":" + bytesToHex(bits);
+> }
+> async function makePwHash(pw) {
+>   try { return await hashPwStrong(pw); } catch (e) { return hashPw(pw); } // no WebCrypto -> legacy fallback
+> }
+> async function verifyPw(pw, stored) {
+>   const st = String(stored || "");
+>   if (st.startsWith("v2:")) {
+>     const parts = st.split(":");
+>     try { return (await hashPwStrong(pw, parts[1])) === st; } catch (e) { return false; }
+>   }
+>   return st === hashPw(pw); // legacy FNV hash from older data
+> }
+836a873
+>   const [saveError, setSaveError] = useState(false); // primary autosave (window.storage) failed — data lives only in memory/IndexedDB
+875a913,918
+>             if (Array.isArray(d.history)) setHistory(d.history);
+>             if (Array.isArray(d.advances)) setAdvances(d.advances);
+>             if (Array.isArray(d.custDeposits)) setCustDeposits(d.custDeposits);
+>             if (Array.isArray(d.payees)) setPayees(d.payees);
+>             if (Array.isArray(d.pendingSales)) setPendingSales(d.pendingSales);
+>             if (Array.isArray(d.hsTable)) setHsTable(d.hsTable);
+907a951
+>           setSaveError(false);
+909c953
+<       } catch (e) { /* ignore */ }
+---
+>       } catch (e) { setSaveError(true); }
+917c961
+<   }, [accounts, entries, products, movements, customers, banks, sales, purchases, expenses, docs, payments, apPayments, assets, whts, history, advances, custDeposits, payees, pendingSales, hsTable, profile, lang, loaded]);
+---
+>   }, [accounts, entries, products, categories, movements, customers, banks, sales, purchases, expenses, docs, payments, apPayments, assets, whts, history, advances, custDeposits, payees, pendingSales, hsTable, profile, auth, paperBoards, lang, vatRate, paperBoardsV, paperStockV, loaded]);
+1170a1215
+>     if (gateOn && acctLevel < 3) { window.alert(t("กู้คืนข้อมูลได้เฉพาะผู้ดูแล (ระดับ 3)", "Only an admin (level 3) can restore data.")); return false; }
+1186c1231,1236
+<   const signIn = (u, pw) => {
+---
+>   // on a successful login with a LEGACY (FNV) hash, silently upgrade the stored hash to PBKDF2 v2
+>   const upgradeHashIfLegacy = async (usr, pw) => {
+>     if (String(usr.pwHash || "").startsWith("v2:")) return;
+>     try { const nh = await hashPwStrong(pw); setAuth((prev) => ({ ...prev, users: (prev.users || []).map((x) => (x.id === usr.id ? { ...x, pwHash: nh } : x)) })); } catch (e) {}
+>   };
+>   const signIn = async (u, pw) => {
+1188c1238
+<     if (usr && usr.pwHash === hashPw(pw)) { setSessionUser({ id: usr.id, username: usr.username, name: usr.name, level: usr.level }); setAcctUnlock(null); setPosMode(true); return true; }
+---
+>     if (usr && (await verifyPw(pw, usr.pwHash))) { await upgradeHashIfLegacy(usr, pw); setSessionUser({ id: usr.id, username: usr.username, name: usr.name, level: usr.level }); setAcctUnlock(null); setPosMode(true); return true; }
+1191c1241
+<   const acctSignIn = (u, pw) => {
+---
+>   const acctSignIn = async (u, pw) => {
+1193c1243
+<     if (usr && usr.level >= 2 && usr.pwHash === hashPw(pw)) { setAcctUnlock({ id: usr.id, username: usr.username, name: usr.name, level: usr.level }); setAcctLoginOpen(false); setPosMode(false); setTab(usr.level >= 3 ? "dashboard" : "inventory"); return true; }
+---
+>     if (usr && usr.level >= 2 && (await verifyPw(pw, usr.pwHash))) { await upgradeHashIfLegacy(usr, pw); setAcctUnlock({ id: usr.id, username: usr.username, name: usr.name, level: usr.level }); setAcctLoginOpen(false); setPosMode(false); setTab(usr.level >= 3 ? "dashboard" : "inventory"); return true; }
+1199c1249,1253
+<   const saveUser = (u) => {
+---
+>   const saveUser = async (u) => {
+>     if (gateOn && acctLevel < 3) { window.alert(t("ต้องเป็นผู้ดูแล (ระดับ 3) เท่านั้น", "Admin (level 3) only.")); return; }
+>     // hash outside the state updater (PBKDF2 is async); new/changed passwords get the v2 hash
+>     const newHash = u.password ? await makePwHash(u.password) : null;
+>     const blankHash = await makePwHash("");
+1205c1259
+<         pwHash: u.password ? hashPw(u.password) : (i >= 0 ? users[i].pwHash : hashPw("")),
+---
+>         pwHash: newHash != null ? newHash : (i >= 0 ? users[i].pwHash : blankHash),
+1211,1212c1265,1266
+<   const deleteUser = (id) => setAuth((prev) => ({ ...prev, users: (prev.users || []).filter((x) => x.id !== id) }));
+<   const setAuthEnabled = (on) => setAuth((prev) => ({ ...prev, enabled: !!on }));
+---
+>   const deleteUser = (id) => { if (gateOn && acctLevel < 3) { window.alert(t("ต้องเป็นผู้ดูแล (ระดับ 3) เท่านั้น", "Admin (level 3) only.")); return; } setAuth((prev) => ({ ...prev, users: (prev.users || []).filter((x) => x.id !== id) })); };
+>   const setAuthEnabled = (on) => { if (gateOn && acctLevel < 3) { window.alert(t("ต้องเป็นผู้ดูแล (ระดับ 3) เท่านั้น", "Admin (level 3) only.")); return; } setAuth((prev) => ({ ...prev, enabled: !!on })); };
+1412,1415c1466,1507
+<   const addPayment = (p) => setPayments((prev) => [...prev, p]);
+<   const deletePayment = (id) => setPayments((prev) => prev.filter((x) => x.id !== id));
+<   const addApPayment = (p) => setApPayments((prev) => [...prev, p]);
+<   const deleteApPayment = (id) => setApPayments((prev) => prev.filter((x) => x.id !== id));
+---
+>   // A/R receipt: Dr cash/bank, Cr 1030 — journaled only when the source bill itself posted a journal
+>   const addPayment = (p) => {
+>     const sale = sales.find((s) => s.id === p.refId);
+>     let journalId = null;
+>     const amt = round2(Number(p.amount) || 0);
+>     if (sale && sale.journalId && amt > 0) {
+>       ensureAccounts(["1010", "1020", "1030"]);
+>       const accId = (code) => (accounts.find((a) => a.code === code) || {}).id;
+>       const drCode = p.channel === "cash" ? "1010" : "1020";
+>       const dr = accId(drCode) || "a" + drCode;
+>       const ar = accId("1030") || "a1030";
+>       journalId = uid();
+>       addEntry({ id: journalId, date: p.date || todayISO(), desc: "รับชำระลูกหนี้ บิล " + (sale.billNo || "") + " / A/R receipt " + (sale.billNo || ""), lines: [{ accountId: dr, debit: amt, credit: 0 }, { accountId: ar, debit: 0, credit: amt }] });
+>     }
+>     setPayments((prev) => [...prev, { ...p, journalId }]);
+>   };
+>   const deletePayment = (id) => {
+>     const pay = payments.find((x) => x.id === id);
+>     if (pay && pay.journalId) setEntries((prev) => prev.filter((e) => e.id !== pay.journalId));
+>     setPayments((prev) => prev.filter((x) => x.id !== id));
+>   };
+>   // A/P payment: Dr 2010, Cr cash/bank — journaled only when the source purchase posted a journal
+>   const addApPayment = (p) => {
+>     const purch = purchases.find((x) => x.id === p.refId);
+>     let journalId = null;
+>     const amt = round2(Number(p.amount) || 0);
+>     if (purch && purch.journalId && amt > 0) {
+>       ensureAccounts(["1010", "1020", "2010"]);
+>       const accId = (code) => (accounts.find((a) => a.code === code) || {}).id;
+>       const crCode = p.channel === "cash" ? "1010" : "1020";
+>       const cr = accId(crCode) || "a" + crCode;
+>       const ap = accId("2010") || "a2010";
+>       journalId = uid();
+>       addEntry({ id: journalId, date: p.date || todayISO(), desc: "จ่ายชำระเจ้าหนี้ " + (purch.docNo || purch.supplier || "") + " / A/P payment " + (purch.docNo || ""), lines: [{ accountId: ap, debit: amt, credit: 0 }, { accountId: cr, debit: 0, credit: amt }] });
+>     }
+>     setApPayments((prev) => [...prev, { ...p, journalId }]);
+>   };
+>   const deleteApPayment = (id) => {
+>     const pay = apPayments.find((x) => x.id === id);
+>     if (pay && pay.journalId) setEntries((prev) => prev.filter((e) => e.id !== pay.journalId));
+>     setApPayments((prev) => prev.filter((x) => x.id !== id));
+>   };
+1426c1518,1519
+<     ? { ...p, tracksSerial: true, serials: [...(p.serials || []).filter((sr) => norm(sr.serial) !== norm(serial)), { serial, status: "in", addedAt: todayISO(), cost: Number(p.cost) || 0 }] }
+---
+>     // never flip a qty-tracked product with stock on hand into serial mode (would hide its qty/layers)
+>     ? { ...p, tracksSerial: p.tracksSerial || !((Number(p.qty) || 0) > 0 || (p.layers || []).some((l) => (Number(l.qty) || 0) > 0)), serials: [...(p.serials || []).filter((sr) => norm(sr.serial) !== norm(serial)), { serial, status: "in", addedAt: todayISO(), cost: Number(p.cost) || 0 }] }
+1449a1543
+>     if (orig && orig.voided) { window.alert(t("บิลนี้ถูกยกเลิกแล้ว แก้ไขไม่ได้ (สต๊อกถูกคืนไปแล้วตอนยกเลิก)", "This bill is cancelled and cannot be edited (its stock was already restored).")); return null; }
+1453a1548
+>     const fifoMap = {}; // productId -> consumed FIFO slices, stored on the sale for exact restore
+1464c1559
+<         ? p.layers.map((x) => ({ qty: Number(x.qty) || 0, unitCost: Number(x.unitCost) || 0 }))
+---
+>         ? p.layers.map((x) => ({ ...x, qty: Number(x.qty) || 0, unitCost: Number(x.unitCost) || 0 }))
+1466c1561
+<       const { layers, cogs } = consumeFIFO(startLayers, qtySold);
+---
+>       const { layers, cogs, consumed } = consumeFIFO(startLayers, qtySold);
+1467a1563
+>       if (consumed.length) fifoMap[p.id] = consumed;
+1495a1592
+>       fifo: Object.keys(fifoMap).length ? fifoMap : null,
+1504a1602
+>       ensureAccounts(["1010", "1020", "1030", "1035", "1040", "4010", "5010"]);
+1507c1605
+<       const asset = accId(assetCode), sales4010 = accId("4010"), vatAcc = accId("2100") || "a2100", cogsAcc = accId("5010"), inv = accId("1040");
+---
+>       const asset = accId(assetCode) || "a" + assetCode, sales4010 = accId("4010") || "a4010", vatAcc = accId("2100") || "a2100", cogsAcc = accId("5010") || "a5010", inv = accId("1040") || "a1040";
+1536a1635,1640
+>     // also reverse any A/R receipt journals recorded against this bill — the sale reversal credits 1030
+>     // in full, so leaving receipt entries in place would strand a negative A/R balance
+>     payments.filter((x) => x.refId === saleId && x.journalId).forEach((x) => {
+>       const pj = entries.find((e) => e.id === x.journalId);
+>       if (pj && Array.isArray(pj.lines) && pj.lines.length) addEntry({ id: uid(), date: todayISO(), desc: "กลับรายการรับชำระ (ยกเลิกบิล " + sale.billNo + ") / Reversal of receipt on voided " + sale.billNo, lines: reverseLines(pj.lines), reversalOf: x.journalId });
+>     });
+1542a1647
+>     if (gateOn && acctLevel < 3) { window.alert(t("ยกเลิกบิลได้เฉพาะผู้ดูแล (ระดับ 3)", "Only an admin (level 3) can cancel bills.")); return; }
+1553a1659
+>     const fifoMap = {}; // productId -> consumed FIFO slices (exact restore on cancel/billing edit)
+1564c1670
+<         ? p.layers.map((x) => ({ qty: Number(x.qty) || 0, unitCost: Number(x.unitCost) || 0 }))
+---
+>         ? p.layers.map((x) => ({ ...x, qty: Number(x.qty) || 0, unitCost: Number(x.unitCost) || 0 }))
+1566c1672
+<       const { layers, cogs } = consumeFIFO(startLayers, qtySold);
+---
+>       const { layers, cogs, consumed } = consumeFIFO(startLayers, qtySold);
+1567a1674
+>       if (consumed.length) fifoMap[p.id] = consumed;
+1591a1699
+>       fifo: Object.keys(fifoMap).length ? fifoMap : null,
+1618a1727
+>       ensureAccounts(["1010", "1020", "1030", "1035", "1040", "4010", "5010"]);
+1621c1730
+<       const asset = accId(assetCode) || (assetCode === "1035" ? "a1035" : null), sales4010 = accId("4010"), vatAcc = accId("2100") || "a2100", cogsAcc = accId("5010"), inv = accId("1040");
+---
+>       const asset = accId(assetCode) || "a" + assetCode, sales4010 = accId("4010") || "a4010", vatAcc = accId("2100") || "a2100", cogsAcc = accId("5010") || "a5010", inv = accId("1040") || "a1040";
+1653a1763
+>         fifo: rec.fifo || null,
+1666a1777
+>         fifo: (() => { const m = {}; chosen.forEach((r) => { const f = r.fifo || {}; Object.keys(f).forEach((pid) => { m[pid] = [...(m[pid] || []), ...f[pid]]; }); }); return Object.keys(m).length ? m : null; })(),
+1679a1791
+>     if (sale && sale.voided) { window.alert(t("บิลนี้ถูกยกเลิกแล้ว แก้ไขไม่ได้", "This bill is cancelled and cannot be edited.")); return; }
+1716c1828
+<       const bank = accId("1020"), clearing = accId("1035") || "a1035", feeAcc = accId("5080") || "a5080";
+---
+>       const bank = accId("1020") || "a1020", clearing = accId("1035") || "a1035", feeAcc = accId("5080") || "a5080";
+1718c1830,1833
+<       const feePosted = round2(clearedTotal - received); // fee on the posted portion
+---
+>       // journal covers the POSTED portion only: allocate the deposit to posted bills pro-rata,
+>       // so an off-book (unposted) bill in the batch neither inflates the bank debit nor distorts the fee
+>       const postedReceived = round2(sumBill > 0 ? received * (clearedTotal / sumBill) : 0);
+>       const feePosted = round2(clearedTotal - postedReceived); // fee on the posted portion
+1720c1835
+<       if (received !== 0) jl.push({ accountId: bank, debit: received, credit: 0 });
+---
+>       if (postedReceived !== 0) jl.push({ accountId: bank, debit: postedReceived, credit: 0 });
+1726c1841,1842
+<     // allocate the deposit + fee across bills (proportional to bill amount) for per-bill reporting
+---
+>     // allocate the deposit + fee across bills (proportional; residual goes to the LAST bill so
+>     // per-bill allocations sum back exactly to the deposit that was entered and journaled)
+1727a1844,1851
+>     const allocs = {};
+>     let accRecv = 0;
+>     picked.forEach((s, idx) => {
+>       const share = sumBill > 0 ? (Number(s.total) || 0) / sumBill : 1 / picked.length;
+>       const r = idx === picked.length - 1 ? round2(received - accRecv) : round2(received * share);
+>       accRecv = round2(accRecv + r);
+>       allocs[s.id] = r;
+>     });
+1730,1731c1854
+<       const share = sumBill > 0 ? (Number(s.total) || 0) / sumBill : 1 / picked.length;
+<       const recv_i = round2(received * share);
+---
+>       const recv_i = allocs[s.id];
+1753c1876,1877
+<       return { productId: l.productId || null, name: l.name, qty, unitCostFx: unitFx, unitCostThb: unitThb, lineThb: round2(qty * unitThb), useSerial: !!l.useSerial, serials: Array.isArray(l.serials) ? l.serials.slice() : [], shipRatio: Number(l.shipRatio) || 1, dutyRate: Number(l.dutyRate) || 0, dutyThb: round2(Number(l.dutyThb) || 0) };
+---
+>       // line total from full-precision qty*unit*rate (matches the Purchases screen preview) — NOT qty * rounded-unit
+>       return { productId: l.productId || null, name: l.name, qty, unitCostFx: unitFx, unitCostThb: unitThb, lineThb: round2(qty * unitFx * rate), useSerial: !!l.useSerial, serials: Array.isArray(l.serials) ? l.serials.slice() : [], shipRatio: Number(l.shipRatio) || 1, dutyRate: Number(l.dutyRate) || 0, dutyThb: round2(Number(l.dutyThb) || 0) };
+1779,1782c1903,1916
+<           const existing = new Set((np.serials || []).map((s) => norm(s.serial)));
+<           const add = [];
+<           serialIts.forEach((i) => { const c = landedUnitOf(i); (i.serials || []).forEach((sn) => { const v = String(sn).trim(); if (v && !existing.has(norm(v))) { existing.add(norm(v)); add.push({ serial: v, status: "in", addedAt: date, cost: c, srcId: billId }); } }); });
+<           np = { ...np, tracksSerial: true, serials: [...(np.serials || []), ...add] };
+---
+>           const hasQtyStock = !np.tracksSerial && ((Number(np.qty) || 0) > 0 || (np.layers || []).some((x) => (Number(x.qty) || 0) > 0));
+>           if (hasQtyStock) {
+>             // qty-tracked product with stock on hand: DON'T flip to serial mode (that would hide the existing
+>             // qty/layers from on-hand & value) — receive these units as ordinary FIFO layers instead
+>             const layers = [...(np.layers || [])];
+>             let addQty = 0;
+>             serialIts.forEach((i) => { const c = landedUnitOf(i); const n = (i.serials || []).length; if (n > 0) { layers.push({ qty: n, unitCost: c, srcId: billId }); addQty += n; } });
+>             np = { ...np, layers, qty: (Number(np.qty) || 0) + addQty };
+>           } else {
+>             const existing = new Set((np.serials || []).map((s) => norm(s.serial)));
+>             const add = [];
+>             serialIts.forEach((i) => { const c = landedUnitOf(i); (i.serials || []).forEach((sn) => { const v = String(sn).trim(); if (v && !existing.has(norm(v))) { existing.add(norm(v)); add.push({ serial: v, status: "in", addedAt: date, cost: c, srcId: billId }); } }); });
+>             np = { ...np, tracksSerial: true, serials: [...(np.serials || []), ...add] };
+>           }
+1800a1935
+>       ensureAccounts(["1010", "1020", "1040", "1170", "5050", "5090"]);
+1802c1937
+<       const debitAcc = receiveStock ? accId("1040") : (accId(expenseCode || "5050") || accId("5050"));
+---
+>       const debitAcc = receiveStock ? (accId("1040") || "a1040") : (accId(expenseCode || "5050") || accId("5050") || "a5050");
+1805c1940
+<       const cred = accId(credCode);
+---
+>       const cred = accId(credCode) || "a" + credCode;
+1826a1962
+>       layered: true, // stamped by this version: stock layers carry a durable srcId thread (see deletePurchase fallback)
+1931c2067,2088
+<           np = { ...np, serials: (np.serials || []).filter((s) => !(remove.has(norm(s.serial)) && s.status === "in")) };
+---
+>           const before = (np.serials || []).length;
+>           const kept = (np.serials || []).filter((s) => !(remove.has(norm(s.serial)) && s.status === "in"));
+>           np = { ...np, serials: kept };
+>           // serial lines received as FIFO layers (qty product with stock at receive time) have no serial rows —
+>           // pull the residual units back out of this bill's own layers so cancel matches the reversing journal
+>           const wantQty = serialIts.reduce((s, i) => s + ((i.serials || []).length || Number(i.qty) || 0), 0);
+>           let residual = wantQty - (before - kept.length);
+>           if (residual > 0) {
+>             let layers2 = [...(np.layers || [])];
+>             let toRm = residual;
+>             for (let k = 0; k < layers2.length && toRm > 0; k++) {
+>               if (layers2[k].srcId !== rec.id) continue;
+>               const take = Math.min(layers2[k].qty, toRm);
+>               layers2[k] = { ...layers2[k], qty: layers2[k].qty - take };
+>               toRm -= take;
+>             }
+>             const rmq = residual - toRm;
+>             if (rmq > 0) {
+>               layers2 = layers2.filter((l) => (Number(l.qty) || 0) > 0);
+>               np = { ...np, layers: layers2, qty: Math.max(0, (Number(np.qty) || 0) - rmq) };
+>             }
+>           }
+1935a2093,2096
+>           if (!layers.length) {
+>             // legacy qty-only product (stock never held in layers): old direct-subtract behavior
+>             return { ...np, qty: Math.max(0, (Number(np.qty) || 0) - qtyBack) };
+>           }
+1936a2098
+>           const hasOwn = layers.some((l) => l.srcId === rec.id);
+1944,1948c2106,2117
+<           // legacy bills (no srcId): fall back to newest-first removal
+<           for (let k = layers.length - 1; k >= 0 && toRemove > 0; k--) {
+<             const take = Math.min(layers[k].qty, toRemove);
+<             layers[k] = { ...layers[k], qty: layers[k].qty - take };
+<             toRemove -= take;
+---
+>           // Fallback when this bill has no surviving srcId layer:
+>           // - rec.layered (stamped at commit by this version, where consumeFIFO preserves srcId): its tags
+>           //   survive sales, so no surviving layer means the units were SOLD — remove nothing more.
+>           // - older records (incl. layers whose srcId the old consumeFIFO erased): remove from UNTAGGED
+>           //   layers newest-first; NEVER strip another bill's srcId-tagged layers.
+>           if (!hasOwn && !rec.layered) {
+>             for (let k = layers.length - 1; k >= 0 && toRemove > 0; k--) {
+>               if (layers[k].srcId != null) continue;
+>               const take = Math.min(layers[k].qty, toRemove);
+>               layers[k] = { ...layers[k], qty: layers[k].qty - take };
+>               toRemove -= take;
+>             }
+1949a2119
+>           const removed = qtyBack - toRemove; // subtract only what was actually taken out of layers
+1951c2121
+<           np = { ...np, layers, qty: Math.max(0, (Number(np.qty) || 0) - qtyBack) };
+---
+>           np = { ...np, layers, qty: Math.max(0, (Number(np.qty) || 0) - removed) };
+1968a2139,2143
+>     // reverse any A/P payment journals recorded against this bill (mirror of the A/R receipt reversal on voidSale)
+>     apPayments.filter((x) => x.refId === rec.id && x.journalId).forEach((x) => {
+>       const pj = entries.find((e) => e.id === x.journalId);
+>       if (pj && Array.isArray(pj.lines) && pj.lines.length) addEntry({ id: uid(), date: todayISO(), desc: "กลับรายการจ่ายชำระ (ยกเลิกบิลซื้อ " + (rec.docNo || "") + ") / Reversal of payment on voided purchase", lines: reverseLines(pj.lines), reversalOf: x.journalId });
+>     });
+2048a2224,2226
+>   // re-add any missing core account (deleted from the chart / restored old backup) before journaling to it;
+>   // pair with the "a"+code id fallback at each accId call — DEFAULT ids are exactly "a"+code
+>   const ensureAccounts = (codes) => importAccounts(DEFAULT_ACCOUNTS.filter((a) => codes.includes(a.code)));
+2058c2236,2243
+<           out[i] = { ...out[i], qty: (Number(out[i].qty) || 0) + (Number(np.qty) || 0), cost: np.cost || out[i].cost, price: np.price || out[i].price };
+---
+>           const cur = out[i];
+>           const addQty = Number(np.qty) || 0;
+>           // products already on FIFO layers count on-hand from layers — imported qty must land as a layer too,
+>           // otherwise it is invisible and gets erased when the next sale recomputes qty from layers
+>           const layers = (Array.isArray(cur.layers) && cur.layers.length && addQty > 0)
+>             ? [...cur.layers, { qty: addQty, unitCost: Number(np.cost) || Number(cur.cost) || 0 }]
+>             : cur.layers;
+>           out[i] = { ...cur, qty: (Number(cur.qty) || 0) + addQty, layers, cost: np.cost || cur.cost, price: np.price || cur.price };
+2067a2253
+>     if (gateOn && acctLevel < 3) { window.alert(t("ต้องเป็นผู้ดูแล (ระดับ 3) เท่านั้น", "Admin (level 3) only.")); return; }
+2072a2259
+>     if (gateOn && acctLevel < 3) { window.alert(t("ต้องเป็นผู้ดูแล (ระดับ 3) เท่านั้น", "Admin (level 3) only.")); return; }
+2080c2267
+<       const data = { accounts, entries, products, categories, movements, customers, banks, sales, purchases, expenses, docs, payments, apPayments, assets, whts, history, advances, profile, auth, paperBoards, lang, vatRate, paperBoardsV, paperStockV };
+---
+>       const data = { accounts, entries, products, categories, movements, customers, banks, sales, purchases, expenses, docs, payments, apPayments, assets, whts, history, advances, custDeposits, payees, pendingSales, hsTable, profile, auth, paperBoards, lang, vatRate, paperBoardsV, paperStockV };
+2091a2279,2280
+>   // NOTE: no level guard here — restoreAll is also used by SYSTEM flows (initial IndexedDB load,
+>   // "newer backup found" prompt). User-initiated restore entry points carry the admin guard instead.
+2191c2380
+<       onClose={() => { setInvoiceSale(null); forceSyncNow(); }} onEdit={editSale} onDelete={acctLevel >= 3 ? deleteSale : null} />
+---
+>       onClose={() => { setInvoiceSale(null); forceSyncNow(); }} onEdit={acctLevel >= 3 ? editSale : null} onDelete={acctLevel >= 3 ? deleteSale : null} />
+2221,2224c2410,2417
+<   const saveBadge = dirty ? (
+<     <button className="btn btn-sm" style={{ borderColor: "#c79100", color: "#8a6500", fontWeight: 700 }} onClick={exportAll}
+<       title={t("มีข้อมูลที่ยังไม่ได้บันทึกลงไฟล์ — กดเพื่อส่งออกไฟล์สำรองทันที", "Changes not yet saved to a file — tap to export a backup now")}>
+<       ● {t("ยังไม่ได้บันทึก", "Unsaved")}
+---
+>   const saveBadge = (saveError || dirty) ? (
+>     <button className="btn btn-sm" style={saveError
+>       ? { borderColor: "#b3261e", color: "#b3261e", fontWeight: 700 }
+>       : { borderColor: "#c79100", color: "#8a6500", fontWeight: 700 }} onClick={exportAll}
+>       title={saveError
+>         ? t("บันทึกอัตโนมัติล้มเหลว (พื้นที่เก็บอาจเต็ม) — กดส่งออกไฟล์สำรองทันที", "Autosave FAILED (storage may be full) — tap to export a backup now")
+>         : t("มีข้อมูลที่ยังไม่ได้บันทึกลงไฟล์ — กดเพื่อส่งออกไฟล์สำรองทันที", "Changes not yet saved to a file — tap to export a backup now")}>
+>       ● {saveError ? t("บันทึกไม่สำเร็จ!", "Save FAILED!") : t("ยังไม่ได้บันทึก", "Unsaved")}
+2486c2679
+<           <ShopSettings t={t} lang={lang} profile={profile} onProfile={setProfile} banks={banks} onSaveBank={saveBank} onDeleteBank={deleteBank} onExportData={exportAll} onRestoreData={restoreAll}
+---
+>           <ShopSettings t={t} lang={lang} profile={profile} onProfile={setProfile} banks={banks} onSaveBank={saveBank} onDeleteBank={deleteBank} onExportData={exportAll} onRestoreData={(obj) => { if (gateOn && acctLevel < 3) { window.alert(t("กู้คืนข้อมูลได้เฉพาะผู้ดูแล (ระดับ 3)", "Only an admin (level 3) can restore data.")); return; } restoreAll(obj); }}
+3191,3192c3384,3401
+<     onUpdate(p.id, (x) => ({ tracksSerial: true, serials: [...(x.serials || []), ...serialPending.map((s) => ({ serial: s, status: "in", addedAt: todayISO(), cost: c }))] }));
+<     addMovement({ type: "in", productId: p.id, qty: serialPending.length, note: "รับเข้า / Receive @ " + c });
+---
+>     const hasQtyStock = !p.tracksSerial && ((Number(p.qty) || 0) > 0 || (p.layers || []).some((l) => (Number(l.qty) || 0) > 0));
+>     if (hasQtyStock) {
+>       // qty-tracked product with stock on hand: DON'T flip to serial mode (would hide existing qty/layers) —
+>       // receive as an ordinary FIFO layer; the serial numbers are kept on the movement note
+>       const n = serialPending.length;
+>       onUpdate(p.id, (x) => {
+>         const layers = (Array.isArray(x.layers) && x.layers.length)
+>           ? x.layers.map((l) => ({ ...l, qty: Number(l.qty) || 0, unitCost: Number(l.unitCost) || 0 }))
+>           : ((Number(x.qty) || 0) > 0 ? [{ qty: Number(x.qty) || 0, unitCost: Number(x.cost) || 0 }] : []);
+>         layers.push({ qty: n, unitCost: c });
+>         return { layers, qty: layers.reduce((s, l) => s + l.qty, 0), cost: c };
+>       });
+>       addMovement({ type: "in", productId: p.id, qty: n, note: "รับเข้า / Receive @ " + c + " · SN: " + serialPending.join(", ") });
+>       window.alert(t("สินค้านี้นับสต๊อกแบบจำนวนและมีของอยู่แล้ว — รับเข้าเป็นจำนวนแทน (serial ถูกจดไว้ในประวัติ)", "This product is qty-tracked with stock on hand — received as quantity instead (serials noted in history)."));
+>     } else {
+>       onUpdate(p.id, (x) => ({ tracksSerial: true, serials: [...(x.serials || []), ...serialPending.map((s) => ({ serial: s, status: "in", addedAt: todayISO(), cost: c }))] }));
+>       addMovement({ type: "in", productId: p.id, qty: serialPending.length, note: "รับเข้า / Receive @ " + c });
+>     }
+3679c3888,3890
+<   const cartQtyForProduct = (pid) => cartRef.current.filter((l) => l.productId === pid && !l.serial).reduce((s, l) => s + (Number(l.qty) || 0), 0);
+---
+>   // count every qty-consuming line: plain qty lines AND serial-note lines (isSerial=false but serial noted) —
+>   // filtering on !l.serial let serial-note lines bypass the stock guard and oversell silently
+>   const cartQtyForProduct = (pid) => cartRef.current.filter((l) => l.productId === pid && !l.isSerial).reduce((s, l) => s + (Number(l.qty) || 0), 0);
+3813c4024,4027
+<       if (qty > oh) qty = oh;
+---
+>       // cap includes the edited bill's own freed stock (editCredit); never clamp below 1 —
+>       // the aggregate guard in confirmSale still blocks a genuinely overselling cart
+>       const cap = oh + (editCredit[l.productId] || 0);
+>       if (qty > cap) qty = Math.max(1, cap);
+4690c4904
+<   const go = () => { if (!onSignIn(u, pw)) { setErr(t("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง", "Wrong username or password")); setPw(""); } };
+---
+>   const go = async () => { if (!(await onSignIn(u, pw))) { setErr(t("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง", "Wrong username or password")); setPw(""); } };
+4707c4921
+<   const go = () => { if (!onLogin(u, pw)) { setErr(t("เข้าไม่ได้ — ต้องเป็นผู้ใช้ระดับ 2 ขึ้นไป และรหัสถูกต้อง", "Denied — needs a level-2+ account with the right password")); setPw(""); } };
+---
+>   const go = async () => { if (!(await onLogin(u, pw))) { setErr(t("เข้าไม่ได้ — ต้องเป็นผู้ใช้ระดับ 2 ขึ้นไป และรหัสถูกต้อง", "Denied — needs a level-2+ account with the right password")); setPw(""); } };
+5461c5675
+<               {doc.vatEnabled && <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}><span>VAT {Math.round(vatRate * 100)}%</span><span>{money(tot.vat)}</span></div>}
+---
+>               {doc.vatEnabled && <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}><span>VAT {+(vatRate * 100).toFixed(2)}%</span><span>{money(tot.vat)}</span></div>}
+6426,6427c6640,6651
+<   useEffect(() => { try { setApiKey(localStorage.getItem(AI_KEY_LS) || ""); } catch (e) {} }, []);
+<   const saveKey = (k) => { setApiKey(k); try { localStorage.setItem(AI_KEY_LS, k); } catch (e) {} };
+---
+>   // default = session-only (cleared when the browser closes); persisting to localStorage is an explicit opt-in —
+>   // on a shared shop terminal a persisted key is readable by every user of the machine
+>   const [keyPersist, setKeyPersist] = useState(false);
+>   useEffect(() => { try { const ls = localStorage.getItem(AI_KEY_LS); const ss = sessionStorage.getItem(AI_KEY_LS); if (ls) { setApiKey(ls); setKeyPersist(true); } else if (ss) setApiKey(ss); } catch (e) {} }, []);
+>   const saveKey = (k, persist = keyPersist) => {
+>     setApiKey(k);
+>     try {
+>       if (persist) { localStorage.setItem(AI_KEY_LS, k); sessionStorage.removeItem(AI_KEY_LS); }
+>       else { sessionStorage.setItem(AI_KEY_LS, k); localStorage.removeItem(AI_KEY_LS); }
+>     } catch (e) {}
+>   };
+>   const togglePersist = (v) => { setKeyPersist(v); saveKey(apiKey, v); };
+6562a6787,6790
+>               <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, marginTop: 6, cursor: "pointer" }}>
+>                 <input type="checkbox" checked={keyPersist} onChange={(e) => togglePersist(e.target.checked)} />
+>                 {t("จำคีย์ถาวรบนเครื่องนี้ (ถ้าไม่ติ๊ก คีย์หายเมื่อปิดเบราว์เซอร์ — ปลอดภัยกว่าบนเครื่องที่ใช้ร่วมกัน)", "Remember key on this device (unchecked = cleared when the browser closes — safer on a shared machine)")}
+>               </label>
+6791,6794c7019,7023
+<   const rate = currency === "THB" ? 1 : (Number(fxRate) || 0);
+<   const effQty = (l) => (l.useSerial ? (l.serials || []).length : (Number(l.qty) || 0));
+<   const lineThb = (l) => round2(effQty(l) * (Number(l.unitCostFx) || 0) * rate);
+<   const goodsFx = lines.reduce((s, l) => s + effQty(l) * (Number(l.unitCostFx) || 0), 0);
+---
+>   // user-typed money/qty fields go through num() so "1,115.50" parses instead of silently becoming 0
+>   const rate = currency === "THB" ? 1 : (num(fxRate) || 0);
+>   const effQty = (l) => (l.useSerial ? (l.serials || []).length : (num(l.qty) || 0));
+>   const lineThb = (l) => round2(effQty(l) * (num(l.unitCostFx) || 0) * rate);
+>   const goodsFx = lines.reduce((s, l) => s + effQty(l) * (num(l.unitCostFx) || 0), 0);
+6799,6800c7028,7034
+<   const lineNetThb = (l) => round2(effQty(l) * (useVatCalc ? (Number(l.unitCostFx) || 0) / (1 + vatRate) : (Number(l.unitCostFx) || 0)) * rate);
+<   const lineDuty = (l) => round2(lineNetThb(l) * (Number(l.dutyRate) || 0) / 100);
+---
+>   const lineNetThb = (l) => round2(effQty(l) * (useVatCalc ? (num(l.unitCostFx) || 0) / (1 + vatRate) : (num(l.unitCostFx) || 0)) * rate);
+>   // Thai customs assesses import duty on the CIF value — allocate freight to lines by weight and
+>   // include it in each line's duty base (was: ex-VAT goods value only, understating the duty)
+>   const totalWeightUI = lines.reduce((s, l) => s + effQty(l) * (num(l.shipRatio) || 1), 0);
+>   const freightNum = num(freight) || 0;
+>   const lineFreightAlloc = (l) => { const w = effQty(l) * (num(l.shipRatio) || 1); return totalWeightUI > 0 ? round2(freightNum * (w / totalWeightUI)) : 0; };
+>   const lineDuty = (l) => round2((lineNetThb(l) + lineFreightAlloc(l)) * (num(l.dutyRate) || 0) / 100);
+6802c7036
+<   const landedExtra = round2(dutyTotal + (Number(freight) || 0));
+---
+>   const landedExtra = round2(dutyTotal + freightNum);
+6804c7038
+<   const vat = !billVat ? 0 : (vatAuto ? vatGoodsAuto : round2(Number(vatManual) || 0));
+---
+>   const vat = !billVat ? 0 : (vatAuto ? vatGoodsAuto : round2(num(vatManual) || 0));
+6806c7040
+<   const feeN = round2(Number(feeThb) || 0);
+---
+>   const feeN = round2(num(feeThb) || 0);
+6810c7044
+<   const appliedList = candAdv.map((a) => ({ advanceId: a.id, amountThb: round2(Number(applyAdv[a.id]) || 0) })).filter((x) => x.amountThb > 0);
+---
+>   const appliedList = candAdv.map((a) => ({ advanceId: a.id, amountThb: round2(num(applyAdv[a.id]) || 0) })).filter((x) => x.amountThb > 0);
+6814c7048
+<   const netUnitFx = (l) => { const u = Number(l.unitCostFx) || 0; return useVatCalc ? u / (1 + vatRate) : u; };
+---
+>   const netUnitFx = (l) => { const u = num(l.unitCostFx) || 0; return useVatCalc ? u / (1 + vatRate) : u; };
+6848,6849c7082,7083
+<       lines: valid.map((l) => ({ productId: l.productId || null, name: (l.name || "").trim() || (products.find((p) => p.id === l.productId) || {}).th || "", qty: effQty(l), unitCostFx: netUnitFx(l), useSerial: !!l.useSerial, serials: l.useSerial ? (l.serials || []) : [], shipRatio: Number(l.shipRatio) || 1, dutyRate: Number(l.dutyRate) || 0, dutyThb: lineDuty(l) })),
+<       dutyThb: dutyTotal, freightThb: Number(freight) || 0, vatThb: vat, vatBaseThb: vatBase, isVat: billVat,
+---
+>       lines: valid.map((l) => ({ productId: l.productId || null, name: (l.name || "").trim() || (products.find((p) => p.id === l.productId) || {}).th || "", qty: effQty(l), unitCostFx: netUnitFx(l), useSerial: !!l.useSerial, serials: l.useSerial ? (l.serials || []) : [], shipRatio: num(l.shipRatio) || 1, dutyRate: num(l.dutyRate) || 0, dutyThb: lineDuty(l) })),
+>       dutyThb: dutyTotal, freightThb: freightNum, vatThb: vat, vatBaseThb: vatBase, isVat: billVat,
+6857c7091
+<   const inputVatAll = round2(purchases.reduce((s, p) => s + (Number(p.vatThb) || 0), 0));
+---
+>   const inputVatAll = round2(purchases.filter((p) => !p.voided).reduce((s, p) => s + (Number(p.vatThb) || 0), 0));
+7745c7979
+<         {onEdit && <button className="btn" onClick={() => onEdit(sale)}>✏️ {t("แก้ไขบิล", "Edit")}</button>}
+---
+>         {onEdit && !sale.voided && <button className="btn" onClick={() => onEdit(sale)}>✏️ {t("แก้ไขบิล", "Edit")}</button>}
+7981c8215
+<   const sumVat = rows.reduce((a, e) => a + (Number(e.vatThb) || 0), 0);
+---
+>   const sumVat = rows.filter((e) => !e.voided).reduce((a, e) => a + (Number(e.vatThb) || 0), 0);
