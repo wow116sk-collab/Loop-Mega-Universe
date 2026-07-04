@@ -219,3 +219,18 @@
 4. **หลัง merge — V3.26 bundle (R10/R15):** bump `\lmuver` → 3.26, เขียน revision-history block, rename `LMU_V3_26_consolidated.*`, อัปเดต README/CITATION/CHANGELOG/ABOUT_AND_TAGS, rebuild + certify (เซสชันนี้มี TeX แล้ว — ทำได้ในนี้)
 5. **สคริปต์ตรวจที่ README สัญญาไว้:** CODATA spine / KG re-integration / dimensional audit ยังไม่มีใน `/code` (ตอนนี้มีเฉพาะ `lmu_endgame_repro.py`)
 
+
+---
+
+## Application record — Addendum 2 (R17–R29), 2026-07-04
+
+**Applied (60 items):** A-majors id13, id57, id66, id73, id80, id88+id90 (default arm — รอคำตอบผู้เขียนเรื่องแหล่ง 2026), id89, id97 (×4 จุดค่า retired), R26 (id46 preferred-citation), R27 (id53) · B-batch ทุกข้อรวม overrides: id81 (+11.3), id82, id115 (placement note, ไม่ resort), id93 (ตัด 2 อ้างอิง), id23 (arm 2), id92+id59 (σ=317 ทั้งสองจุด) · id39 [unverified→reworded]
+
+**Partial / skipped (แจ้ง adjudicator):**
+- id77: retag ประโยค no-remnant แล้ว (`\factth`) แต่ "tag line 656" หาประโยคเป้าหมายที่บรรทัดนั้นไม่พบ — ขอ pointer
+- id94: เพิ่ม `\Fact` ที่ sample claim แล้ว; ตำแหน่ง `\Auditor` ของ verdict clause ยังไม่ชี้ชัด
+- id92: ใช้ "(the adopted value, \S5)" เป็น source pointer — วรรณกรรมต้นทางของ σ=317 ต้องให้ผู้เขียนระบุ (ruling สั่ง "with source")
+
+**Certification (R29-C.4):** XeLaTeX ×2 · 0 errors · **103 pages** (ลดจาก 104 — การปิดกลุ่ม `{\small` ที่แตก (id99) ทำให้ revision history กลับไปตัวเล็กตามที่ตั้งใจ) · section destinations **75/75 distinct, 0 duplicates** (pypdf Names-tree walk)
+
+**เหลือ (human):** id12 (เลือกโครงสร้าง), id88 (มีแหล่ง 2026 จริงไหม — yes/no), C.1/C.2 (GitHub About / Zenodo, ทำมือ), C.3 eyeball (Attribution ×4 + `\Fact`→`\factth` ×3), V3.26 bundle + R25 stage-2 (ε 4.6e-2 recompute pass) + C.5 (`code/verify_all.py` — adjudicator ค้างส่ง)

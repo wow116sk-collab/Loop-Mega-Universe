@@ -16,7 +16,7 @@
 | **SB** | `synthetic_body_design_V1_4` | Engineering of a synthetic body / brain-preservation vessel | Yes (engineering brief); couples to CoE at the identity + brain-preservation joints | `[Fact] [Hypothesis] [Speculation] [unverified]` + `[USER'S OWN] [HYBRID SYNTHESIS]` |
 | **RM** | `Robotic_Mining_Architecture_Notes.md` | Off-world robotic-mining architecture | **Yes — explicitly "not part of LMU cosmology"** (evidential); connects only by method + ontology-chain | `[Fact] [Hypothesis] [Speculation] [unverified]` |
 
-**Tag-system note.** LMU and CoE use *different* legends. Rough cross-map for anyone slicing these apart: LMU `[Fact]` ≈ CoE `[ESTABLISHED]`; LMU `[Hypothesis]` ≈ CoE `[HYBRID SYNTHESIS]`/`[SPECULATIVE]`; both use `[Fact-eq]` the same way (derived-from-Fact with the numbers shown). Do **not** silently merge the two legends when combining files.
+**Tag-system note.** LMU and CoE use *different* legends. Rough cross-map for anyone slicing these apart: LMU `[Fact]` ≈ CoE `[ESTABLISHED]`; LMU `[Hypothesis]` ≈ CoE `[HYBRID SYNTHESIS]`/`[SPECULATIVE]`; CoE additionally uses `[Fact-eq]` (derived-from-Fact with the numbers shown); the LMU legend does not include it. Do **not** silently merge the two legends when combining files.
 
 ---
 
@@ -41,7 +41,7 @@
 
 | ID | Type | Endpoints | Status | Strength | One line |
 |---|---|---|---|---|---|
-| C1 | ONT | LMU ⊂ CoE | `[declared]` | posit `[Speculative]`; containment `[USER'S OWN]` | Same substrate/ream; LMU aeon = a sub-sequence of slides; L0 = stacking axis |
+| C1 | ONT | LMU ⊂ CoE | `[declared]` | posit `[SPECULATIVE]`; containment `[USER'S OWN]` | Same substrate/ream; LMU aeon = a sub-sequence of slides; L0 = stacking axis |
 | C2 | FORK | CoE-transport ⊥ SB | `[declared]` | `[Hypo]` (identity criterion — physics silent) | Parfit/pattern vs Olson/animalist — cannot both be foundational |
 | C3 | ONT+content | CoE ↔ SB | `[declared]` | mixed — see entry | Brain-preservation / bioprinting / layer-3 regeneration bridge |
 | C4 | METH | all four | `[declared]` (RM states it) | `[Design]` principle | "hit a structural wall → route around/exploit, never smash" |
@@ -68,7 +68,7 @@ Each block below is written to stand alone if you copy it into its own `.md` in 
 - **Two bounded consequences (from the doc):**
   1. Shared foundation *by intent* — if the substrate/slide ontology fails, **both fail together** (author accepts this "linked fate").
   2. Containment is **ontological, not evidential** — CoE does **not** import LMU's still-open derivations (Λ₀, S_crit, channel weights, γ universality, a dS/CFT construction). See firewall **F1** in §5.
-- **Strength of the link:** the *containment architecture* is `[USER'S OWN]`; the *substrate it rests on* is `[Speculative]` (pre-geometric extension) over `[ESTABLISHED]` block geometry (Minkowski 1908).
+- **Strength of the link:** the *containment architecture* is `[USER'S OWN]`; the *substrate it rests on* is `[SPECULATIVE]` (pre-geometric extension) over `[ESTABLISHED]` block geometry (Minkowski 1908).
 - **Grafts with:** C6, C7 (they are the mechanics of this shared ontology); F1 (its firewall).
 
 ---
@@ -146,7 +146,7 @@ Each block below is written to stand alone if you copy it into its own `.md` in 
   `substrate → ream → slides → matter → life → human → human's tools → tools-of-tools = mining.`
   This is exactly how **DNA traces down to H** [Fact] (H → nucleoside → nucleotide → DNA) — nobody requires DNA to be "built directly from H"; tracing down the chain is what ontological containment *means*. Distance along the chain does not void the connection.
 - **Reconciling with RM's "standalone":** RM's own line *"not part of LMU cosmology"* means **evidentially** separate (it borrows no LMU equation) — **not** ontologically outside the universe. Same structure as LMU⊂CoE: *in* the box (ontological), *firewalled* (evidential).
-- **Strength:** `[Fact-eq]` by definition of `ream` (every physical process lives in the block). Needs no substrate posit — `ream`/block (Minkowski, `[ESTABLISHED]`) already connects every physical process.
+- **Strength:** `[Fact]` — true by definition of `ream` (every physical process lives in the block). Needs no substrate posit — `ream`/block (Minkowski, `[ESTABLISHED]`) already connects every physical process.
 - **Grafts with:** C4 (RM's *other*, weaker link — the method), F2 (RM's evidential firewall).
 
 ---
@@ -173,7 +173,7 @@ Each block below is written to stand alone if you copy it into its own `.md` in 
   - ✅ everything traces down to it (like every element traces to H).
   - ❌ does **not** *produce/predict* upper-layer behaviour — **emergence** (Anderson, "More is Different," 1972). This is exactly why CoE §4.13(h) writes "ontological **not evidential**."
 - **Guard `[Fact]`:** a base that *produces every answer including its own* is `[Fact]`-false (Gödel 1931: consistent arithmetic-strong systems are incomplete and can't prove own consistency; + agent⊂universe, CoE §4.13(i)). The strong base is the one that *places* everything honestly — including marking what is out of reach — not the one that explains everything.
-- **Two levels of "box" available:** `[ESTABLISHED]` ream/block (Minkowski 1908) — enough to hold all four docs — **or** `[Speculative]` pre-geometric substrate (deeper, unfalsifiable, §6.1). The H-analogy fits the `[ESTABLISHED]` level *without* needing the substrate posit.
+- **Two levels of "box" available:** `[ESTABLISHED]` ream/block (Minkowski 1908) — enough to hold all four docs — **or** `[SPECULATIVE]` pre-geometric substrate (deeper, unfalsifiable, CoE §6.1). The H-analogy fits the `[ESTABLISHED]` level *without* needing the substrate posit.
 
 ### D4 — L0 vs substrate : strength asymmetry {#d4}
 - **Claim:** L0 is **stronger** than substrate, not weaker — despite being unmeasurable — because their *triggers* differ.
@@ -229,7 +229,6 @@ If you split each block into its own file, preserve these IDs so internal links 
 #d2  Continuity manufactured not transported [derived]
 #d3  Box = substrate/ream (H-analogy)   [derived]
 #d4  L0 vs substrate strength asymmetry [derived]
-#f1..f5  firewalls (do-not-connect)
 ```
 
 **Provenance line for the map itself:** links marked `[declared]` are traceable to the cited section in the source docs; links marked `[derived]` were reasoned out in analysis (2026-07-03) and are **not** claims the documents make. Assembled by Claude against the author's tag legend; curation per the author's standing rules.

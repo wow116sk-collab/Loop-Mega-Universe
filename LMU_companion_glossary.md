@@ -14,7 +14,7 @@ intuition-before-formalism ordering: Reichenbach (1938), discovery vs. justifica
 
 ## A. Numbers and scales
 
-**log₁₀ x** — counts *digits*, not size. log₁₀ = 122 means "a 1 with 122 zeros."
+**log₁₀ x** — counts *zeros* (orders of magnitude), not size. log₁₀ x = 122 means "a 1 with 122 zeros."
 The whole document breathes in log-space; differences of "a few" here are factors
 of thousands.
 
@@ -150,7 +150,7 @@ c³/(2GH).
 ## F. Statistics of the sky
 
 **P(k), A_s, n_s** — the recipe of the initial lumps: how much lumpiness at each
-size. A_s is the overall amplitude (~10⁻⁵ contrast), n_s the tilt (slightly more
+size. A_s is the overall power amplitude (2.1×10⁻⁹, corresponding to ~10⁻⁵ density contrast), n_s the tilt (slightly more
 power at large sizes, 0.9649).
 
 **f_NL** — whether the lumps are pure coin-flip Gaussian or carry a correlated

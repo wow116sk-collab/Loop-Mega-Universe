@@ -8,7 +8,7 @@ Everything below is paste-ready. License decision (made): **CC-BY-4.0** for docu
 
 **Description (≤350 chars):**
 
-> Loop Mega Universe (LMU) — cyclic black-hole cosmology framework: aeons end cold & dilute; the last survivor BH's evaporation flash seeds a Coleman–De Luccia bounce → one flash, one bubble, one new hot smooth aeon. Two axioms, Fact/Hypo-labelled, pre-registered falsifiers (DESI-Y5, BHEX, LiteBIRD). V3.25, 104 pp.
+> Loop Mega Universe (LMU) — cyclic black-hole cosmology framework: aeons end cold & dilute; the last survivor BH's evaporation flash seeds a Coleman–De Luccia bounce → one flash, one bubble, one new hot smooth aeon. Two axioms, Fact/Hypothesis-labelled, pre-registered falsifiers (DESI-Y5, BHEX, LiteBIRD). V3.25, 104 pp.
 
 **Website:** `https://doi.org/10.5281/zenodo.20692157`
 
@@ -140,7 +140,7 @@ problem, Loop Mega Universe, LMU.
 
 - `"Loop Mega Universe" cosmology`
 - `"Loop Mega Universe" Rungsiyapornratana`
-- `LMU "one flash, one bubble, one aeon"`  ← วลีลายเซ็น อยู่ทั้งใน doc/README/Zenodo
+- `LMU "one flash, one bubble, one aeon"`  ← วลีลายเซ็น (README/Zenodo ใช้รูป "One flash = one bubble = one aeon" — ค้นทั้งสองรูป)
 - `zenodo 20692157`
 - `site:github.com Loop-Mega-Universe`
 - `wow116sk-collab`

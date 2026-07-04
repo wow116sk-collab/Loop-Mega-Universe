@@ -53,3 +53,13 @@ keywords:
   - measure problem
   - Loop Mega Universe
   - LMU
+preferred-citation:
+  type: report
+  title: "Loop Mega Universe (LMU): a cyclic black-hole cosmology framework"
+  authors:
+    - family-names: "Rungsiyapornratana"
+      given-names: "Pitarn"
+      orcid: "https://orcid.org/0009-0004-6411-2201"
+  year: 2026
+  version: "3.25"
+  doi: 10.5281/zenodo.20692157

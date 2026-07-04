@@ -32,7 +32,7 @@ Dead ends are kept, not deleted (failure logs); rebuttals are tested for wrong-p
 
 ## Verification culture
 
-Independent recomputation, not self-citation: the physics-constant spine is re-derived from CODATA (Hawking temperature, evaporation time, Bekenstein–Hawking and Zurek 4/3 entropies, Nariai ceiling); the dark-energy sector is re-integrated from the Klein–Gordon equation (6/6 (w₀, wₐ) rows reproduced to three decimals, no phantom crossing — Vikman); dimensional audits pass 14/14; the relic-galaxy statistics reproduce exactly from the published dynamical masses. Verification scripts are being deposited in `/code` (first: `lmu_endgame_repro.py`, run provenance for the Result-2 endgame integration).
+Independent recomputation, not self-citation: the physics-constant spine is re-derived from CODATA (Hawking temperature, evaporation time, Bekenstein–Hawking and Zurek 4/3 entropies, Nariai ceiling); the dark-energy sector is re-integrated from the Klein–Gordon equation (6/6 (w₀, wₐ) rows reproduced to three decimals, no phantom crossing — Vikman); dimensional audits pass 13/13; the relic-galaxy statistics reproduce exactly from the published dynamical masses. Verification scripts are being deposited in `/code` (first: `lmu_endgame_repro.py`, run provenance for the Result-2 endgame integration).
 
 ## Pre-registered falsifier lines
 
