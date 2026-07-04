@@ -20,7 +20,11 @@ Every load-bearing statement in the document carries a label:
 - **[Fact]** — measured / peer-reviewed,
 - **[Fact-theory]** — established theory,
 - **[Hypothesis]** — an assumption with literature support (the framework's own machinery included),
-- **[Open]** — unsolved.
+- **[Speculation]** — no equations yet,
+- **[Design]** — structural choice,
+- **[Open]** — unsolved,
+- **[Dead-end]** — failed (kept as failure logs),
+- **[Auditor]** — editor addition.
 
 *(Working alias in session logs: Fact-eq ≡ Fact-theory with the checkable numbers shown.)*
 
@@ -92,7 +96,7 @@ See `CITATION.cff` (GitHub's "Cite this repository" button), or cite the concept
 
 ## บทคัดย่อ (ไทย)
 
-**Loop Mega Universe (LMU)** คือกรอบสังเคราะห์จักรวาลวิทยาเชิงวัฏจักรบนฟิสิกส์หลุมดำ: อีออน (aeon) จบที่สภาพเย็น–เจือจาง–เป็นก้อน หลุมดำผู้รอด (L1) หยุดหมุน ระเหย และแฟลชสุดท้ายของมันจุดชนวน bounce แบบ Coleman–De Luccia ที่ปลายทางการระเหยระดับพลังค์ — หนึ่งแฟลช หนึ่งฟอง หนึ่งอีออนใหม่ ร้อน–เรียบ–หนาแน่นพร้อมกันทั้งใบบนผิวเวลาภายใน ช่องว่างเอนโทรปีที่เปิดใหม่ (งบเนเกนโทรปีของอีออน) ติดลูกศรเวลาอีกครั้ง กรอบนี้ประกาศตัวเป็น "เลนส์มอง" ไม่ใช่ทฤษฎีทำนายใหม่ ทุกกลไกอ้างเจ้าของในวรรณกรรม มีป้ายกำกับ [Fact]/[Fact-theory]/[Hypothesis] ทุกข้อกล่าวอ้าง และแนบตัวชี้ขาดล่วงหน้า (DESI-Y5, BHEX, LiteBIRD)
+**Loop Mega Universe (LMU)** คือกรอบสังเคราะห์จักรวาลวิทยาเชิงวัฏจักรบนฟิสิกส์หลุมดำ: อีออน (aeon) จบที่สภาพเย็น–เจือจาง–เป็นก้อน หลุมดำผู้รอด (L1) หยุดหมุน ระเหย และแฟลชสุดท้ายของมันจุดชนวน bounce แบบ Coleman–De Luccia ที่ปลายทางการระเหยระดับพลังค์ — หนึ่งแฟลช หนึ่งฟอง หนึ่งอีออนใหม่ ร้อน–เรียบ–หนาแน่นพร้อมกันทั้งใบบนผิวเวลาภายใน ช่องว่างเอนโทรปีที่เปิดใหม่ (งบเนเกนโทรปีของอีออน) ติดลูกศรเวลาอีกครั้ง กรอบนี้ประกาศตัวเป็น "เลนส์มอง" ไม่ใช่ทฤษฎีทำนายใหม่ ทุกกลไกอ้างเจ้าของในวรรณกรรม มีป้ายกำกับสถานะ 8 แบบ ([Fact]/[Fact-theory]/[Hypothesis]/[Speculation]/[Design]/[Open]/[Dead-end]/[Auditor]) ทุกข้อกล่าวอ้าง และแนบตัวชี้ขาดล่วงหน้า (DESI-Y5, BHEX, LiteBIRD)
 
 ## License
 

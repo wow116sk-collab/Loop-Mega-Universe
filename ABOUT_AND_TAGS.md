@@ -104,8 +104,9 @@ in-place conversion of latent vacuum energy. The re-opened entropy gap
 arrow; dilution into the unbounded substrate keeps the total ledger
 second-law-safe.
 
-Two axioms only (substrate + Λ). Every load-bearing claim is labelled [Fact]
-/ [Fact-eq] / [Hypo]; every mechanism is attributed to its owning literature;
+Two axioms only (substrate + Λ). Every load-bearing claim carries one of eight
+status tags ([Fact], [Fact-theory], [Hypothesis], [Speculation], [Design],
+[Open], [Dead-end], [Auditor]); every mechanism is attributed to its owning literature;
 dead ends are retained in failure logs. Pre-registered falsifier lines: F1
 dark energy (thawing corridor vs DESI; DESI-Y5 ~2027), F2 black-hole spin
 (BHEX era), F4 single-instanton origin signature (r ≈ 0.009 vs current

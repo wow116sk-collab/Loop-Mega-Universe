@@ -312,7 +312,7 @@ mass and shoot the starting displacement, or fix the displacement and shoot
 the mass — land on the same point of the thawing locus: **m = 0.804 H₀
 = 1.16×10⁻³³ eV**, with today's equation of state **w₀ = −0.91,
 wₐ = −0.15**, matching the thawing-class relation wₐ ≈ −1.5(1+w₀) = −0.14
-to 4%. [Fact] (the runs, recomputed under R6 with two different
+to ~10% (against the pinned wₐ = −0.15). [Fact] (the runs, recomputed under R6 with two different
 integrators)
 
 **Against DESI — the honest score.** DESI DR2 prefers an *evolving* dark

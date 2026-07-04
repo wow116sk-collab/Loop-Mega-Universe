@@ -109,7 +109,7 @@ hierarchical / hybrid autonomy · learning-from-demonstration & human-in-the-loo
 
 **Pitarn’s contribution [Design / hybrid]:** assembling these into a Moon robotic-mining system; the delay-based fallback design (do level-1 autonomy onboard, escalate level-2 to Earth because 1.3 s makes it cheap); the “narrow domain → cases run out → stop-ask-store fits” reasoning; tying the whole thing to the “use the body as physics allows” principle.
 
-No new concept was invented — consistent with the author’s rule and with the cosmology work’s §9.8 spirit (compose existing tools; a step demanding a brand-new primitive is a red flag).
+No new concept was invented — consistent with the author’s rule and with the cosmology work’s Reading-rules spirit (every piece is established physics with a named owner — compose existing tools; a step demanding a brand-new primitive is a red flag).
 
 -----
 
