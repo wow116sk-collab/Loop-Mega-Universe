@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20692157.svg)](https://doi.org/10.5281/zenodo.20692157)
 
-**Current version: V3.25 (2026-07-02) — 104 pp, XeLaTeX.**
+**Current version: V3.26 (2026-07-04) — 103 pp, XeLaTeX.**
 Author: Pitarn Rungsiyapornratana ([ORCID 0009-0004-6411-2201](https://orcid.org/0009-0004-6411-2201)) · [Zenodo (all versions)](https://doi.org/10.5281/zenodo.20692157) · [OSF](https://osf.io/2ac8x)
 
 ## What this is
@@ -32,7 +32,7 @@ Dead ends are kept, not deleted (failure logs); rebuttals are tested for wrong-p
 
 ## Verification culture
 
-Independent recomputation, not self-citation: the physics-constant spine is re-derived from CODATA (Hawking temperature, evaporation time, Bekenstein–Hawking and Zurek 4/3 entropies, Nariai ceiling); the dark-energy sector is re-integrated from the Klein–Gordon equation (6/6 (w₀, wₐ) rows reproduced to three decimals, no phantom crossing — Vikman); dimensional audits pass 13/13; the relic-galaxy statistics reproduce exactly from the published dynamical masses. Verification scripts are being deposited in `/code` (first: `lmu_endgame_repro.py`, run provenance for the Result-2 endgame integration).
+Independent recomputation, not self-citation: the physics-constant spine is re-derived from CODATA (Hawking temperature, evaporation time, Bekenstein–Hawking and Zurek 4/3 entropies, Nariai ceiling); the dark-energy sector is re-integrated from the Klein–Gordon equation (6/6 (w₀, wₐ) rows reproduced to three decimals, no phantom crossing — Vikman); dimensional audits pass 13/13; the relic-galaxy statistics reproduce exactly from the published dynamical masses. Verification scripts live in `/code`: `verify_all.py` (CODATA spine, Klein–Gordon m-scan, relic statistics, N_Q budget, tex integrity) and `lmu_endgame_repro.py` (Result-2 endgame run provenance).
 
 ## Pre-registered falsifier lines
 
@@ -56,17 +56,18 @@ DESI DR2 (arXiv:2503.14738) · six-relic compilation Cohn et al. 2025 (arXiv:250
 
 | Version | Date | One-liner |
 |---|---|---|
+| 3.26 | 2026-07-04 | External-review + adjudication pass (PR #1, rulings R1–R29): PDF link plumbing repaired (104→103 pp), ε_DESI 4.6×10⁻² adopted body-wide, M87* spin [Open — contested], verification suite in /code |
 | 3.25 | 2026-07-02 | + GW231123 and five-array PTA rows (looked-at, not load-bearing) |
 | 3.24 | 2026-07-02 | Negentropy/arrow homing (Frautschi gap, Eddington arrow, timeless Coleman bridge, Page-returned scramble); one-flash-one-aeon convention; Boddy–Carroll–Pollack citation repair |
 | 3.23 | 2026-07-01 | Catalysis endpoint sharpened; the two open premises homed to the measure problem (Olum) and the Tolman conundrum (Steinhardt–Turok / Ijjas–Steinhardt / Pavlović–Sossich); Problem A sharpened to Volovik-P>0 vs Carroll-P=0 |
 
-Full chain 3.4 → 3.25 lives inside the document's revision history.
+Full chain 3.4 → 3.26 lives inside the document's revision history.
 
 ## Repository layout
 
 ```
-LMU_V3_25_consolidated.tex    LaTeX source
-LMU_V3_25_consolidated.pdf    compiled PDF
+LMU_V3_26_consolidated.tex    LaTeX source
+LMU_V3_26_consolidated.pdf    compiled PDF
 figs/                         the 22 PNG figures (read via \graphicspath{{figs/}})
 code/                         verification / run-provenance scripts
 LMU_Companion_draft_v0.1.md   plain-language companion (draft)
@@ -82,17 +83,17 @@ Robotic_Mining_Architecture_Notes.md   standalone notes (not part of the LMU cos
 XeLaTeX, **twice** (TOC/refs settle on pass 2). XeLaTeX is the recommended engine (`fontspec` + Latin Modern OpenType fonts); the preamble also carries a pdfTeX fallback branch that loads `lmodern`. Keep the figure PNGs in `figs/` next to the `.tex` (`\graphicspath{{figs/}}` is set in the preamble).
 
 ```
-xelatex LMU_V3_25_consolidated.tex
-xelatex LMU_V3_25_consolidated.tex
+xelatex LMU_V3_26_consolidated.tex
+xelatex LMU_V3_26_consolidated.tex
 ```
 
-Expected: 0 errors, 104 pages, 26 equation environments (33 numbered display equations including align rows).
+Expected: 0 errors, 103 pages, 26 equation environments (33 numbered display equations including align rows).
 
 ## Cite
 
 See `CITATION.cff` (GitHub's "Cite this repository" button), or cite the concept DOI, which always resolves to the latest version:
 
-> Rungsiyapornratana, P. (2026). *Loop Mega Universe (LMU): a cyclic black-hole cosmology framework* (V3.25). Zenodo. https://doi.org/10.5281/zenodo.20692157
+> Rungsiyapornratana, P. (2026). *Loop Mega Universe (LMU): a cyclic black-hole cosmology framework* (V3.26). Zenodo. https://doi.org/10.5281/zenodo.20692157
 
 ## บทคัดย่อ (ไทย)
 

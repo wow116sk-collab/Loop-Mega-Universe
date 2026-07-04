@@ -7,6 +7,29 @@ the `.tex`).
 
 ---
 
+## v3.26 — 2026-07-04
+
+External-review + adjudication deposit. A full document review (136 verified
+findings; raw ledger in `findings_raw.md`) was adjudicated across rulings
+R1–R29 (records in `/review`) and applied with rerun verification:
+
+- PDF link plumbing repaired (hyperref anchors made part-unique; the V3.25
+  build reused destination names across parts, so TOC clicks landed in
+  Part I). Page count 104 → 103 after the revision-history small-print
+  group repair.
+- ε_DESI = 4.6×10⁻² (chain covariance, V3.8 pull) adopted body-wide;
+  N_Q = 9.03×10¹²¹ at the new threshold (rerun-verified changeset in `/review`).
+- M87* spin status adjudicated [Open — contested]: Drew et al. 2025 (ApJL 984
+  L31, Doppler beaming, lower limit) vs Wong et al. 2025 (polarimetry).
+- Verification suite deposited: `code/verify_all.py` + `code/lmu_endgame_repro.py`.
+- Metadata: eight-tag legend synchronised across README/CITATION/companions;
+  licenses stated (MIT code, CC-BY-4.0 docs); CITATION.cff preferred-citation.
+
+Files: `LMU_V3_26_consolidated.tex`, `LMU_V3_26_consolidated.pdf` (22 figures,
+unchanged set). Zenodo: new version DOI under concept DOI `10.5281/zenodo.20692157`.
+
+---
+
 ## v3.25 — 2026-07-02
 
 Consolidated deposit; the document-internal revision chain 3.18 → 3.25 lives in the

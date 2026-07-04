@@ -241,3 +241,14 @@
 - **R18-RESOLVED (id12, Option A):** ย้าย C7/C8 blocks (พร้อม anchor {#c7}/{#c8}) ไป §4 ต่อจาก D4; ทิ้ง stub `[derived → §4]` ที่ตำแหน่งเดิมใน §3 และ annotate แถว index §2
 - **Certification:** XeLaTeX ×2 · 0 errors · 103 pages · dests 75/75 distinct, 0 duplicates
 - **เหลือ (human):** eyeball (Attribution ×4 + \Fact→\factth ×3) → merge → V3.26 bundle (R25 stage-2 ε=4.6e-2 pass, C.5 verify_all.py, page-count 104→103 propagation ใน README/ABOUT)
+
+---
+
+## Application record — V3.26 assembly, 2026-07-04
+
+- **STOP-check ผ่าน:** entry 3.7→3.8 บันทึกค่า 4.6×10⁻² (joint chain covariance, ρ=−0.894) ตรงกับ changeset — ไม่มีข้อขัดแย้ง
+- **ε changeset E1–E5 applied** + ลบป้าย "(retired V3.8 convention)" ครบ 4 จุด · residual audit: ค่าเก่าเหลือเฉพาะใน provenance clause ของ E1 · ΔA look-alike (4.6×10⁻³) count ไม่เปลี่ยน (1→1) · changeset เก็บเป็น `review/LMU_V3_26_EPSILON_CHANGESET.md`
+- **verify_all.py: ALL PASS 30/30** (CODATA spine 12, KG m-scan 6/6 rows, relic stats 6, N_Q both tiers + retired anchor, tex integrity) — log ใน commit
+- **V3.26 bundle:** \lmuver bump, revision entry 3.25→3.26, rename `LMU_V3_26_consolidated.{tex,pdf}`, README/CITATION/CHANGELOG/ABOUT/LICENSE-docs/companions/CONNECTION_MAP อัปเดตครบ, PDF ทางการ build ในเซสชันนี้
+- **Certification (C.4):** XeLaTeX ×2 · 0 errors · 103 pages · dests 75/75 distinct, 0 duplicates
+- **ปิดคิว:** ทุก ruling R1–R29 + R25 stage-2 + C.5 มี disposition แล้ว — เหลือเฉพาะงานเว็บทำมือ (GitHub About/Release, Zenodo new version, OSF) ตามลำดับใน ABOUT_AND_TAGS §5
