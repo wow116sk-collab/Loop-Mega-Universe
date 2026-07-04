@@ -1,6 +1,6 @@
 # ABOUT & TAGS — copy-paste pack (GitHub + Zenodo) — V3.25, 2026-07-02
 
-Everything below is paste-ready. ⚠ One decision is yours before first release: **license** (CC-BY-4.0 is suggested everywhere; replace consistently if you prefer another).
+Everything below is paste-ready. License decision (made): **CC-BY-4.0** for documents and figures (`LICENSE-docs`), **MIT** for code (`LICENSE`).
 
 ---
 
@@ -81,7 +81,7 @@ Attach to the release: `LMU_V3_25_consolidated.pdf` (and optionally the .tex).
 - **Title:** `Loop Mega Universe (LMU): a cyclic black-hole cosmology framework — V3.25`
 - **Authors:** Rungsiyapornratana, Pitarn — ORCID `0009-0004-6411-2201`
 - **Version:** `3.25` · **Publication date:** `2026-07-02` · **Language:** English
-- **License:** CC-BY-4.0 ⚠ (your call)
+- **License:** CC-BY-4.0
 - **Related identifiers:**
   - `https://github.com/wow116sk-collab/Loop-Mega-Universe` — *is supplemented by*
   - `https://osf.io/2ac8x` — *is supplemented by*
@@ -151,7 +151,7 @@ problem, Loop Mega Universe, LMU.
 
 ## 5) ลำดับอัพโหลด (กันงง)
 
-1. จัดไฟล์ตาม layout ใน README (`/tex /pdf /figures /logs /changesets /code`) → `git add` → commit (ข้อความ commit อยู่แชท) → push
+1. จัดไฟล์ตาม layout ใน README (ไฟล์ `.tex`/`.pdf`/`.md` ที่รูท, รูป PNG ทั้งหมดใน `figs/`) → `git add` → commit (ข้อความ commit อยู่แชท) → push
 2. GitHub: Settings → About → วาง Description + Website + Topics (ข้อ 1)
 3. GitHub: Releases → `v3.25` + notes (ข้อ 2) + แนบ PDF
 4. Zenodo: **New version** ใต้ record เดิม → วาง metadata (ข้อ 3) → publish → ได้ DOI ย่อยของ 3.25 (concept DOI เดิมชี้มาที่นี่อัตโนมัติ)

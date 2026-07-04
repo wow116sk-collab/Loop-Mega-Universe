@@ -16,7 +16,7 @@ identifiers:
     value: "https://osf.io/2ac8x"
     description: "OSF project"
 repository-code: "https://github.com/wow116sk-collab/Loop-Mega-Universe"
-license: CC-BY-4.0   # <-- confirm or replace before first tagged release
+license: CC-BY-4.0
 abstract: >
   A worldview-level synthesis wiring established physics into one cyclic
   black-hole cosmology: aeons end cold and dilute; the last surviving black

@@ -1,11 +1,11 @@
 # What the math is doing — a plain-language glossary for LMU V3.13
 
-**Governance rule:** this glossary *describes* `LMU_V3_13_consolidated.tex`; where the
-two disagree, the .tex governs. **Reading rule:** glosses are for *reading*, not
+**Governance rule:** this glossary *describes* `LMU_V3_25_consolidated.tex` (it was
+drafted against the V3.13 snapshot); where the two disagree, the .tex governs. **Reading rule:** glosses are for *reading*, not
 *reasoning* — never derive a conclusion from the metaphor; derive from the equation,
 then check the metaphor survived. **Precision rule:** significant figures are sacred
 (2.69σ never becomes "almost 3σ"). **Tag rule:** every claim keeps its
-[Fact]/[Hyp]/[Design]/[Open]/[Dead] tag when restated in words.
+[Fact]/[Fact-theory]/[Hypothesis]/[Speculation]/[Design]/[Open]/[Dead-end] tag when restated in words.
 
 *Style ancestry: Thompson, "Calculus Made Easy" (1910); ∫-as-summa: Leibniz;
 intuition-before-formalism ordering: Reichenbach (1938), discovery vs. justification.*

@@ -25,7 +25,7 @@ Dead ends are kept, not deleted (failure logs); rebuttals are tested for wrong-p
 
 ## Verification culture
 
-Independent recomputation, not self-citation: the physics-constant spine is re-derived from CODATA (Hawking temperature, evaporation time, Bekenstein–Hawking and Zurek 4/3 entropies, Nariai ceiling); the dark-energy sector is re-integrated from the Klein–Gordon equation (6/6 (w₀, wₐ) rows reproduced to three decimals, no phantom crossing — Vikman); dimensional audits pass 14/14; the relic-galaxy statistics reproduce exactly from the published dynamical masses. Verification scripts live in `/code`.
+Independent recomputation, not self-citation: the physics-constant spine is re-derived from CODATA (Hawking temperature, evaporation time, Bekenstein–Hawking and Zurek 4/3 entropies, Nariai ceiling); the dark-energy sector is re-integrated from the Klein–Gordon equation (6/6 (w₀, wₐ) rows reproduced to three decimals, no phantom crossing — Vikman); dimensional audits pass 14/14; the relic-galaxy statistics reproduce exactly from the published dynamical masses. Verification scripts are not yet included in this repository.
 
 ## Pre-registered falsifier lines
 
@@ -58,24 +58,27 @@ Full chain 3.4 → 3.25 lives inside the document's revision history.
 ## Repository layout
 
 ```
-/tex         LaTeX source (LMU_V3_25_consolidated.tex and priors)
-/pdf         compiled PDFs
-/figures     the 22 PNG figures the build expects beside the .tex
-/logs        session handoff logs (.md) — decisions, failure logs
-/changesets  minimal-diff changeset specs per version
-/code        verification / stress-test scripts
+LMU_V3_25_consolidated.tex    LaTeX source
+LMU_V3_25_consolidated.pdf    compiled PDF
+figs/                         the 22 PNG figures (read via \graphicspath{{figs/}})
+LMU_Companion_draft_v0.1.md   plain-language companion (draft)
+LMU_companion_glossary.md     plain-language glossary
+CONNECTION_MAP.md             cross-document connection map
+ABOUT_AND_TAGS.md             copy-paste release pack (GitHub/Zenodo metadata)
+CHANGELOG.md                  public-deposit milestones
+Robotic_Mining_Architecture_Notes.md   standalone notes (not part of the LMU cosmology)
 ```
 
 ## Building
 
-XeLaTeX, **twice** (TOC/refs settle on pass 2). Requires `fontspec` + Latin Modern OpenType fonts (do **not** use pdflatex; `lmodern.sty` is not assumed). Place the figure PNGs in the same directory as the `.tex`.
+XeLaTeX, **twice** (TOC/refs settle on pass 2). XeLaTeX is the recommended engine (`fontspec` + Latin Modern OpenType fonts); the preamble also carries a pdfTeX fallback branch that loads `lmodern`. Keep the figure PNGs in `figs/` next to the `.tex` (`\graphicspath{{figs/}}` is set in the preamble).
 
 ```
 xelatex LMU_V3_25_consolidated.tex
 xelatex LMU_V3_25_consolidated.tex
 ```
 
-Expected: 0 errors, 104 pages, 26 numbered equations.
+Expected: 0 errors, 104 pages, 26 equation environments (33 numbered display equations including align rows).
 
 ## Cite
 
@@ -85,8 +88,8 @@ See `CITATION.cff` (GitHub's "Cite this repository" button), or cite the concept
 
 ## บทคัดย่อ (ไทย)
 
-**Loop Mega Universe (LMU)** คือกรอบสังเคราะห์จักรวาลวิทยาเชิงวัฏจักรบนฟิสิกส์หลุมดำ: อิออนจบที่สภาพเย็น–เจือจาง–เป็นก้อน หลุมดำผู้รอด (L1) หยุดหมุน ระเหย และแฟลชสุดท้ายของมันจุดชนวน bounce แบบ Coleman–De Luccia ที่ปลายทางการระเหยระดับพลังค์ — หนึ่งแฟลช หนึ่งฟอง หนึ่งอิออนใหม่ ร้อน–เรียบ–หนาแน่นพร้อมกันทั้งใบบนผิวเวลาภายใน ช่องว่างเอนโทรปีที่เปิดใหม่ (งบเนเกนโทรปีของอิออน) ติดลูกศรเวลาอีกครั้ง กรอบนี้ประกาศตัวเป็น "เลนส์มอง" ไม่ใช่ทฤษฎีทำนายใหม่ ทุกกลไกอ้างเจ้าของในวรรณกรรม มีป้ายกำกับ [Fact]/[Fact-eq]/[Hypo] ทุกข้อเรียกร้อง และแนบตัวชี้ขาดล่วงหน้า (DESI-Y5, BHEX, LiteBIRD)
+**Loop Mega Universe (LMU)** คือกรอบสังเคราะห์จักรวาลวิทยาเชิงวัฏจักรบนฟิสิกส์หลุมดำ: อีออน (aeon) จบที่สภาพเย็น–เจือจาง–เป็นก้อน หลุมดำผู้รอด (L1) หยุดหมุน ระเหย และแฟลชสุดท้ายของมันจุดชนวน bounce แบบ Coleman–De Luccia ที่ปลายทางการระเหยระดับพลังค์ — หนึ่งแฟลช หนึ่งฟอง หนึ่งอีออนใหม่ ร้อน–เรียบ–หนาแน่นพร้อมกันทั้งใบบนผิวเวลาภายใน ช่องว่างเอนโทรปีที่เปิดใหม่ (งบเนเกนโทรปีของอีออน) ติดลูกศรเวลาอีกครั้ง กรอบนี้ประกาศตัวเป็น "เลนส์มอง" ไม่ใช่ทฤษฎีทำนายใหม่ ทุกกลไกอ้างเจ้าของในวรรณกรรม มีป้ายกำกับ [Fact]/[Fact-eq]/[Hypo] ทุกข้อกล่าวอ้าง และแนบตัวชี้ขาดล่วงหน้า (DESI-Y5, BHEX, LiteBIRD)
 
 ## License
 
-CC-BY-4.0 *(⚠ confirm/replace before first release — see ABOUT_AND_TAGS.md)*
+Documents and figures: **CC-BY-4.0** (see `LICENSE-docs`). Code: **MIT** (see `LICENSE`).
