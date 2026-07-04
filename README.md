@@ -17,15 +17,18 @@ LMU is a **worldview-level synthesis, not a new predictive theory**: it wires *e
 
 Every load-bearing statement in the document carries a label:
 
-- **[Fact]** — measured / peer-reviewed / proven,
-- **[Fact-eq]** — derived from Fact with the checkable numbers shown,
-- **[Hypo]** — any assumption (the framework's own machinery included).
+- **[Fact]** — measured / peer-reviewed,
+- **[Fact-theory]** — established theory,
+- **[Hypothesis]** — an assumption with literature support (the framework's own machinery included),
+- **[Open]** — unsolved.
+
+*(Working alias in session logs: Fact-eq ≡ Fact-theory with the checkable numbers shown.)*
 
 Dead ends are kept, not deleted (failure logs); rebuttals are tested for wrong-population sampling (R8); "verdict right, numbers wrong" is treated as the worst failure mode (R6).
 
 ## Verification culture
 
-Independent recomputation, not self-citation: the physics-constant spine is re-derived from CODATA (Hawking temperature, evaporation time, Bekenstein–Hawking and Zurek 4/3 entropies, Nariai ceiling); the dark-energy sector is re-integrated from the Klein–Gordon equation (6/6 (w₀, wₐ) rows reproduced to three decimals, no phantom crossing — Vikman); dimensional audits pass 14/14; the relic-galaxy statistics reproduce exactly from the published dynamical masses. Verification scripts are not yet included in this repository.
+Independent recomputation, not self-citation: the physics-constant spine is re-derived from CODATA (Hawking temperature, evaporation time, Bekenstein–Hawking and Zurek 4/3 entropies, Nariai ceiling); the dark-energy sector is re-integrated from the Klein–Gordon equation (6/6 (w₀, wₐ) rows reproduced to three decimals, no phantom crossing — Vikman); dimensional audits pass 14/14; the relic-galaxy statistics reproduce exactly from the published dynamical masses. Verification scripts are being deposited in `/code` (first: `lmu_endgame_repro.py`, run provenance for the Result-2 endgame integration).
 
 ## Pre-registered falsifier lines
 
@@ -61,6 +64,7 @@ Full chain 3.4 → 3.25 lives inside the document's revision history.
 LMU_V3_25_consolidated.tex    LaTeX source
 LMU_V3_25_consolidated.pdf    compiled PDF
 figs/                         the 22 PNG figures (read via \graphicspath{{figs/}})
+code/                         verification / run-provenance scripts
 LMU_Companion_draft_v0.1.md   plain-language companion (draft)
 LMU_companion_glossary.md     plain-language glossary
 CONNECTION_MAP.md             cross-document connection map
@@ -88,7 +92,7 @@ See `CITATION.cff` (GitHub's "Cite this repository" button), or cite the concept
 
 ## บทคัดย่อ (ไทย)
 
-**Loop Mega Universe (LMU)** คือกรอบสังเคราะห์จักรวาลวิทยาเชิงวัฏจักรบนฟิสิกส์หลุมดำ: อีออน (aeon) จบที่สภาพเย็น–เจือจาง–เป็นก้อน หลุมดำผู้รอด (L1) หยุดหมุน ระเหย และแฟลชสุดท้ายของมันจุดชนวน bounce แบบ Coleman–De Luccia ที่ปลายทางการระเหยระดับพลังค์ — หนึ่งแฟลช หนึ่งฟอง หนึ่งอีออนใหม่ ร้อน–เรียบ–หนาแน่นพร้อมกันทั้งใบบนผิวเวลาภายใน ช่องว่างเอนโทรปีที่เปิดใหม่ (งบเนเกนโทรปีของอีออน) ติดลูกศรเวลาอีกครั้ง กรอบนี้ประกาศตัวเป็น "เลนส์มอง" ไม่ใช่ทฤษฎีทำนายใหม่ ทุกกลไกอ้างเจ้าของในวรรณกรรม มีป้ายกำกับ [Fact]/[Fact-eq]/[Hypo] ทุกข้อกล่าวอ้าง และแนบตัวชี้ขาดล่วงหน้า (DESI-Y5, BHEX, LiteBIRD)
+**Loop Mega Universe (LMU)** คือกรอบสังเคราะห์จักรวาลวิทยาเชิงวัฏจักรบนฟิสิกส์หลุมดำ: อีออน (aeon) จบที่สภาพเย็น–เจือจาง–เป็นก้อน หลุมดำผู้รอด (L1) หยุดหมุน ระเหย และแฟลชสุดท้ายของมันจุดชนวน bounce แบบ Coleman–De Luccia ที่ปลายทางการระเหยระดับพลังค์ — หนึ่งแฟลช หนึ่งฟอง หนึ่งอีออนใหม่ ร้อน–เรียบ–หนาแน่นพร้อมกันทั้งใบบนผิวเวลาภายใน ช่องว่างเอนโทรปีที่เปิดใหม่ (งบเนเกนโทรปีของอีออน) ติดลูกศรเวลาอีกครั้ง กรอบนี้ประกาศตัวเป็น "เลนส์มอง" ไม่ใช่ทฤษฎีทำนายใหม่ ทุกกลไกอ้างเจ้าของในวรรณกรรม มีป้ายกำกับ [Fact]/[Fact-theory]/[Hypothesis] ทุกข้อกล่าวอ้าง และแนบตัวชี้ขาดล่วงหน้า (DESI-Y5, BHEX, LiteBIRD)
 
 ## License
 

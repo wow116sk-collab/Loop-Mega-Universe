@@ -138,8 +138,10 @@ changes; each one purchases a conservation law [Noether 1918]. Expanding space h
 no time-slide — which is why total energy is *legally* non-conserved there.
 
 **Frobenius indices** — the short menu of behaviors a field is even *allowed* to
-have at t = 0. The stiff t^(−1/2) branch has no slot on the menu, so its amplitude
-must vanish on the surface — that is condition G2-c, said in words.
+have at t = 0. At a radiation bang the menu has two entries, {0, −1/2}. The stiff
+t^(−1/2) branch **is on the menu** — which is exactly why admissibility costs one
+extra condition: its amplitude must be set to vanish on the surface. That is
+condition G2-c, said in words.
 
 **Nariai mass** — the largest black hole that fits inside a given cosmic horizon;
 as H → 0 the ceiling rises without bound. Coefficient c³/(3√3·GH), not the naive
