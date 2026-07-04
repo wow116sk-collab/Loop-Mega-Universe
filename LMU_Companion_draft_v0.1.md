@@ -1,19 +1,20 @@
 # The Loop Mega Universe — A Companion
 
-**Plain-language companion to `LMU_V3_13_consolidated.tex`**
+**Plain-language companion to `LMU_V3_25_consolidated.tex`** *(drafted against the V3.13 snapshot)*
 Pitarn Rungsiyapornratana · Bangkok · 2026 · draft v0.1
 
 ---
 
 > **The one rule that governs this whole document.**
 > This companion *describes* the consolidated mathematical pass,
-> `LMU_V3_13_consolidated.tex`. That file is the **sole authoritative source**.
+> `LMU_V3_25_consolidated.tex` (drafted against the V3.13 snapshot). That file
+> is the **sole authoritative source**.
 > Wherever this companion and the .tex disagree — a number, a tag, a claim, a
 > date — **the .tex governs and this companion is wrong.**
 >
 > Three reading rules travel with that one:
 > **Tags travel.** Every claim keeps its epistemic tag — [Fact], [Fact-theory],
-> [Hypothesis], [Design], [Open], [Dead-end] — even in plain prose. A sentence
+> [Hypothesis], [Design], [Open], [Dead-end] — plus the [Auditor] editor tag — even in plain prose. A sentence
 > without a tag near it is either background or carelessness; treat it as the
 > weakest tag in its paragraph.
 > **Numbers are exact.** Significant figures are sacred. 2.69σ never becomes
@@ -237,7 +238,7 @@ framework's "rank by cause, not mass," published as a mainstream result.
 > 2025)**. Status: **leaning-against, not falsified.** [Open] Run the spin
 > walk backwards (a = a₀/√(1+N), Hughes & Blandford 2003) and a★ ≥ 0.8
 > allows at most **0.56–2.26 misaligned mergers against the ~5.9 the model
-> assumed** — a tension factor of 2.6–10.6, equivalently an aligned-merger
+> assumed** (0.56 = pure walk from a₀ = 0.998; 2.26 = allowing accretion re-spin, lift ×1.45) — a tension factor of 2.6–10.6, equivalently an aligned-merger
 > fraction ≥ 62% where the model assumed isotropy. Meanwhile the *relic*
 > side of the decoupling is unmeasurable in principle: a relic's defining
 > quiescence switches off every spin probe (no accretion → no X-ray
@@ -311,7 +312,7 @@ mass and shoot the starting displacement, or fix the displacement and shoot
 the mass — land on the same point of the thawing locus: **m = 0.804 H₀
 = 1.16×10⁻³³ eV**, with today's equation of state **w₀ = −0.91,
 wₐ = −0.15**, matching the thawing-class relation wₐ ≈ −1.5(1+w₀) = −0.14
-to 4%. [Fact] (the runs, recomputed under R6 with two different
+to ~10% (against the pinned wₐ = −0.15). [Fact] (the runs, recomputed under R6 with two different
 integrators)
 
 **Against DESI — the honest score.** DESI DR2 prefers an *evolving* dark
@@ -341,7 +342,7 @@ field stays bounded in [−1, +1] forever.
 that defeats intuition — waves longer than your horizon. *(This framing is
 the author's, recorded in the session log; it is a gloss, for reading, not
 reasoning.)* A tsunami in the open ocean is about 30 cm tall on water 4 km
-deep — a relative ripple of roughly 1.5×10⁻⁴, close to the size of the
+deep — a relative ripple of roughly 7.5×10⁻⁵, close to the size of the
 density ripples on gigaparsec scales — with a wavelength of a couple of
 hundred kilometres. A diver below feels *nothing*: his visibility bubble is
 30 m, and the wave is a million times longer than what he can see. He is
@@ -456,8 +457,8 @@ resolution comes from the author's own V_min ruling taken seriously: if
 V = 0 is an *absorbing state that nothing draws exactly*, then every
 still-living lineage carries some +ε′ residue — and a +ε′ ending **is** de
 Sitter, restoring the spacelike boundary and making Penrose's crossing
-native again. The window is computed, not asserted: the program tier
-re-derives at ε′_crit = 6.3×10⁻¹⁸¹, and the de Sitter phase lasts long
+native again. The window is computed, not asserted: the program tier's
+threshold is ε′_crit = 6.3×10⁻¹⁸¹ (a separately defined criterion, not a re-derivation of the 3.1×10⁻¹⁸¹ tier), and the de Sitter phase lasts long
 enough by a margin ≳ 10¹²⁰ even under the harshest quantum-breaking budget
 (N_Q = 1.39×10¹²² e-folds at the DESI-scale residue; 6.60×10³⁰⁰ at the
 critical one — recomputed from constants in the V3.13 pass). [Design] (the
@@ -681,7 +682,7 @@ inherits the confidence of neither.*
 package (its 10⁹⁰ e-folds, its de Sitter horizon, its 0.17 M☉ "transport
 verdict") — retired wholesale by Correction 1, each number listed so it can
 never be quoted as live. The "survivor isolated forever" phrasing — scoped
-to the acceleration window only (a ≈ 0.6 to a few–20). And NGC 1277's old
+to the acceleration window only (a ≈ 0.6 to ~3–5.5). And NGC 1277's old
 1.7×10¹⁰ M☉ mass — superseded by the Walsh et al. (2016) adaptive-optics
 value of (4.9 ± 1.6)×10⁹; the two flowing corrections (the NGC 1277 fixes
 and the TON 618 flagship swap) are standing action items for the main
@@ -770,12 +771,12 @@ header applies — the .tex governs it too.)*
 
 # What the math is doing — a plain-language glossary for LMU V3.13
 
-**Governance rule:** this glossary *describes* `LMU_V3_13_consolidated.tex`; where the
-two disagree, the .tex governs. **Reading rule:** glosses are for *reading*, not
+**Governance rule:** this glossary *describes* `LMU_V3_25_consolidated.tex` (it was
+drafted against the V3.13 snapshot); where the two disagree, the .tex governs. **Reading rule:** glosses are for *reading*, not
 *reasoning* — never derive a conclusion from the metaphor; derive from the equation,
 then check the metaphor survived. **Precision rule:** significant figures are sacred
 (2.69σ never becomes "almost 3σ"). **Tag rule:** every claim keeps its
-[Fact]/[Hyp]/[Design]/[Open]/[Dead] tag when restated in words.
+[Fact]/[Fact-theory]/[Hypothesis]/[Speculation]/[Design]/[Open]/[Dead-end] tag when restated in words.
 
 *Style ancestry: Thompson, "Calculus Made Easy" (1910); ∫-as-summa: Leibniz;
 intuition-before-formalism ordering: Reichenbach (1938), discovery vs. justification.*
@@ -784,7 +785,7 @@ intuition-before-formalism ordering: Reichenbach (1938), discovery vs. justifica
 
 ## A. Numbers and scales
 
-**log₁₀ x** — counts *digits*, not size. log₁₀ = 122 means "a 1 with 122 zeros."
+**log₁₀ x** — counts *zeros* (orders of magnitude), not size. log₁₀ x = 122 means "a 1 with 122 zeros."
 The whole document breathes in log-space; differences of "a few" here are factors
 of thousands.
 
@@ -908,8 +909,10 @@ changes; each one purchases a conservation law [Noether 1918]. Expanding space h
 no time-slide — which is why total energy is *legally* non-conserved there.
 
 **Frobenius indices** — the short menu of behaviors a field is even *allowed* to
-have at t = 0. The stiff t^(−1/2) branch has no slot on the menu, so its amplitude
-must vanish on the surface — that is condition G2-c, said in words.
+have at t = 0. At a radiation bang the menu has two entries, {0, −1/2}. The stiff
+t^(−1/2) branch **is on the menu** — which is exactly why admissibility costs one
+extra condition: its amplitude must be set to vanish on the surface. That is
+condition G2-c, said in words.
 
 **Nariai mass** — the largest black hole that fits inside a given cosmic horizon;
 as H → 0 the ceiling rises without bound. Coefficient c³/(3√3·GH), not the naive
@@ -918,7 +921,7 @@ c³/(2GH).
 ## F. Statistics of the sky
 
 **P(k), A_s, n_s** — the recipe of the initial lumps: how much lumpiness at each
-size. A_s is the overall amplitude (~10⁻⁵ contrast), n_s the tilt (slightly more
+size. A_s is the overall power amplitude (2.1×10⁻⁹, corresponding to ~10⁻⁵ density contrast), n_s the tilt (slightly more
 power at large sizes, 0.9649).
 
 **f_NL** — whether the lumps are pure coin-flip Gaussian or carry a correlated
@@ -937,4 +940,4 @@ not — the gloss is wrong.*
 
 ---
 
-*End of companion draft v0.1. Authority: `LMU_V3_13_consolidated.tex`. Where this document and the .tex disagree, the .tex governs.*
+*End of companion draft v0.1. Authority: `LMU_V3_25_consolidated.tex` (drafted against the V3.13 snapshot). Where this document and the .tex disagree, the .tex governs.*

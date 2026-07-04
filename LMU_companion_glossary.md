@@ -1,11 +1,11 @@
 # What the math is doing — a plain-language glossary for LMU V3.13
 
-**Governance rule:** this glossary *describes* `LMU_V3_13_consolidated.tex`; where the
-two disagree, the .tex governs. **Reading rule:** glosses are for *reading*, not
+**Governance rule:** this glossary *describes* `LMU_V3_25_consolidated.tex` (it was
+drafted against the V3.13 snapshot); where the two disagree, the .tex governs. **Reading rule:** glosses are for *reading*, not
 *reasoning* — never derive a conclusion from the metaphor; derive from the equation,
 then check the metaphor survived. **Precision rule:** significant figures are sacred
 (2.69σ never becomes "almost 3σ"). **Tag rule:** every claim keeps its
-[Fact]/[Hyp]/[Design]/[Open]/[Dead] tag when restated in words.
+[Fact]/[Fact-theory]/[Hypothesis]/[Speculation]/[Design]/[Open]/[Dead-end] tag when restated in words.
 
 *Style ancestry: Thompson, "Calculus Made Easy" (1910); ∫-as-summa: Leibniz;
 intuition-before-formalism ordering: Reichenbach (1938), discovery vs. justification.*
@@ -14,7 +14,7 @@ intuition-before-formalism ordering: Reichenbach (1938), discovery vs. justifica
 
 ## A. Numbers and scales
 
-**log₁₀ x** — counts *digits*, not size. log₁₀ = 122 means "a 1 with 122 zeros."
+**log₁₀ x** — counts *zeros* (orders of magnitude), not size. log₁₀ x = 122 means "a 1 with 122 zeros."
 The whole document breathes in log-space; differences of "a few" here are factors
 of thousands.
 
@@ -138,8 +138,10 @@ changes; each one purchases a conservation law [Noether 1918]. Expanding space h
 no time-slide — which is why total energy is *legally* non-conserved there.
 
 **Frobenius indices** — the short menu of behaviors a field is even *allowed* to
-have at t = 0. The stiff t^(−1/2) branch has no slot on the menu, so its amplitude
-must vanish on the surface — that is condition G2-c, said in words.
+have at t = 0. At a radiation bang the menu has two entries, {0, −1/2}. The stiff
+t^(−1/2) branch **is on the menu** — which is exactly why admissibility costs one
+extra condition: its amplitude must be set to vanish on the surface. That is
+condition G2-c, said in words.
 
 **Nariai mass** — the largest black hole that fits inside a given cosmic horizon;
 as H → 0 the ceiling rises without bound. Coefficient c³/(3√3·GH), not the naive
@@ -148,7 +150,7 @@ c³/(2GH).
 ## F. Statistics of the sky
 
 **P(k), A_s, n_s** — the recipe of the initial lumps: how much lumpiness at each
-size. A_s is the overall amplitude (~10⁻⁵ contrast), n_s the tilt (slightly more
+size. A_s is the overall power amplitude (2.1×10⁻⁹, corresponding to ~10⁻⁵ density contrast), n_s the tilt (slightly more
 power at large sizes, 0.9649).
 
 **f_NL** — whether the lumps are pure coin-flip Gaussian or carry a correlated

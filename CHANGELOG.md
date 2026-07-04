@@ -7,6 +7,20 @@ the `.tex`).
 
 ---
 
+## v3.25 — 2026-07-02
+
+Consolidated deposit; the document-internal revision chain 3.18 → 3.25 lives in the
+`.tex` revision history. Highlights (per the README version table): catalysis endpoint
+sharpened and the two open premises homed to named field-wide problems (3.23);
+negentropy/arrow homing and the one-flash-one-aeon convention (3.24); GW231123 and
+five-array PTA rows added, looked-at not load-bearing (3.25).
+
+Files: `LMU_V3_25_consolidated.tex`, `LMU_V3_25_consolidated.pdf` (22 figures — adds
+`lmu_v321_loop_cascade.png` to the v3.17 set). Zenodo: new version DOI under concept
+DOI `10.5281/zenodo.20692157`.
+
+---
+
 ## v3.17 — 2026-06-24
 
 Consolidated mathematical & empirical pass. Supersedes v3.13 for all physics content.

@@ -2,7 +2,7 @@
 
 **Status:** Casual exploration, May 2026. Not part of LMU cosmology framework — standalone.
 **Author stance:** Pitarn (system design / arrangement). All component concepts are borrowed from existing robotics/aerospace fields — see Attribution. Pitarn’s contribution = assembling them into a Moon robotic-mining system + delay-based fallback design.
-**Epistemic tags:** [Fact] measured/demonstrated · [Hypothesis] plausible, not yet shown · [Speculation] no data · [unverified] claim not source-checked.
+**Epistemic tags:** [Fact] measured/demonstrated · [Hypothesis] plausible, not yet shown · [Speculation] no data · [Design] structural/arrangement choice · [unverified] not source-checked, or checked with no supporting source found.
 
 -----
 
@@ -29,7 +29,7 @@ This is the same move as the author’s cosmology notes (hit a structural wall �
 Escape velocity: Earth 11.2 / Moon 2.4 / Mars 5.0 km/s. [Fact]
 
 - **Moon** = depot + robotic mine. Shallowest well + adjacent to Earth + comms delay only 1.3 s.
-- **Mars** = stockpile + next rung (near asteroid belt). Deeper well, ~100× farther, launch windows every ~26 months.
+- **Mars** = stockpile + next rung (near asteroid belt). Deeper well, ~150–600× farther depending on orbital positions, launch windows every ~26 months.
 - **No body is “home.”**
 
 **2. Don’t ship everything back to Earth**
@@ -42,7 +42,7 @@ The well works both ways — shallow well helps export but re-entry must fight E
 **3. Robots, not people**
 Cuts life-support cost + the cross-generational biology bottleneck.
 
-- Teleoperation at 1.3 s works (supervised). [Fact]
+- Teleoperation at 1.3 s one-way (~2.6 s round-trip control loop) works (supervised). [Fact]
 - Needs a comms relay/ground station, especially for the far side (faces away from Earth permanently). Relay is for *routing signal*, NOT for reducing delay — delay is set by *distance*, not by where the command originates. [Fact — correction to an earlier “send via space station” phrasing]
 
 **4. Hierarchical autonomy**
@@ -74,7 +74,7 @@ Sim / digital twin / sim-to-real: model Moon conditions, try fixes thousands of 
 
 - Autonomous mining trucks/excavators on Earth (Caterpillar, Komatsu)
 - Rover onboard autonomy (Perseverance)
-- Teleoperation at 1–2 s latency (undersea, remote surgery)
+- Teleoperation at 1–2 s latency (undersea ROV and satellite-linked rover operations, supervised)
 - Sim-to-real transfer (Isaac Sim, MuJoCo)
 - Fleet learning (Tesla FSD)
 - Robotic sample-return autonomy (Hayabusa2, OSIRIS-REx, Chang’e)
@@ -109,7 +109,7 @@ hierarchical / hybrid autonomy · learning-from-demonstration & human-in-the-loo
 
 **Pitarn’s contribution [Design / hybrid]:** assembling these into a Moon robotic-mining system; the delay-based fallback design (do level-1 autonomy onboard, escalate level-2 to Earth because 1.3 s makes it cheap); the “narrow domain → cases run out → stop-ask-store fits” reasoning; tying the whole thing to the “use the body as physics allows” principle.
 
-No new concept was invented — consistent with the author’s rule and with the cosmology work’s §9.8 spirit (compose existing tools; a step demanding a brand-new primitive is a red flag).
+No new concept was invented — consistent with the author’s rule and with the cosmology work’s Reading-rules spirit (every piece is established physics with a named owner — compose existing tools; a step demanding a brand-new primitive is a red flag).
 
 -----
 
@@ -120,9 +120,10 @@ Same operating principle throughout: **hit a structural wall → route around or
 - entropy can’t be un-maxed (2nd law) → change the *frame* at the conformal boundary (Penrose), don’t re-light the dead fire
 - comms delay 1.3 s → use it as a *fallback*, don’t force full autonomy
 - Moon dust won’t simulate exactly → *calibrate* from real data, don’t trust one sim pass
-- Mars can’t hold an atmosphere → use it as a *depot*, don’t terraform
+- Mars can’t retain a thickened atmosphere long-term → use it as a *stockpile/staging point*, don’t terraform
 
 Consistent from entropy to excavators. That consistency is the “core” the author was after.
+
 -----
 
 ## Progress log
