@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.6"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.6.1"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
