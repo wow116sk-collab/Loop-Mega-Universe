@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.6.1"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.6.2"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
@@ -8351,8 +8351,12 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
     r.expAmt = E.reduce((a, x) => a + (Number(x.amount) || 0), 0);
     r.expBase = r.expAmt - r.expVat;
     r.inVat = r.purchVat + r.expVat;
+    // marketplace fees (Shopee/Lazada): actual per-bill fee once the payout batch is settled,
+    // otherwise the estimate typed at sale — deducted so "net" is the REAL take-home profit
+    r.mktFee = round2(S.reduce((a, x) => a + ((x.channel === "shopee" || x.channel === "lazada")
+      ? (x.settle ? (Number(x.settle.fee) || 0) : (Number(x.platformFee) || 0)) : 0), 0));
     r.gross = r.revenue - r.cogs;
-    r.net = r.gross - r.expBase;
+    r.net = r.gross - r.mktFee - r.expBase;
     return r;
   };
   const smeTax = (p) => { if (p <= 0) return { t1: 0, t2: 0, t3: 0, total: 0 }; const t2 = Math.min(Math.max(p - 300000, 0), 2700000) * 0.15; const t3 = Math.max(p - 3000000, 0) * 0.20; return { t1: 0, t2, t3, total: t2 + t3 }; };
@@ -8420,7 +8424,8 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
             <Kpi label={t("รายได้จากการขาย", "Revenue")} val={M.revenue} sub={M.bills + t(" บิล", " bills")} />
             <Kpi label={t("ต้นทุนขาย (FIFO)", "COGS (FIFO)")} val={M.cogs} />
             <Kpi label={t("กำไรขั้นต้น", "Gross profit")} val={M.gross} />
-            <Kpi label={t("กำไรสุทธิ (หักค่าใช้จ่ายร้าน)", "Net profit (after expenses)")} val={M.net} sub={t("ค่าใช้จ่ายร้าน ฿", "expenses ฿") + money(M.expBase)} />
+            <Kpi label={t("ค่าธรรมเนียม Shopee/Lazada", "Marketplace fees")} val={M.mktFee} sub={t("ใช้ค่าหักจริงเมื่อเคลียร์รอบโอนแล้ว", "actual once the payout is settled")} />
+            <Kpi label={t("กำไรสุทธิจริง (หักค่าธรรมเนียม + ค่าใช้จ่ายร้าน)", "TRUE net (after fees + expenses)")} val={M.net} sub={t("ค่าใช้จ่ายร้าน ฿", "expenses ฿") + money(M.expBase)} />
           </div>
         </>
       )}
@@ -8432,7 +8437,8 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
             <Kpi label={t("รายได้ทั้งปี", "Annual revenue")} val={Y.revenue} sub={Y.bills + t(" บิล", " bills")} />
             <Kpi label={t("ต้นทุนขายทั้งปี", "Annual COGS")} val={Y.cogs} />
             <Kpi label={t("กำไรขั้นต้น", "Gross profit")} val={Y.gross} />
-            <Kpi label={t("กำไรสุทธิก่อนภาษี", "Net before tax")} val={Y.net} sub={t("ค่าใช้จ่ายร้าน ฿", "expenses ฿") + money(Y.expBase)} />
+            <Kpi label={t("ค่าธรรมเนียม Shopee/Lazada ทั้งปี", "Annual marketplace fees")} val={Y.mktFee} />
+            <Kpi label={t("กำไรสุทธิก่อนภาษี (หักค่าธรรมเนียม + ค่าใช้จ่ายร้าน)", "Net before tax (after fees + expenses)")} val={Y.net} sub={t("ค่าใช้จ่ายร้าน ฿", "expenses ฿") + money(Y.expBase)} />
           </div>
           <div className="kpi-grid" style={{ marginBottom: 18 }}>
             <Kpi label={t("ภาษีขายทั้งปี", "Annual output VAT")} val={Y.outVat} />
@@ -8443,9 +8449,9 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
           <div className="line-head" style={{ margin: "4px 0 8px" }}>{t("รายเดือนภายในปี ", "Month-by-month ")}{Number(y) + 543}</div>
           <div className="table-scroll" style={{ marginBottom: 18 }}>
             <table className="t">
-              <thead><tr><th>{t("เดือน", "Month")}</th><th className="r">{t("ยอดขาย", "Sales")}</th><th className="r">{t("กำไรขั้นต้น", "Gross")}</th><th className="r">{t("ค่าใช้จ่าย", "Expenses")}</th><th className="r">{t("กำไรสุทธิ", "Net")}</th></tr></thead>
+              <thead><tr><th>{t("เดือน", "Month")}</th><th className="r">{t("ยอดขาย", "Sales")}</th><th className="r">{t("กำไรขั้นต้น", "Gross")}</th><th className="r">{t("ค่าธรรมเนียม", "Fees")}</th><th className="r">{t("ค่าใช้จ่าย", "Expenses")}</th><th className="r">{t("กำไรสุทธิ", "Net")}</th></tr></thead>
               <tbody>{monthsOfYear.map((r, i) => (
-                <tr key={i}><td>{r.lbl}</td><td className="r acc-num">{r.revenue ? money(r.revenue) : <span className="faint">—</span>}</td><td className="r acc-num">{r.revenue ? money(r.gross) : ""}</td><td className="r acc-num">{r.expBase ? money(r.expBase) : ""}</td><td className="r acc-num">{r.revenue || r.expBase ? money(r.net) : ""}</td></tr>
+                <tr key={i}><td>{r.lbl}</td><td className="r acc-num">{r.revenue ? money(r.revenue) : <span className="faint">—</span>}</td><td className="r acc-num">{r.revenue ? money(r.gross) : ""}</td><td className="r acc-num">{r.mktFee ? money(r.mktFee) : ""}</td><td className="r acc-num">{r.expBase ? money(r.expBase) : ""}</td><td className="r acc-num">{r.revenue || r.expBase || r.mktFee ? money(r.net) : ""}</td></tr>
               ))}</tbody>
             </table>
           </div>
@@ -8476,8 +8482,8 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
       )}
 
       <div className="muted" style={{ fontSize: 12, lineHeight: 1.6 }}>
-        {t("* อัตรา SME (ทุนชำระแล้ว ≤ 5 ล้าน และรายได้ ≤ 30 ล้าน/ปี) · ตัวเลขคำนวณจากบิลขาย บันทึกซื้อ และค่าใช้จ่ายร้านในระบบ ยังไม่รวมรายการปรับปรุงทางบัญชี เช่น ค่าเสื่อมราคา สต๊อกปลายปี — ใช้อ้างอิงประกอบการจัดทำงบ ควรให้ผู้ทำบัญชีตรวจทานก่อนยื่นจริง",
-           "* SME rates (paid-up ≤ 5M, revenue ≤ 30M) · Figures come from bills, purchases and shop expenses; accounting adjustments (depreciation, closing stock) are not included — have your accountant review before filing")}
+        {t("* อัตรา SME (ทุนชำระแล้ว ≤ 5 ล้าน และรายได้ ≤ 30 ล้าน/ปี) · กำไรสุทธิ = ยอดขาย − ต้นทุนสินค้า − ค่าธรรมเนียม Shopee/Lazada (ค่าหักจริงเมื่อเคลียร์รอบโอนแล้ว ไม่งั้นใช้ค่าประเมินที่กรอกตอนขาย) − ค่าใช้จ่ายร้าน · ยังไม่รวมรายการปรับปรุงทางบัญชี เช่น ค่าเสื่อมราคา สต๊อกปลายปี — ใช้อ้างอิงประกอบการจัดทำงบ ควรให้ผู้ทำบัญชีตรวจทานก่อนยื่นจริง",
+           "* SME rates (paid-up ≤ 5M, revenue ≤ 30M) · Net = sales − COGS − marketplace fees (actual once settled, else the estimate typed at sale) − shop expenses · accounting adjustments (depreciation, closing stock) are not included — have your accountant review before filing")}
       </div>
     </div>
   );
