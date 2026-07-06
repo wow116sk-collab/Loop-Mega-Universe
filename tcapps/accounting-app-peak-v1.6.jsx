@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.6.2"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.6.3"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
@@ -2639,7 +2639,7 @@ export default function AccountingApp() {
         )}
 
         {tab === "wht" && acctLevel >= 3 && (
-          <WHT t={t} lang={lang} whts={whts} customers={customers} profile={profile} money={money} onSave={saveWht} onDelete={deleteWht} onHistory={(w) => openHistory("wht", w)} />
+          <WHT t={t} lang={lang} whts={whts} customers={customers} profile={profile} money={money} onSave={saveWht} onSaveExpense={saveExpense} onDelete={deleteWht} onHistory={(w) => openHistory("wht", w)} />
         )}
 
         {tab === "assets" && acctLevel >= 3 && (
@@ -6273,13 +6273,13 @@ function WHTCertModal({ t, lang, rec, profile, money, onClose }) {
     </Portal>
   );
 }
-function WHT({ t, lang, whts, customers, profile, money, onSave, onDelete, onHistory }) {
+function WHT({ t, lang, whts, customers, profile, money, onSave, onSaveExpense, onDelete, onHistory }) {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState(null);
   const [filter, setFilter] = useState("all");
   const [m, setM] = useState(todayISO().slice(0, 7));
   const blankLine = () => ({ key: uid(), typeIdx: 0, rate: WHT_TYPES[0].rate, base: "" });
-  const blank = { date: todayISO(), form: "pnd53", certNo: whtCertNo(whts, todayISO()), payee: "", payeeTaxId: "", payeeAddress: "", note: "", lines: [blankLine()] };
+  const blank = { date: todayISO(), form: "pnd53", certNo: whtCertNo(whts, todayISO()), payee: "", payeeTaxId: "", payeeAddress: "", note: "", lines: [blankLine()], alsoExpense: true };
   const [f, setF] = useState(blank);
   const [certEdited, setCertEdited] = useState(false);
   const set = (k, v) => setF((x) => ({ ...x, [k]: v }));
@@ -6292,12 +6292,35 @@ function WHT({ t, lang, whts, customers, profile, money, onSave, onDelete, onHis
   const delLine = (key) => setF((x) => ({ ...x, lines: x.lines.length > 1 ? x.lines.filter((l) => l.key !== key) : x.lines }));
   const totBase = f.lines.reduce((a, l) => a + num(l.base), 0);
   const totAmt = f.lines.reduce((a, l) => a + lineAmt(l), 0);
+  // map the certificate's income types onto a shop-expense category
+  const expCatOf = (lns) => {
+    if (f.form === "pnd1") return "เงินเดือน";
+    const txt = lns.map((l) => l.incomeType).join(" ");
+    if (/เงินเดือน|แรงงาน/.test(txt)) return "เงินเดือน";
+    if (/เช่า/.test(txt)) return "ค่าเช่า";
+    if (/ขนส่ง/.test(txt)) return "ขนส่ง";
+    if (/โฆษณา/.test(txt)) return "การตลาด/โฆษณา";
+    return "อื่นๆ";
+  };
   const save = () => {
     if (!f.payee.trim()) { window.alert(t("ใส่ชื่อผู้รับเงิน", "Enter the payee")); return; }
     const valid = f.lines.filter((l) => num(l.base) > 0);
     if (!valid.length) { window.alert(t("ใส่จำนวนเงินอย่างน้อย 1 ประเภท", "Enter at least one income line")); return; }
     const lines = valid.map((l) => ({ incomeType: WHT_TYPES[l.typeIdx].th, incomeTypeEn: WHT_TYPES[l.typeIdx].en, rate: Number(l.rate) || 0, base: num(l.base), amount: lineAmt(l) }));
-    onSave({ id: uid(), date: f.date || todayISO(), form: f.form, certNo: (f.certNo || "").trim() || whtCertNo(whts, f.date), payee: f.payee.trim(), payeeTaxId: f.payeeTaxId.trim(), payeeAddress: f.payeeAddress.trim(), lines, incomeType: lines.map((l) => l.incomeType + (l.rate ? " " + l.rate + "%" : "")).join(" + "), base: lines.reduce((a, l) => a + l.base, 0), amount: lines.reduce((a, l) => a + l.amount, 0), note: f.note.trim() });
+    const certNo = (f.certNo || "").trim() || whtCertNo(whts, f.date);
+    const baseTotal = lines.reduce((a, l) => a + l.base, 0);
+    onSave({ id: uid(), date: f.date || todayISO(), form: f.form, certNo, payee: f.payee.trim(), payeeTaxId: f.payeeTaxId.trim(), payeeAddress: f.payeeAddress.trim(), lines, incomeType: lines.map((l) => l.incomeType + (l.rate ? " " + l.rate + "%" : "")).join(" + "), base: baseTotal, amount: lines.reduce((a, l) => a + l.amount, 0), note: f.note.trim() });
+    // optional one-step expense: records the FULL pre-withholding amount into shop expenses
+    // (the withheld tax is the payee's money remitted to the Revenue Dept — not an extra expense)
+    if (f.alsoExpense && onSaveExpense) {
+      onSaveExpense({
+        date: f.date || todayISO(), cat: expCatOf(lines),
+        desc: lines.map((l) => l.incomeType).join(" + ") + " — " + t("หัก ณ ที่จ่าย เลขที่ ", "WHT cert ") + certNo,
+        vendor: f.payee.trim(), vendorTaxId: f.payeeTaxId.trim(), vendorAddress: f.payeeAddress.trim(),
+        purpose: "", amount: baseTotal, vatThb: 0, currency: "THB", foreignAmt: 0, fxRate: 0,
+        revCharge: false, revChargeVat: 0, pay: "transfer", bankId: "", cardBank: "", cardNo: "", fromWht: certNo,
+      });
+    }
     setF({ ...blank, lines: [blankLine()], date: f.date, form: f.form, certNo: whtCertNo(whts, f.date) }); setCertEdited(false); setOpen(false);
   };
   const rows = [...whts].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
@@ -6361,6 +6384,10 @@ function WHT({ t, lang, whts, customers, profile, money, onSave, onDelete, onHis
             </table>
           </div>
           <button className="btn btn-sm" style={{ marginTop: 8 }} onClick={addLine}>+ {t("เพิ่มประเภทเงินได้ / อัตรา", "Add income type / rate")}</button>
+          <label style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 12, fontSize: 13, cursor: "pointer" }}>
+            <input type="checkbox" checked={!!f.alsoExpense} onChange={(e) => set("alsoExpense", e.target.checked)} />
+            <span>{t("ลงเป็นค่าใช้จ่ายร้านให้เลย (ยอดก่อนหัก ฿" + money(totBase) + ") — หักออกจากกำไรสุทธิจริงทันที ไม่ต้องไปกรอกซ้ำอีกหน้า · อย่าติ๊กถ้าลงค่าใช้จ่ายก้อนนี้ไว้แล้ว", "Also record as a shop expense (pre-WHT ฿" + money(totBase) + ") — deducted from true net immediately · untick if you already recorded this expense")}</span>
+          </label>
           <div style={{ marginTop: 12 }}><button className="btn btn-primary" onClick={save}>💾 {t("บันทึก", "Save")}</button></div>
         </div>
       )}
