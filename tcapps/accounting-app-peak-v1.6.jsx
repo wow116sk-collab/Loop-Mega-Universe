@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.6.3"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.6.4"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
@@ -5604,12 +5604,13 @@ function docNoGen(docs, kind, date) {
   return ab + ym + "-001";
 }
 
-function DocModal({ t, lang, doc, profile, money, vatRate = VAT_RATE, onClose }) {
+function DocModal({ t, lang, doc, profile, banks = [], money, vatRate = VAT_RATE, onClose }) {
   if (!doc) return null;
   const K = DOC_KINDS[doc.kind] || DOC_KINDS.quote;
   const title = lang === "en" ? K.en : K.th;
   const tot = computeSaleTotals({ items: doc.items || [], discountType: doc.discountType, discountValue: doc.discountValue, vatEnabled: doc.vatEnabled, vatRate });
   const blankRows = Math.max(0, 10 - (doc.items || []).length);
+  const payBank = doc.bankId ? (banks || []).find((b) => b.id === doc.bankId) : null;
   return (
     <Portal>
     <div className="inv-overlay" onClick={onClose} style={{ position: "fixed", inset: 0, background: "rgba(20,18,14,.55)", zIndex: 999, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "4vh 12px 12px", overflow: "auto" }}>
@@ -5677,6 +5678,14 @@ function DocModal({ t, lang, doc, profile, money, vatRate = VAT_RATE, onClose })
             </div>
           </div>
           {doc.note ? <div style={{ marginTop: 12, fontSize: 12, color: "#555" }}>{t("หมายเหตุ: ", "Note: ")}{doc.note}</div> : null}
+          {payBank ? (
+            <div style={{ marginTop: 12, border: "1px solid #d8d2c4", borderRadius: 6, padding: "8px 10px", fontSize: 12.5, maxWidth: 340 }}>
+              <div style={{ color: "#7a7464", fontSize: 11, marginBottom: 2 }}>{t("ชำระเงินโดยโอนเข้าบัญชี", "Please transfer payment to")}</div>
+              <div style={{ fontWeight: 600 }}>{payBank.bankName || payBank.bank || ""}</div>
+              {payBank.accountName ? <div>{t("ชื่อบัญชี ", "Name ")}{payBank.accountName}</div> : null}
+              {(payBank.accountNo || payBank.last4) ? <div>{t("เลขที่บัญชี ", "Acct no. ")}<b className="acc-num">{payBank.accountNo || payBank.last4}</b></div> : null}
+            </div>
+          ) : null}
           <div style={{ display: "flex", justifyContent: doc.kind === "delivery" ? "space-between" : "center", marginTop: 120, fontSize: 12 }}>
             {doc.kind === "delivery" && <div style={{ textAlign: "center", flex: 1 }}>____________________<div>{t("ผู้รับสินค้า / Received by", "Received by")}</div></div>}
             <div style={{ textAlign: "center", flex: doc.kind === "delivery" ? 1 : "0 0 auto", minWidth: 230 }}>____________________<div>{doc.kind === "delivery" ? t("ผู้ส่งสินค้า / Delivered by", "Delivered by") : (doc.kind === "quote" ? t("ผู้เสนอราคา / Quoted by", "Quoted by") : t("ผู้มีอำนาจลงนาม / Authorized", "Authorized"))}</div></div>
@@ -5703,6 +5712,7 @@ function SalesDocs({ t, lang, docs, customers, products, profile, banks, money, 
   const [discVal, setDiscVal] = useState("");
   const [note, setNote] = useState("");
   const [validDays, setValidDays] = useState("7");
+  const [bankId, setBankId] = useState(banks && banks[0] ? banks[0].id : ""); // account shown on the printed doc for the customer to transfer to
   const [lines, setLines] = useState([blankLine()]);
   const [flash, setFlash] = useState(null);
 
@@ -5710,7 +5720,7 @@ function SalesDocs({ t, lang, docs, customers, products, profile, banks, money, 
   const addLine = () => setLines((ls) => [...ls, blankLine()]);
   const delLine = (k) => setLines((ls) => (ls.length > 1 ? ls.filter((l) => l.key !== k) : ls));
   const pickProd = (k, p) => setLine(k, { productId: p.id, name: pname(p), price: Number(p.price) || 0, _sug: false });
-  const reset = () => { setKind("quote"); setDate(todayISO()); setCustId(""); setCustForm({ name: "", taxId: "", branch: "สำนักงานใหญ่", address: "", phone: "" }); setVatEnabled(true); setDiscType("amount"); setDiscVal(""); setNote(""); setValidDays("7"); setLines([blankLine()]); };
+  const reset = () => { setKind("quote"); setDate(todayISO()); setCustId(""); setCustForm({ name: "", taxId: "", branch: "สำนักงานใหญ่", address: "", phone: "" }); setVatEnabled(true); setDiscType("amount"); setDiscVal(""); setNote(""); setValidDays("7"); setBankId(banks && banks[0] ? banks[0].id : ""); setLines([blankLine()]); };
 
   const itemsOf = () => lines.filter((l) => (l.name || "").trim() && (Number(l.qty) || 0) > 0).map((l) => ({ productId: l.productId, name: l.name.trim(), qty: Number(l.qty) || 0, price: Number(String(l.price).replace(/,/g, "")) || 0, cost: (products.find((p) => p.id === l.productId) || {}).cost || 0 }));
 
@@ -5724,7 +5734,7 @@ function SalesDocs({ t, lang, docs, customers, products, profile, banks, money, 
       const saved = onSaveCustomer ? onSaveCustomer({ id: uid(), ...customer }) : null;
       if (saved && saved.id) cid = saved.id;
     }
-    const d = { id: uid(), kind, no: docNoGen(docs, kind, date), date, customerId: cid, customer, items, vatEnabled, discountType: discType, discountValue: Number(discVal) || 0, note: note.trim(), validDays: kind === "quote" ? (Number(validDays) || 0) : 0, status: "open", createdAt: todayISO() };
+    const d = { id: uid(), kind, no: docNoGen(docs, kind, date), date, customerId: cid, customer, items, vatEnabled, discountType: discType, discountValue: Number(discVal) || 0, note: note.trim(), validDays: kind === "quote" ? (Number(validDays) || 0) : 0, bankId: kind === "delivery" ? null : (bankId || null), status: "open", createdAt: todayISO() };
     onSave(d);
     setFlash({ type: "ok", msg: t("บันทึก ", "Saved ") + DOC_KINDS[kind][lang === "en" ? "en" : "th"] + " " + d.no });
     reset(); setOpen(false);
@@ -5816,6 +5826,16 @@ function SalesDocs({ t, lang, docs, customers, products, profile, banks, money, 
             {kind === "quote" ? <div className="field"><label>{t("ยืนราคา (วัน)", "Valid (days)")}</label><input className="input" inputMode="numeric" value={validDays} onChange={(e) => setValidDays(e.target.value.replace(/\D/g, ""))} /></div> : <div className="field" />}
           </div>
           <label className="checkrow"><input type="checkbox" checked={vatEnabled} onChange={(e) => setVatEnabled(e.target.checked)} />{t("รวมภาษีมูลค่าเพิ่ม (VAT)", "Include VAT")}</label>
+          {kind !== "delivery" && (
+            <div className="field"><label>{t("บัญชีรับโอนเงิน (แสดงบนเอกสารให้ลูกค้าโอน)", "Bank account for transfer (shown on the document)")}</label>
+              {banks && banks.length ? (
+                <select className="select" value={bankId} onChange={(e) => setBankId(e.target.value)}>
+                  <option value="">{t("— ไม่แสดงบัญชี —", "— don't show an account —")}</option>
+                  {banks.map((b) => <option key={b.id} value={b.id}>{(b.bankName || b.bank || "") + (b.accountNo ? " · " + b.accountNo : "") + (b.accountName ? " (" + b.accountName + ")" : "")}</option>)}
+                </select>
+              ) : <div className="muted" style={{ fontSize: 12 }}>{t("ยังไม่มีบัญชีธนาคาร — เพิ่มได้ที่หน้า “ตั้งค่าร้าน”", "No bank accounts yet — add one in Shop settings")}</div>}
+            </div>
+          )}
           <div className="field"><label>{t("หมายเหตุ", "Note")}</label><input className="input" value={note} onChange={(e) => setNote(e.target.value)} placeholder={t("เงื่อนไขการชำระเงิน ฯลฯ", "payment terms, etc.")} /></div>
           <button className="btn btn-primary" style={{ marginTop: 4 }} onClick={save}>💾 {t("บันทึกเอกสาร", "Save document")}</button>
         </div>
@@ -5855,7 +5875,7 @@ function SalesDocs({ t, lang, docs, customers, products, profile, banks, money, 
           </div>
         )}
       </div>
-      {view && <DocModal t={t} lang={lang} doc={view} profile={profile} money={money} vatRate={vatRate} onClose={() => setView(null)} />}
+      {view && <DocModal t={t} lang={lang} doc={view} profile={profile} banks={banks} money={money} vatRate={vatRate} onClose={() => setView(null)} />}
     </div>
   );
 }
