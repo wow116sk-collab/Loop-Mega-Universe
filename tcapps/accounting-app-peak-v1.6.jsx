@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.6.4"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.6.5"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
@@ -871,6 +871,7 @@ export default function AccountingApp() {
   // "unsaved changes" tracking: dirty until the latest data is flushed to the linked file OR exported
   const [dirty, setDirty] = useState(false);
   const [saveError, setSaveError] = useState(false); // primary autosave (window.storage) failed — data lives only in memory/IndexedDB
+  const [hideEmptyHint, setHideEmptyHint] = useState(false); // dismiss the "empty — import a backup?" banner (genuinely new shop)
   const dirtyRef = useRef(false);
   const firstSaveRunRef = useRef(true);
   const idbSaveTimer = useRef(null); // debounce full-data writes to IndexedDB (local autosave for file:// use)
@@ -2488,6 +2489,22 @@ export default function AccountingApp() {
             </div>
           </div>
         </div>
+
+        {/* empty-data hint: a freshly-opened (e.g. newer-version) file starts blank — prompt to import a backup
+            so an upgrade isn't mistaken for lost data. Hidden once dismissed or once any data exists. */}
+        {loaded && !hideEmptyHint && !sales.length && !purchases.length && !products.length && !entries.length && !expenses.length && !docs.length && !banks.length && (
+          <div className="card card-pad" style={{ margin: "10px 0", borderLeft: "4px solid #c79100", background: "rgba(199,145,0,.07)" }}>
+            <div style={{ fontWeight: 700, marginBottom: 4 }}>📂 {t("ยังไม่มีข้อมูลในไฟล์นี้", "This file has no data yet")}</div>
+            <div className="muted" style={{ fontSize: 12.5, marginBottom: 8, lineHeight: 1.5 }}>
+              {t("ถ้าเพิ่งเปิดโปรแกรมเวอร์ชันใหม่ ข้อมูลเดิมไม่ได้หาย — อยู่ในไฟล์เก่า กดปุ่มด้านล่างเพื่อนำเข้าไฟล์สำรอง (.json) ล่าสุดของคุณ · ถ้าเป็นร้านใหม่เริ่มต้นใช้งาน กดปิดข้อความนี้ได้เลย",
+                 "If you just opened a newer version, your data isn't lost — it's in the old file. Import your latest backup (.json) below. Starting fresh? Just dismiss this.")}
+            </div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <button className="btn btn-sm btn-primary" onClick={() => setTab("settings")}>⬇️ {t("ไปหน้านำเข้าไฟล์สำรอง", "Go to import backup")}</button>
+              <button className="btn btn-sm" onClick={() => setHideEmptyHint(true)}>{t("ปิดข้อความนี้ (ร้านใหม่)", "Dismiss (new shop)")}</button>
+            </div>
+          </div>
+        )}
 
         {/* tabs + content — sidebar on wide screens, top strip on mobile/portrait */}
         <div className="layout">
