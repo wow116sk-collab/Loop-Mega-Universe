@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.6.5"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.6.6"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
@@ -1651,6 +1651,29 @@ export default function AccountingApp() {
     voidSale(sale.id);
     setInvoiceSale(null);
   };
+  // HARD delete a bill created by mistake (typo) — removes the record entirely so its bill number
+  // frees up and can be reused. Restores stock (if not already restored by a prior void), purges the
+  // bill's journals (original + void-reversal + any A/R receipts and their reversals) and its payments.
+  // NOT for real tax invoices already issued/filed — those must stay voided-on-record for audit.
+  const purgeSale = (sale) => {
+    if (!sale) return;
+    if (gateOn && acctLevel < 3) { window.alert(t("ลบบิลถาวรได้เฉพาะผู้ดูแล (ระดับ 3)", "Only an admin (level 3) can permanently delete a bill.")); return; }
+    if (!window.confirm(t(
+      "ลบบิล " + sale.billNo + " ถาวร?\n\nใช้เฉพาะกรณีสร้างผิด/พิมพ์ผิด ที่ยังไม่ได้ส่งให้ลูกค้าและยังไม่ได้ยื่นภาษี\nบิลจะหายทั้งหมด คืนสต๊อก ล้างรายการบัญชี และเลขบิลจะกลับมาใช้ใหม่ได้\n\n⚠️ ห้ามใช้กับใบกำกับภาษีที่ออกให้ลูกค้าแล้ว — บิลแบบนั้นให้ใช้ “ยกเลิก” เพื่อเก็บไว้ตรวจสอบ",
+      "Permanently delete bill " + sale.billNo + "?\n\nOnly for a mistake/typo not yet given to a customer or filed.\nThe bill is fully removed, stock restored, journals cleared, and the number becomes reusable.\n\n⚠️ Do NOT use for a tax invoice already issued — void that instead to keep it on record."))) return;
+    // 1) stock: restore only if a prior void hasn't already put it back
+    if (!sale.voided) setProducts((prev) => restoreSaleStock(prev, sale));
+    // 2) journals: this bill's own + its void-reversal + A/R receipts for it — plus anything reversing those
+    const payJids = payments.filter((x) => x.refId === sale.id && x.journalId).map((x) => x.journalId);
+    const dead = new Set([sale.journalId, sale.voidJournalId, ...payJids].filter(Boolean));
+    if (dead.size) setEntries((prev) => prev.filter((e) => !dead.has(e.id) && !(e.reversalOf && dead.has(e.reversalOf))));
+    // 3) drop A/R receipts booked against this bill
+    setPayments((prev) => prev.filter((x) => x.refId !== sale.id));
+    // 4) remove the record entirely -> nextBillNo (last remaining bill + 1) reclaims the number
+    setSales((prev) => prev.filter((s) => s.id !== sale.id));
+    logEvent("delete", "sale", sale, sale);
+    setInvoiceSale(null);
+  };
 
   // ---- "รอออกบิล": park a sale (cut stock now, journal + bill number later) ----
   const parkSale = (payload) => {
@@ -2378,7 +2401,7 @@ export default function AccountingApp() {
 
   const invoiceOverlay = invoiceSale ? (
     <InvoiceModal t={t} lang={lang} sale={invoiceSale} profile={profile} banks={banks} money={money}
-      onClose={() => { setInvoiceSale(null); forceSyncNow(); }} onEdit={acctLevel >= 3 ? editSale : null} onDelete={acctLevel >= 3 ? deleteSale : null} />
+      onClose={() => { setInvoiceSale(null); forceSyncNow(); }} onEdit={acctLevel >= 3 ? editSale : null} onDelete={acctLevel >= 3 ? deleteSale : null} onPurge={acctLevel >= 3 ? purgeSale : null} />
   ) : null;
 
   const acctLoginOverlay = acctLoginOpen ? (
@@ -2593,7 +2616,7 @@ export default function AccountingApp() {
         {tab === "bills" && (
           <BillsList
             t={t} lang={lang} sales={sales} money={money} showTotal={showCost}
-            onShowInvoice={setInvoiceSale} onEdit={acctLevel >= 3 ? editSale : null} onDelete={acctLevel >= 3 ? deleteSale : null} onHistory={(s) => openHistory("sale", s)}
+            onShowInvoice={setInvoiceSale} onEdit={acctLevel >= 3 ? editSale : null} onDelete={acctLevel >= 3 ? deleteSale : null} onPurge={acctLevel >= 3 ? purgeSale : null} onHistory={(s) => openHistory("sale", s)}
           />
         )}
 
@@ -5058,7 +5081,7 @@ function Pager({ t, page, pageCount, total, onPage }) {
   );
 }
 
-function BillsList({ t, lang, sales, money, onShowInvoice, onEdit, onDelete, onHistory, showTotal = true }) {
+function BillsList({ t, lang, sales, money, onShowInvoice, onEdit, onDelete, onPurge, onHistory, showTotal = true }) {
   const [q, setQ] = useState("");
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
@@ -5110,6 +5133,7 @@ function BillsList({ t, lang, sales, money, onShowInvoice, onEdit, onDelete, onH
                         {onHistory && <button className="btn btn-sm" title={t("ดูประวัติย้อนหลัง", "History")} onClick={() => onHistory(s)}>🕘</button>}{" "}
                         {!s.voided && onEdit && <button className="btn btn-sm" onClick={() => onEdit(s)}>{t("แก้ไข", "Edit")}</button>}{" "}
                         {!s.voided && onDelete && <button className="btn btn-sm btn-danger" onClick={() => onDelete(s)}>{t("ยกเลิก", "Cancel")}</button>}
+                        {s.voided && onPurge && <button className="btn btn-sm btn-danger" title={t("ลบทิ้งถาวร เลขบิลกลับมาใช้ได้ (เฉพาะบิลที่สร้างผิด)", "Delete for good and free the number (mistakes only)")} onClick={() => onPurge(s)}>🗑 {t("ลบถาวร", "Delete")}</button>}
                       </td>
                     </tr>
                   ))}
@@ -8029,7 +8053,7 @@ function AdvanceDetail({ t, a, banks, money, onClose }) {
   );
 }
 
-function InvoiceModal({ t, lang, sale, profile, banks, money, onClose, onEdit, onDelete }) {
+function InvoiceModal({ t, lang, sale, profile, banks, money, onClose, onEdit, onDelete, onPurge }) {
   const isTax = sale.docType === "tax";
   const bank = sale.bankId ? (banks || []).find((b) => b.id === sale.bankId) : null;
   const cust = sale.customer || {};
@@ -8041,7 +8065,8 @@ function InvoiceModal({ t, lang, sale, profile, banks, money, onClose, onEdit, o
       <div className="inv-toolbar">
         <button className="btn btn-primary" onClick={() => window.print()}>🖨 {t("พิมพ์ / บันทึก PDF", "Print / Save PDF")}</button>
         {onEdit && !sale.voided && <button className="btn" onClick={() => onEdit(sale)}>✏️ {t("แก้ไขบิล", "Edit")}</button>}
-        {onDelete && <button className="btn btn-danger" onClick={() => onDelete(sale)}>🗑 {t("ลบบิล", "Delete")}</button>}
+        {onDelete && !sale.voided && <button className="btn btn-danger" onClick={() => onDelete(sale)}>🗑 {t("ยกเลิกบิล", "Cancel bill")}</button>}
+        {onPurge && sale.voided && <button className="btn btn-danger" onClick={() => onPurge(sale)} title={t("ลบทิ้งถาวร เลขบิลกลับมาใช้ได้ (เฉพาะบิลที่สร้างผิด)", "Delete for good and free the number (mistakes only)")}>🗑 {t("ลบถาวร (แก้พิมพ์ผิด)", "Delete for good")}</button>}
         <button className="btn" onClick={onClose}>{t("ปิด", "Close")}</button>
       </div>
       <div className="inv-hint">
