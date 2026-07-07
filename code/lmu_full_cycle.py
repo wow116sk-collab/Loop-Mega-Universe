@@ -73,13 +73,16 @@ print(f"  r   = 12 alpha/N^2 = {r:.4f}   [Starobinsky's alpha=1 value, condition
 print(f"  A_s = V/(24 pi^2 eps Mp^4) = {V/(24*math.pi**2*eps*Mp**4):.2e}  [= input, a FIT]")
 print(f"  dT/T = sqrt(A_s) = {As_obs**0.5:.1e}")
 
-head("STAGE 5 -- SMOOTH HALF (dilution) =======================================")
+head("STAGE 5 -- SMOOTH HALF (two SEPARATE quantities, do not conflate) =======")
 resid=math.exp(-2*N)
 k_req=122*math.log(10)/N
-print(f"  per-point Weyl diluted: e^-2N = {resid:.1e} (44 orders below 1e-5)")
-print(f"  reaching the 10^-122 floor needs exponent k=122 ln10/N={k_req:.2f}:")
-print(f"    hand-wave '+3 spread' 2+3=5 HITS ({abs(5-k_req)/k_req*100:.0f}%); rigorous 2+1.5=3.5 MISSES")
-print(f"    -> the '+3 spread' is LMU-specific OPEN ITEM #1 [soft]")
+print(f"  (a) observable smoothness = a density CONTRAST ~1e-5: e^-2N = {resid:.1e} clears it by 44")
+print(f"      orders -- EASY (and the CMB fluctuations we see are the NEW inflationary ones, a fit).")
+print(f"  (b) old-aeon residual ENERGY -> the MEASURED vacuum floor Lambda/M_Pl^4 ~ 1e-122:")
+print(f"      needs energy-redshift k=122 ln10/N={k_req:.2f} (~5). Real GR redshift supplies it")
+print(f"      (shear a^-6 fast overshoots; curvature a^-2 slow undershoots).")
+print(f"    -> LMU-specific OPEN ITEM #1 [soft]: does the calm/low-Weyl L0 residual carry enough")
+print(f"       FAST (shear/radiation) energy to reach the floor in N=57? (code/residual_dilution_to_floor.py)")
 
 head("STAGE 6 -- THERMAL BRIDGE ===============================================")
 T_cmb_K=2.72548; T_cmb_GeV=kB*T_cmb_K/GeV_J   # kB*T in J, /( J/GeV ) -> GeV

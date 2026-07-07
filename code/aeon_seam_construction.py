@@ -29,14 +29,18 @@ V14 = V**0.25
 Treh= (30*V/(math.pi**2*200))**0.25
 print(f"   V^1/4={V14:.2e} GeV, T_reheat={Treh:.2e} GeV, H_inf/Mp={math.sqrt(V/3)/Mp:.1e}  (OK)")
 
-print("== [B] SMOOTH HALF: old-aeon Weyl residual, diluted, spread over the aeon ==")
+print("== [B] SMOOTH HALF: TWO separate quantities (do NOT conflate -- this caused the flip-flop) ==")
 for N in (57, 100):
-    print(f"   N={N}: residual/point e^-2N=1e{log10(-2*N):.0f} ; spread e^-5N=1e{log10(-5*N):.0f} ; "
-          f"{abs(log10(-2*N))-5:.0f} orders below the 1e-5 CMB seed")
+    print(f"   N={N}: observable CONTRAST e^-2N=1e{log10(-2*N):.0f} -> {abs(log10(-2*N))-5:.0f} orders below the 1e-5 CMB seed (EASY, met)")
+print("   SEPARATE item: the old-aeon residual ENERGY must redshift below the MEASURED vacuum floor")
+print("   Lambda/M_Pl^4 ~ 1e-122 (energy-to-energy), needing k~5 via REAL GR redshift (shear a^-6 fast,")
+print("   curvature a^-2 slow) -- NOT a statistical 'spread'. [soft] (code/residual_dilution_to_floor.py)")
 
-print("== [C] N-CONVERGENCE: one N does three jobs ==")
-N_cmb=2/(1-ns_obs); N_floor=122*math.log(10)/5
-print(f"   N(CMB tilt)={N_cmb:.0f} ; N(residual->1e-122 de Sitter floor)={N_floor:.0f} ; N(horizon/flatness)~55-60")
+print("== [C] N-CONVERGENCE: the CMB tilt and flatness both point to N~57 ==")
+N_cmb=2/(1-ns_obs)
+print(f"   N(CMB tilt)={N_cmb:.0f} ; N(horizon/flatness)~55-60   [two real inflationary jobs]")
+print(f"   (the old 'N(residual->1e-122)' leg is the energy-redshift-to-vacuum-floor item, k~5, a")
+print(f"    consistency target -- not an independent third job; see [B] and residual_dilution_to_floor.py)")
 
 print("== [D] CMB FIT: alpha-attractor (=conformal inflation, Kallosh-Linde 2013) ==")
 N=N_cmb; alpha=r_obs*N**2/12

@@ -25,7 +25,7 @@ In infinite **L0**, dead remnants pile into a **broad, shallow, non-collapsing w
 `code/backcalc_from_cmb_floor.py` — take the CMB and the de Sitter floor as anchors, compute backward:
 
 - **N from the CMB tilt:** $N=2/(1-n_s)=57$.
-- **The floor pins the (previously soft) dilution exponent:** to take an O(1) residual down to $10^{-122}$ in $N=57$ e-folds needs $k=122\ln10/N=\mathbf{4.93}$. The hand-wave $k=2+3=5$ matches to **1%**; the rigorous $k=2+1.5=3.5$ would need $N=80$ and **misses**. So anchoring on both measured values *demands* $k\approx5$ — the framework is consistent **iff the "+3" spread is right**.
+- **The floor sets the required energy-redshift exponent (pinned, not a statistical spread):** the "residual" is the old-aeon inhomogeneity **energy**, which must redshift below the **measured** vacuum floor $\Lambda/M_{\rm Pl}^4\approx10^{-122}$ (present dark energy, a *constant*) in $N=57$ e-folds → $k=122\ln10/N=\mathbf{4.93}$. This is **real GR component redshift** (curvature $a^{-2}$ slow, radiation $a^{-4}$, shear $a^{-6}$ fast; the energy lost into the expansion, Wald 1984), **not** a "spread over patches." So the framework is consistent **iff the L0 residual is shear/radiation-heavy enough** to reach $k\approx5$. *(The observable smoothness — a density contrast $\sim10^{-5}$ — is a separate, easily-met quantity. `code/residual_dilution_to_floor.py`.)*
 - **Pre-aeon inhomogeneity implied:** $\delta_{\rm init}=10^{-122}e^{+kN}\approx\mathbf{1}$ — i.e. the shallow well starts at O(1) inhomogeneity (not $\gg1$, precisely because it is calm and less-dense-than-air), and inflation dilutes it to the floor.
 
 ## What is closed vs open (honest)
@@ -38,7 +38,7 @@ In infinite **L0**, dead remnants pile into a **broad, shallow, non-collapsing w
 - The two measured anchors (N=57 from CMB, 10⁻¹²² floor) are mutually consistent at $k\approx5$. ✓
 
 **Open (two items, sharp):**
-1. **The exponent's "+3" spread is a hand-wave** — the anchors demand $k\approx4.93$; the physical spread gives $+3$ (→5) by hand-waving, but rigorous statistical averaging gives $+1.5$ (→3.5), which fails. Deriving the spread is the smoothness half of Problem A.
+1. **The residual's composition (the "+3 spread", pinned)** — reaching the measured floor $\Lambda/M_{\rm Pl}^4\approx10^{-122}$ in $N\approx57$ e-folds needs an effective energy-redshift $k\approx5$. Real GR redshift *can* supply it (shear $a^{-6}$ overshoots, radiation $a^{-4}$ nearly), so the open item is **whether a calm, low-Weyl clump — which is curvature-heavy ($a^{-2}$, slow, undershoots) — carries enough fast (shear/radiation) energy**, i.e. whether "calm/low-Weyl" and "reach the floor in 57 e-folds" are in tension. (Not a statistical spread; this is the smoothness half of Problem A.)
 2. **The trigger→plateau coupling** — how the flash, acting on the cold diffuse well, lifts the $\omega$-inflaton onto the GUT plateau so the free lunch can fire. This is the single un-equationed link.
 
 **Net:** the accumulation setup is essentially all doc-backed; the picture reduces the reset to two sharp, quantifiable open pieces (the +3 spread; the trigger→plateau coupling), plus the always-open de-Sitter-stability question dissolved into "does a self-built hilltop count" (it evades the pre-existing-barrier swampland form). No new equation; the wiring is the assembly.
