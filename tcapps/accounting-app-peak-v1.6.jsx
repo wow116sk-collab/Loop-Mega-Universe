@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.6.6"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.6.8"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
@@ -3285,13 +3285,14 @@ function Inventory({ t, lang, accName, products, sales = [], categories = [], on
   const [serialInput, setSerialInput] = useState("");
   const [recvQty, setRecvQty] = useState("");
   const [recvCost, setRecvCost] = useState("");
+  const [setQtyVal, setSetQtyVal] = useState(""); // "นับใหม่" — set on-hand to an exact number
   const [serialPending, setSerialPending] = useState([]); // serials queued before "receive all"
   const [gen, setGen] = useState({ prefix: "", start: "", count: "", pad: "" });
   const [recvSerial, setRecvSerial] = useState(false); // receive-with-serial toggle for the open product
   const [editForm, setEditForm] = useState(null); // edit name/price/codes for the expanded product
   const [editMsg, setEditMsg] = useState(null); // product id briefly flagged as saved
   useEffect(() => {
-    setSerialPending([]); setSerialInput(""); setRecvQty(""); setRecvCost(""); setGen({ prefix: "", start: "", count: "", pad: "" });
+    setSerialPending([]); setSerialInput(""); setRecvQty(""); setRecvCost(""); setSetQtyVal(""); setGen({ prefix: "", start: "", count: "", pad: "" });
     const ep = products.find((x) => x.id === expanded);
     setRecvSerial(!!(ep && ep.tracksSerial));
     setEditForm(ep ? { th: ep.th || "", en: ep.en || "", price: ep.price != null ? String(ep.price) : "", codes: (ep.codes && ep.codes.length) ? ep.codes.slice() : (ep.barcode ? [ep.barcode] : []), newCode: "", hsCode: ep.hsCode || "", dutyRate: ep.dutyRate != null ? String(ep.dutyRate) : "", shipRatio: ep.shipRatio != null ? String(ep.shipRatio) : "" } : null);
@@ -3404,6 +3405,38 @@ function Inventory({ t, lang, accName, products, sales = [], categories = [], on
     });
     addMovement({ type: "in", productId: p.id, qty: q, note: "รับเข้า / Receive @ " + c });
     setRecvQty(""); setRecvCost("");
+  };
+
+  // "นับใหม่" — set on-hand to an EXACT number (stock count correction). Non-serial products only:
+  // a serial product's count IS its in-stock serials, so it must be corrected by adding/removing serials.
+  // Increase -> add a FIFO layer at the product's current cost; decrease -> consume oldest lots first (FIFO),
+  // so inventory value moves consistently. Mirrors receive()'s non-journaled behavior + logs a movement.
+  const setStockQty = (p) => {
+    if (p.tracksSerial) { alert(t("สินค้านี้ติดตามรายชิ้น (Serial) — แก้จำนวนโดยเพิ่ม/ลบ serial ด้านล่าง", "This item is serial-tracked — adjust its count by adding/removing serials below.")); return; }
+    // reject non-numeric BEFORE num() coerces it to 0 (num("abc") === 0 would silently target qty 0)
+    const raw = String(setQtyVal).replace(/,/g, "").trim();
+    if (!/^\d+(\.\d+)?$/.test(raw)) { alert(t("ใส่จำนวนคงเหลือใหม่ (ตัวเลขเท่านั้น)", "Enter the new on-hand quantity (numbers only)")); return; }
+    const tgt = Math.max(0, Math.floor(num(raw)));
+    const cur = productOnHand(p);
+    if (tgt === cur) { setSetQtyVal(""); return; }
+    if (!window.confirm(t("ปรับจำนวนคงเหลือ \"" + pname(p) + "\" จาก " + cur + " เป็น " + tgt + " ?\n(นับสต๊อกใหม่ให้ตรงของจริง — ปรับเพิ่มคิดต้นทุนตามราคาทุนล่าสุด ปรับลดตัดล็อตเก่าก่อน)", "Set on-hand of \"" + pname(p) + "\" from " + cur + " to " + tgt + "?\n(count correction — increases use latest cost, decreases consume oldest lots first)"))) return;
+    onUpdate(p.id, (x) => {
+      let layers = (Array.isArray(x.layers) && x.layers.length)
+        ? x.layers.map((l) => ({ ...l, qty: Number(l.qty) || 0, unitCost: Number(l.unitCost) || 0 }))
+        : ((Number(x.qty) || 0) > 0 ? [{ qty: Number(x.qty) || 0, unitCost: Number(x.cost) || 0 }] : []);
+      const curQ = layers.reduce((s, l) => s + l.qty, 0);
+      if (tgt > curQ) {
+        layers.push({ qty: tgt - curQ, unitCost: Number(x.cost) || 0 });
+      } else {
+        let rm = curQ - tgt; // remove oldest-first (FIFO)
+        for (let i = 0; i < layers.length && rm > 0; i++) { const take = Math.min(layers[i].qty, rm); layers[i] = { ...layers[i], qty: layers[i].qty - take }; rm -= take; }
+        layers = layers.filter((l) => (Number(l.qty) || 0) > 0);
+      }
+      return { layers, qty: layers.reduce((s, l) => s + l.qty, 0) };
+    });
+    const diff = tgt - cur;
+    addMovement({ type: diff > 0 ? "in" : "out", productId: p.id, qty: Math.abs(diff), note: (diff > 0 ? "ปรับเพิ่มสต๊อก (นับใหม่)" : "ปรับลดสต๊อก (นับใหม่)") + " → " + tgt + " / Stock count adjust" });
+    setSetQtyVal("");
   };
 
   const existsSerial = (p, s) => (p.serials || []).some((x) => norm(x.serial) === norm(s));
@@ -3737,6 +3770,11 @@ function Inventory({ t, lang, accName, products, sales = [], categories = [], on
                                 <div className="field" style={{ margin: 0 }}><label>{t("รับเข้า จำนวน", "Receive qty")}</label><input className="qty-input" inputMode="decimal" value={recvQty} onChange={(e) => setRecvQty(e.target.value)} placeholder="0" /></div>
                                 {showCost && <div className="field" style={{ margin: 0 }}><label>{t("ต้นทุน/หน่วย (ล็อตนี้)", "Cost/unit (this lot)")}</label><input className="qty-input" style={{ width: 96 }} inputMode="decimal" value={recvCost} onChange={(e) => setRecvCost(e.target.value)} placeholder={String(Number(p.cost) || 0)} /></div>}
                                 <button className="btn btn-sm btn-primary" onClick={() => receive(p)}>+ {t("รับเข้า", "Receive")}</button>
+                              </div>
+                              <div style={{ display: "flex", gap: 8, alignItems: "flex-end", flexWrap: "wrap", marginBottom: 10, borderTop: "1px dashed var(--line)", paddingTop: 10 }}>
+                                <div className="field" style={{ margin: 0 }}><label>{t("แก้จำนวนคงเหลือ (นับใหม่)", "Set on-hand (recount)")}</label><input className="qty-input" inputMode="decimal" value={setQtyVal} onChange={(e) => setSetQtyVal(e.target.value)} placeholder={String(productOnHand(p))} /></div>
+                                <button className="btn btn-sm" onClick={() => setStockQty(p)}>✎ {t("ตั้งจำนวน", "Set qty")}</button>
+                                <span className="muted" style={{ fontSize: 11.5, alignSelf: "center" }}>{t("คงเหลือปัจจุบัน ", "now ")}<b className="acc-num">{productOnHand(p)}</b> — {t("ใส่จำนวนจริงเพื่อแก้ให้ตรง", "type the real count to correct it")}</span>
                               </div>
                               {showCost && <>
                               <div className="line-head" style={{ marginBottom: 4 }}>{t("ล็อตต้นทุน FIFO (เก่า → ใหม่)", "FIFO cost lots (old → new)")}</div>
@@ -8458,7 +8496,14 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
   const beM = (mm) => mm.slice(5, 7) + "/" + (Number(mm.slice(0, 4)) + 543);
   const TH_M = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
   const monthsOfYear = Array.from({ length: 12 }, (_, i) => { const mm = y + "-" + String(i + 1).padStart(2, "0"); return { lbl: TH_M[i], ...agg((d) => d.slice(0, 7) === mm) }; });
-  const Kpi = ({ label, val, sub }) => (<div className="kpi"><div className="kpi-label">{label}</div><div className="kpi-val">฿{money(val)}</div>{sub ? <div className="faint" style={{ fontSize: 11.5 }}>{sub}</div> : null}</div>);
+  // ยอดบวก → รองพื้นเขียว, ยอดติดลบ → รองพื้นแดง (เห็นกำไร/ขาดทุนได้ทันที); ส่ง plain เพื่อไม่ลงสี
+  const Kpi = ({ label, val, sub, plain }) => {
+    const n = Number(val) || 0;
+    const tint = plain || n === 0 ? null : (n < 0
+      ? { background: "var(--red-soft)", borderColor: "#E3C2B6" }
+      : { background: "var(--green-soft)", borderColor: "#BCD8C4" });
+    return (<div className="kpi" style={tint}><div className="kpi-label">{label}</div><div className="kpi-val" style={!plain && n < 0 ? { color: "var(--red)" } : null}>{n < 0 ? "−" : ""}฿{money(val)}</div>{sub ? <div className="faint" style={{ fontSize: 11.5 }}>{sub}</div> : null}</div>);
+  };
   const off = { opacity: 0.4, pointerEvents: "none", filter: "grayscale(0.7)" };
   return (
     <div>
@@ -8510,11 +8555,11 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
           </div>
           <div className="line-head" style={{ margin: "4px 0 8px" }}>📅 {t("งบกำไรขาดทุนรายเดือน ", "Monthly P&L ")}{beM(m)}</div>
           <div className="kpi-grid" style={{ marginBottom: 8 }}>
-            <Kpi label={t("รายได้จากการขาย", "Revenue")} val={M.revenue} sub={M.bills + t(" บิล", " bills")} />
+            <Kpi label={t("รายได้จากการขาย (ไม่รวม VAT)", "Revenue (ex-VAT)")} val={M.revenue} sub={M.bills + t(" บิล · ยอดรับจริงรวม VAT ฿", " bills · incl-VAT ฿") + money(M.revenue + M.outVat)} />
             <Kpi label={t("ต้นทุนขาย (FIFO)", "COGS (FIFO)")} val={M.cogs} />
             <Kpi label={t("กำไรขั้นต้น", "Gross profit")} val={M.gross} />
             <Kpi label={t("ค่าธรรมเนียม Shopee/Lazada", "Marketplace fees")} val={M.mktFee} sub={t("ใช้ค่าหักจริงเมื่อเคลียร์รอบโอนแล้ว", "actual once the payout is settled")} />
-            <Kpi label={t("กำไรสุทธิจริง (หักค่าธรรมเนียม + ค่าใช้จ่ายร้าน)", "TRUE net (after fees + expenses)")} val={M.net} sub={t("ค่าใช้จ่ายร้าน ฿", "expenses ฿") + money(M.expBase)} />
+            <Kpi label={t("กำไร/ขาดทุนสุทธิจริง (หักค่าธรรมเนียม + ค่าใช้จ่ายร้าน)", "TRUE net profit/(loss) (after fees + expenses)")} val={M.net} sub={t("ค่าใช้จ่ายร้าน ฿", "expenses ฿") + money(M.expBase)} />
           </div>
         </>
       )}
@@ -8523,11 +8568,11 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
         <>
           <div className="line-head" style={{ margin: "4px 0 8px" }}>📘 {t("งบประจำปี ", "Annual statement ")}{Number(y) + 543}</div>
           <div className="kpi-grid" style={{ marginBottom: 10 }}>
-            <Kpi label={t("รายได้ทั้งปี", "Annual revenue")} val={Y.revenue} sub={Y.bills + t(" บิล", " bills")} />
+            <Kpi label={t("รายได้ทั้งปี (ไม่รวม VAT)", "Annual revenue (ex-VAT)")} val={Y.revenue} sub={Y.bills + t(" บิล · ยอดรับจริงรวม VAT ฿", " bills · incl-VAT ฿") + money(Y.revenue + Y.outVat)} />
             <Kpi label={t("ต้นทุนขายทั้งปี", "Annual COGS")} val={Y.cogs} />
             <Kpi label={t("กำไรขั้นต้น", "Gross profit")} val={Y.gross} />
             <Kpi label={t("ค่าธรรมเนียม Shopee/Lazada ทั้งปี", "Annual marketplace fees")} val={Y.mktFee} />
-            <Kpi label={t("กำไรสุทธิก่อนภาษี (หักค่าธรรมเนียม + ค่าใช้จ่ายร้าน)", "Net before tax (after fees + expenses)")} val={Y.net} sub={t("ค่าใช้จ่ายร้าน ฿", "expenses ฿") + money(Y.expBase)} />
+            <Kpi label={t("กำไร/ขาดทุนสุทธิก่อนภาษี (หักค่าธรรมเนียม + ค่าใช้จ่ายร้าน)", "Net profit/(loss) before tax (after fees + expenses)")} val={Y.net} sub={t("ค่าใช้จ่ายร้าน ฿", "expenses ฿") + money(Y.expBase)} />
           </div>
           <div className="kpi-grid" style={{ marginBottom: 18 }}>
             <Kpi label={t("ภาษีขายทั้งปี", "Annual output VAT")} val={Y.outVat} />
@@ -8540,7 +8585,7 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
             <table className="t">
               <thead><tr><th>{t("เดือน", "Month")}</th><th className="r">{t("ยอดขาย", "Sales")}</th><th className="r">{t("กำไรขั้นต้น", "Gross")}</th><th className="r">{t("ค่าธรรมเนียม", "Fees")}</th><th className="r">{t("ค่าใช้จ่าย", "Expenses")}</th><th className="r">{t("กำไรสุทธิ", "Net")}</th></tr></thead>
               <tbody>{monthsOfYear.map((r, i) => (
-                <tr key={i}><td>{r.lbl}</td><td className="r acc-num">{r.revenue ? money(r.revenue) : <span className="faint">—</span>}</td><td className="r acc-num">{r.revenue ? money(r.gross) : ""}</td><td className="r acc-num">{r.mktFee ? money(r.mktFee) : ""}</td><td className="r acc-num">{r.expBase ? money(r.expBase) : ""}</td><td className="r acc-num">{r.revenue || r.expBase || r.mktFee ? money(r.net) : ""}</td></tr>
+                <tr key={i}><td>{r.lbl}</td><td className="r acc-num">{r.revenue ? money(r.revenue) : <span className="faint">—</span>}</td><td className="r acc-num">{r.revenue ? (r.gross < 0 ? "−" : "") + money(r.gross) : ""}</td><td className="r acc-num">{r.mktFee ? money(r.mktFee) : ""}</td><td className="r acc-num">{r.expBase ? money(r.expBase) : ""}</td><td className="r acc-num" style={(r.revenue || r.expBase || r.mktFee) ? (r.net < 0 ? { background: "var(--red-soft)", color: "var(--red)", fontWeight: 600 } : { background: "var(--green-soft)" }) : null}>{r.revenue || r.expBase || r.mktFee ? (r.net < 0 ? "−" : "") + money(r.net) : ""}</td></tr>
               ))}</tbody>
             </table>
           </div>
@@ -8557,7 +8602,7 @@ function AcctSummary({ t, sales, purchases, expenses, money, vatRate = VAT_RATE 
           <div className="table-scroll" style={{ marginBottom: 8 }}>
             <table className="t">
               <tbody>
-                <tr><td>{t("กำไรสุทธิก่อนภาษี (จากระบบ)", "Net profit before tax (from this system)")}</td><td className="r acc-num">฿{money(Y.net)}</td></tr>
+                <tr><td>{t("กำไรสุทธิก่อนภาษี (จากระบบ)", "Net profit before tax (from this system)")}</td><td className="r acc-num" style={Y.net < 0 ? { color: "var(--red)", fontWeight: 600 } : null}>{Y.net < 0 ? "−" : ""}฿{money(Y.net)}</td></tr>
                 <tr><td>{t("ช่วง 0 – 300,000 (ยกเว้น SME)", "0 – 300,000 (SME exempt)")}</td><td className="r acc-num">฿0.00</td></tr>
                 <tr><td>{t("ช่วง 300,001 – 3,000,000 × 15%", "300,001 – 3,000,000 × 15%")}</td><td className="r acc-num">฿{money(tax50.t2)}</td></tr>
                 <tr><td>{t("ส่วนที่เกิน 3,000,000 × 20%", "over 3,000,000 × 20%")}</td><td className="r acc-num">฿{money(tax50.t3)}</td></tr>
