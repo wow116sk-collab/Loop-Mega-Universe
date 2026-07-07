@@ -1,5 +1,7 @@
 # Session log — 2026-07-07 (physics collaboration, post-V3.26)
 
+> **⚠️ log ประวัติ — ชั้นเก่า (entries ก่อน "deterministic flash" ช่วงบ่ายวันเดียวกัน).** สถานะเปิดของ LMU ปัจจุบัน = **2 ปม** เท่านั้น: **"+3" spread** [soft] + **wiring ω=inflaton** [Hypo]. **de Sitter stability / P>0 / V_min=0 / swampland-minimum = คำถาม field-wide ที่ LMU แชร์ ไม่ใช่ปม/ตัวปิดวงของ LMU** (reset เป็น deterministic flash แล้ว ไม่ใช่ probabilistic decay). **Single source of truth = `review/LMU_SYNTHESIS_2026-07-07.md`.** entries ด้านล่างที่พูดถึง "joints #1+#2 ยุบเป็น de Sitter stability (Volovik)" = **superseded** เก็บเป็นบันทึกประวัติ ห้ามยกกลับเป็นปม LMU.
+
 Chronological record of the session. Every entry is a committed, reproducible artifact.
 Nothing new was derived — every equation is borrowed and owned (R7); the work is
 computation, honesty auditing, and reframing. Direction: **the framework was clarified

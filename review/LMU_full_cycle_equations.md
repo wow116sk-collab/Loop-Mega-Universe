@@ -1,4 +1,6 @@
 # The LMU cycle in equations — pre-aeon → new aeon
+
+> **⚠️ ชั้นเก่า (pre-2026-07-07 "deterministic flash") — อ่านตัวปัจจุบันเท่านั้น.** สถานะเปิดของ LMU ปัจจุบัน = **2 ปม** เท่านั้น: **"+3" spread** [soft] + **wiring ω=inflaton** [Hypo]. **de Sitter stability / P>0 / V_min=0 / swampland-minimum = คำถาม field-wide ที่ LMU แชร์ ไม่ใช่ปม/ตัวปิดวงของ LMU** (reset เป็น deterministic flash แล้ว ไม่ใช่ probabilistic decay). **Single source of truth = `review/LMU_SYNTHESIS_2026-07-07.md`.** ข้อความ/ไดอะแกรมด้านล่างที่ยัง frame `P>0 OPEN` / de Sitter เป็นปมของ LMU = **superseded** เก็บเป็นประวัติ ห้ามยกกลับ.
 ### Every equation, what it connects to, the value it carries, its owner, and its status
 
 **What this is.** The full chain from one aeon's cold dead end to the birth of the next, written as a sequence of equations with the value flowing through each. **Nothing here is new** — it *assembles* borrowed, individually-owned equations (R7); the only LMU-specific move is the *wiring* (how they connect), flagged **[Hypo]**. Reproduce every number in one pass: `code/lmu_full_cycle.py`.

@@ -1,5 +1,7 @@
 # The L0 shallow-well accumulation picture — consolidated
 
+> **หมายเหตุ (2026-07-07):** ภาพ accumulation ด้านล่าง (shallow well, flash=trigger, free lunch, +3 spread, trigger→plateau coupling) **ยังเป็นปัจจุบัน**. แก้จุดเดียว — วลี "always-open de-Sitter-stability question" (ท้ายไฟล์, §Net) = **superseded**: de Sitter stability = คำถาม field-wide ที่ LMU แชร์ ไม่ใช่ปมของ LMU (reset เป็น deterministic flash ไม่ต้องมี barrier). ปมเฉพาะ LMU = **2** (+3 spread [soft], wiring [Hypo]). SSOT = **`review/LMU_SYNTHESIS_2026-07-07.md`**.
+
 **Date:** 2026-07-07 · **Reproduce:** `code/backcalc_from_cmb_floor.py` · **Doc-checked** (lines cited) · **Status:** the setup is doc-supported; one coupling + one soft exponent remain open.
 
 Pitarn's picture, assembled across the session and consolidated here so it stops scattering. Every piece is doc-cited or borrowed; the wiring is the assembly.

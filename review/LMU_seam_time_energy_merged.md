@@ -1,4 +1,6 @@
 # The LMU Aeon Seam — Two Axes, Merged
+
+> **⚠️ ชั้นเก่า (pre-2026-07-07 "deterministic flash") — อ่านตัวปัจจุบันเท่านั้น.** สถานะเปิดของ LMU ปัจจุบัน = **2 ปม** เท่านั้น: **"+3" spread** [soft] + **wiring ω=inflaton** [Hypo]. **de Sitter stability / P>0 / V_min=0 / swampland-minimum = คำถาม field-wide ที่ LMU แชร์ ไม่ใช่ปม/ตัวปิดวงของ LMU** (reset เป็น deterministic flash แล้ว ไม่ใช่ probabilistic decay). **Single source of truth = `review/LMU_SYNTHESIS_2026-07-07.md`.** ข้อความด้านล่างที่ยัง frame ปมเหล่านั้นเป็นของ LMU = **superseded** เก็บเป็นประวัติ ห้ามยกกลับ.
 ### Time axis (L0 continuous time) × Energy/entropy axis (cold-clumpy → hot-smooth), one crossing
 
 **What this is.** A merge of two existing [Hypo] explorations into one picture of the same aeon-to-aeon seam:

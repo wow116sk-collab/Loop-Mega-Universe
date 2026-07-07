@@ -1,5 +1,7 @@
 # Red-team record — Attack #2: swampland de Sitter vs the LMU relighting
 
+> **⚠️ ชั้นเก่า (pre-2026-07-07 "deterministic flash") — อ่านตัวปัจจุบันเท่านั้น.** การโจมตีนี้ตั้งบน "relighting ต้องมี metastable false vacuum (barrier) ที่ swampland ห้าม" — แต่ reset ปัจจุบันเป็น **deterministic flash** (survivor ระเหยแน่นอน→แฟลชเขี่ยสนามบนที่ราบ α-attractor) **ไม่มี barrier/tunnelling** ดังนั้นข้อโจมตีในรูป "minimum ต้องห้าม" **หลุดออกไป**; เหลือแค่ swampland-vs-inflation ทั่วไปที่ *ทุก* plateau model แชร์ (และ LMU's thawing DE = swampland-*favoured*). **de Sitter stability / P>0 / swampland-minimum ไม่ใช่ปม/ตัวปิดวงของ LMU.** Single source of truth = **`review/LMU_SYNTHESIS_2026-07-07.md`**. เก็บบันทึกนี้ไว้เป็นประวัติ red-team ห้ามยกกลับเป็นปม LMU.
+
 **Date:** 2026-07-04 · **Status:** [Hypo] throughout (the whole attack is conditional on the *contested* de Sitter swampland conjecture) · **Reproduce:** `code/attack2_swampland_relighting.py` (all numbers recomputed from scratch) · **Team run:** `wf_b4abc9ed-c59` (4 researchers + 1 batch verifier)
 
 Purpose: freeze the adversarial exploration before it drifts. This is a stress-test log, not a claim in the framework.
