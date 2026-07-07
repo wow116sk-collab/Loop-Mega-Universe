@@ -2,6 +2,8 @@
 
 **Date:** 2026-07-07 · **Status:** the objection is removed, the wiring stays [Hypo] · **Reproduce:** `code/filtered_dm_lmu.py` · **Lit-checked first** (CLAUDE.md rule).
 
+> **Stress-test correction (M5).** The specific *filtering* mechanism (Baker–Kopp–Long) requires a **pre-existing hot symmetric phase OUTSIDE the wall** for the wall to filter. LMU's crossing is **cold→hot**: the bubble nucleates from a cold, empty dead end, and the plasma at $T_{\rm reh}$ exists only *inside*, *after* the wall. So there is no external bath to filter — **wall-*filtering* does not apply.** What survives is the weaker, correct statement: dark matter is produced **at / after the hot start** (post-reheating super-heavy thermal/gravitational production), an independent channel that still frees Ω from Penrose's erebon role. Read "filtered DM" below as "post-reheating super-heavy DM production"; the conclusion (DM made at the transition, not Ω → Penrose conflict removed) stands, the mechanism label was wrong. The $10^{17}$–$10^{18}$ vs $10^{19}$ GeV "convergence" with the erebon is 1–2 orders, not exact.
+
 ## The conflict (joint #3)
 
 The wiring identifies Penrose's conformal factor Ω with the **inflaton**. But Penrose's own reading of the dynamical Ω is the **erebon** — Planck-mass (~10⁻⁵ g) **dark matter** created each cycle and decaying gravitationally (CCC). So "Ω = inflaton" appeared to clash with "Ω = dark matter."
