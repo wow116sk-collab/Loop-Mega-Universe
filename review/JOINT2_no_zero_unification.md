@@ -2,6 +2,8 @@
 
 **Date:** 2026-07-07 · **Status:** unifies two open joints into one contested question; does not resolve it · **Lit-checked first** (CLAUDE.md rule).
 
+> **Correction (2026-07-07, deterministic-flash reset).** This document's central move — collapsing joints #1 and #2 into "*is de Sitter stable?*" via **Volovik's Γ>0 decay** — is **superseded**. It was a residue of the *barrier framing* (the reset conceived as a probabilistic vacuum decay that needs P>0). In the current picture the **reset is deterministic**: the survivor **will** evaporate (Hawking — certain), and its terminal flash **triggers** the roll of a field already on the α-attractor plateau (`LMU_SYNTHESIS_2026-07-07.md` §5.3; `code/coupling_field_on_plateau.py`). So the framework does **not need de Sitter to decay** and does **not** rest on the Volovik-vs-BCP question. What survives, and still stands, is **only** the joint-#2 half: $V_{\min}\neq0$ via **quintessence + "no true zero"** (evades Weinberg's exact-0 no-go) — read below for that. The joint-#1 "relighting needs Γ>0 / P>0" half, and the "both joints collapse into de Sitter stability" claim, are **withdrawn**: de Sitter stability / P>0 are field-wide questions LMU *shares*, not LMU closure-blockers. The genuinely LMU-specific open items are the **"+3" spread** [soft] and the **wiring** [Hypo].
+
 ## The principle (Pitarn)
 
 The framework's core carries **no exact zeros** — nothing reaches true 0, because an exact zero is absolute stasis and "activity in the universe would stop." Applied to the dark-energy floor: $V_{\min}$ approaches 0 but is never *exactly* 0.
@@ -32,6 +34,7 @@ The document states the endgame as $V_{\min}=0\Rightarrow H\to0\Rightarrow$ **as
 
 ## Honest status
 
-- **Achieved:** the exact-0 Weinberg wall is removed (quintessence); joints #1 and #2 are unified into the single de Sitter-stability question, with the framework postulating the Volovik ($\Gamma>0$) side.
-- **Not achieved:** the tiny $\Lambda$ value is still unexplained (CC problem); de Sitter stability itself is **[open]/contested**; "no true zero" is a **postulate**, not proven.
+- **Achieved (what stands):** the exact-0 Weinberg wall is removed (quintessence + "no true zero") ⇒ $V_{\min}\neq0$, a **tiny nonzero de Sitter** floor. This half is independent of the reset mechanism and survives the correction above.
+- **Withdrawn (superseded by the deterministic flash):** the "joints #1 and #2 collapse into the de Sitter-stability question" claim and the postulate of the Volovik ($\Gamma>0$) side. The reset does not need de Sitter to decay (see the correction banner); de Sitter stability / P>0 are field-wide, not LMU closure-blockers.
+- **Not achieved:** the tiny $\Lambda$ value is still unexplained (CC problem, shared by every model); "no true zero" is a **postulate**, not proven.
 - **Owners:** Weinberg (CC problem / no-go); Ratra–Peebles / Caldwell–Dave–Steinhardt (quintessence); Volovik 2020/2023 (de Sitter decay); Gibbons–Hawking 1977 ($T=H/2\pi$); Boddy–Carroll–Pollack 2014 (stable side). The read-across and the no-zero postulate are Pitarn's.
