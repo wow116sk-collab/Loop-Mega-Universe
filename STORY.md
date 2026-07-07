@@ -1,11 +1,11 @@
 # The Story of the Universe, Told Plainly
 
-*A five-minute, no-equations telling of the Loop Mega Universe (LMU) picture — V3.26.
+*A five-minute, no-equations telling of the Loop Mega Universe (LMU) picture — V3.27.
 This is a story version of a labeled, cited framework, not a substitute for it: in the
 main document every claim below carries a status tag ([Fact], [Fact-theory],
 [Hypothesis]…) and a named owner in the literature. The numbers here are cross-checked
 by `code/verify_all.py`. LMU is a lens, not a new predictive theory, and it is not
-peer-reviewed. The full version lives in `LMU_V3_26_consolidated.pdf`.*
+peer-reviewed. The full version lives in `LMU_V3_27_consolidated.pdf`.*
 
 ---
 

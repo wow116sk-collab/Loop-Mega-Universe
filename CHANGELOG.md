@@ -7,6 +7,36 @@ the `.tex`).
 
 ---
 
+## v3.27 — 2026-07-07
+
+Deterministic-flash reset + doc-consistency deposit. The reset joint is re-read
+as a *deterministic flash* (the survivor's evaporation is certain → its terminal
+flash triggers a field already on the α-attractor plateau), superseding the 3.26
+"Volovik/P>0 collapse" reading:
+
+- **Reset = deterministic flash, not a probabilistic decay.** No metastable
+  barrier, no tunnelling. Supersedes the 3.26 open-joint (ii)(b) collapse into
+  "is de Sitter stable?"; the 3.26 (ii)(a) result (V_min≠0 via quintessence)
+  still stands.
+- **Endgame chosen = tiny nonzero de Sitter** (V_min = ρ_Λ = (2.3 meV)⁴,
+  anchored to the measured Λ) → finite horizon ceiling S = A/4G ~ 10¹²²;
+  supersedes the Part II "V_min=0 / asymptotic Minkowski / infinite ceiling"
+  wording.
+- **LMU-specific open items reduced to exactly two:** the "+3" spread [soft] and
+  the ω=inflaton wiring [Hypo]. de Sitter stability / swampland / P>0 / V_min=0
+  reframed as field-wide questions LMU shares, not LMU closure-blockers.
+- **Doc-loop fix:** `review/LMU_SYNTHESIS_2026-07-07.md` named the single source
+  of truth for open-item status; JOINT2 / PROOF_STATUS_LEDGER / LMU_SYNTHESIS
+  corrected; six older review records banner-marked as superseded layers; a
+  standing rule added to the working-rules file.
+- Split into its own file; V3.26 kept pristine as a rollback point.
+
+Files: `LMU_V3_27_consolidated.tex`, `LMU_V3_27_consolidated.pdf` (105 pp, 0
+errors, XeLaTeX ×2; 22 figures, unchanged set). `LMU_V3_26_consolidated.*`
+retained as the previous version. No new equation, axiom, or falsifier.
+
+---
+
 ## v3.26 — 2026-07-04
 
 External-review + adjudication deposit. A full document review (136 verified

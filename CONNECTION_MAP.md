@@ -11,7 +11,7 @@
 
 | Code | File | Scope | Standalone? | Tag system it uses |
 |---|---|---|---|---|
-| **LMU** | `LMU_V3_26_consolidated` | Cyclic cosmology — matter ladder, dark-energy field, L0 closure, aeon transition | No — declared *contained within* CoE (ontology), but *evidentially firewalled* | `[Fact] [Fact-theory] [Hypothesis] [Speculation] [Design] [Open] [Dead-end] [Auditor]` |
+| **LMU** | `LMU_V3_27_consolidated` | Cyclic cosmology — matter ladder, dark-energy field, L0 closure, aeon transition | No — declared *contained within* CoE (ontology), but *evidentially firewalled* | `[Fact] [Fact-theory] [Hypothesis] [Speculation] [Design] [Open] [Dead-end] [Auditor]` |
 | **CoE** | `Consciousness_for_Eternity` | Consciousness / substrate / block-universe / survival ledger | Is the container doc (defines the shared ontology) | `[ESTABLISHED] [THEORETICAL] [MINORITY VIEW] [CONTESTED] [HYBRID SYNTHESIS] [USER'S OWN] [SPECULATIVE]` + `[Fact-eq]` |
 | **SB** | `synthetic_body_design_V1_4` | Engineering of a synthetic body / brain-preservation vessel | Yes (engineering brief); couples to CoE at the identity + brain-preservation joints | `[Fact] [Hypothesis] [Speculation] [unverified]` + `[USER'S OWN] [HYBRID SYNTHESIS]` |
 | **RM** | `Robotic_Mining_Architecture_Notes.md` | Off-world robotic-mining architecture | **Yes — explicitly "not part of LMU cosmology"** (evidential); connects only by method + ontology-chain | `[Fact] [Hypothesis] [Speculation] [unverified]` |
