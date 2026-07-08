@@ -29,9 +29,9 @@ Fiducial (Fabian et al. 2006; standard ICM values: $r\approx35$ kpc, $kT\approx3
 | hot ICM present (L2 BCG, cool cores) | $P_{\rm CEAW}>0$ |
 | L3 dwarfs / spirals (no hot ICM) | $P_{\rm CEAW}\approx0$ |
 | **rippled** core | L2 still **active** (feedback heating) |
-| **quiet** core | **approaching the lone L1 survivor** (feedback fading) |
+| **quiet** core | AGN between outbursts (duty-cycle-off) **or** feedback fading toward L1 — *not distinguishable from the ripple state alone* (see Robustness) |
 
-So the ripple state is a **consistency signal** for where a cluster BCG sits on the L2→L1 descent — the quietest cool cores should host the most massive, most isolated (near-survivor) holes.
+So the ripple state is a **consistency signal** for where a cluster BCG sits on the L2→L1 descent — **but only after the repair below**. Naively "quiet = near L1" fails, because a single ripple snapshot samples the AGN duty cycle (~10⁷ yr), not the L2→L1 secular descent (~Gyr). The robust reading is population-statistical and fuel-state-discriminated (next section).
 
 ## Status labels (per the working rules)
 
@@ -53,9 +53,20 @@ $$P_{\rm cav}\propto L_{\rm cool}^{\,0.69\pm0.13}\,,\qquad R^2=0.51,\quad N=29$$
 
 with **median $P_{\rm cav}/L_{\rm cool}\approx26$** — cavity power meets or exceeds the cooling luminosity in every sampled system: a direct, quantitative self-regulating loop (more cooling → more accretion → more feedback → offsets the cooling) with **no environment-dependent efficiency**. This relation **replaced the four η (efficiency) parameters that V3.2 dropped**. **[Fact]** (Rafferty, McNamara, Nulsen & Wise 2006; Bîrzan et al. 2008). CEAW rides *alongside* this as a sub-dominant channel + diagnostic — never the knob.
 
-## Possible falsifier hook (testable, [Open])
+## Robustness — stress-tested and repaired (`code/ceaw_stress.py`)
 
-A stacked X-ray survey correlating **cool-core ripple amplitude** with **BCG black-hole mass / isolation**: LMU predicts the *quietest* cores host the *most near-survivor* (most massive, most isolated) holes. A reversed or null correlation would pressure the L2→L1 diagnostic reading. Depends on pinning $\Gamma_j$.
+An adversarial stress-test found the equation and the number robust, but the *per-object* diagnostic weak. The repairs that make it complete:
+
+- **R1 — the formula is power *carried*, not *dissipated*.** Local heating needs the acoustic damping length ≲ the core (~62 kpc at full Spitzer — Fabian's case), but ICM transport is magnetically suppressed ×10–100, so the waves may escape. **Fix:** read CEAW as a **presence/state readout** (ripple detection/amplitude = "AGN active"), *not* a local heating rate — the heating **budget** stays with P_cav–L_cool.
+- **R3 — "quiet = near L1" fails per-object**, because a ripple snapshot samples the AGN **duty cycle** (~10⁷ yr; ~10²–10³ cycles per Gyr-scale descent), not the L2→L1 stage. **Fix (two parts):** *(i) fuel-state discriminator* — a quiet core with fuel present (short central t_cool ~0.5 Gyr, cold gas, companions) is merely **duty-off** (will re-ignite); a quiet core that is **fuel-exhausted** (t_cool ≳ Hubble, high central entropy, no cold gas, isolated n_gal→0) is **secular-off = near L1**. The robust tag is *quiet **and** fuel-exhausted **and** isolated*, never "quiet" alone. *(ii) population-statistical* — test the duty-cycle-**averaged** feedback (mean ripple power / quiet-and-exhausted fraction) vs BCG mass/isolation across a **large sample**, never a single core.
+- **R2 — the number is order-of-magnitude** (factor ~19 across plausible δP/P, r). **Fix:** use it as a consistency check only; pin Γ_j with a uniform survey (`code/ceaw_gamma_channels.py`).
+- **R4 — domain.** State **hot X-ray halos** (clusters, groups, giant ellipticals), not "clusters only."
+
+**Honest residue:** even repaired, "fuel-exhausted, isolated BCG = near L1" largely **coincides with standard cool-core / BCG fuel-exhaustion evolution** — so CEAW is a robust **consistency diagnostic** ([Hybrid]), **not a unique falsifier** (the true L1 endpoint ~10¹⁰⁰ yr is unobservable).
+
+## Falsifier hook (repaired — population-statistical)
+
+Across a **large, uniform** cool-core sample, bin BCGs by mass/isolation **and by fuel state** (central t_cool, entropy, cold-gas mass, companion count). LMU's L2→L1 descent predicts the **duty-cycle-averaged** feedback activity **declines** for the most massive, most isolated, most **fuel-exhausted** systems (the near-survivors). A flat or reversed trend would pressure the reading. This is a **consistency** test (it coincides with standard fuel-exhaustion evolution), not a unique signature, and it depends on pinning Γ_j.
 
 ## References
 
