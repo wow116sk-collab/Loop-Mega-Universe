@@ -38,12 +38,20 @@ So the ripple state is a **consistency signal** for where a cluster BCG sits on 
 - **[Fact]** — acoustic dissipation in cluster gas is *observed*: Fabian et al. 2006 (Perseus ripples), Hitomi Collaboration 2016 (X-ray spectroscopy), continuing XRISM data.
 - **[Fact-eq]** — the acoustic-power formula and the Perseus number reproduce (textbook acoustics + standard ICM values).
 - **[Hybrid]** — the name "CEAW" and the *channel-decomposition* framing are the author's (Pitarn), **not** from Fabian directly; Fabian supplies the sound-wave physics, not this decomposition.
-- **[Open]** — the channel weights $\Gamma_j$ still need stacked cluster **X-ray surveys** to pin.
+- **[Open]** — the channel weights $\Gamma_j$ still need stacked cluster **X-ray surveys** to pin (open-item provenance: `Codex_Session_12_Phase5_Reframe.md`, per LMU_V3_4). The method + why it is open (the sound-wave fraction $\Gamma_{\rm sound}=P_{\rm CEAW}/(P_{\rm cav}+P_{\rm CEAW})$ comes out order ~10% but scatters ~10× across a heterogeneous sample, input-driven by the poorly-known $\delta P/P$ and $r$) is in `code/ceaw_gamma_channels.py`. Closing it needs one uniform pipeline over a controlled cool-core sample (Chandra/XMM cavities + XRISM ripple/turbulence).
 
 ## Scope limits (do not over-extend — the session's standing discipline)
 
 - CEAW is **descent-side** (in-aeon, L2 cluster, hot ICM). It does **not** bear on the L0→aeon **reset** (the "+3 spread" smoothing / the ω-inflaton wiring — items 1/2 are untouched).
-- It is **not** the growth-regulating knob — that is the **P_cav–L_cool / M_σ self-regulation** (Rafferty et al. 2006; Bîrzan et al. 2008; King 2003; Silk–Rees 1998), a separate mechanism already in the main doc (L174–L355).
+- It is **not** the growth-regulating knob — that is the **P_cav–L_cool self-regulation** (see the next section), a separate mechanism (also carried in the main doc's M_σ/King feedback, L174–L355).
+
+## The real self-regulation knob (separate from CEAW — P_cav–L_cool)
+
+Per `LMU_V3_4` §12.1.4, the *growth-regulating* self-regulation is **not** CEAW but the **cavity-power–cooling** relation (the X-ray-cavity, pdV-work channel):
+
+$$P_{\rm cav}\propto L_{\rm cool}^{\,0.69\pm0.13}\,,\qquad R^2=0.51,\quad N=29$$
+
+with **median $P_{\rm cav}/L_{\rm cool}\approx26$** — cavity power meets or exceeds the cooling luminosity in every sampled system: a direct, quantitative self-regulating loop (more cooling → more accretion → more feedback → offsets the cooling) with **no environment-dependent efficiency**. This relation **replaced the four η (efficiency) parameters that V3.2 dropped**. **[Fact]** (Rafferty, McNamara, Nulsen & Wise 2006; Bîrzan et al. 2008). CEAW rides *alongside* this as a sub-dominant channel + diagnostic — never the knob.
 
 ## Possible falsifier hook (testable, [Open])
 
