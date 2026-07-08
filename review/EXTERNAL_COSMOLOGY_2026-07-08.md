@@ -11,6 +11,16 @@
 - **[Fact-th, field-wide]** the vanilla α-attractor/Starobinsky at reheating-allowed N~50–60 predicts n_s ~0.960–0.967 — now ~1.5–2σ **below** ACT's 0.971–0.975; matching ACT needs N~69–81, which over-shoots reheating. A mild plateau-vs-ACT tension, **shared by every plateau model** (extended α-Starobinsky / modified reheating fixes exist: [2606.24131](https://arxiv.org/abs/2606.24131), [2510.18656](https://arxiv.org/pdf/2510.18656)). LMU inherits the fix; it does not create the problem.
 - **Not a contradiction:** the doc uses n_s as a measured *input*, not a locked prediction. Honest caveat: the ACT shift is ~2σ, not a definitive overturn of Planck.
 
+### Resolution — an extended α-attractor removes the tension (borrowed, at a cost)
+
+The tension is **removable** (`code/act_alpha_extension.py`):
+
+- **Standard α=1 plateau** at reheating N~55–60 gives n_s ~0.964–0.967 → **2.2–3.1σ** below ACT's 0.9743±0.0034; exact match needs N~78 (over-shoots reheating).
+- **Route A — modified reheating** (LMU's free-lunch EoS is tunable): a stiffer reheating raises the observable N to ~60–65 → n_s ~0.967–0.969 → cuts the tension to **~1.5σ** (consistent with ACT DR6 *alone*, 0.9666±0.0077). Cheap, partial.
+- **Route B — the δ-deformation** (Shobcha–Risdianto–Budhi 2026, [2606.24131](https://arxiv.org/abs/2606.24131)): a single small δ>0 (exponential or polynomial plateau deformation) shifts n_s up by the needed ~+0.008 to reach 0.974 at fixed, reheating-consistent N~60, with **r nearly unchanged (~0.0033, under 0.038)**. Tension **removed**.
+- **LMU reading:** the ω-inflaton is the conformal / trace-anomaly scalaron (α=1 from the R² completion). Both routes are natural to it — reheating is the free lunch (A), and a higher-curvature scalaron correction (R³, R⁴…) **is** a δ-deformation (B). So LMU **absorbs** ACT DR6; the framework does not break. `[Fact-th, borrowed]` / `[Hypo]` (the specific LMU δ).
+- **Honest cost (no free lunch here):** the δ needed (Δn_s~+0.008) is **not** the EFT-natural R³ size (which shifts α by ~10⁻¹⁹, far too small), so Route B is a **tuned** deformation — LMU trades "α=1 is uniquely EFT-natural" for "α=1 + a fitted δ" (predictivity drops). Route A is cheaper but only partial (~1.5σ). It is **field-wide** (every plateau pays it) and **conditional** (ACT's shift is ~2σ, may revert). **Verdict: tension removable (B) / reducible (A), borrowed, at the cost of one tuned parameter — not a clean win; r stays under the bound throughout.**
+
 ## 2. Negative-neutrino-mass anomaly (DESI DR2 + CMB lensing, 2024–25) — favourable to LMU
 
 - **[Fact]** DESI+CMB constrains Σmν **below** the oscillation floor (~0.06 eV), with the max-likelihood drifting into formally **negative** territory at ~2–3σ ([PRD 111 083507](https://link.aps.org/doi/10.1103/PhysRevD.111.083507); [2503.14744](https://arxiv.org/abs/2503.14744)). "Negative neutrino mass" is **unphysical — an anomaly, not a fact of nature.**
