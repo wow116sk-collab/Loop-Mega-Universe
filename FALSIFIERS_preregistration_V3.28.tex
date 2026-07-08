@@ -1,0 +1,142 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage[margin=2.1cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=NavyBlue,urlcolor=NavyBlue,pdftitle={LMU Pre-registered Falsifiers V3.28}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=1.5pt,topsep=2pt}
+\newcommand{\st}[1]{\texttt{[#1]}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\renewcommand{\arraystretch}{1.25}
+
+\title{\vspace{-1.2cm}\textbf{Loop Mega Universe (LMU) --- Pre-registered Falsifiers}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-1.4cm}
+
+\begin{center}\itshape A time-stamped registration of LMU's falsifiable predictions, fixed before the deciding data.\end{center}
+
+\begin{itemize}
+\item \textbf{Framework:} Loop Mega Universe (LMU) --- a cyclic black-hole cosmology (a \emph{lens/synthesis}, not a new predictive theory).
+\item \textbf{Document of record:} \texttt{LMU\_V3\_28\_consolidated.pdf} (V3.28, 2026-07-08). Where this registration and the \texttt{.tex} disagree, the \texttt{.tex} governs.
+\item \textbf{Author:} Pitarn Rungsiyapornratana \textperiodcentered\ ORCID \href{https://orcid.org/0009-0004-6411-2201}{0009-0004-6411-2201}
+\item \textbf{Concept DOI:} \href{https://doi.org/10.5281/zenodo.20692157}{10.5281/zenodo.20692157} \textperiodcentered\ \textbf{Source:} \href{https://github.com/wow116sk-collab/Loop-Mega-Universe}{github.com/wow116sk-collab/Loop-Mega-Universe} \textperiodcentered\ \textbf{License:} CC-BY-4.0
+\item \textbf{Numbers reproduce from:} \texttt{code/verify\_all.py} (CODATA spine, Klein--Gordon $m$-scan, relic statistics) --- ALL PASS at V3.28.
+\end{itemize}
+
+\hrulefill
+
+\section*{Why this document exists (the point of pre-registration)}
+The deciding measurements for LMU's distinctive predictions are largely \textbf{still to come} --- DESI-Y5 ($\sim$2027) and DESI DR3 / Euclid / Roman; X-ray-reflection / NewAthena + LISA (late 2030s); LiteBIRD-class B-mode (2030s); ongoing CMB anomaly-pattern searches. This file \textbf{fixes the thresholds now}, so a later ``verdict right, numbers wrong'' outcome cannot be papered over by moving the line after the fact (repository rule R6: a moved threshold is the worst failure mode). Each fixed threshold below is \textbf{immutable}: it must not be relaxed if data later push against the model.
+
+\textbf{Honesty preamble (recorded, not hidden).} LMU's \emph{central} claim --- that our aeon was seeded by the terminal flash of a previous aeon's last black hole --- is \textbf{directly unfalsifiable}: we cannot observe prior aeons. The lines below (F1, F2, F4, F5 live with fixed thresholds; F6 a watch-line; F3 retired) therefore test the framework's \textbf{distinctive consequences within our own aeon}, not the cycle itself. \textbf{Note on numbering:} these F-labels follow the public README set; the document's \emph{internal} F-labels differ (e.g.\ its internal ``F4'' is the Hawking-point test $=$ F5 here). Several lines were \textbf{reframed for the framework's changed reading} (deterministic-flash reset; tiny-de-Sitter endgame) --- see F5, F6, and the Registration statement. LMU contains \textbf{no new equation}; its one quantitative prediction (the tensor ratio $r$) is Starobinsky's, inherited \emph{conditional on the wiring} ($\omega =$ the prior aeon's conformal factor $=$ the $\alpha$-attractor inflaton, status \st{Hypo $\to$ soft/favoured}).
+
+\textbf{Label legend:} \st{Fact} measured/peer-reviewed \textperiodcentered\ \st{Fact-th} from established theory \textperiodcentered\ \st{Hypo} the assembly/wiring \textperiodcentered\ \st{Open} unsolved.
+
+\hrulefill
+
+\section*{F1 --- Dark energy: canonical thawing quintessence, no phantom crossing}
+\begin{itemize}
+\item \textbf{Prediction.} LMU's dark-energy field $A$ is \textbf{canonical quintessence with $w(z)\geq-1$ at all $z$} and \textbf{cannot cross $-1$} (Vikman 2005). A thawing field matches DESI's $w_0$ \textbf{or} $w_a$, not both cleanly; DESI's apparent $w<-1$ crossing is read as a \textbf{CPL-parametrisation artifact} (physical non-phantom thawing fits comparably --- Dinda--Maartens 2025; de Souza et al.\ 2025). \st{Fact-th} / \st{Hypo} (the reading).
+\item \textbf{Fires (falsified) IFF:} DESI-Y5 ($\sim$2027) \textbf{sustains $w(z)<-1$ at high $z$ at $\gtrsim3\sigma$, with systematics resolved}, and the crossing \textbf{survives a physical (non-CPL) reanalysis}.
+\item \textbf{Does NOT fire if:} the data are $w\geq-1$ but evolving; a phantom hint is $<3\sigma$ or systematics-limited; the crossing appears only under CPL.
+\item \textbf{Scope (what F1 kills):} a confirmed non-CPL crossing falsifies the \textbf{canonical} $A$-field (the spine's choice); a quintom / k-essence upgrade would survive it, at the cost of a ghost. So F1 kills the \emph{canonical} field, not every dark-energy variant.
+\item \textbf{The $3\sigma$ line is fixed now and must not be moved.}
+\item \textbf{Test / timeline:} DESI-Y5, $\sim$2027.
+\item \textbf{Status at registration (2026-07):} DESI DR2 rejects $\Lambda$CDM at 2.8--4.2$\sigma$ with a CPL crossing near $z\sim0.5$ --- this \textbf{sharpens} F1 but does \textbf{not} fire it (CPL artifact; defence holds). One item to watch.
+\end{itemize}
+
+\section*{F2 --- Black-hole spin: isolated over-massive relics spin \emph{high}, merger-built BCGs spin \emph{low}}
+\begin{itemize}
+\item \textbf{Prediction.} The model forces \textbf{isolated over-massive relics (NGC 1277, Mrk 1216) to spin HIGH} (accretion-frozen, bucking the general high-mass $\to$ low-spin trend), while \textbf{merger-built cluster BCGs spin LOW} --- a \emph{decoupling} of spin from mass. Conditional on \textbf{coherent cocoon feeding $f_{\rm coh}\gtrsim0.15$} (open joint J3, \st{Open}). For the carry-through variant, the inherited spin axis tilts past $45^\circ$ after the survivor accretes $\sim$0.77 of its mass in the new aeon. \st{Fact-th} / \st{Open} (the $f_{\rm coh}$ condition).
+\item \textbf{Fires (falsified) IF any of:} (a) a local over-massive \textbf{isolated relic is measured to spin LOW}; (b) a \textbf{clear major merger is found in such a relic}; (c) \textbf{the super-Eddington dense-cocoon wind is shown to shut off the hole's \emph{own} accretion ($M$--$\sigma$ self-regulation), not merely the host's star formation} --- LID-568 currently shows the \emph{latter} (host SF only), which is what the mechanism needs; the \emph{former} would remove the isolated-relic over-mass route.
+\item \textbf{Sharper cluster-side threshold:} on the merger/cluster (low-spin) side, only a confirmed \textbf{near-maximal spin $a_\star\gtrsim0.9$} would tension the merger-spin-down expectation ($a_\star\sim0.55$).
+\item \textbf{Test / timeline:} X-ray reflection spectroscopy of accreting relics (now $\to$ 2030s); NewAthena + LISA (late 2030s) for the carry-through axis; BHEX-era spin history.
+\item \textbf{Status at registration (2026-07):} M87* spin is \textbf{contested} --- Drew et al.\ 2025 ($a_\star\gtrsim0.8$, Doppler beaming, a lower limit) vs Wong et al.\ 2025 (polarimetry, disfavours high spin) --- logged as an \textbf{offsetting flag} (\st{Open --- contested}), not a falsification. The cluster spin-down expectation ($a_\star\sim0.55$) vs $a_\star\gtrsim0.8$ is a tension (factor 2.6--10.6 $\to$ an aligned-merger fraction $\geq62\%$).
+\end{itemize}
+
+\section*{F3 --- $P(k)$ re-initialisation --- RETIRED / re-scoped (recorded for honesty)}
+\begin{itemize}
+\item The earlier ``primordial power-spectrum re-initialisation'' falsifier was \textbf{ruled and re-scoped at V3.12}, and is now \textbf{closed-conditional} (horizon exile: every finite wall/patch scale exits the $H_\infty$ horizon in finite $N$). It is \textbf{not a live falsifier line} at V3.28. Listed so the registry states plainly which lines are active and which were retired. \st{Fact-th, conditional}.
+\end{itemize}
+
+\section*{F4 --- Single-instanton origin signature: a primordial tensor ratio in the $\alpha$-attractor plateau band}
+\begin{itemize}
+\item \textbf{Prediction.} The $\sim$$10^{16}$\,GeV ignition (an $\alpha$-attractor plateau) leaves a primordial \textbf{tensor-to-scalar ratio in the plateau band}: \textbf{$r\approx0.0037$} ($\alpha=1$, Starobinsky, $N=57$) up to \textbf{$r\approx0.009$} ($\alpha=2.44$); under ACT DR6's higher $N$ (69--81), \textbf{$r\approx0.0018$} ($\alpha=1$). \textbf{All below the current bound $r<0.036$--$0.038$} (BICEP/Keck). The $(n_s,r)$ point sits \textbf{on the $\alpha$-attractor locus}; the ignition B-mode is the \textbf{only} channel that reaches us (direct-detection GW is symmetry-suppressed and buried $\sim$5--7 orders below the astrophysical background). \st{Fact-th, borrowed, conditional on the wiring}.
+\item \textbf{Fires (falsified) IF:} LiteBIRD-class sensitivity measures \textbf{$r$ inconsistent with the $\alpha$-attractor plateau band} --- e.g.\ a robust detection of \textbf{$r$ well above the plateau ceiling}, \textbf{or} an $(n_s,r)$ locus \textbf{incompatible with a single-field plateau}.
+\item \textbf{Does NOT fire if:} $r$ is measured anywhere in the plateau band (0.0018--0.009) consistent with the $(n_s,r)$ attractor line, or a null below current sensitivity.
+\item \textbf{Sharper thresholds (from the document):} a single quadratic $A$-field serving as \emph{both} inflaton and dark energy gives \textbf{$r=8/N\approx0.14$ --- already excluded} by BICEP/Keck ($r<0.036$), which is \emph{why} a separate plateau generator (Starobinsky / $\alpha$-attractor) is required. A \textbf{reverse} line: a firm \textbf{$r<10^{-3}$} would favour the ekpyrotic (Ijjas--Steinhardt) rival over an LMU-type plateau. \textbf{Scope:} the $\Phi_{\rm gen}\sim10^{16}$\,GeV ignition scale is \textbf{not an axiom}, so a differently-measured $r$ \emph{shifts the scale} rather than killing the loop --- F4 is a \textbf{comparative / differential} signature, not a make-or-break falsifier.
+\item \textbf{Test / timeline:} LiteBIRD-class B-mode polarisation, 2030s.
+\item \textbf{Status at registration (2026-07):} consistent (predicted $r$-band under the bound); untested at the required sensitivity. Caveat: $r$ is \textbf{not} an LMU-original number --- it is Starobinsky's, inherited conditional on the wiring; a confirmation supports the $\alpha$-attractor ignition, it does not \emph{uniquely} single out LMU.
+\end{itemize}
+
+\section*{F5 --- No CCC-style Hawking points or concentric circles (a clean departure from bare CCC)}
+\begin{itemize}
+\item \textbf{Prediction.} LMU predicts the \textbf{ABSENCE} of Penrose-CCC-style \textbf{Hawking points} and \textbf{concentric low-variance circles} in the CMB. Two mechanisms give the absence: \textbf{horizon exile} (every \emph{other} island's terminal flash sits outside our horizon) and --- decisively under the current reading --- the \textbf{deterministic-flash reset ignites inflation}, whose $\alpha$-attractor plateau (57+ e-folds) \textbf{erases} any prior-aeon imprint. A clean discriminator from \emph{bare} CCC, which predicts the circles. \st{Fact-th, conditional on the wiring + inflation}.
+\item \textbf{Fires (falsified) IF:} a \textbf{confirmed detection} of CCC Hawking points / concentric circles. Per the document's own stakes flag, a confirmed detection does not merely re-open a sub-item --- it \textbf{breaks horizon exile itself}.
+\item \textbf{Reframed for the changed thinking (2026-07):} the document's older caveat --- ``absence is \emph{predicted} only on the B-primary \emph{nucleation} joint, merely \emph{permitted} on the B-alt \emph{rescale} joint'' --- is a \textbf{residue of the superseded barrier framing}. The reset is now a \textbf{deterministic flash $\to$ inflation}, and inflation erases prior-aeon structure regardless of the old nucleation-vs-rescale fork, so the absence is predicted under the current reading (firmer, not fork-conditional).
+\item \textbf{Test / timeline:} CMB anomaly-pattern searches (Gurzadyan--Penrose 2010; An--Meissner--Nurowski--Penrose 2020; Meissner--Penrose 2025), ongoing.
+\item \textbf{Status at registration (2026-07):} \textbf{contested; consistent with absence.} Detection claims disagree --- AMNP 2020 report 99.98\% significance; Jow \& Scott 2020 find $\sim$87\% ($\sim$1$\sigma$) after ring-size marginalisation. No confirmed detection stands. (A confirmed Gpc-scale cross-aeon structure --- the Giant Arc / Big Ring, itself contested --- would fall in the same basket.)
+\end{itemize}
+
+\section*{F6 --- The endgame is a \emph{tiny positive} de Sitter, not a future AdS crunch}
+\begin{itemize}
+\item \textbf{Prediction (current reading).} LMU's chosen endgame is a \textbf{tiny nonzero de Sitter}: $V_{\min}=\rho_\Lambda=(2.3\,\text{meV})^4$, \textbf{anchored to the measured $\Lambda$}, so dark energy \textbf{asymptotes to a positive constant} ($H_\infty>0$, $w\to-1$) --- \emph{not} to zero (the older ``Minkowski / $A\to0$'' body prose, now \textbf{superseded}) and \emph{not} to a negative floor (a future AdS transition $\to$ crunch). \st{Fact-th, conditional}; the endgame choice is \st{Design}.
+\item \textbf{Fires (falsified) IF:} DESI DR3 / Euclid / Roman establish a \textbf{future AdS transition} (dark-energy density crossing to negative, $V_{\min}<0$) --- contradicting the positive-de-Sitter asymptote the endgame commits to.
+\item \textbf{Reframed for the changed thinking (2026-07):} the document's older ``$V_{\min}=0$ (Minkowski) vs $V_{\min}<0$ (AdS)'' discriminator is \textbf{superseded on the $V_{\min}=0$ side} --- the framework now commits to a \emph{tiny positive} de Sitter. The live discriminator is therefore \textbf{positive-dS (LMU) vs future-AdS (rival)}.
+\item \textbf{NOT the same as} the field-wide ``\textbf{de Sitter \emph{stability}} ($\Gamma>0$ vs $\Gamma=0$)'' question, which LMU shares and does \textbf{not} list as an open item. F6 is the observational \textbf{sign of $V_{\min}$} (positive vs negative), not the decay-rate question.
+\item \textbf{Honest status (leans rival):} \textbf{no fixed $\sigma$ threshold is pre-registered} for this line, and current data \textbf{lean against} it --- Gialamas et al.\ 2025 report a $\sim$93.8\% preference for a future AdS transition. Registered here as a \textbf{live tension to watch} (DESI DR3 / Euclid / Roman era), not a fixed-threshold falsifier; shared with other positive-$\Lambda$ models, not unique to LMU.
+\end{itemize}
+
+\hrulefill
+
+\section*{Corroborate vs falsify --- at a glance}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.3cm} Y Y >{\raggedright\arraybackslash}p{2.6cm}@{}}
+\toprule
+\textbf{Line} & \textbf{Corroborated if} & \textbf{Falsified (fires) iff} & \textbf{Decider (era)} \\
+\midrule
+\textbf{F1} dark energy & $w\geq-1$ evolving; crossing is CPL-only & $w<-1$ at high $z$, $\geq3\sigma$, systematics resolved, non-CPL & DESI-Y5 ($\sim$2027) \\
+\textbf{F2} BH spin & isolated relics spin high, BCGs low & isolated over-massive relic spins low; a major merger in one; cocoon wind shuts off the hole's own accretion; or $a_\star\gtrsim0.9$ cluster-side & X-ray reflection; NewAthena+LISA (late 2030s) \\
+\textbf{F3} $P(k)$ & --- (retired) & --- (re-scoped at V3.12, closed-conditional) & --- \\
+\textbf{F4} tensor $r$ & $r$ in 0.0018--0.009 on the $(n_s,r)$ locus & $r$ outside the plateau band / off the attractor line (comparative, not make-or-break) & LiteBIRD-class (2030s) \\
+\textbf{F5} no Hawking pts & sustained null on CCC circles & a confirmed Hawking-point / circle detection (breaks horizon exile) & CMB anomaly searches (ongoing) \\
+\textbf{F6} endgame sign (watch) & DE asymptotes positive (tiny dS) & a confirmed future AdS transition ($V_{\min}<0$); no fixed $\sigma$; leans rival now & DESI DR3 / Euclid / Roman \\
+\bottomrule
+\end{tabularx}
+
+\hrulefill
+
+\section*{Explicitly NOT falsifier lines (recorded for honesty)}
+These are in the document but are \textbf{not} registrable falsifiers --- stated so the registry cannot be read as claiming more than it does:
+\begin{itemize}
+\item \textbf{Dark-matter nature / the 5:1 baryon:DM ratio} --- \textbf{matched, not predicted}. LMU re-mints DM as a thermal relic each aeon; the ratio and relic nature are \emph{inputs}, and direct-detection bounds (LZ/XENONnT) enter only as an exclusion corridor the model must fit inside. \textbf{No DM-mass or cross-section prediction.}
+\item \textbf{The re-initialisation targets --- $n_s,A_s,r,\Omega_k,f_{\rm NL}$, isocurvature} --- are \textbf{declared inputs} the generator must hit (Planck 2018 values), \emph{not} predictions. (F4's $r$ is the $\alpha$-attractor \emph{consequence} of the plateau, a distinct use.)
+\item \textbf{CMB spectral distortions ($\mu,y$)} --- LMU predicts \emph{no} distortion; satisfied by tens of orders (FIRAS). A consistency pass, not a discriminator.
+\item \textbf{PTA / NANOGrav stochastic GW background} --- \emph{supports} the SMBH-merger assumption; a consistency/cleanliness bound, not a unique falsifier.
+\item \textbf{CEAW (Cosmic Entropy Acoustic Waves)} --- a within-aeon L2 \textbf{consistency re-check} (channel weights $\Gamma_j$ \st{Open}), explicitly \emph{not} a unique falsifier or a growth knob.
+\item \textbf{The ``too-early / lump-seeded'' seed-flux channel} --- a bare ``carry-through prediction'' with \textbf{no observable or threshold} in the document; the doc itself cautions that high-$z$ AGN over-massiveness can be a virial-mass artifact (up to 1 dex) and anchors the relic claim on \emph{dynamical} masses. Not registrable as-is.
+\end{itemize}
+
+\hrulefill
+
+\section*{Registration statement}
+These predictions and thresholds are registered as of \textbf{2026-07-08 (V3.28)}, before the deciding data. The \textbf{fixed, immutable} thresholds --- F1's $3\sigma$ non-CPL line; F2's low-spin / major-merger / own-accretion-shutoff breakers (and the $a_\star\gtrsim0.9$ cluster line); F4's plateau band (with the $r=0.14$ exclusion and the $r<10^{-3}$ reverse line); F5's \emph{confirmed-detection} breaker --- will \textbf{not} be relaxed if later data push against the model. F6 is registered as a \textbf{watch-line without a fixed $\sigma$ threshold} (and currently leans rival), and F3 is stated as \textbf{retired} (re-scoped at V3.12), not silently dropped.
+
+\textbf{Reframed for the changed framework (important).} The document changed its reset/endgame reading after the earlier body text was written (append-only): the reset is now a \textbf{deterministic flash} (not a barrier/nucleation-vs-rescale fork), and the endgame is a \textbf{tiny positive de Sitter} (not $V_{\min}=0$ / Minkowski). The \texttt{.tex} body still carries the superseded prose \emph{verbatim} (append-only), with the 3.27 revision entries as the reconcile. \textbf{F5 and F6 above are written against the \emph{current} reading}, not the superseded body prose --- which is why they had to be reframed (F5 firmer; F6 a positive-dS-vs-AdS sign test). SSOT for the current state: \texttt{review/LMU\_SYNTHESIS\_2026-07-07.md}.
+
+The framework's own immediate open item is \textbf{one linked initial-condition question} (the wiring, \st{Hypo $\to$ soft/favoured}, carrying the relocated residue of the former ``+3 spread'', now the standard flatness problem). Field-wide questions LMU shares --- \textbf{de Sitter \emph{stability} ($\Gamma$)}, the measure problem, the swampland --- are \textbf{not} LMU closure-blockers and are \textbf{not} falsifier lines (distinct from F6, the observational \emph{sign} of $V_{\min}$).
+
+\textbf{Provenance (document of record, V3.28):} \S``Falsifiers'' (F2 relic-spin); \S``DESI status and the pre-registered falsifier'' (F1, verbatim); the ignition-GW revision record (F4); Part~VII \S7 / ledger item (D) + Part~IV B-primary (F5); Part~VI \S18 ``Open joint 2 --- sign of $V_{\min}$'' + the 3.27 tiny-de-Sitter revision entries (F6). SSOT: \texttt{review/LMU\_SYNTHESIS\_2026-07-07.md}.
+
+\end{document}
