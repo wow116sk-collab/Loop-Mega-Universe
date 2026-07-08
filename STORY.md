@@ -1,11 +1,11 @@
 # The Story of the Universe, Told Plainly
 
-*A five-minute, no-equations telling of the Loop Mega Universe (LMU) picture — V3.27.
+*A five-minute, no-equations telling of the Loop Mega Universe (LMU) picture — V3.28.
 This is a story version of a labeled, cited framework, not a substitute for it: in the
 main document every claim below carries a status tag ([Fact], [Fact-theory],
 [Hypothesis]…) and a named owner in the literature. The numbers here are cross-checked
 by `code/verify_all.py`. LMU is a lens, not a new predictive theory, and it is not
-peer-reviewed. The full version lives in `LMU_V3_27_consolidated.pdf`.*
+peer-reviewed. The full version lives in `LMU_V3_28_consolidated.pdf`.*
 
 ---
 
@@ -98,12 +98,20 @@ arrow of time re-arms because a hot *smooth* start is a low-entropy start relati
 the freshly reopened ceiling: the first drop of ink on a new sheet of paper, not the
 old sheet imperfectly erased.
 
-## Closing — two open wounds, three appointments
+## Closing — one open seam, three appointments
 
-The document states its own two unsolved problems on page one. **One:** does the fire
-actually relight every round — is the new vacuum "seedable" again? That is a live,
-field-wide dispute, not a private gap. **Two:** an unbounded L0 walks straight into the
-measure problem of eternal-inflation cosmology, which nobody has solved.
+The framework is honest about where it is unfinished. Its one genuinely-its-own gap is
+the **wiring**: it says the spark that lights each new aeon is the *leftover shape of the
+previous one* — the old aeon's "conformal factor" becoming the new one's inflaton. That
+identification is now *favoured* by the physics (the leftover shape naturally makes a
+flat inflating plateau, and the field that does it has to start massless — exactly an
+inflaton, not dark matter), but it is not yet *forced*; nobody has closed that last step
+(it is cyclic cosmology's own open problem). Everything the older telling called a second
+"wound" — does the fire relight, does an unbounded substrate misbehave — turns out to be a
+question *every* cyclic or inflationary cosmology shares, not LMU's private hole: the
+relight is read as a **certain** event now (the last black hole *will* evaporate, and its
+final flash lights a field already poised to burn), so there is no separate "will it
+reseed?" gamble.
 
 And it keeps three appointments with reality: **DESI-Y5 (~2027)** — does dark energy
 thaw; the **BHEX era (2030s)** — which way black-hole spin points; **LiteBIRD** — a

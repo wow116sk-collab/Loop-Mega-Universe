@@ -1,6 +1,6 @@
 # The wiring, tightened — ω (CCC conformal factor) = the α-attractor inflaton
 
-**Date:** 2026-07-08 · **The biggest LMU-specific gap (the one place LMU departs from established physics).** This does **not** close it — the wiring stays `[Hypo]` — but it **shrinks it to its irreducible core** by demarcating what is borrowed/owned from what LMU alone asserts. Lit-checked. **SSOT for open-item status:** `review/LMU_SYNTHESIS_2026-07-07.md` (wiring = item 2, still `[Hypo]`).
+**Date:** 2026-07-08 · **The biggest LMU-specific gap (the one place LMU departs from established physics).** This does **not** close it — the wiring is `[Hypo → soft/favoured]` — but it **shrinks it to its irreducible core** by demarcating what is borrowed/owned from what LMU alone asserts, then **tilts that core toward the plateau** via a naturalness/selection argument (see "Selection argument" below; the plateau reading is *favoured*, not forced — amplitude still tuned, erebon not forbidden). Lit-checked. **SSOT for open-item status:** `review/LMU_SYNTHESIS_2026-07-07.md` (wiring = item 2, `[Hypo → soft/favoured]`; as of 2026-07-08 it also carries the relocated residue of the "+3 spread", now reduced to the standard flatness problem).
 
 ## The claim
 LMU identifies **ω = the prior aeon's CCC conformal factor Ω = the α-attractor inflaton** that drives the new aeon's inflation. Before this note it read as one broad, un-owned `[Hypo]` ("invent Ω and call it the inflaton").
@@ -23,7 +23,7 @@ CCC's phantom-field equation fixes Ω only *up to initial data* (Tod 2023); Penr
 
 - **Before:** "Ω = inflaton" — one broad, un-owned hypothesis.
 - **After:** L1–L5 are **owned/borrowed** (Ω *does* become a physical scalar post-crossover; conformal scalars *do* α-attract; the reciprocal wiring and the DM-freeing are in place; a CCC→inflaton precedent exists). The residue is **one sharp choice**: the post-crossover conformal scalar *inflates* (α=1 plateau) rather than being dark matter (mass) — a reading of **what the CCC-provided scalar does**, differing from Penrose's DM reading (conflict removed) but not *forced* over it.
-- **Status unchanged in kind:** the wiring is still `[Hypo]`; LMU is still a hybrid assembly. What changed is **localization** — the novelty is now one demarcated line, most of the machinery is borrowed, and "is Ω even a physical field?" is answered *by CCC itself* (yes, post-crossover), not left hanging.
+- **Status:** the wiring moved `[Hypo] → [Hypo → soft/favoured]` (via the selection argument below); LMU is still a hybrid assembly. What changed is **localization + a tilt** — the novelty is now one demarcated line, most of the machinery is borrowed, "is Ω even a physical field?" is answered *by CCC itself* (yes, post-crossover), and the last line is naturalness-*favoured* toward the plateau (not forced).
 - **What would close it (out of reach here):** a derivation, from the CCC phantom-field equation + a naturalness/selection principle, that the post-crossover conformal scalar's potential is the inflating plateau rather than the erebon mass. That is **CCC's own open problem** ("how to fix Ω uniquely"), field-wide — LMU inherits it, does not create it.
 
 ## Selection argument — why the plateau is *favoured* over the erebon (2026-07-08)
