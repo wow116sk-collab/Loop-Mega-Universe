@@ -1,6 +1,6 @@
 # What the math is doing — a plain-language glossary for LMU V3.13
 
-**Governance rule:** this glossary *describes* `LMU_V3_26_consolidated.tex` (it was
+**Governance rule:** this glossary *describes* `LMU_V3_28_consolidated.tex` (it was
 drafted against the V3.13 snapshot); where the two disagree, the .tex governs. **Reading rule:** glosses are for *reading*, not
 *reasoning* — never derive a conclusion from the metaphor; derive from the equation,
 then check the metaphor survived. **Precision rule:** significant figures are sacred

@@ -1,13 +1,13 @@
 # The Loop Mega Universe — A Companion
 
-**Plain-language companion to `LMU_V3_26_consolidated.tex`** *(drafted against the V3.13 snapshot)*
+**Plain-language companion to `LMU_V3_28_consolidated.tex`** *(drafted against the V3.13 snapshot)*
 Pitarn Rungsiyapornratana · Bangkok · 2026 · draft v0.1
 
 ---
 
 > **The one rule that governs this whole document.**
 > This companion *describes* the consolidated mathematical pass,
-> `LMU_V3_26_consolidated.tex` (drafted against the V3.13 snapshot). That file
+> `LMU_V3_28_consolidated.tex` (drafted against the V3.13 snapshot). That file
 > is the **sole authoritative source**.
 > Wherever this companion and the .tex disagree — a number, a tag, a claim, a
 > date — **the .tex governs and this companion is wrong.**
@@ -771,7 +771,7 @@ header applies — the .tex governs it too.)*
 
 # What the math is doing — a plain-language glossary for LMU V3.13
 
-**Governance rule:** this glossary *describes* `LMU_V3_26_consolidated.tex` (it was
+**Governance rule:** this glossary *describes* `LMU_V3_28_consolidated.tex` (it was
 drafted against the V3.13 snapshot); where the two disagree, the .tex governs. **Reading rule:** glosses are for *reading*, not
 *reasoning* — never derive a conclusion from the metaphor; derive from the equation,
 then check the metaphor survived. **Precision rule:** significant figures are sacred
@@ -940,4 +940,4 @@ not — the gloss is wrong.*
 
 ---
 
-*End of companion draft v0.1. Authority: `LMU_V3_26_consolidated.tex` (drafted against the V3.13 snapshot). Where this document and the .tex disagree, the .tex governs.*
+*End of companion draft v0.1. Authority: `LMU_V3_28_consolidated.tex` (drafted against the V3.13 snapshot). Where this document and the .tex disagree, the .tex governs.*

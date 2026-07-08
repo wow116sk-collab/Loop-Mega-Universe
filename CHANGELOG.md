@@ -7,6 +7,83 @@ the `.tex`).
 
 ---
 
+## v3.28 — 2026-07-08
+
+Release consolidation of the post-3.27 run (all append-only revision entries in
+the `.tex`, gathered under one version). No new equation, axiom, or falsifier;
+net epistemic direction down (open items reduced/localized); the Planck spine
+(N=57, r=0.0037) stays the reference.
+
+- **CEAW reinstated** as an in-aeon, descent-side L2 **state-diagnostic** (Cosmic
+  Entropy Acoustic Waves; present in V3.4 §12.1.4, trimmed in the 3.4→3.27
+  consolidation) — stress-tested and repaired to fuel-state-discriminated +
+  population-statistical; a consistency re-check, *not* a growth knob or a
+  reset-joint item. (`code/ceaw_*.py`, `review/CEAW_L2_diagnostic.md`.)
+- **External-cosmology refresh (2024–2026)** folded in as *drift records*, tagged
+  at true level: ACT DR6 / SPT-3G n_s up ~1.5–2σ (recompute N, r — LMU still
+  passes); the negative-Σmν anomaly (favourable to evolving DE); CCBH strengthened
+  but scoped off; DESI DR2 phantom crossing sharpening F1. No hard contradiction.
+  (`review/EXTERNAL_COSMOLOGY_2026-07-08.md`.)
+- **ACT-tension resolution:** an extended α-attractor (modified reheating / a
+  δ-deformation) removes the plateau-vs-ACT tension — borrowed, at the cost of one
+  tuned parameter; field-wide, not LMU-specific. (`code/act_alpha_extension.py`.)
+- **Wiring bridge tightened + selection argument:** ω = the prior aeon's CCC
+  conformal factor Ω = the α-attractor inflaton is demarcated to one irreducible
+  line, now **naturalness-favoured** (trace anomaly → Starobinsky plateau + a
+  massless-early scalar = inflaton, not the erebon mass): [Hypo] → **[Hypo→soft/
+  favoured]**. (`review/WIRING_bridge_2026-07-08.md`.)
+- **The "+3 spread" re-derived to the standard flatness problem** (verified,
+  SURVIVES-WITH-CAVEATS): the old "residual energy must reach the floor within 57
+  e-folds / 63 orders short" was an **epoch-mismatch bookkeeping artifact**;
+  correct accounting (curvature fraction Ω_k, diluted to today) makes it the
+  standard flatness problem, solved by N_total ≈ 60–85 total e-folds. Its residue
+  (the residual's equation of state + flash e-fold delivery) is **relocated into
+  the wiring's flash→plateau IC family** — a reduction, not a closure.
+  (`code/residual_flatness_accounting.py`, `code/residual_flatness_stress.py`.)
+- **Net open-item status:** the LMU-specific gaps collapse to **one linked
+  initial-condition question** — the flash→plateau wiring (now [Hypo→soft/
+  favoured], carrying item-1's relocated residue). Closing it is CCC's own
+  field-wide "fix Ω uniquely" problem (Tod 2023) — inherited, not created; nobody
+  has closed it. SSOT: `review/LMU_SYNTHESIS_2026-07-07.md`; run log:
+  `review/LOG_post_3.27_2026-07-08.md`.
+
+Files: `LMU_V3_28_consolidated.tex`, `LMU_V3_28_consolidated.pdf` (108 pp, 0
+errors, XeLaTeX ×2; 22 figures, unchanged set). `LMU_V3_27_consolidated.*`
+retained as the rollback point (`LMU_V3_26_consolidated.*` older rollback).
+`code/verify_all.py` still ALL PASS (spine unchanged).
+
+---
+
+## v3.27 — 2026-07-07
+
+Deterministic-flash reset + doc-consistency deposit. The reset joint is re-read
+as a *deterministic flash* (the survivor's evaporation is certain → its terminal
+flash triggers a field already on the α-attractor plateau), superseding the 3.26
+"Volovik/P>0 collapse" reading:
+
+- **Reset = deterministic flash, not a probabilistic decay.** No metastable
+  barrier, no tunnelling. Supersedes the 3.26 open-joint (ii)(b) collapse into
+  "is de Sitter stable?"; the 3.26 (ii)(a) result (V_min≠0 via quintessence)
+  still stands.
+- **Endgame chosen = tiny nonzero de Sitter** (V_min = ρ_Λ = (2.3 meV)⁴,
+  anchored to the measured Λ) → finite horizon ceiling S = A/4G ~ 10¹²²;
+  supersedes the Part II "V_min=0 / asymptotic Minkowski / infinite ceiling"
+  wording.
+- **LMU-specific open items reduced to exactly two:** the "+3" spread [soft] and
+  the ω=inflaton wiring [Hypo]. de Sitter stability / swampland / P>0 / V_min=0
+  reframed as field-wide questions LMU shares, not LMU closure-blockers.
+- **Doc-loop fix:** `review/LMU_SYNTHESIS_2026-07-07.md` named the single source
+  of truth for open-item status; JOINT2 / PROOF_STATUS_LEDGER / LMU_SYNTHESIS
+  corrected; six older review records banner-marked as superseded layers; a
+  standing rule added to the working-rules file.
+- Split into its own file; V3.26 kept pristine as a rollback point.
+
+Files: `LMU_V3_27_consolidated.tex`, `LMU_V3_27_consolidated.pdf` (105 pp, 0
+errors, XeLaTeX ×2; 22 figures, unchanged set). `LMU_V3_26_consolidated.*`
+retained as the previous version. No new equation, axiom, or falsifier.
+
+---
+
 ## v3.26 — 2026-07-04
 
 External-review + adjudication deposit. A full document review (136 verified
