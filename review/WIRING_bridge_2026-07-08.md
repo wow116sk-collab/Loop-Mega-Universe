@@ -26,5 +26,19 @@ CCC's phantom-field equation fixes Ω only *up to initial data* (Tod 2023); Penr
 - **Status unchanged in kind:** the wiring is still `[Hypo]`; LMU is still a hybrid assembly. What changed is **localization** — the novelty is now one demarcated line, most of the machinery is borrowed, and "is Ω even a physical field?" is answered *by CCC itself* (yes, post-crossover), not left hanging.
 - **What would close it (out of reach here):** a derivation, from the CCC phantom-field equation + a naturalness/selection principle, that the post-crossover conformal scalar's potential is the inflating plateau rather than the erebon mass. That is **CCC's own open problem** ("how to fix Ω uniquely"), field-wide — LMU inherits it, does not create it.
 
+## Selection argument — why the plateau is *favoured* over the erebon (2026-07-08)
+
+The last `[Hypo]` (plateau-not-erebon) is no longer a bare 50/50 choice — a naturalness argument **tilts it toward the plateau**, though it does not force it:
+
+- **The conformal/trace anomaly of the boundary conformal fields naturally produces the Starobinsky *plateau*** — "the self-potential has an infinite plateau, very suitable for the inflationary phase" (trace-anomaly-driven inflation: Hawking–Hertog–Reall 2001; anomaly-induced effective action, Shapiro program). The anomaly gives the inflaton *shape*, not a mass term. `[Fact-th, borrowed]`
+- **The anomaly framework *requires* the associated scalar to be *massless in the early universe*.** A massless-early scalar with a plateau **is** the inflaton (flat ≈ massless at large field); it is **not** the ~Planck-mass erebon. So masslessness-at-the-conformal-boundary — which the CCC crossover independently demands (rest-mass suppression as Ω→∞) — **selects the plateau/inflaton role** for the conformal mode. This is the argument that pushes plateau over erebon. `[Fact-th, borrowed]` framework / `[Hypo→favoured]` the LMU reading.
+- **Consistency with the Weyl-inflation split:** in Weyl-R² (Tang 2020) the conformal mode's canonical role *is* the inflaton, with DM a *separate* d.o.f. — the same split LMU uses (Ω = inflaton; DM post-reheating). The conformal mode's natural home is the inflaton, not DM.
+
+**Honest residue (still not closed):**
+- The plateau **amplitude** stays unexplained/tuned — the anomaly gives the *shape* but not the R²-coefficient (~5×10⁸, equivalently ~10¹³ fields); "the effect is insufficient to explain the huge coefficient" is a known, field-wide naturalness problem. *Shape* favoured, *amplitude* open.
+- The erebon reading is **not forbidden** — Penrose's post-crossover mass mechanism can still act; the argument *favours* the plateau, it does not *exclude* the mass term.
+
+**Net:** the last `[Hypo]` line moves from a bare choice to the **naturalness-favoured reading** (conformal-anomaly-natural + massless-at-the-boundary + Weyl-split-consistent), the erebon a defensible-but-unneeded alternative (DM is already separate). Status: **`[Hypo → soft/favoured]`, not `[Fact]`** — the plateau is now *motivated*, not merely *chosen*, but the amplitude is tuned and the erebon is not excluded, so it does **not** close.
+
 ## Owners
 Penrose 2006/2010 (CCC, the phantom field, Ω=−ω⁻¹); Tod 2023 (phantom-field equation, CCC-consistency constraint on Ω); Kallosh–Linde 2013 (superconformal α-attractors = conformal compensator inflaton); Tang 2020 (Weyl R² inflation + conformal-DM split); Beckwith 2007 (Penrose-model emergent inflaton); scale-factor duality (arXiv:1604.08032). The **read-across and the plateau-not-erebon choice are Pitarn's** (R7).
