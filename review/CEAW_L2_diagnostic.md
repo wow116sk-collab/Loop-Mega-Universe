@@ -64,9 +64,11 @@ An adversarial stress-test found the equation and the number robust, but the *pe
 
 **Honest residue:** even repaired, "fuel-exhausted, isolated BCG = near L1" largely **coincides with standard cool-core / BCG fuel-exhaustion evolution** — so CEAW is a robust **consistency diagnostic** ([Hybrid]), **not a unique falsifier** (the true L1 endpoint ~10¹⁰⁰ yr is unobservable).
 
-## Falsifier hook (repaired — population-statistical)
+## Consistency re-check of observation data — CEAW's actual role
 
-Across a **large, uniform** cool-core sample, bin BCGs by mass/isolation **and by fuel state** (central t_cool, entropy, cold-gas mass, companion count). LMU's L2→L1 descent predicts the **duty-cycle-averaged** feedback activity **declines** for the most massive, most isolated, most **fuel-exhausted** systems (the near-survivors). A flat or reversed trend would pressure the reading. This is a **consistency** test (it coincides with standard fuel-exhaustion evolution), not a unique signature, and it depends on pinning Γ_j.
+CEAW's job is a **cross-check of observational data for internal consistency** with the L2→L1 picture — **not** a prediction and **not** a falsifier. Concretely: across a **large, uniform** cool-core sample, bin BCGs by mass/isolation **and by fuel state** (central t_cool, entropy, cold-gas mass, companion count) and ask whether the **duty-cycle-averaged** feedback activity **declines** for the most massive / most isolated / most **fuel-exhausted** systems, as the L2→L1 descent expects. A consistent trend **validates** the ladder reading against the data; a flat or reversed one flags a tension to investigate. Because this coincides with standard cool-core fuel-exhaustion, it is a **consistency re-check**, never a unique signature; it depends on pinning Γ_j.
+
+**Settled scope (2026-07-08):** CEAW is used **only** as a consistency re-check of observation data — validate/cross-check, not predict, not falsify. Equation `[Fact-eq]`, number = order-of-magnitude consistency, diagnostic = robust (fuel-state-discriminated + population-statistical) **at the consistency level**, Γ_j `[Open]` (survey). Do not re-promote it to a falsifier or a growth knob.
 
 ## References
 
