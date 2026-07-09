@@ -42,8 +42,28 @@ Pinning (φ₁, φ₂) has **no interior extremum and no isolated stable manifol
 - **New in the ledger this round:** result 1 (node-theorem) is a `[Fact-th, script-backed]` *reason* the whole asymptotic class fails → a genuine dead-end, kept. Result 2 (MS map area-preserving) **corrects** the Round-1 record. Results 3–4 confirm entropy=ranking and amplitude=field-wide-tuned.
 - **de Sitter stability, the measure problem, the swampland, and the amplitude remain field-wide** — not LMU closure-blockers (unchanged).
 
+---
+
+## Addendum (2026-07-09) — Pitarn's reframe + the hot-flash test: the node is a *feature*, and the erebon is locked out at the flash
+
+Two moves after the round above **change the reading of the negative theorem** and strengthen the selection. Both are Pitarn's read-across (R7).
+
+### (1) The node-erasure is required, not an obstacle — so "fix (φ₁,φ₂)" was the wrong demand
+The negative theorem (result 1) says the plateau is a stable node that **erases** the Cauchy data. Re-read: **a clean rebirth *requires* an information-erasing basin** (the new aeon must be memoryless/smooth — Penrose's WCH), and ignition is **external** (the deterministic flash — "one-way flash, not self-ignition", already in the body). So demanding that the *internal* dynamics *derive* (φ₁,φ₂) is the wrong demand: they are a **legitimate contingent initial condition** — the image of the previous aeon's endpoint delivered through the crossover, then erased into the node — not a gap to be closed. This is the same status as the Standard Model's input parameters: an *input*, not a *failure*. It also **vindicates the fertilization mapping**: "relocating the freedom to the external trigger" (the Round-1 refutation) is not a cheat — for an externally-ignited rebirth it is the correct physics (the egg does not self-select; the trigger is external and contingent). Net: the "(φ₁,φ₂) unpinned" half of the joint is **dissolved as illegitimate**, leaving only the plateau-vs-erebon *selection*.
+
+### (2) The hot flash dynamically locks out the erebon — plateau selection strengthened `[Hypo → favoured, script-backed]`
+Test (`code/wiring_hot_flash_vs_erebon.py`, editor-run): the discriminator is the frame-robust ratio **m_eff/H at the flash**.
+- At the crossover Ω→∞ the rest mass is suppressed, **m_eff = m₀/Ω** (Penrose's delayed-rest-mass hypothesis, owned). With LMU's own crossover blueshift **Ω_flash ~ 10²⁶–10⁴⁷** (V3.28 in=out-ledger note), a Planck/GUT bare mass gives **m_eff/H ~ 10⁻²¹ … 10⁻⁴⁵ ≪ 1**.
+- The standard frozen-vs-oscillating dichotomy (script-confirmed, test scalar in de Sitter, amplitude-independent): **m/H ≪ 1 → ⟨w⟩→−1** (frozen, vacuum-like, *inflating* = plateau); **m/H ≳ 3 → ⟨w⟩→0** (coherent oscillation, matter = the *erebon*); transition at m/H ~ 1–3.
+- So at the flash the field sits **~21–45 orders deep in the frozen (w=−1) regime** → it inflates (plateau). The erebon (w=0 matter) would need **m/H ≳ 1 ⇒ Ω_flash ≲ 10⁵** — i.e. essentially *no* crossover blueshift — which contradicts Ω_flash ~ 10²⁶⁺ by ~20+ orders. **The erebon reading is dynamically locked out *at the flash*.**
+- **Honest residue:** `[Hypo → favoured]`, *not* exclusion — it shows the flash **cannot deposit** the field as an erebon; it does not forbid an erebon existing *later* (as Ω→1 and the mass turns on), which is fine — that is exactly LMU's Ω=inflaton **+ DM-separate** split. Assumes m~m₀/Ω (Penrose DRMH) and H_flash~√(V₀/3); m/H is frame-schematic, but the 21–45-order hierarchy is far too large for conformal-frame factors to overturn.
+
+### Net after the addendum
+The wiring joint re-reads as: **(a) (φ₁,φ₂) = a legitimate contingent IC** (dissolved as a "gap", per the reframe) **+ (b) plateau-over-erebon = now dynamically favoured** (erebon locked out at the flash, not merely trace-anomaly-favoured) **+ (c) amplitude = field-wide-tuned** (untouched). This does **not** produce a `[Fact]` closure — but it downgrades the joint from "[Hypo] with an unpinned-data obstacle" to **"legitimate IC + a quantitatively-favoured selection"** — arguably the honest endpoint short of solving CCC's field-wide Ω-uniqueness. **Status label: `[Hypo → soft/favoured]`, unchanged in kind but materially stronger.**
+
 ## Scripts (reproducible)
 - `code/wiring_attemptA_leastaction.py` — phantom-field bistable: node eigenvalues, action flat in φ₁ (the negative theorem).
 - `code/wiring_attemptB_entropyprod.py` — plateau-vs-erebon entropy production; monotone-unbounded (no interior extremum).
 - `code/wiring_attemptC_msmap.py` — MS aeon-map: det J=1, P=λ·m conserved, parabolic fixed point, backward-attractor falsified.
 - `code/wiring_attemptD_amplitude.py` — anomaly-coefficient → R² amplitude field count (8–11 order shortfall + Duff obstruction).
+- `code/wiring_hot_flash_vs_erebon.py` — **addendum:** m_eff/H at the flash (rest-mass suppression × crossover blueshift) locks out the erebon; frozen-vs-oscillating (w) confirmation.
