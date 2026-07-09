@@ -15,6 +15,9 @@ identifiers:
   - type: url
     value: "https://osf.io/2ac8x"
     description: "OSF project"
+  - type: doi
+    value: 10.17605/OSF.IO/CN3B4
+    description: "OSF pre-registration of the falsifier lines (F1-F6)"
 repository-code: "https://github.com/wow116sk-collab/Loop-Mega-Universe"
 license: CC-BY-4.0
 abstract: >
