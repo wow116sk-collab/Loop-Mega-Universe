@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20692157.svg)](https://doi.org/10.5281/zenodo.20692157)
 
 **Current version: V3.28 (2026-07-08) — 108 pp, XeLaTeX.**
-Author: Pitarn Rungsiyapornratana ([ORCID 0009-0004-6411-2201](https://orcid.org/0009-0004-6411-2201)) · [Zenodo (all versions)](https://doi.org/10.5281/zenodo.20692157) · [OSF](https://osf.io/2ac8x)
+Author: Pitarn Rungsiyapornratana ([ORCID 0009-0004-6411-2201](https://orcid.org/0009-0004-6411-2201)) · [Zenodo (all versions)](https://doi.org/10.5281/zenodo.20692157) · [OSF](https://osf.io/2ac8x) · [OSF pre-registration — falsifiers](https://doi.org/10.17605/OSF.IO/CN3B4)
 
 **New here?** Read [**STORY.md**](STORY.md) first — the whole cycle in five acts, plain language, no equations, five minutes.
 
@@ -42,6 +42,8 @@ Independent recomputation, not self-citation: the physics-constant spine is re-d
 - **F2 — black-hole spin:** survivor/BCG spin history; next-generation EHT / **BHEX era (2030s)**. Current inventory already logs M87* polarimetry (Wong et al. 2025) disfavouring high spin as an *offsetting* flag.
 - **F3 —** re-scoped: the P(k) re-initialization falsifier was ruled and re-scoped at V3.12 (see in-document revision history).
 - **F4 — single-instanton origin signature** ("Open, flat, smooth by one instanton — and a clean F4"): the 10¹⁶ GeV ignition scale gives r ≈ 0.009 (ε ≈ 5.7×10⁻⁴) against the current bound r < 0.036 (BICEP/Keck); **LiteBIRD-class** sensitivity tests it.
+
+These lines (plus **F5** — the predicted *absence* of CCC-style Hawking points / concentric circles — and **F6** — a tiny-positive-de-Sitter endgame, falsified by a future AdS transition) are **pre-registered on OSF** with fixed, immutable thresholds, before the deciding data: **[doi.org/10.17605/OSF.IO/CN3B4](https://doi.org/10.17605/OSF.IO/CN3B4)** (see `FALSIFIERS_preregistration_V3.28.pdf`).
 
 ## The open problem (owned, not hidden)
 

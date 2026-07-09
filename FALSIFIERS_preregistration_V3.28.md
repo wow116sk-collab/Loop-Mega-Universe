@@ -5,6 +5,7 @@
 - **Framework:** Loop Mega Universe (LMU) — a cyclic black-hole cosmology (a *lens/synthesis*, not a new predictive theory).
 - **Document of record:** `LMU_V3_28_consolidated.pdf` (V3.28, 2026-07-08). Where this registration and the `.tex` disagree, the `.tex` governs.
 - **Author:** Pitarn Rungsiyapornratana · ORCID [0009-0004-6411-2201](https://orcid.org/0009-0004-6411-2201)
+- **Registered (OSF):** [doi.org/10.17605/OSF.IO/CN3B4](https://doi.org/10.17605/OSF.IO/CN3B4) — the frozen, time-stamped pre-registration.
 - **Concept DOI:** [10.5281/zenodo.20692157](https://doi.org/10.5281/zenodo.20692157) · **Code/source:** <https://github.com/wow116sk-collab/Loop-Mega-Universe> · **License:** CC-BY-4.0
 - **Numbers reproduce from:** `code/verify_all.py` (CODATA spine, Klein–Gordon m-scan, relic statistics) — ALL PASS at V3.28.
 
