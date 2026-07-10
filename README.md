@@ -53,6 +53,8 @@ Since V3.27 the reset is read as a **deterministic flash** (the survivor's evapo
 
 **Field-wide, not LMU-private (homed, not hidden):** de Sitter stability (Volovik P>0 vs Boddy–Carroll–Pollack P=0), the eternal-inflation **measure problem** (Olum 2012, fork-5 / unbounded L0), the swampland, and V_min=0-exactly are questions *every* inflationary cosmology shares — the deterministic-flash reset needs no metastable minimum, so they are **not LMU closure-blockers**. Single source of truth for open-item status: `review/LMU_SYNTHESIS_2026-07-07.md`.
 
+**The full research map — every open problem with its status, the expertise it needs, and where to look:** [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md).
+
 ## Empirical anchors in the current inventory (live-verified July 2026)
 
 DESI DR2 (arXiv:2503.14738) · six-relic compilation Cohn et al. 2025 (arXiv:2504.00172) + Walsh 2015–17, Cohn 2021–24 ALMA masses · NGC 384 · JWST over-massive BHs incl. A2744-QSO1 (Juodžbalis et al. 2026) · UHZ1 (contested) · **GW231123** (LVK 2025: 137+103 → 225 M☉, χ ~ 0.9/0.8 — mass-gap, merger-built; caveats logged) · nanohertz GW background, five concordant PTAs incl. MPTA (Miles et al. 2025) · Planck 2018 · BICEP/Keck.
