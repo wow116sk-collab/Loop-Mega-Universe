@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.6.8"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.6.9"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
@@ -578,7 +578,9 @@ table.t tbody tr:last-child td { border-bottom:0; }
 .flash-info { background:#EEF1E6; color:var(--soft); border:1px solid var(--line); }
 .checkrow { display:flex; align-items:center; gap:9px; font-size:13.5px; margin:14px 0; cursor:pointer; }
 .checkrow input { width:17px; height:17px; accent-color:var(--green); }
-.qty-input { width:62px; font-family:'IBM Plex Mono',monospace; text-align:center; font-size:14px;
+/* กว้างพอเห็นเลข 3 หลักสบายๆ ทุกเครื่อง — เทอม ch ผูกกับความกว้างตัวเลขของฟอนต์ที่ render จริง
+   (เครื่องที่ fallback เป็นฟอนต์ตัวกว้างจะขยายตาม ไม่โดนตัดเหลือหลักเดียว) */
+.qty-input { width:max(84px, calc(4.5ch + 15px)); font-family:'IBM Plex Mono',monospace; text-align:center; font-size:14px;
   padding:6px; border:1.5px solid var(--line); border-radius:8px; }
 .serial-chip { font-family:'IBM Plex Mono',monospace; font-size:11.5px; padding:3px 8px; border-radius:7px;
   background:#fff; border:1px solid var(--line); display:inline-flex; align-items:center; gap:6px; }
@@ -4356,7 +4358,7 @@ function SellScan({ t, lang, products, customers, banks, profile, sales = [], ac
           <div className="table-scroll" style={{ border: 0 }}>
             <table className="t" style={{ minWidth: 520 }}>
               <thead>
-                <tr><th>{t("สินค้า", "Item")}</th><th className="c" style={{ width: 84 }}>{t("จำนวน", "Qty")}</th><th className="r" style={{ width: 96 }}>{t("ราคา", "Price")}</th><th className="c" style={{ width: 116 }}>{t("ส่วนลด", "Disc.")}</th><th className="r" style={{ width: 104 }}>{t("รวม", "Total")}</th><th style={{ width: 36 }}></th></tr>
+                <tr><th>{t("สินค้า", "Item")}</th><th className="c" style={{ width: 100 }}>{t("จำนวน", "Qty")}</th><th className="r" style={{ width: 96 }}>{t("ราคา", "Price")}</th><th className="c" style={{ width: 116 }}>{t("ส่วนลด", "Disc.")}</th><th className="r" style={{ width: 104 }}>{t("รวม", "Total")}</th><th style={{ width: 36 }}></th></tr>
               </thead>
               <tbody>
                 {cart.map((l) => (
@@ -5870,7 +5872,7 @@ function SalesDocs({ t, lang, docs, customers, products, profile, banks, money, 
           <div className="line-head" style={{ margin: "10px 0 6px", fontSize: 14 }}>{t("รายการ", "Line items")}</div>
           <div className="table-scroll">
             <table className="t">
-              <thead><tr><th>{t("สินค้า / รายการ", "Item")}</th><th style={{ width: 70 }}>{t("จำนวน", "Qty")}</th><th style={{ width: 110 }}>{t("ราคา/หน่วย", "Unit price")}</th><th className="r" style={{ width: 100 }}>{t("รวม", "Amount")}</th><th style={{ width: 34 }}></th></tr></thead>
+              <thead><tr><th>{t("สินค้า / รายการ", "Item")}</th><th style={{ width: 100 }}>{t("จำนวน", "Qty")}</th><th style={{ width: 110 }}>{t("ราคา/หน่วย", "Unit price")}</th><th className="r" style={{ width: 100 }}>{t("รวม", "Amount")}</th><th style={{ width: 34 }}></th></tr></thead>
               <tbody>
                 {lines.map((l) => (
                   <tr key={l.key}>
@@ -7274,7 +7276,7 @@ function Purchases({ t, lang, products, banks, accounts, customers, onSaveCustom
           <table className="t">
             <thead><tr>
               <th>{t("สินค้า (เลือกเพื่อรับเข้าสต๊อก)", "Product (to receive stock)")}</th>
-              <th className="r" style={{ width: 70 }}>{t("จำนวน", "Qty")}</th>
+              <th className="r" style={{ width: 100 }}>{t("จำนวน", "Qty")}</th>
               <th className="r" style={{ width: 110 }}>{t("ทุน/หน่วย", "Unit cost")}{fxc ? " (" + fxc + ")" : ""}</th>
               <th className="r" style={{ width: 110 }}>{t("รวม (บาท)", "Total (THB)")}</th>
               <th style={{ width: 34 }}></th>
