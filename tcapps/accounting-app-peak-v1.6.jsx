@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.6.9"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.7.0"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
@@ -4099,12 +4099,9 @@ function SellScan({ t, lang, products, customers, banks, profile, sales = [], ac
   const setLineQty = (key, q) => {
     setCart((c) => c.map((l) => {
       if (l.key !== key) return l;
-      const p = byId(l.productId); const oh = p ? productOnHand(p) : 0;
-      let qty = Math.max(1, Math.floor(num(q)) || 1);
-      // cap includes the edited bill's own freed stock (editCredit); never clamp below 1 —
-      // the aggregate guard in confirmSale still blocks a genuinely overselling cart
-      const cap = oh + (editCredit[l.productId] || 0);
-      if (qty > cap) qty = Math.max(1, cap);
+      // พิมพ์จำนวนได้อิสระสูงสุด 3 หลัก (999) — ไม่ปรับลงเท่าสต๊อกระหว่างพิมพ์
+      // สต๊อกจริงยังถูกบังคับตอนยืนยันขาย (aggregate guard ใน confirmSale จะเตือนและไม่ให้ออกบิลถ้าของไม่พอ)
+      const qty = Math.min(999, Math.max(1, Math.floor(num(q)) || 1));
       return { ...l, qty };
     }));
   };
@@ -4364,7 +4361,7 @@ function SellScan({ t, lang, products, customers, banks, profile, sales = [], ac
                 {cart.map((l) => (
                   <tr key={l.key}>
                     <td>{l.name}{l.serial && <span className="serial-chip s-in" style={{ marginLeft: 6 }}>{l.serial}</span>}</td>
-                    <td className="c">{l.isSerial ? <span className="acc-num">1</span> : <input className="qty-input" inputMode="numeric" value={l.qty} onChange={(e) => setLineQty(l.key, e.target.value)} />}</td>
+                    <td className="c">{l.isSerial ? <span className="acc-num">1</span> : <input className="qty-input" inputMode="numeric" maxLength={3} value={l.qty} onChange={(e) => setLineQty(l.key, e.target.value)} />}</td>
                     <td className="r"><input className="qty-input" style={{ width: 84, textAlign: "right" }} inputMode="decimal" value={l.price} onChange={(e) => setLineField(l.key, { price: e.target.value })} title={t("แก้ราคาขายต่อหน่วยได้ (เช่น ต่างแพลตฟอร์ม)", "edit unit price (e.g. per platform)")} /></td>
                     <td className="c">
                       <div style={{ display: "flex", gap: 3, alignItems: "center", justifyContent: "center" }}>
@@ -7325,7 +7322,7 @@ function Purchases({ t, lang, products, banks, accounts, customers, onSaveCustom
                       <td className="r">
                         {serial
                           ? <span className="acc-num" title={t("จำนวน = ตามจำนวน serial ที่ใส่", "qty = number of serials entered")}>{(l.serials || []).length}</span>
-                          : <input className="qty-input" inputMode="decimal" value={l.qty} onChange={(e) => setLine(l.key, { qty: e.target.value })} placeholder="0" />}
+                          : <input className="qty-input" inputMode="decimal" maxLength={3} value={l.qty} onChange={(e) => setLine(l.key, { qty: e.target.value })} placeholder="0" />}
                       </td>
                       <td className="r"><input className="qty-input" style={{ width: 100 }} inputMode="decimal" value={l.unitCostFx} onChange={(e) => setLine(l.key, { unitCostFx: e.target.value })} placeholder="0.00" /></td>
                       <td className="r acc-num">{money(lineThb(l))}</td>

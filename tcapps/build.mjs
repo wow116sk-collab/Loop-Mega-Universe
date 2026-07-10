@@ -1,5 +1,5 @@
 // Build the single-file runnable HTML from the source .jsx
-// usage: node build.mjs   ->  thaicolor-app-peak-v1.6.9.html
+// usage: node build.mjs   ->  thaicolor-app-peak-v1.7.0.html
 import { build } from "esbuild";
 import { readFileSync, writeFileSync } from "fs";
 
@@ -35,5 +35,5 @@ const html = `<!DOCTYPE html>
 </body>
 </html>
 `;
-writeFileSync("thaicolor-app-peak-v1.6.9.html", html);
-console.log("built thaicolor-app-peak-v1.6.9.html", (html.length / 1048576).toFixed(2), "MB");
+writeFileSync("thaicolor-app-peak-v1.7.0.html", html);
+console.log("built thaicolor-app-peak-v1.7.0.html", (html.length / 1048576).toFixed(2), "MB");
