@@ -50,7 +50,7 @@ const DEFAULT_ACCOUNTS = [
 ];
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-const APP_VERSION = "V1.7.0"; // shown next to the app title on the ledger home page; bump on each release
+const APP_VERSION = "V1.7.1"; // shown next to the app title on the ledger home page; bump on each release
 const todayISO = () => new Date().toISOString().slice(0, 10);
 // all scan/lookup codes for a product: explicit codes[] + legacy barcode + sku, de-duplicated
 function prodCodes(p) {
@@ -1917,7 +1917,9 @@ export default function AccountingApp() {
     const totalThb = round2(goodsThb + landedExtra + vat);
     const payTotal = round2(totalThb + (feeToCost ? 0 : feeNum));
 
-    if (receiveStock && goodsThb > 0) {
+    // รับเข้าสต๊อกตามจำนวนเสมอเมื่อติ๊กรับเข้าสต๊อก — แม้ทุน/หน่วยเป็น 0 (ของแถม/ยังไม่รู้ราคา)
+    // เดิม gate ด้วย goodsThb > 0 ทำให้บิลที่ไม่ใส่ราคา "บันทึกสำเร็จ" แต่ของไม่เข้าสต๊อกเงียบๆ
+    if (receiveStock) {
       setProducts((prev) => prev.map((p) => {
         const its = items.filter((i) => i.productId === p.id);
         if (!its.length) return p;
@@ -2633,7 +2635,7 @@ export default function AccountingApp() {
         {tab === "purchasebills" && (
           <PurchaseBillsList
             t={t} lang={lang} purchases={purchases} banks={banks} money={money}
-            onDelete={deletePurchase} canDelete={acctLevel >= 3} onPrintVoucher={setVoucherPurch} onHistory={(p) => openHistory("purchase", p)} />
+            onDelete={deletePurchase} canDelete={acctLevel >= 3} onPrintVoucher={setVoucherPurch} onHistory={(p) => openHistory("purchase", p)} onAdjustLanded={adjustPurchaseLanded} />
         )}
 
         {tab === "advances" && (
@@ -5275,7 +5277,7 @@ function PurchaseModal({ t, lang, rec, banks, money, onClose, onDelete, onAdjust
   );
 }
 
-function PurchaseBillsList({ t, lang, purchases, banks, money, onDelete, canDelete, onPrintVoucher, onHistory }) {
+function PurchaseBillsList({ t, lang, purchases, banks, money, onDelete, canDelete, onPrintVoucher, onHistory, onAdjustLanded }) {
   const [q, setQ] = useState("");
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
