@@ -83,3 +83,18 @@ Order = chronological. Each block: what was asked → what was done → status.
 - `code/residual_flatness_accounting.py` — **new**; the full flatness accounting (dilute to today, compare to today's ρ_crit). Prose corrected post-verification (Ω_k framing, curvature = slowest/hardest).
 - `code/residual_flatness_stress.py` — **new**; the adversarial stress-test (reheating sweep → N_min range 60–85, worst-case curvature, slower components, born-hot, shear re-growth).
 - Commits after 3.27: `9ace7cd` (wiring bridge), `6461516` (wiring selection argument), `24e0fbc` (this log + accounting script), `2fbf259` (stress script), then the item-1 propagation (ก) commit.
+
+---
+
+## 5) Watch item (2026-07-11): tabletop entropic-time / Wheeler–DeWitt experiment (Barontini, Birmingham)
+
+**What:** G. Barontini (U. Birmingham), *"Testing the problem of time with cold atoms"* (earlier title: *Emergence of Entropic Time in a Tabletop Wheeler-DeWitt Universe*), arXiv:2509.07745 (v1 2025-09-09; revised 2026-03/06), **published Phys. Rev. Research, June 2026** (DOI 10.1103/1h9j-df4k). BEC of ~24,000 ⁸⁷Rb atoms in a conservative trap, thin optical barrier partitioning an observed ("bright") and unobserved ("dark") sector; negligible dissipation on the experimental timescale.
+
+**The move:** start from the timeless constraint Ĥ|Ψ⟩=0 (Wheeler–DeWitt), split Ĥ = Ĥ_bright + Ĥ_dark + Ĥ_coupling, then define an **entropic time** from an experimentally measured coarse-grained (Shannon, macropixel) entropy, τ(λ) ∝ ∫ (dS/dφ)|dφ| with φ = a centre-of-mass "clock field" — time advances only while entropy flows between sectors. Deriving in this internal parameter gives an **effective Schrödinger equation** iħ∂_τψ = Φ(τ)ψ + Λ(τ)Ĥ_geom ψ, whose entropy-dependent factor Λ acts as an "energy pump" into the radial (scale-factor-analogue) mode. Numerical solutions of that equation reproduce the measured condensate-width ("analogue universe size") evolution across repeated expansion–recollapse cycles, ~5% statistical uncertainty per point; entropic time robustly *orders* events across cycles.
+
+**Why we care (mapping to LMU rows, [conceptual-support] ONLY, not evidence):**
+- Same family as the ledger's **"time reframe (arrow inherited)"** row and the timeless Coleman bridge (V3.24): time = relational/entropic, arrow = entropy flow, **τ stalls when entropy stops flowing** — the lab realisation of the "fast/slow/stall" reading of the monotonic-entropy axiom (cf. `code/entropy_monotonic_vs_tinyDS.py`, the dS-tail asymptotic stall).
+- Page–Wootters conditioning made quantitative in a *matter-wave* system (photonic tests existed, e.g. Moreva 2013); the bright/dark **sector split with exchange through a barrier** is structurally the observed-aeon/substrate bookkeeping in miniature (an analogy, not a mechanism).
+- **Status discipline:** an analogue/tabletop internal-consistency test of the *mechanism class*. It moves NO LMU falsifier and proves nothing about cosmological time; do not cite it as support for the cycle. It belongs on the watch-line for the emergent-time literature maturing (a second group reproducing with a different clock field / larger systems would strengthen the class).
+
+**Press-layer corrections (for future readers who arrive via news):** "proved time emerges" → the paper *tests a construction*; "first ever" → first cold-atom/entropic variant, not first Page–Wootters test; "completely sealed" → negligible dissipation on the run timescale; "London" dateline → it's Birmingham. Paper's own stated limits: M(φ)=αφ assumption, τ undefined where entropy does not flow, results concentrated at V≃0 (pump-dominant regime), minisuperspace analogue only.
