@@ -59,3 +59,14 @@ Batch verification per project rule (one verifier for the whole set). All 52 sub
 4. **Companion files:** SSOT version-pointer note (#36), prereg F-label scope note via README/OPEN_PROBLEMS (#33).
 
 Provenance: workflow run `wf_c6541ca1-8de` (2026-07-12), 14 agents, 0 errors, 252 tool uses; raw per-agent returns in the session workflow journal.
+---
+
+## Resolution (2026-07-12, same day — the commissioned check→fix→check loop)
+
+1. **Re-check before fixing** (1 batch re-checker): all 36 re-confirmed at their lines, zero moot, all arithmetic independently recomputed → 48 exact edit specs, every anchor grep-verified unique.
+2. **Fix pass applied** (commit `94aec86`): 48/48 edits across 6 files per the three-tier policy (outward-facing rewrites / append-only `[v3.29 stress-test note]` riders / inline `[Erratum 3.29]` + direct slip fixes) + one new revision entry. Rebuild 109 pp, 0 errors; `verify_all --tex` ALL PASS.
+3. **Post-fix verification** (1 batch verifier): **CLEAN** — 36/36 RESOLVED, 0 unresolved, 0 collateral. All numerics recomputed again post-fix; zero stale-text hits for the seven corrected phrases; riders in valid environments with live pointer targets; CITATION.cff parses as valid YAML.
+
+Two cosmetic residuals ruled **not defects** (no action): (a) the 3.16-erratum block at tex:1563 *quotes* the old "19–32 orders" wording of the entry it corrects (historical quote, nil mislead); (b) tex:1330 item (D) carries a dated `r<0.036` inside an untouched pre-3.29 stratum (dated bounds are correct at their date, per the trap list).
+
+Runs: recheck `wf_da7eac4b-9ad` · post-fix `wf_a6acb391-677` (1 agent each, batch rule).
