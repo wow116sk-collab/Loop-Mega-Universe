@@ -43,7 +43,7 @@ physics
 
 ## 2) GitHub — release v3.29 (Releases → Draft new release)
 
-**Tag:** `v3.29` (target: `main`, already merged) · **Title:** `LMU V3.29 — wiring closure rounds 1–4 (gauge + free IC) + the τ_aeon entropic clock`
+**Tag:** พิมพ์ `v3.29` ในช่อง tag แล้วเลือก **Create new tag: v3.29 on publish** (target: `main`) · **Title:** `LMU V3.29 — wiring closure rounds 1–4 (gauge + free IC) + the τ_aeon entropic clock`
 
 **Release notes (paste):**
 
@@ -221,8 +221,8 @@ measure problem, Loop Mega Universe, LMU.
 
 ## 6) ลำดับอัพโหลด (กันงง)
 
-1. ~~Merge branch → main~~ **ทำแล้ว** (PR merged; tag `v3.29` push แล้ว)
+1. ~~Merge branch → main~~ **ทำแล้ว** (PR #10 merged เข้า main แล้ว — tag `v3.29` จะถูกสร้างอัตโนมัติตอนกด Publish release ในข้อ 3)
 2. GitHub: Settings → About → วาง Description + Website + Topics (ข้อ 1 — ข้อความใหม่ แก้เป็น deterministic flash แล้ว)
-3. GitHub: Releases → Draft new release → เลือก **tag `v3.29` ที่มีอยู่แล้ว** + Title/notes (ข้อ 2) + แนบ `LMU_V3_29_consolidated.pdf` → Publish
+3. GitHub: Releases → Draft new release → ช่อง tag พิมพ์ `v3.29` → **Create new tag on publish** (target `main`) + Title/notes (ข้อ 2) + แนบ `LMU_V3_29_consolidated.pdf` → Publish
 4. Zenodo: **New version** ใต้ record เดิม → วาง metadata (ข้อ 3) → upload `LMU_V3_29_consolidated.{pdf,tex}` → publish → ได้ DOI ย่อยของ 3.29 (ข้าม 3.28 ได้เลย concept DOI ชี้ตัวล่าสุดอัตโนมัติ)
 5. OSF: อัพ PDF (ข้อ 4) + ลิงก์ GitHub/Zenodo — **ไม่ต้องลงทะเบียน falsifier ใหม่** (เกณฑ์ไม่เปลี่ยน CN3B4 เดิม govern ต่อ)
