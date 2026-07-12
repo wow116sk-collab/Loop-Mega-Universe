@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20692157.svg)](https://doi.org/10.5281/zenodo.20692157)
 
-**Current version: V3.28 (2026-07-08) — 108 pp, XeLaTeX.**
+**Current version: V3.29 (2026-07-11) — 109 pp, XeLaTeX.**
 Author: Pitarn Rungsiyapornratana ([ORCID 0009-0004-6411-2201](https://orcid.org/0009-0004-6411-2201)) · [Zenodo (all versions)](https://doi.org/10.5281/zenodo.20692157) · [OSF](https://osf.io/2ac8x) · [OSF pre-registration — falsifiers](https://doi.org/10.17605/OSF.IO/CN3B4)
 
 **New here?** Read [**STORY.md**](STORY.md) first — the whole cycle in five acts, plain language, no equations, five minutes.
@@ -11,7 +11,7 @@ Author: Pitarn Rungsiyapornratana ([ORCID 0009-0004-6411-2201](https://orcid.org
 
 LMU is a **worldview-level synthesis, not a new predictive theory**: it wires *established, cited* physics into one coherent cyclic picture and then subjects the wiring to falsifiers. Every mechanism belongs to its published owner (attribution rule R7 is enforced throughout the document); the framework's own contributions are the conventions, the read-acrosses, and the wiring.
 
-**The cycle in one paragraph.** An aeon ends cold, dilute, and clumpy: structure funnels through a black-hole size ladder (L4 gas/stars → L3 galactic BH → L2 BCG BH → L1 the last survivor). The survivor stops spinning (Page), evaporates, and its terminal Hawking flash — at the post-evaporation Planck-scale endpoint, not the 10¹¹ M☉ body — seeds a catalyzed Coleman–De Luccia bounce (Gregory–Moss–Withers). One flash = one bubble = one aeon: on the interior slicing the hot start is simultaneous across the new aeon, homogeneous by instanton symmetry, with density arriving by in-place conversion of the latent vacuum energy (ρ ≈ ΔV; Guth's free lunch). The re-opened entropy gap (Frautschi) — the aeon's fresh negentropy budget — re-arms the thermodynamic arrow, and dilution into the unbounded substrate keeps the total ledger second-law-safe (Ijjas–Steinhardt-type resolution, strengthened to an actually infinite L0).
+**The cycle in one paragraph.** An aeon ends cold, dilute, and clumpy: structure funnels through a black-hole size ladder (L4 gas/stars → L3 galactic BH → L2 BCG BH → L1 the last survivor). The survivor stops spinning (Page) and evaporates — *certainly* (Hawking) — and its terminal flash **triggers the ω-inflaton already sitting on the α-attractor plateau** (Carrasco–Kallosh–Linde; Bastero-Gil; Matsui): the deterministic-flash reset (since V3.27) — **no metastable barrier, no tunnelling** (the Coleman–De Luccia bubble is the kept, computed alternative). One flash = one ignition = one aeon: on the interior slicing the hot start is simultaneous across the new aeon, with density arriving by in-place conversion of the plateau's vacuum energy (ρ ≈ ΔV; Guth's free lunch). The re-opened entropy gap (Frautschi) — the aeon's fresh negentropy budget — re-arms the thermodynamic arrow, and dilution into the unbounded substrate keeps the total ledger second-law-safe (Ijjas–Steinhardt-type resolution, strengthened to an actually infinite L0).
 
 **Two axioms only:** the substrate (q) and Λ (a constant; no origin mechanism sought). Dark matter is *not* a given — it is re-created each aeon at the hot boundary as a collisionless thermal relic, symmetric with baryons.
 
@@ -41,7 +41,7 @@ Independent recomputation, not self-citation: the physics-constant spine is re-d
 - **F1 — dark energy:** a canonical thawing field can match DESI DR2's w₀ *or* wₐ, not both (document shows the full m-scan); **DESI-Y5 (~2027)** sharpens or breaks this.
 - **F2 — black-hole spin:** survivor/BCG spin history; next-generation EHT / **BHEX era (2030s)**. Current inventory already logs M87* polarimetry (Wong et al. 2025) disfavouring high spin as an *offsetting* flag.
 - **F3 —** re-scoped: the P(k) re-initialization falsifier was ruled and re-scoped at V3.12 (see in-document revision history).
-- **F4 — single-instanton origin signature** ("Open, flat, smooth by one instanton — and a clean F4"): the 10¹⁶ GeV ignition scale gives r ≈ 0.009 (ε ≈ 5.7×10⁻⁴) against the current bound r < 0.036 (BICEP/Keck); **LiteBIRD-class** sensitivity tests it.
+- **F4 — single-instanton origin signature** ("Open, flat, smooth by one instanton — and a clean F4"): registered as r ≈ 0.0037 (the α=1 spine) within the plateau band **0.0018–0.009** on the (n_s, r) locus — 0.009 is the α=2.44 upper edge of the 10¹⁶ GeV ignition scale — against the current bound r < 0.034 (95% CL, 2025 combined Planck+SPT-3G+ACT+BICEP/Keck); **LiteBIRD-class** sensitivity tests it.
 
 These lines (plus **F5** — the predicted *absence* of CCC-style Hawking points / concentric circles — and **F6** — a tiny-positive-de-Sitter endgame, falsified by a future AdS transition) are **pre-registered on OSF** with fixed, immutable thresholds, before the deciding data: **[doi.org/10.17605/OSF.IO/CN3B4](https://doi.org/10.17605/OSF.IO/CN3B4)** (see `FALSIFIERS_preregistration_V3.28.pdf`).
 
@@ -63,6 +63,7 @@ DESI DR2 (arXiv:2503.14738) · six-relic compilation Cohn et al. 2025 (arXiv:250
 
 | Version | Date | One-liner |
 |---|---|---|
+| 3.29 | 2026-07-11 | Release consolidation of the post-3.28 run: **wiring closure rounds 1–4** (not promotable by principle — the residual is a conformal-gauge zero-mode + one free York datum + the field-wide amplitude; hot-flash lock-out + anomaly isotropy penalty keep the plateau *favoured*; decided by measurement, F4/F5); **NEW τ_aeon entropic-clock layer** [Hypo, wiring-only] — the aeon's internal time = its own coarse-grained entropy flow (energy = sawtooth, time = staircase; pre-bang closed form, finite in τ; w=−1 ⟺ undiluting ⟺ timeless compresses cold→hot to one line; explains why F4/F5 are the only two observational windows; ownership swept twice — unoccupied among cosmological models, Barontini PRR 2026 = lab precedent); observational snapshot folded (r < 0.034 tightening toward the F4 band; Hawking-point 2023–24 nulls consistent with F5); relic-discrimination criteria pinned (a confirmed *structured* crossing would falsify LMU, not confirm it); OPEN_PROBLEMS.md research map + ledger sync. V3.28 kept as a rollback point |
 | 3.28 | 2026-07-08 | Release consolidation of the post-3.27 run: CEAW reinstated (L2 state-diagnostic); external-cosmology refresh (ACT DR6 n_s↑, ν-anomaly, CCBH, DESI DR2) folded in as drift; ACT-tension resolved via extended α-attractor (borrowed, one tuned parameter); wiring bridge tightened + selection argument → ω=inflaton now [Hypo→soft/favoured]; the "+3 spread" **re-derived to the standard flatness problem** (verified), its residue relocated into the wiring's flash→plateau IC family → LMU-specific gaps collapse to one linked question. V3.27 kept as a rollback point |
 | 3.27 | 2026-07-07 | Deterministic-flash reset (supersedes the Volovik/P>0 collapse); tiny de Sitter endgame → finite 10¹²² ceiling; LMU-specific open items reduced to two (the "+3" spread [soft], the ω=inflaton wiring [Hypo]); de Sitter stability / swampland / P>0 reframed as field-wide, not LMU closure-blockers. Split into its own file; V3.26 kept as a rollback point |
 | 3.26 | 2026-07-04 | External-review + adjudication pass (PR #1, rulings R1–R29): PDF link plumbing repaired (104→103 pp), ε_DESI 4.6×10⁻² adopted body-wide, M87* spin [Open — contested], verification suite in /code |
@@ -70,13 +71,13 @@ DESI DR2 (arXiv:2503.14738) · six-relic compilation Cohn et al. 2025 (arXiv:250
 | 3.24 | 2026-07-02 | Negentropy/arrow homing (Frautschi gap, Eddington arrow, timeless Coleman bridge, Page-returned scramble); one-flash-one-aeon convention; Boddy–Carroll–Pollack citation repair |
 | 3.23 | 2026-07-01 | Catalysis endpoint sharpened; the two open premises homed to the measure problem (Olum) and the Tolman conundrum (Steinhardt–Turok / Ijjas–Steinhardt / Pavlović–Sossich); Problem A sharpened to Volovik-P>0 vs Carroll-P=0 |
 
-Full chain 3.4 → 3.28 lives inside the document's revision history.
+Full chain 3.4 → 3.29 lives inside the document's revision history.
 
 ## Repository layout
 
 ```
-LMU_V3_28_consolidated.tex    LaTeX source (current)
-LMU_V3_28_consolidated.pdf    compiled PDF (current)
+LMU_V3_29_consolidated.tex    LaTeX source (current)
+LMU_V3_29_consolidated.pdf    compiled PDF (current)
 LMU_V3_27_consolidated.tex    LaTeX source (previous — rollback point)
 LMU_V3_27_consolidated.pdf    compiled PDF (previous — rollback point)
 LMU_V3_26_consolidated.tex    LaTeX source (older rollback)
@@ -96,8 +97,8 @@ Robotic_Mining_Architecture_Notes.md   standalone notes (not part of the LMU cos
 XeLaTeX, **twice** (TOC/refs settle on pass 2). XeLaTeX is the recommended engine (`fontspec` + Latin Modern OpenType fonts); the preamble also carries a pdfTeX fallback branch that loads `lmodern`. Keep the figure PNGs in `figs/` next to the `.tex` (`\graphicspath{{figs/}}` is set in the preamble).
 
 ```
-xelatex LMU_V3_28_consolidated.tex
-xelatex LMU_V3_28_consolidated.tex
+xelatex LMU_V3_29_consolidated.tex
+xelatex LMU_V3_29_consolidated.tex
 ```
 
 Expected: 0 errors, 108 pages, 26 equation environments (33 numbered display equations including align rows).
@@ -106,7 +107,7 @@ Expected: 0 errors, 108 pages, 26 equation environments (33 numbered display equ
 
 See `CITATION.cff` (GitHub's "Cite this repository" button), or cite the concept DOI, which always resolves to the latest version:
 
-> Rungsiyapornratana, P. (2026). *Loop Mega Universe (LMU): a cyclic black-hole cosmology framework* (V3.28). Zenodo. https://doi.org/10.5281/zenodo.20692157
+> Rungsiyapornratana, P. (2026). *Loop Mega Universe (LMU): a cyclic black-hole cosmology framework* (V3.29). Zenodo. https://doi.org/10.5281/zenodo.20692157
 
 ## บทคัดย่อ (ไทย)
 

@@ -1,4 +1,4 @@
-# OPEN_PROBLEMS — the research map (V3.28 · snapshot 2026-07-10)
+# OPEN_PROBLEMS — the research map (V3.29 · snapshot 2026-07-11)
 
 LMU in its current state is a **map, not a finished theory**: a hybrid assembly of owned
 mechanisms (CCC · Starobinsky/α-attractors · ekpyrotic smoothing · anomaly-inflation program)
@@ -108,6 +108,8 @@ predecessor". **Needed expertise:** phenomenology · BH population synthesis.
 
 Thresholds are **immutable** (OSF registration above). Argue with data, not with edits.
 
+*Label-scope note (2026-07-12): the pre-registration's internal-label mapping note ("the document's internal F-labels differ — e.g. its internal 'F4' is the Hawking-point test = F5 here") applies only to pre-3.26 tex strata; from the 3.26 revision entries onward the tex uses this public F-numbering (F4 = tensor band, F5 = Hawking-point absence).*
+
 ---
 
 ## 6. Field-wide problems LMU shares (NOT LMU-specific — do not re-list as LMU knots)
@@ -156,4 +158,4 @@ The useful contribution modes, in order: (a) the seam calculation (§3), (b) an 
 observable (§4), (c) data on any watch-line (§5), (d) a proof that one of the dead-ends
 in §7 was closed wrongly.
 
-*Author of the framework: Pitarn Rungsiyapornratana. Map assembled 2026-07-10, alongside release v3.28.*
+*Author of the framework: Pitarn Rungsiyapornratana. Map assembled 2026-07-10, updated 2026-07-11 alongside v3.29.*

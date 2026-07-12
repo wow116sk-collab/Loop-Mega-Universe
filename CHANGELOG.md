@@ -7,6 +7,51 @@ the `.tex`).
 
 ---
 
+## v3.29 — 2026-07-11
+
+Release consolidation of the post-3.28 run (all append-only revision entries in
+the `.tex`, gathered under one version). No new equation, axiom, or falsifier;
+net open-item status unchanged from 3.28 (one linked IC question — the wiring),
+now with its non-closability *explained* and its decision points named.
+
+- **Wiring closure attempts, rounds 1–4** (adversarially verified): the wiring
+  (ω = prior aeon's conformal factor = α-attractor inflaton) is **not promotable
+  to [Fact] by principle** — least action, entropy production, the aeon map,
+  amplitude, Yamabe/Lichnerowicz–York, the trace anomaly on the Obata orbit,
+  einselection and Landauer all fail for the same structural reason: the
+  residual is a conformal-diffeomorphism zero-mode (gauge) + one free York
+  datum (φ₂) + the field-wide amplitude — not a physical hole. Plateau stays
+  *favoured* (hot-flash lock-out; anomaly isotropy penalty); measurement decides
+  (F4/F5). Log: `review/WIRING_closure_attempts_2026-07-09.md`; scripts
+  `code/wiring_*.py`.
+- **NEW: the τ_aeon entropic-clock layer** [Hypo, wiring-only]: the aeon's
+  internal time = accumulated **coarse-grained** entropy flow of its own ledger
+  (coarse-grained pinned against the Page-curve trap). Energy = sawtooth, time =
+  staircase; pre-bang closed form τ(t)=τ_max[1−(1−t/t_ev)^(2/3)] — finite in τ,
+  crescendo into the flash, flash→hot-bang one thick tick; the identity
+  w=−1 ⟺ undiluting ⟺ timeless compresses cold→hot to one line; explains why
+  F4/F5 are the only two observational windows (Landauer records argument).
+  Ownership swept twice (34 agents, ~90 papers, batch-verified): unoccupied
+  among cosmological models; nearest neighbours cited (Barontini PRR 8 L022047
+  2026 = lab precedent; Weberszpil–Sotolongo-Costa IJTP 65:15 2026; Martyushev
+  & Shaiapin 2016; Bojowald–Tavakol 2008). Moves no falsifier; independent of
+  the ω=inflaton knot. Files: `review/ENTROPIC_TIME_bridge_2026-07-11.md`,
+  `review/ENTROPIC_TIME_ownership_2026-07-11.md`,
+  `code/entropic_time_vs_energy_seam.py`.
+- **Observational snapshot** (stable parts): r < 0.034 (2025 combined) tightening
+  toward the decisive LiteBIRD/CMB-S4 range for the F4 band; ACT DR6 n_s
+  consistent with the plateau; Hawking-point 2023–24 reanalyses find no
+  significant signal — consistent with F5 (shared with ΛCDM).
+- **Relic-discrimination criteria** pinned (crossed vs freshly-made):
+  statistics-vs-template, causal-correlation excess (weak alone), formation-
+  history mismatch (F2's spin tag), seam write-budget (WCH ⇒ ~zero structure
+  crosses) — a confirmed structured crossing would *falsify* LMU (F5 axis).
+- **Repo research layer:** `OPEN_PROBLEMS.md` (outsider-facing map + superseded-
+  layer guard), `review/PROOF_STATUS_LEDGER.md` §2/§4 synced, OSF falsifier
+  pre-registration cross-linked (DOI 10.17605/OSF.IO/CN3B4).
+
+---
+
 ## v3.28 — 2026-07-08
 
 Release consolidation of the post-3.27 run (all append-only revision entries in
