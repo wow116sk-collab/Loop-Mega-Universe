@@ -48,7 +48,7 @@
 | C5 | METH | all four | `[declared]` | n/a (a practice) | Shared epistemic-tag system + decision-log discipline |
 | C6 | ONT | LMU ↔ CoE | `[declared]` | `[Fact-eq]` (mechanism); channel `[USER'S OWN]` | entropy-as-record = the *impersonal* continuity channel that passes the no-hair wall |
 | C7 | ONT | substrate ↔ L0 | `[derived → §4]` this-analysis | structure `[Fact-eq]`; existence split — see D4 | L0 is the thermodynamic *face* of substrate seen from inside a cycle |
-| C8 | ONT-chain | RM → box | `[derived → §4]` this-analysis | `[Fact-eq]` (by definition of ream) | Mining reaches the box via human → tool → tool-of-tool, far down the chain |
+| C8 | ONT-chain | RM → box | `[derived → §4]` this-analysis | `[Fact]` (by definition of ream) | Mining reaches the box via human → tool → tool-of-tool, far down the chain |
 
 Derived results (D1–D4) and the firewall map (§5) follow.
 
@@ -233,6 +233,9 @@ If you split each block into its own file, preserve these IDs so internal links 
 #d2  Continuity manufactured not transported [derived]
 #d3  Box = substrate/ream (H-analogy)   [derived]
 #d4  L0 vs substrate strength asymmetry [derived]
+#f1..f5  firewalls (do-not-connect)
 ```
 
 **Provenance line for the map itself:** links marked `[declared]` are traceable to the cited section in the source docs; links marked `[derived]` were reasoned out in analysis (2026-07-03) and are **not** claims the documents make. Assembled by Claude against the author's tag legend; curation per the author's standing rules.
+
+**Sync note (2026-07-12):** one map, three repos — this revision synced verbatim across LMU · CoE · SBA. Base = the LMU-side copy (registry already at `LMU_V3_29_consolidated`; C7/C8 quarantined in §4; corrected tag-system note). Two in-place fixes on that base: (1) master-index C8 strength aligned to its §4 block — `[Fact-eq]` → `[Fact]` (by definition of `ream`; no arithmetic shown, so `[Fact-eq]` did not apply); (2) restored the `#f1..f5` anchor line dropped from the appendix in an earlier LMU-side edit. The CoE/SBA copies this supersedes were the 2026-07-03 assembly (registry `LMU_V3_25`, RM filename `_2`, pre-quarantine C7/C8). Net effect: accuracy/consistency only — no link added, removed, or re-typed.
