@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use or discuss this framework, please cite it as below."
 type: dataset
 title: "Loop Mega Universe (LMU): a cyclic black-hole cosmology framework"
-version: "3.28"
-date-released: "2026-07-08"
+version: "3.29"
+date-released: "2026-07-11"
 authors:
   - family-names: "Rungsiyapornratana"
     given-names: "Pitarn"
@@ -64,5 +64,5 @@ preferred-citation:
       given-names: "Pitarn"
       orcid: "https://orcid.org/0009-0004-6411-2201"
   year: 2026
-  version: "3.28"
+  version: "3.29"
   doi: 10.5281/zenodo.20692157

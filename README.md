@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20692157.svg)](https://doi.org/10.5281/zenodo.20692157)
 
-**Current version: V3.28 (2026-07-08) — 108 pp, XeLaTeX.**
+**Current version: V3.29 (2026-07-11) — 109 pp, XeLaTeX.**
 Author: Pitarn Rungsiyapornratana ([ORCID 0009-0004-6411-2201](https://orcid.org/0009-0004-6411-2201)) · [Zenodo (all versions)](https://doi.org/10.5281/zenodo.20692157) · [OSF](https://osf.io/2ac8x) · [OSF pre-registration — falsifiers](https://doi.org/10.17605/OSF.IO/CN3B4)
 
 **New here?** Read [**STORY.md**](STORY.md) first — the whole cycle in five acts, plain language, no equations, five minutes.
@@ -63,6 +63,7 @@ DESI DR2 (arXiv:2503.14738) · six-relic compilation Cohn et al. 2025 (arXiv:250
 
 | Version | Date | One-liner |
 |---|---|---|
+| 3.29 | 2026-07-11 | Release consolidation of the post-3.28 run: **wiring closure rounds 1–4** (not promotable by principle — the residual is a conformal-gauge zero-mode + one free York datum + the field-wide amplitude; hot-flash lock-out + anomaly isotropy penalty keep the plateau *favoured*; decided by measurement, F4/F5); **NEW τ_aeon entropic-clock layer** [Hypo, wiring-only] — the aeon's internal time = its own coarse-grained entropy flow (energy = sawtooth, time = staircase; pre-bang closed form, finite in τ; w=−1 ⟺ undiluting ⟺ timeless compresses cold→hot to one line; explains why F4/F5 are the only two observational windows; ownership swept twice — unoccupied among cosmological models, Barontini PRR 2026 = lab precedent); observational snapshot folded (r < 0.034 tightening toward the F4 band; Hawking-point 2023–24 nulls consistent with F5); relic-discrimination criteria pinned (a confirmed *structured* crossing would falsify LMU, not confirm it); OPEN_PROBLEMS.md research map + ledger sync. V3.28 kept as a rollback point |
 | 3.28 | 2026-07-08 | Release consolidation of the post-3.27 run: CEAW reinstated (L2 state-diagnostic); external-cosmology refresh (ACT DR6 n_s↑, ν-anomaly, CCBH, DESI DR2) folded in as drift; ACT-tension resolved via extended α-attractor (borrowed, one tuned parameter); wiring bridge tightened + selection argument → ω=inflaton now [Hypo→soft/favoured]; the "+3 spread" **re-derived to the standard flatness problem** (verified), its residue relocated into the wiring's flash→plateau IC family → LMU-specific gaps collapse to one linked question. V3.27 kept as a rollback point |
 | 3.27 | 2026-07-07 | Deterministic-flash reset (supersedes the Volovik/P>0 collapse); tiny de Sitter endgame → finite 10¹²² ceiling; LMU-specific open items reduced to two (the "+3" spread [soft], the ω=inflaton wiring [Hypo]); de Sitter stability / swampland / P>0 reframed as field-wide, not LMU closure-blockers. Split into its own file; V3.26 kept as a rollback point |
 | 3.26 | 2026-07-04 | External-review + adjudication pass (PR #1, rulings R1–R29): PDF link plumbing repaired (104→103 pp), ε_DESI 4.6×10⁻² adopted body-wide, M87* spin [Open — contested], verification suite in /code |
@@ -70,13 +71,13 @@ DESI DR2 (arXiv:2503.14738) · six-relic compilation Cohn et al. 2025 (arXiv:250
 | 3.24 | 2026-07-02 | Negentropy/arrow homing (Frautschi gap, Eddington arrow, timeless Coleman bridge, Page-returned scramble); one-flash-one-aeon convention; Boddy–Carroll–Pollack citation repair |
 | 3.23 | 2026-07-01 | Catalysis endpoint sharpened; the two open premises homed to the measure problem (Olum) and the Tolman conundrum (Steinhardt–Turok / Ijjas–Steinhardt / Pavlović–Sossich); Problem A sharpened to Volovik-P>0 vs Carroll-P=0 |
 
-Full chain 3.4 → 3.28 lives inside the document's revision history.
+Full chain 3.4 → 3.29 lives inside the document's revision history.
 
 ## Repository layout
 
 ```
-LMU_V3_28_consolidated.tex    LaTeX source (current)
-LMU_V3_28_consolidated.pdf    compiled PDF (current)
+LMU_V3_29_consolidated.tex    LaTeX source (current)
+LMU_V3_29_consolidated.pdf    compiled PDF (current)
 LMU_V3_27_consolidated.tex    LaTeX source (previous — rollback point)
 LMU_V3_27_consolidated.pdf    compiled PDF (previous — rollback point)
 LMU_V3_26_consolidated.tex    LaTeX source (older rollback)
@@ -96,8 +97,8 @@ Robotic_Mining_Architecture_Notes.md   standalone notes (not part of the LMU cos
 XeLaTeX, **twice** (TOC/refs settle on pass 2). XeLaTeX is the recommended engine (`fontspec` + Latin Modern OpenType fonts); the preamble also carries a pdfTeX fallback branch that loads `lmodern`. Keep the figure PNGs in `figs/` next to the `.tex` (`\graphicspath{{figs/}}` is set in the preamble).
 
 ```
-xelatex LMU_V3_28_consolidated.tex
-xelatex LMU_V3_28_consolidated.tex
+xelatex LMU_V3_29_consolidated.tex
+xelatex LMU_V3_29_consolidated.tex
 ```
 
 Expected: 0 errors, 108 pages, 26 equation environments (33 numbered display equations including align rows).
@@ -106,7 +107,7 @@ Expected: 0 errors, 108 pages, 26 equation environments (33 numbered display equ
 
 See `CITATION.cff` (GitHub's "Cite this repository" button), or cite the concept DOI, which always resolves to the latest version:
 
-> Rungsiyapornratana, P. (2026). *Loop Mega Universe (LMU): a cyclic black-hole cosmology framework* (V3.28). Zenodo. https://doi.org/10.5281/zenodo.20692157
+> Rungsiyapornratana, P. (2026). *Loop Mega Universe (LMU): a cyclic black-hole cosmology framework* (V3.29). Zenodo. https://doi.org/10.5281/zenodo.20692157
 
 ## บทคัดย่อ (ไทย)
 

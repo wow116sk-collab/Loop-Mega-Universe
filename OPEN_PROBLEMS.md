@@ -1,4 +1,4 @@
-# OPEN_PROBLEMS — the research map (V3.28 · snapshot 2026-07-10)
+# OPEN_PROBLEMS — the research map (V3.29 · snapshot 2026-07-11)
 
 LMU in its current state is a **map, not a finished theory**: a hybrid assembly of owned
 mechanisms (CCC · Starobinsky/α-attractors · ekpyrotic smoothing · anomaly-inflation program)
@@ -156,4 +156,4 @@ The useful contribution modes, in order: (a) the seam calculation (§3), (b) an 
 observable (§4), (c) data on any watch-line (§5), (d) a proof that one of the dead-ends
 in §7 was closed wrongly.
 
-*Author of the framework: Pitarn Rungsiyapornratana. Map assembled 2026-07-10, alongside release v3.28.*
+*Author of the framework: Pitarn Rungsiyapornratana. Map assembled 2026-07-10, updated 2026-07-11 alongside v3.29.*
