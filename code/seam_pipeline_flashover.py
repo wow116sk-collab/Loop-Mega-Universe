@@ -16,8 +16,9 @@ Stage map (fire language -> seam language, owners in brackets):
            {N_total, flatness, n_s, r, T_reh, entropy ticks}
            [alpha-attractor formulas; instant-reheat thermodynamics]
 
-HONEST VERDICT BUILT IN: the pipe closes end-to-end with EXACTLY ONE hand-fed
-number -- phi0, the field's plateau position at ignition. That number is the
+HONEST VERDICT BUILT IN: given the declared inputs (M0 survivor anchor; repo
+conventions alpha=1, V0=1e-10, instant reheat), the pipe closes end-to-end with
+EXACTLY ONE remaining free number -- phi0, the field's plateau position at ignition. That number is the
 legitimately-free York-type initial datum of wiring closure rounds 1-4: not
 derivable by principle, here made concrete as the single dial on the pipeline.
 Everything upstream of phi0 (timing, thresholds) and downstream of phi0
@@ -68,7 +69,7 @@ M_cut = M0 * (t_na / t_ev) ** (1.0 / 3.0)
 print(f"  match-strike window (|dlnM/dt| > H_inf): last {t_na/yr:.1e} yr of the fuse")
 print(f"    mass entering the strike: M_cut = {M_cut:.2e} kg = {M_cut/Msun:.1e} Msun")
 print(f"    strike energy E_match = {M_cut*c**2:.1e} J  (the 'match head' as the substrate clock sees it)")
-print("  -> timing/tempo of ignition: FULLY COMPUTED from M0. No dial anywhere.\n")
+print("  -> timing/tempo of ignition: FULLY COMPUTED from M0. No dial beyond the declared input M0.\n")
 
 print("=" * 78)
 print("STAGE 2 -- the ignition criterion (the aeon's 'Thomas correlation')")
@@ -88,7 +89,7 @@ print("     phi0 = the York-type free initial datum (rounds 1-4). The pipe's ONE
 print("=" * 78)
 print("STAGE 3 -- the fully developed fire: AFTER-AEON state vector, per phi0")
 print("=" * 78)
-# instant-reheat temperature from the plateau height (owned; matches repo 3.3e15 GeV)
+# instant-reheat T (owned; repo's 3.29e15 GeV = same formula at V0^(1/4)=8e15 GeV, 4% V0 rounding)
 T_reh_GeV = (30 * V0 / (np.pi**2 * gstar)) ** 0.25 * MPl_GeV
 n_s = 1 - 2 / N_CMB
 r_spine = 12 * alpha / N_CMB**2
@@ -102,7 +103,7 @@ for phi0 in phi0_sweep:
         verdict, ok, om = "MISFIRE (CMB window does not even fit)", False, float('nan')
     elif margin < 0:
         verdict, ok = "MISFIRE (open, curvature-dominated aeon)", False
-        om = 0.01 * np.exp(-2 * margin)   # exceeds the bound
+        om = min(1.0, 0.01 * np.exp(-2 * margin))   # formal e^{-2m} capped at ~1: Omega_k saturates under curvature domination
     else:
         verdict, ok = "IGNITES -> flat hot aeon", True
         om = 0.01 * np.exp(-2 * margin)   # bound met with margin
@@ -126,7 +127,8 @@ print("""  YES, end-to-end, EXCEPT ONE NUMBER. The flashover-class chain carries
   The single un-computed input is phi0 -- the plateau position at ignition,
   i.e. the legitimately-free York-type datum of the wiring rounds. The pipeline
   therefore proves a sharp form of OPEN_PROBLEMS section 3:
-      the seam is a ONE-PARAMETER family of after-aeons;
+      given (M0; alpha=1, V0, instant reheat -- repo conventions), the seam
+      is a ONE-PARAMETER family of after-aeons in phi0;
       deriving that one parameter IS the derivation gap -- nothing else is missing.
   Below the threshold the same pipe computes the MISFIRE (sterile, curvature-
   dominated aeon) -- the formalism prices failure as well as success.
