@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Flashover vs the aeon flash: the SAME mathematical class ("runaway by loss of
-equilibrium"), drawn side by side. Produces figs/flashover_vs_aeon_flash.png.
+"""Flashover vs the aeon flash: the SAME mathematical class ("runaway past an
+unstable equilibrium"), drawn side by side. Produces figs/flashover_vs_aeon_flash.png.
 
 Run to reproduce. All ingredients owned:
   * Semenov thermal-explosion theory (Semenov 1928; Frank-Kamenetskii 1939):
@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 # ---------- constants (SI) ----------
 G, hbar, c, kB = 6.674e-11, 1.055e-34, 2.998e8, 1.381e-23
 a_rad, Msun = 7.566e-16, 1.989e30
-H_inf = 1.5e-18                                  # s^-1  (H0*sqrt(Omega_L), ~measured Lambda)
+H_inf = 1.83e-18                                 # s^-1  (H0*sqrt(Omega_L), matches endgame_anchored_desitter.py)
 T_dS = hbar * H_inf / (2 * np.pi * kB)           # Gibbons-Hawking bath
 
 # unstable equilibrium, two owned routes (agree up to greybody O(1)):
@@ -37,8 +37,8 @@ M_eq_flux = (hbar * c**9 / (15360 * 27 * np.pi**2 * G**4 * a_rad * T_dS**4)) ** 
 print(f"T_dS = {T_dS:.2e} K")
 print(f"M_eq (T_H = T_dS)      = {M_eq_TH/Msun:.2e} Msun")
 print(f"M_eq (flux balance)    = {M_eq_flux/Msun:.2e} Msun   (greybody O(1) apart)")
-print(f"survivor band 1e10-1e12 Msun sits {np.log10(M_eq_TH/Msun/1e12):.0f}-"
-      f"{np.log10(M_eq_TH/Msun/1e10):.0f} orders below the ceiling")
+print(f"survivor band 1e10-1e12 Msun sits {np.log10(M_eq_TH/Msun/1e12):.1f}-"
+      f"{np.log10(M_eq_TH/Msun/1e10):.1f} orders below the ceiling")
 
 # ---------- palette (validated: Okabe-Ito pair + neutral inks) ----------
 BLUE, ORANGE = "#0072B2", "#D55E00"       # loss/absorption vs generation/emission
@@ -56,7 +56,8 @@ fig.subplots_adjust(hspace=0.44, wspace=0.28, top=0.865, bottom=0.09)
 ax = axs[0, 0]
 th = np.linspace(0, 3.2, 400)
 loss = th
-ax.plot(th, loss, color=BLUE, lw=2, label="heat loss  ~ (T − T₀)")
+ax.plot(th, loss, color=BLUE, lw=2)
+ax.text(2.62, 2.28, "heat loss ~ (T − T₀)", color=BLUE, fontsize=8, rotation=35)
 curve_tags = [(0.22, ":", "small fire", 2.88), (np.e**-1, "--", "critical (tangent)", 2.28),
               (0.55, "-", "big fire", 1.92)]
 for delta, ls, tag, xlab in curve_tags:
@@ -135,7 +136,7 @@ ax.axvline(1.0, color=MUT, lw=1, ls="--")
 ax.text(0.86, 30, "terminal\nFLASH", color=ORANGE, fontsize=9, fontweight="bold")
 ax.set_xlim(0, 1.04); ax.set_ylim(1, 1e3)
 
-fig.suptitle("Flashover and the aeon flash: the same class — runaway by loss of equilibrium", fontsize=12, y=0.988)
+fig.suptitle("Flashover and the aeon flash: the same class — runaway past an unstable equilibrium", fontsize=12, y=0.988)
 fig.text(0.5, 0.922, "P1 two competing power curves · P2 one unstable crossing, two basins of fate\n"
          "P3 positive feedback (Arrhenius ↔ negative heat capacity) · P4 slow creep, finite-time finale",
          ha="center", fontsize=8.7, color=MUT)
