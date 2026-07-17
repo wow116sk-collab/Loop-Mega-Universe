@@ -61,10 +61,11 @@ Everything below is one family: *what exactly does the flash hand the new aeon?*
 | Does the flash deliver **N_total ≈ 60–85** total e-folds (reheating-dependent minimum)? | yes (α-attractors generically give N_total ≫ 66) | a first-principles seam calculation (§3) |
 | Flash **sparsity** — are survivors rare enough that neighbouring aeons stay horizon-exiled? | yes | survivor-population statistics |
 | Survivor-mass distribution → aeon-lifetime distribution (t ∝ M³; mortality window M ≲ 10²² M_☉, above which T_H < T_dS and the survivor never evaporates) | realistic masses sit ~10 orders below the ceiling | BH population synthesis into the deep future |
+| **Fertility** — does the new aeon mint a baryon asymmetry after reheating? (the seam erases any inherited B by e⁻³ᴺ; a B=0 aeon inflates and reheats normally but is *sterile*: annihilation to η~10⁻¹⁸, no stars → no SMBHs → no next survivor — the chain ends one generation later. The birth-side twin of the mortality window.) | yes, via a borrowed standard mechanism running in the hot plasma (leptogenesis · Affleck–Dine · spontaneous baryogenesis — owners and grading in [`review/LOG_post_3.27_2026-07-08.md`](review/LOG_post_3.27_2026-07-08.md) item 10); generic to every cyclic model, not LMU-specific | this decade's data, independent of LMU: ν δ_CP (DUNE/Hyper-K), 0νββ, ~5 GeV direct detection |
 
 | Needed expertise | Where |
 |---|---|
-| numerical relativity · semiclassical gravity · BH population synthesis | `code/residual_flatness_accounting.py` · `code/residual_flatness_stress.py` · SSOT §5 |
+| numerical relativity · semiclassical gravity · BH population synthesis · baryogenesis / particle cosmology | `code/residual_flatness_accounting.py` · `code/residual_flatness_stress.py` · SSOT §5 |
 
 ---
 
@@ -158,4 +159,4 @@ The useful contribution modes, in order: (a) the seam calculation (§3), (b) an 
 observable (§4), (c) data on any watch-line (§5), (d) a proof that one of the dead-ends
 in §7 was closed wrongly.
 
-*Author of the framework: Pitarn Rungsiyapornratana. Map assembled 2026-07-10, updated 2026-07-11 alongside v3.29.*
+*Author of the framework: Pitarn Rungsiyapornratana. Map assembled 2026-07-10, updated 2026-07-11 alongside v3.29; §2 fertility row added 2026-07-17.*
