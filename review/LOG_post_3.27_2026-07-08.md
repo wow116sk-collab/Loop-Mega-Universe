@@ -174,3 +174,31 @@ Conversation arc following item 9 (BW crossfire). All mechanisms = owners' ([bor
 
 **Deferred doc-candidate (do not apply until instructed):** a "fertility" row ("does the new aeon mint a baryon asymmetry?" — settled by borrowed baryogenesis + the decade's ν/DM measurements) could join the seam-IC family table in OPEN_PROBLEMS §2 alongside flatness delivery.
 
+
+---
+
+## 11) Seam-derivation ownership sweep (2026-07-18/19): "has anyone done item 3?" — void STANDS after adversarial pass; §3 upgraded from "absent" to "swept, with field-internal admissions"
+
+Trigger: user challenge "seam calc มีคนทำแล้วนี่". First disambiguated three look-alikes (our pipeline = assembly with φ₀ as input; Tod's CCC equations = matching under ansatz; item 3 proper = INPUT (M_survivor, substrate) → OUTPUT (A_s, spectrum shape, N_total/φ₀) with no dial fit to data), then swept. Team: declared ปานกลาง/20, used 10 (head + 2 advisers + 6 lit axes + 1 adversarial batch verifier). Coverage: ~26 sweep phrasings + 9 fresh verifier phrasings + 2 targeted author audits; all 6 load-bearing claims verified at source (6/6 CONFIRMED).
+
+**Rubric (adviser-refined):** A = input is a causal predecessor state, tested by traceability d(output)/d(predecessor) ≠ 0, not narrative framing; B = outputs the amplitude A_s (a derived distribution over (A_s, N) also passes; retro-fit direction A_s→scale fails); C = dial ledger — every choice classified fit-to-data / convention / forced-by-predecessor; D = seam *mediated* by the evaporation radiation, not merely temporally adjacent; E-tag "asserted-not-derived" when no equation exists to cite.
+
+**VERDICT: nobody closes item 3. No paper passes two rubric letters.** Near-misses, each ≤ 1 letter:
+- **Oshita–Yokoyama** (1601.03929; PLB 785, 197 (2018)) — only genuinely flash-*mediated* mechanism found (terminal-evaporation heating nucleates a false-vacuum bubble → wormhole → daughter inflates); outputs a nucleation scenario, zero ICs; tunnelling (the road LMU dropped).
+- **Sueto–Yoshimoto–Cano** (2604.04601, 2026) — only paper where a BH scale quantitatively fixes an e-fold count, N ~ f(r_g/√α); brane-in-bulk construction, no A_s, no flash, higher-curvature tower of dials.
+- **Turok–Boyle** (2302.00344) — the field's loudest "no free parameters" amplitude claim (A_s + tilt from SM couplings; verified verbatim); input is a CPT/analyticity boundary condition at the bang, not a predecessor → A-fail. *Sets the bar item 3 must beat; proves a zero-fit-parameter A_s computation is at least formulable.*
+- **Meissner–Penrose** (2503.24263) — predecessor data genuinely crosses (cluster masses → Hawking-point temperatures) but outputs a conservation law + localized anomalies, no A_s/spectrum/N → B-fail.
+- **Rovelli–Vidotto** (1805.03224) — predecessor BH remnants cross the bounce as dark-matter *content*, not as ICs.
+- **Gaztañaga et al.** (2505.23877; PRD 111, 103537) — the June-2025 "universe born in a black hole" press wave: what is derived is a bounce radius; IC claims are asserted-not-derived (E-fail). Press false positive, as pre-flagged.
+- **Bastero-Gil–Berera–Brandenberger et al.** (1612.04726; verifier find) — closest existing φ₀-derivation: plateau-field localization from a *preceding thermal era*; generic era (not a BH/aeon state), coupling dials, no A_s.
+
+**School-by-school failure mode (one line each):** CCC — Tod (1309.7248): matching under reciprocity with residual conformal freedom (*the same φ₂-type freedom our wiring rounds isolated*), zero occurrences of "perturbation"; CCC's own literature admits the post-bang spectrum calculation "hasn't been done". Bounce family — through-bounce transfer machinery exists but amplitude is normalized to observation. LQC — deterministic bounce evolution, but bounce-vacuum choice is a dial and A_s is fit. Wavefunction programs — the ansatz swings the answer (no-boundary → minimal N, 0803.1663; tunnelling → maximal N), FLT (1703.02076/1705.00192/1708.05104) prove contour-dependence with unsuppressed perturbations. Holography — McFadden–Skenderis (0907.5542) genuinely outputs A_s from the dual, but the dual's parameters are fit to Planck (1607.04878/1703.05385). Correction pinned during sweep: arXiv 2511.11808 ("Inflation without an Inflaton II") is the Matarrese/Padova group, NOT Boyle–Turok, and its verified normalization sentence uses observed A_s as *input* to fix H_inf.
+
+**The real yield — two structural upgrades for §3:**
+1. **Absolute "zero dials" is unattainable in principle for any framework** — hypersurface choice + York datum, vacuum prescription, and (path-integral) contour are choices that move A_s. Honest formulation of item 3 = a **dial ledger**: closure means every entry is forced-by-predecessor-dynamics or a declared axiom, none fit to data. This re-grades the wiring rounds' "φ₂ legitimately free" verdict as a *field-wide* structural feature, not an LMU-specific weakness.
+2. **The best output nature may permit is a distribution, not a point:** no-hair ⇒ the flash plausibly forgets everything but total energy ⇒ the target is P(A_s, N) via stochastic first-passage on the plateau (Vennin–Starobinsky machinery) seeded by the flash. This is the concrete attack route for anyone taking §3.
+
+Fresh no-go momentum: Easson 2606.25023 (June 2026) — obstructions to minimal regular-BH cosmologies (Darmois-matching mismatch; flat/open daughters geodesically incomplete): the newest literature moves toward no-gos, not closures.
+
+**Net:** OPEN_PROBLEMS §3 stands unchanged in content, upgraded in evidence: from "nobody has it" to "six schools swept + adversarial pass + the CCC school's own admission." Candidate doc-note (deferred until instructed): restate §3 in dial-ledger + distribution form per the two upgrades. No falsifier moved. (The base-12 representation exercise from the same sitting is intentionally NOT logged — numerology-grade, zero physical content.)
+
