@@ -202,3 +202,26 @@ Fresh no-go momentum: Easson 2606.25023 (June 2026) — obstructions to minimal 
 
 **Net:** OPEN_PROBLEMS §3 stands unchanged in content, upgraded in evidence: from "nobody has it" to "six schools swept + adversarial pass + the CCC school's own admission." Candidate doc-note (deferred until instructed): restate §3 in dial-ledger + distribution form per the two upgrades. No falsifier moved. (The base-12 representation exercise from the same sitting is intentionally NOT logged — numerology-grade, zero physical content.)
 
+
+---
+
+## 12) PEER-review sweep (2026-07-20): watch-lines re-swept with journal-status flags + first external-engagement audit — zero engagement, two stale-log corrections, no falsifier moved
+
+Team: declared ง่าย/10, used 9 (head + 2 advisers + 6 axes + 1 adversarial batch verifier). Window 2026-07-13→20 (8 days incl. weekend arXiv gap — thin haul pre-graded as the correct outcome). Verifier: **17/18 CONFIRMED, 1 ADJUSTED, 0 REFUTED** — every date checked against arXiv API/Crossref/agency pages, incl. two decoy cases (CQG online-first illusion; ApJL online-vs-print boundary).
+
+**(a) External engagement with LMU: ZERO, cleanly.** No citation/mention/fork/star/discussion anywhere: OpenCitations empty on all three DOIs (concept 10.5281/zenodo.20692157, v3.29 10.5281/zenodo.21322939, OSF 10.17605/OSF.IO/CN3B4); HN Algolia 0; GitHub 0 forks/0 stars/0 watchers, 0 external issues; Thai-language searches null; DataCite's 24 events all self-relations (the concept-vs-version double-count trap — present, correctly excluded). Scholar/Semantic-Scholar unreachable (429) but their week-scale lag makes a zero there uninformative either way. Observed en route: **Zenodo v3.29 record live since 2026-07-12** (17 views / 0 downloads at sweep time) — the release checklist's Zenodo step is done. Also surfaced our own **PR #12** (CONNECTION_MAP three-repo sync, opened 2026-07-12 by the companion session) still open → merged 2026-07-20 on instruction; companion PRs in CoE/SBA remain the other repos' business.
+
+**(b) Stale-log corrections (supersede item 7 on these points — change pre-dates the window):**
+1. **LiteBIRD "~2029" is DEAD.** ISAS/JAXA official page: "aiming for a launch in JFY2036" (KDP2 approved at ISAS Sept 2025; mission definition review planned summer 2026; Kavli IPMU release says "launch in the 2030s"). → **F4's decisive band test slides to the mid/late-2030s**; CMB-S4 also 2030s. Any "~2029" left in files is superseded.
+2. SPT-3G D1 IGW bound (arXiv:2505.02827, logged as preprint) was already **PRD 112, 123520 (2025-12-08)** — arXiv journal-ref lag masked it. Numbers unchanged: r < 0.25 standalone, σ(r)=0.067; combined bound still r < 0.032–0.034.
+3. The evolving-DE evidence paper logged as arXiv:2508.10514 has been **EPJC 86, 564 (2026-05-22)** since May.
+
+**(c) In-window items (peer-review flags per verifier):**
+- **F1:** [PRD 2026-07-16] Dark Acoustic Oscillations (arXiv:2512.15870): "evolving DE" possibly an *artifact* of early dark-matter–dark-radiation decoupling biasing the BAO scale — favorable-to-F1 if it wins; [CQG 43(14), 07-16] Sahoo: conditional **no-phantom-crossing theorem** for single-clock cosmology (invariant-manifold argument) — reinforces the logic F1 leans on; [PRD 114, 023532, 07-14] two-field quintessence ΔlnB≈4 over flat ΛCDM — **non-phantom quintessence family** (verifier adjustment: not "thawing"-specific; DESY5 SN, CMB via shift parameters); [preprint 07-14] arXiv:2607.13009: localized 3.5σ anomaly at z≈0.47 (DESI DR2 BAO + DES-Dovekie, no CMB) — localized hint, does not move F1; [preprint 07-17] Khoury–Lin–Trodden follow-up (2607.16191, Δχ²=−14.48); [RAA 26(8), 07-15] five-paper dark-energy review section. **F1 untouched; DAO line goes on watch.**
+- **F4:** [PRD 114, 023534, 07-17] SPT-3G Compton-y maps (no tensor bearing); [preprint 07-16] "Tunnelling out of Starobinsky inflation" (2607.15354: hybrid exit raises n_s toward ACT-favored while keeping small r).
+- **F5:** Meissner–Penrose 2503.24263 **unchanged** — still v1, no journal, no published rebuttal (all 7 citing papers checked: zero Comments/Replies). The transmit camp remains entirely pre-review while our F5 threshold is pre-registered.
+- **Anchors:** [PRD 114, L021502, 07-13] GW231123 **not lensed** (<4σ; third-party DINGO analysis, 3 waveform models) — the heavy masses stand; over-massive-BH anchor strengthened; [ApJL 1005, online 07-03/print 07-10 — boundary case] GWTC-4.0 populations; [LVK plan page, updated 07-15] **IR1** six-month run begins late-Oct–mid-Nov 2026, O5 timeline still "in discussion".
+- **Theory watch:** quiet, as an 8-day window should be (Baez–Bokor–Boyle 2607.10833 = Boyle's Jordan-algebra/SM line, program-activity marker only; no Barontini follow-ups possible yet).
+
+**Net:** no falsifier moved. Timeline consequence worth absorbing: with LiteBIRD at JFY2036, **F1 (DESI DR3 ~2027 → Y5) is now clearly the first falsifier to face decisive data**, F4 slides to the 2030s. Files carrying "~2029" for LiteBIRD: superseded by this item.
+
