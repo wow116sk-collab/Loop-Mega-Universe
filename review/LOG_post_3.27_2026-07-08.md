@@ -283,3 +283,43 @@ Review also **mis-mapped Open joint 2**: it is the V_min sign question (`tex:122
 
 **Deferred candidates (NOT applied — one scope each, awaiting instruction):** (i) rider over tex:1222–1229; (ii) F1–F4 → F1–F6 in ledger:57; (iii) name the E-model in one sentence; (iv) fix SSOT:51 parenthetical + ledger:8 dangling pointer; (v) F1/F4 status refresh in OPEN_PROBLEMS §5 per (a) and (e); (vi) ladder discriminator as a §4 candidate observable.
 
+
+---
+
+## 14) DEAD-END — the rotating-form route (2026-09-07): rotation as the acceleration engine, and accumulation-to-collapse in L0. Both priced and closed; A2 now quantified
+
+Trigger: an externally-authored survey of rotating/anisotropic cosmologies (AI-written, tracking-tagged links, and it referenced our own "L0" — i.e. an attempt to graft a rotating-universe model onto our substrate), followed by Pitarn's own sharper restatement of the idea. Script: `code/rotating_form_L0.py` (runnable). Team: ง่าย/10, used 4 (3 workers + head; the decisive arithmetic was run directly rather than spending a fifth agent).
+
+**Grading correction, recorded so it is not repeated:** the first pass mis-assigned the proposal, reading it as "L0 has a boundary" and raising 12 collision points. **Five of those (bounded L0, the need for an 'outside', the outside-resists pressure balance, and the finite-L0 walls) are void** — the proposal keeps L0 infinite and unbounded (fork 5 untouched); what curves is the **form condensing inside it**. Only the rotation and no-inflation objections survived, plus the two new items priced below.
+
+### What was already ours (not a new proposal)
+
+- **The accumulation picture** is `review/L0_SHALLOW_WELL_accumulation.md` (2026-07-07, still current): only *cold* matter accumulates (hot/turbulent free-streams away) → a broad, shallow, low-Weyl, **non-collapsing** well in an infinite L0.
+- **"The form is slightly curved"** is canon: the aeon is born an **open FRW patch, Ω_k < 0** (`tex:851`), flattened by inflation.
+- **"The form has an axis"** is the **C5 spin-axis carry-through** (`tex:838`): the child *"inherits a preferred spin-axis direction carried on those lumps"* — [Hyp], and pinned at `tex:1250` as **"directly unobservable in principle."**
+- **"Thaw"** is already F1's registered word — but there the thawing object is a **field beginning to roll**, not a rotation.
+
+### The two new pieces, priced
+
+**(i) Rotation as the engine of the observed acceleration — DEAD, two independent ways.**
+- *Size.* To let the +ω² Raychaudhuri term rival Λ needs ω² ~ 3Ω_Λ H₀², i.e. **ω/H₀ = 1.43**. Bounds: (ω/H)₀ < 7.6×10⁻¹⁰ (Planck 2015 XVIII, Bianchi VII_h) and (σ_V/H)₀ < 4.7×10⁻¹¹ (Saadeh+ 2016 PRL, Planck T+E over all Bianchi d.o.f., odds 121,000:1). **Over by 9.3 and 10.5 orders.**
+- *Timing — the decisive one.* Angular-momentum conservation on a comoving patch (L ~ MR²ω, R ~ a) gives **ω ∝ a⁻²**, so the rotational term goes as **ω² ∝ a⁻⁴**, radiation-like. Granting rotation the **entire** dark-energy budget today, at recombination it was **~10¹² × larger** — it would have dominated the early universe and wrecked the CMB. Acceleration switching on only ~5 Gyr ago is the signature of a component that does **not** dilute (w=−1, ρ∝a⁰) finally overtaking ones that do. **Same failure class as the photon-crossfire result in `code/bw_crossfire_L0.py` (log item 9): a⁻⁴ always loses to expansion; only a w=−1 field is dilution-proof.** Pitarn derived that lesson himself in the crossfire arc and it applies here unchanged.
+- This **quantifies dead-end A2** (`tex:1355`: *"DE/Λ origin: rotation/vorticity (Saadeh et al. 2016 kills)"*; `tex:1438`), which previously carried the verdict without the numbers.
+
+**(ii) Accumulation continuing until the form collapses — DEAD, and self-defeating if forced.**
+- At the L0 floor density (ρ_dS = 6.0×10⁻²⁷ kg/m³) a pile reaches its own Schwarzschild radius only at **M = 5.55×10²² M_☉ = 1.00× the mass inside one de Sitter horizon** — it must gather material that is already receding faster than it can fall in.
+- Even granting it: that mass sits at the **mortality ceiling M_eq = 2.8×10²² M_☉** (T_H = T_dS), above which the hole **never evaporates** — no terminal flash, **no next aeon**. The collapse route does not open a cycle, it ends one.
+- **Bonus — an internal consistency check that passes:** the collapse mass reached here from *mass accumulation* and the mortality ceiling derived in the document from *temperature* land on the same de Sitter mass scale, a factor 2 apart. Two independent routes to the same wall.
+
+### What honestly survives (watch-line only)
+
+**Verma, Aluri, Mota & Obukhov, JCAP 06 (2026) 047** (arXiv:2506.00860) — a Gödel-class cosmographic preference from Pantheon+: Ω₀ = 0.29 (+0.21/−0.15) at z ≤ 0.2, axis ≈ (243°, −49°), ΔAIC = −2.23 — i.e. **~1.9σ, and the authors do not claim a detection**. It survives only because Gödel-type rotation is a model class the Bianchi CMB bounds do not cover, which also makes it correspondingly hard to falsify. Watch only.
+
+### Citation hygiene on the source survey (all checked at primary sources)
+
+Stale or refuted, and must not be carried into any doc: **"r < 0.06 from Planck"** is 8 years stale and mis-sourced (needs Planck+BK14; Planck alone gives 0.10; current r < 0.032 Tristram 2022 / 0.034 Balkenhol OJAp 2026) — and the survey's entire "no PGW ⇒ no inflation" leg rests on it; **"ω/H < 7.6×10⁻¹⁰"** presented as a 2024 result is an intro citation to superseded Planck 2013/2015, ~15× looser than Saadeh 2016; **"Szapudi et al. 2024"** should be **Pál, Goh, Rácz & Szapudi**, EPJ ST (2025); the survey's **~1% polar/equatorial expansion difference "consistent with CMB limits"** requires ω/H ≈ 1.4×10⁻², i.e. **10⁷–10⁸× the bounds**, and that paper's own discussion calls it *"a significant deviation from the concordance model"*; **Birch (1982)** is cited with its refutation history omitted (Phinney & Webster 1983; Bietenholz & Kronberg 1984; no alignment in Joshi+ 2007); **Shamir's galaxy-spin asymmetry** collapses on duplicate catalogue entries — 4.00σ → **0.29σ** after cleaning (Iye, Yagi & Fukumoto, ApJ 907, 123 (2021)), with three independent isotropy-favouring analyses since (Patel & Desmond 2024; Stiskalek & Desmond 2024; Iye & Yagi 2026) and no independent replication; **cosmic filament "solid-body" spin** actually rises then falls to zero past ~2 Mpc, at 1.3–1.7σ for most subsamples (4.2σ only for a triply-selected one; the title says "Possible").
+
+Supporting CMB-anomaly landscape as of 2026-09, for the record: Axis of Evil swings 1.5σ–3.3σ on mask choice with no look-elsewhere correction and no polarization counterpart; **S₁/₂ (missing large-angle correlations) largely dissolved** — better cleaning moves p from 0.2% to 6–9% (Herold et al., ApJ 1005, 146 (2026)); Cold Spot dead both ways (supervoid ruled out by lensing, Owusu+ JCAP 2023; the anomaly itself a filter-choice artefact, Zhang & Huterer 2010); direction-dependent H₀ claims have mutually near-orthogonal axes and are absorbed by bulk flow (Stiskalek, Desmond & Lavaux, MNRAS 2026). **Primordial vorticity as the origin of galactic spin is a historical dead end**: vorticity decays (ω ∝ a⁻¹ to a⁻²) in linear theory, and the replacement — tidal torque theory — is now measured at **~7σ** (Sheng et al., Nature Astronomy 2026).
+
+**Net:** no falsifier moved; A2 upgraded from verdict to priced verdict; one new wall recorded (the de Sitter accumulation budget, coinciding with the mortality ceiling). If a rotating-form idea returns, it must first clear ω/H ≈ 1.43 against 4.7×10⁻¹¹ and explain how an a⁻⁴ component switches on at z ≈ 0.5.
+
