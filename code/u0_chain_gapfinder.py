@@ -5,6 +5,10 @@ Feeds the author's picture through existing equations, one link at a time, and l
 link PASS (existing equation carries it), GAP (an equation is missing), or NEEDS INPUT
 (a parameter the documents do not fix).  It decides nothing about nature.
 
+Collision check (LOG item 18): links B and C1 re-enter the closed routes "energy/event-based
+ignition" and "hold a large patch to ignite" (Part VIII sec. 2). Keep this script as the
+audit trail of why, not as a live route.
+
 Chain:  L1 flash -> radiation in U0 (A = 0, static) -> pile reaches threshold -> collapse
         -> ignition (A > 0) -> inflation -> hot bath;  exterior hole evaporates back into U0.
 

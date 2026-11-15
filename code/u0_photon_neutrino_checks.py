@@ -78,5 +78,13 @@ mfp_gamma = 1 / (0.071 * 11.34) * 1e-2           # m, mass attenuation 0.071 cm^
 print(f"       neutrino mean free path ~ {mfp_nu / ly:.0f} light-years; photon ~ {mfp_gamma * 100:.1f} cm")
 check("log10 ratio of mean free paths", math.log10(mfp_nu / mfp_gamma), 19.5, 0.02)
 
+print("== 8. terminal flash vs the seed (LOG item 18, D1) ==")
+# kT_H = hbar c^3/(8 pi G M): mass left when kT_H = 7e12 GeV (SSOT sec. 3), and time left
+kT_flash_J = 7e12 * 1.602176634e-10
+M_flash = hbar * c**3 / (8 * math.pi * G * kT_flash_J)          # kg
+check("mass left at kT_H = 7e12 GeV [g]", M_flash * 1e3, 1.51, 0.01)
+check("time left at that mass [s]", 2.1e67 * (M_flash / Msun) ** 3 * yr, 2.9e-25, 0.03)
+check("seed (one inflating Hubble patch) [g]", c**3 / (2 * G * H_inf) * 1e3, 8.2, 0.01)
+
 print("\nALL PASS" if ok else "\nFAILURES")
 sys.exit(0 if ok else 1)

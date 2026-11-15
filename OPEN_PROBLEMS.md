@@ -132,6 +132,12 @@ Tried-and-failed routes are retained so nobody re-digs the same holes:
   einselection, Landauer — all logged with verdicts in
   [`review/WIRING_closure_attempts_2026-07-09.md`](review/WIRING_closure_attempts_2026-07-09.md).
 
+- U0-collapse birth ideas of 2026-11-15 — in-space infall as the expansion, pile-collapse or
+  heat-then-bang ignition, a conversion front into a still arena, doughnut spin as the engine,
+  photon-pile electrons: verdicts (re-entered dead-ends + eight new ones) in LOG item 18 of
+  [`review/LOG_post_3.27_2026-07-08.md`](review/LOG_post_3.27_2026-07-08.md); numbers in
+  `code/u0_collapse_checks.py`, `code/u0_photon_neutrino_checks.py`.
+
 If you are about to try a selection principle on the wiring — **read that log first.**
 
 ---
