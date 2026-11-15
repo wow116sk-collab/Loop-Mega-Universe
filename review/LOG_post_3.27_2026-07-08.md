@@ -661,3 +661,76 @@ Citations marked † were given from recall and **not re-verified at a primary s
 **Doc consequence — recorded, NOT applied.** Intra-U1 physics (ladder, F1, F2, F4, F5) is untouched and the flash is kept. What this route would change is the joint *after* the flash: the registered reset (deterministic flash acting on the plateau, with ω = the prior aeon's conformal factor as the inflaton) would become one joint option beside "flash → U0 → collapse → ignition", and the conformal-gluing items (G1/G2) would attach to the former only. `LMU_V4_0_BUILD_SPEC.md` already drafts a selectable-joint layer that could host it. That is an architecture decision for the author, not a wording edit; no `.tex`, falsifier, or SSOT line was changed.
 
 **Net:** no falsifier moved; F1 pressure up (Özülker et al.); one anchor row to flag (LRD mass scale); five papers added to the watch record; the U0-collapse birth picture is coherent as a hybrid with one open slot (how collapse loads A > 0) and one hard condition (gravity confined to three dimensions).
+
+---
+
+## 17) Second sitting (2026-11-15, evening): photons and neutrinos as the end-products, pair creation in a photon pile, a forward gap-finder for the U0 birth chain, and three author replies graded — no falsifier moved, no `.tex` touched
+
+*Filed 2026-11-15, same day as item 16. Conversational grading, head only. Scripts: `code/u0_photon_neutrino_checks.py` (numbers, ALL PASS) and `code/u0_chain_gapfinder.py` (the chain run link by link). Citations marked † were given from recall and **not re-verified at a primary source this sitting** — pin before any `.tex` use; unmarked ones were checked at abstract / publisher level.*
+
+### 17a) "If a neutrino decays, what comes out?"
+- Never observed. [Fact]
+- Standard Model: a heavier mass state → a lighter one + a photon, ν_i → ν_f + γ, with τ ≃ 6.2×10⁴³ s · (eV/m_i)⁵ / (|U_τi|²|U_τf|²) (Giunti & Studenikin, arXiv:1403.6344, eq. 5.10). With a mixing factor ~0.1 (order only, not pinned): ν₃ (m ≥ 0.05 eV) ~6×10⁴³ yr; ν₂ (m ≥ 0.0087 eV) ~4×10⁴⁷ yr. Photon from ν₃ → ν₁: ~0.025 eV, ~50 µm. [Fact-eq, order of magnitude]
+- Beyond the SM: ν_i → ν_f + a massless invisible boson ("invisible decay"). [Hypo]
+- The lightest state cannot decay: it is the lightest fermion and angular momentum needs a fermion in the final state. Its mass is unmeasured (oscillations give only differences) and may be zero. [Fact-theory]
+- Bounds: radiative, τ > few×10¹⁹ – 5×10²⁰ s from the COBE/FIRAS spectrum (Mirizzi, Montanino & Serpico, PRD 76, 053007 (2007)); invisible, τ₀ ≳ (4×10⁵ – 4×10⁶)(m_ν/50 meV)⁵ s from Planck 2018 free-streaming (arXiv:2203.09075). Measured bounds sit > 30 orders below the SM prediction.
+- *Auditor's linkage to 16b-3 [Hypo]:* relic neutrinos are massive clocks that outlive black-hole evaporation; SM decay (10⁴⁴–10⁴⁸ yr) is far shorter than the survivor's ~10¹⁰⁰ yr, so by the flash only the lightest state is left, and whether any clock remains reduces to one unmeasured number — is the lightest mass zero.
+
+### 17b) "Then photons come from light — light decays?"
+- A photon *is* the quantum of light, not a decay product of it. A massless photon cannot decay: stability in QED is purely kinematic, and dτ = 0. [Fact-theory]
+- If it had a mass at the experimental ceiling (< 10⁻¹⁸ eV) it could decay; the CMB blackbody shape then gives a rest-frame lifetime > 3 yr, i.e. ≥ 10¹⁸ yr for visible light in our frame (Heeck, PRL 111, 021801 (2013)). [Fact]
+- What light does do, none of it decay: redshift under expansion (absent in an A = 0 U0); two-photon pair creation above threshold; no single-photon splitting in vacuum (energy–momentum). "Tired light" (Zwicky 1929†) is excluded by supernova time dilation and the CMB spectrum†.
+
+### 17c) "In the U0 basin, piled-up photons keep a chance of making electrons, because with A = 0 they can pile"
+- *Collision channel — still closed [Fact-eq]:* piling raises the number of photons, not the energy of each. E₁E₂ ≈ (5.0×10⁻³² eV)² vs threshold 2(m_e c²)² = 5.2×10¹¹ eV²: 74 orders short. Gate 1 of item 9 stands with or without expansion.
+- *Field channel — open in principle; not covered by item 9.* A dense superposition of very soft photons is a classical field, and field strength does grow with the pile. Pair creation from the vacuum goes as exp(−πE_c/E), E_c = m_e²c³/(eħ) = 1.32×10¹⁸ V/m (Sauter 1931†; Heisenberg & Euler 1936†; Schwinger 1951†; never yet observed in vacuum). Numbers: a pile as dense as today's CMB has E_rms = 0.069 V/m → exponent 6×10¹⁹; reaching E_c needs 1.55×10²⁵ J/m³ = 1.7×10⁸ kg/m³, and a region at that density larger than ~9.7×10⁸ m (3.3×10⁵ M☉) is already inside its own horizon. [Fact-eq]
+- *Owned dividing line:* below that scale concentrated light turns into pairs instead of a black hole — radii 10⁻²⁹ to 10⁸ m (Álvarez-Domínguez, Garay, Martín-Martínez & Polo-Gómez, PRL 133, 041401 (2024)); disputed for rapidly varying inflow (Page, PRL 135, 261402 (2025)). So: small piles → pair fireball; universe-scale piles → horizon first.
+- *Standing conditions:* radiation does not compress itself (only gravity gets it to 10⁸ kg/m³); pairs come out as equal e⁺e⁻, so no net matter (item 10); bulk electrons still come thermally once collapse heats the gas to m_e c²/k = 5.9×10⁹ K — consistent with dead-end B.
+- **Correction to 16b-9:** "radiation crossing itself in U0 does not mint matter (item 9)" is true of the collision channel only. The field channel exists and was not priced before this item.
+
+### 17d) "The first instant of the Big Bang, as we know it, is a blinding flash — so photons must have done something"
+- Not what is measured. The oldest light seen is the CMB (~380,000 yr, ~3000 K); the earliest tested epoch is light-element synthesis (~1 s – 3 min); nothing earlier is observed. The picture is a heat bath filling space, not a flash from a point. [Fact]
+- The photon does not exist as a separate particle above the electroweak scale (~160 GeV, ~10⁻¹¹ s) (Glashow, Weinberg, Salam†). In the standard picture photons are a *product* of reheating (Dolgov & Linde 1982†; Abbott, Farhi & Wise 1982†; Kofman, Linde & Starobinsky 1994†), not its cause. [Fact-theory / Hypo at the inflation level]
+- For the author's chain: with the documents' own 60–85 e-folds, pre-existing radiation is diluted by e^(−240) ≈ 10⁻¹⁰⁴ [Fact-eq]. Old photons are fuel (their total energy drives the collapse); the bright bath is new photons from the decay of A. A direct "old photons = the hot bath" reading fails twice: compressed radiation is contracting [Fact-eq], and it would drop the inflation the documents use for flatness [Fact, by the text].
+
+### 17e) "Can you infer the birth of the universe from everything known?"
+No — and combining fields adds no evidence. What data force (hot phase ≥ MeV; flat and smooth; ~10⁻⁵ near-scale-invariant seeds already present on super-horizon scales; the baryon excess; no primordial tensor signal yet) fixes a *pre-hot phase*, not its identity; direct tests stop at ~1 s, laboratory physics at ~10⁻¹³ s. Surviving families (all [Hypo]; owners given in chat from recall): inflation from an unknown initial state; bounce; conformal cyclic; from-nothing; bubble in an eternally inflating parent; black-hole interior / brane. No data-based reason to rank them. The U0 chain sits in the last family plus the documents' inflation; its U0 part is beyond the horizon by construction — the lens statement the documents already make.
+
+### 17f) Forward gap-finder — "use my ideas as variables in existing equations and see what is missing" (`code/u0_chain_gapfinder.py`, 3+1 throughout)
+| Link | Verdict | Number | Owner |
+|---|---|---|---|
+| A. flash feeds U0 | PASS | 10¹¹ M☉ survivor: T_H = 6.2×10⁻¹⁹ K, λ ≈ 15.8 r_s, 2.1×10¹⁰⁰ yr | Hawking 1974†; Page 1976† |
+| B. pile mass at threshold | NEEDS INPUT | ρ_U0 = 10⁻³⁰ / 10⁻²⁷ / 10⁻²⁰ kg/m³ → 4.3×10²⁴ / 1.4×10²³ / 4.3×10¹⁹ M☉ | Schwarzschild 1916† |
+| C1. compression to ignition density | PASS | ρ_inf = 1.1×10⁸⁴ kg/m³ (V^¼ = 8.3×10¹⁵ GeV at r = 0.0037); 111 orders short at the horizon, supplied inside it | Oppenheimer–Snyder 1939† |
+| C2. radiation → vacuum energy (A > 0) | **GAP** | at ρ_inf the gas is still w = +⅓ (kT = 3.4×10¹⁵ GeV) | candidates: Frolov–Markov–Mukhanov 1990; Farhi–Guth–Guven 1990† |
+| D. energy the seed needs | PASS | one inflating Hubble patch = **8.2 g** | Guth 1981†; Farhi–Guth 1987† |
+| E1. energy back to U0 | PASS | exterior mass returned exactly | Hawking 1974† |
+| E2. entropy growth of U0 | PASS (after 17g) | seed 1.8×10¹² k_B vs pile 2.1×10¹²³ k_B | Carroll & Chen 2004† |
+| E2b. fuel softening / floor on pile mass | **GAP** (hangs on E3) | floor ≈ 15.8 × the smallest hole feeding U0 | — |
+| E3. "U1 dissolves back into U0" | **GAP** | U0 only ever receives the exterior mass | — |
+| F. the 4+1 layer | NEEDS INPUT | no G₅ / crossover scale, wall tension σ, or V(A) fixed | only bound: screening scale ≳ 20 Mpc (Pardo et al. 2018) |
+
+Readings: (1) the amount of fuel is not the constraint — grams suffice; density and the *form* of the energy are. (2) C2 is the same kind of knot the SSOT already keeps as the single LMU-specific one (what puts the field on the plateau); the U0 route relocates it to the pinch, it does not add a new kind. (3) The Schwinger fork of 17c does not arise in a dilute U0: every threshold pile is far above 3×10⁵ M☉ unless ρ_U0 > 1.8×10⁹ kg/m³.
+
+### 17g) Author replies — accepted
+- *"Entropy can go up forever; a newborn takes only its starting entropy; the dead ones hand theirs to U0; entropy runs along with time, without end."* Owner of the same structure: Carroll & Chen 2004† (unbounded entropy in an infinite arena; new universes as small low-entropy starts). Numbers support "takes only its starting entropy": seed/pile = 10⁻¹¹¹ [Fact-eq]. This also answers the relocated Problem A at the level of bookkeeping — the hot low-entropy start is a gram-scale piece, not the whole remnant. "Entropy runs with time" is the τ_aeon reading applied to U0 → hybrid. **The E2 "steady state" demand is withdrawn.**
+- *"The pile need not be the same pile nor the same size each time; only a minimum exists, the rest is timing."* Accepted; the minimum has a number: a pile must be larger than the wavelength it holds → ≥ 1.6×10¹² M☉ for flash photons from a 10¹¹ M☉ survivor (15.8 × M_L1) [Fact-eq, order]. Pile mass becomes a distribution with a floor. **Condition:** the floor stays put only if hard radiation from U1's interior survivors actually reaches U0; if U0 receives only the exterior hole's radiation the fuel softens each round and the floor creeps up. E3 decides it.
+
+### 17h) Author reply — braked: *"at birth it may well press in; contracting it heats; then it bangs"*
+[Fact-eq] Hot radiation accelerates the contraction: ä/a = −(8πG/3)ρ < 0 for every ρ > 0, and ρ ∝ a⁻⁴ grows as it shrinks; vacuum energy placed by heat stays constant while the radiation outgrows it. The same material turning round is a bounce by definition; the owned ways to get one (loop quantum cosmology, Ashtekar–Pawlowski–Singh 2006; torsion, Popławski 2010/2012) are the K7/K8 fork — and 15c records the author's rule "no rebound anywhere". The two cannot both stand. **Author's decision pending:** allow a bounce at birth (rule narrows to "no rebound at the end"), or keep the rule and drop "heats, then bangs". The non-bounce route remains the interior gram-scale ignition, in which heat is not the igniter.
+
+### 17i) Author idea: *"only the core contracts; it makes an energy source so the surroundings build themselves, and it spreads outward in one sweep — so it looks like everything expands together; what has not been swept yet sits still; the energy was already floating there, waiting"*
+- **Owner, exactly:** the Coleman–De Luccia bubble (1980†). From outside: a front spreading from one point at nearly c, unswept regions untouched. From inside: a homogeneous universe with no centre in which the bang is simultaneous everywhere — the inside "same moment" is a surface that chases the wall. Bubble universes built on it: Gott 1982†; Bucher, Goldhaber & Turok 1995†. The author's sentence is correct in that model. Hybrid.
+- **Brake [Fact-eq]:** the front runs by itself only if the outside holds latent energy: wall cost 4πR²σ against volume gain (4π/3)R³ε, growth for R > 3σ/ε, requiring ε = V_out − V_in > 0 (Coleman 1977†). Radiation floating in U0 is ash, not fuel (5×10⁻³² eV per photon; converting it to matter costs energy).
+- **Three ways out, each priced:** (1) latent energy = vacuum energy of U0 → the front works, but U0 then expands (H² = 8πGV/3), contradicting A-U0 = 0 and the still basin, losing debris accumulation (dead-end B), and turning the picture into eternal inflation (Vilenkin 1983†; Linde 1986†). (2) Keep A-U0 = 0 and a still U0 → no front into U0; birth stays the interior ignition, and those inside still see expansion everywhere at once, so the thing to be explained survives. (3) Read it as an explosion with coasting ejecta → Milne 1935†, excluded by flatness and helium. **Author's decision pending** between (1) and (2).
+
+### 17j) Author inference: *"so light must carry some energy we do not know yet; a neutrino keeps splitting into smaller neutrinos plus a photon and an unknown bond; so the neutrino is tied to light, and does something that lets it pass through all matter"*
+- *Hidden energy in light:* none seen; E = hν accounts for it and no photon substructure is known. [Fact] / the hidden part [Hypo, no evidence].
+- *Endless splitting:* there are three light neutrino states (invisible Z width at LEP†; N_eff from the CMB†), so the chain is ν₃ → ν₂ → ν₁ and stops. Decay is a transformation through a loop of known particles (W boson + charged lepton), not the release of a constituent; the photon's energy is the mass difference, (m_i² − m_f²)c²/2m_i. No unknown bond is needed. [Fact-theory]
+- *Tie to light:* real but indirect — photon, W and Z are one electroweak family†. The neutrino has no electric charge, so it does not couple to the photon directly; that absence, plus the heaviness of W/Z (80–91 GeV) which suppresses the weak force at low energy, is why it passes through. It is what the neutrino lacks, not something it does. Numbers (cross-sections from recall, order only): at 1 MeV in lead, neutrino mean free path ~43 light-years vs ~1.2 cm for a photon — 19.5 orders. [Fact-eq, order] Not unstoppable: at TeV–PeV energies the Earth absorbs neutrinos (IceCube 2017†).
+
+### Net of item 17
+- Chain as of this item: L1 flash → energy into a still, A = 0 U0 (entropy unbounded, 17g) → piles above a floor (~16 × the smallest feeding hole) → horizon → **[GAP C2] conversion to A > 0 at gram scale** → inflation erases the old photons, A's decay makes the hot bath → exterior hole returns its mass to U0 → **[GAP E3] how U1's interior content gets back**.
+- Withdrawn: the steady-state demand on U0. Corrected: 16b-9 (field channel). Braked: "heats, then bangs" (17h); a self-propagating front into an A = 0 U0 (17i).
+- Awaiting the author: bounce at birth or not (17h); latent energy in U0 or not (17i); a value or range for ρ_U0; the 4+1 numbers. Unchanged from item 16: the joint architecture question, the F6 wording, the F1 scoring note.
+- No `.tex`, falsifier, or SSOT line changed.
