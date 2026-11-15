@@ -7,6 +7,26 @@ the `.tex`).
 
 ---
 
+## v3.30 — 2026-11-01
+
+Naming fix only. No equation, number, axiom, falsifier, or epistemic tag changed.
+
+- **L0 → U0** throughout the consolidated `.tex` (178 places: 173 `L0`, 5 `L_0` →
+  `U_0`, incl. subscripts E_U0, V_U0, s_U0). Reason (author): "L0" read as one more
+  rung of the L4→L1 black-hole ladder; U0 is the arena itself, not a black hole.
+  Ladder labels L4–L1 unchanged.
+- A one-line **[v3.30 naming note]** after the reading rules, and a full revision-history
+  entry (3.29 → 3.30) inside the `.tex`.
+- Kept on purpose: file names that still carry "L0"
+  (`LMU_L0_closed_box_bounce_SESSION_HANDOFF.md`, `review/L0_SHALLOW_WELL_accumulation.md`,
+  `LMU_terminology_L1_vs_L0lump_vs_childPBH_2026-06-26.md`) and journal article numbers
+  (PRD L061304, PRR L022047).
+- Open (cosmetic): `l1_zoo_fates.png`, `lmu_v321_loop_cascade.png`,
+  `endgame_three_floors.png` still show "L0" as baked-in text; repository notes and
+  `code/` outside the `.tex` still use "L0".
+- Checks: diff vs 3.29 = renamed lines + version macro + note + entry only;
+  `verify_all.py --tex` ALL PASS; XeLaTeX 0 errors, 110 pp.
+
 ## v3.29 — 2026-07-11
 
 Release consolidation of the post-3.28 run (all append-only revision entries in
