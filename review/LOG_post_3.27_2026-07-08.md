@@ -323,3 +323,341 @@ Supporting CMB-anomaly landscape as of 2026-09, for the record: Axis of Evil swi
 
 **Net:** no falsifier moved; A2 upgraded from verdict to priced verdict; one new wall recorded (the de Sitter accumulation budget, coinciding with the mortality ceiling). If a rotating-form idea returns, it must first clear ω/H ≈ 1.43 against 4.7×10⁻¹¹ and explain how an a⁻⁴ component switches on at z ≈ 0.5.
 
+---
+
+## 15) Watch sweep (2026-10-14): window 2026-07-20 → 10-14 — LZ 2.6σ event, an F1 scoring gap (coupled-sector crossing), M87 polarimetry downgrade; no falsifier moved
+
+*Filed 2026-11-15. Written on 2026-10-14 as "item 13" against a project copy of this log that ended at item 12; the repo already had items 13–14 (2026-09-06/07), so it is renumbered **15** (sub-items 15b–15j). Text otherwise unchanged; "L0" below is the arena now called U0 (V3.30).*
+
+Solo sweep (head only; WebSearch/WebFetch). Absence from the docs grep-verified against the V3.29 text + LOG items 1–12. Claims checked at abstract / press-release level; **journal status of preprints NOT checked** — pin before any `.tex` use.
+
+**(a) Dark matter — B4′ minting text (not a falsifier line)**
+- **LZ single unexplained event.** Announced at TeVPA 2026 (Japan, ~2026-08-31/09-01); paper "to arXiv + PRL" (arXiv ID **not yet pinned**). 220 live days (Mar 2023–Apr 2024), 10 t LXe. One nuclear-recoil event that known backgrounds do not explain; **2.6σ** (~0.5% background chance); if WIMP: m ≳ 200 GeV with a non-minimal interaction. The collaboration does **not** claim a detection. [Fact] the event + significance / [Hypo] DM origin (n = 1, < 3σ).
+- Recoil ≈ 248 keV (per the follow-up below). Follow-up: Yang, Wu, Duan, Xia, Tsai & Fan, arXiv:2609.06640 (v2 2026-10-05) — leptophobic **inelastic** DM; endothermic branch ≳ 400 GeV or exothermic branch at tens of GeV (~55 GeV, also fitting the Galactic-Centre GeV excess and AMS-02 antiprotons). Also seen: arXiv:2609.21011 (endothermic Z′-portal, LZ–LHC) — title-level only.
+- **Doc impact:** B4′ says LZ 2024 nulls close the classic WIMP corridor, so the relic must live in still-open corridors. Inelastic DM *is* such a corridor (the mass splitting suppresses low-energy recoils), so a growing signal would land inside what the text already allows — consistent with "collisionless thermal relic, symmetric with baryons". It does **not** serve the ~5 GeV asymmetric-DM option in the OPEN_PROBLEMS §2 fertility row. Watch: LZ continued exposure; XENONnT / PandaX cross-check.
+
+**(b) F1 — dark energy**
+- **Dinda, Maartens & Saito, arXiv:2605.13546 (v2 2026-05-20)** — sequel to the Dinda–Maartens 2025 defence the docs already cite. w0wa gains only a local goodness-of-fit edge (ΔDIC < 0) that does not survive the full prior volume (Δln Z does not favour it); **ΛCDM, w0wa and thawing quintessence are statistically indistinguishable**; no consistent cross-dataset evidence for dynamical DE or phantom crossing. Datasets not pinned from the abstract. [Fact] (preprint). Favourable to F1 not firing; does not change the threshold.
+- **Pompeu, Rebouças & Rosenfeld, arXiv:2608.23712 (v1 2026-08-24, v2 09-10)** — DM mass coupled to the DE field (m ∝ φ^α, V ∝ φ^−β); CMB + BAO + SNIa give goodness-of-fit similar to w0wa and an apparent low-z phantom crossing with no field going phantom. [Fact] (preprint).
+- **Scoring gap — flagged, NOT applied:** F1 fires iff the crossing survives a physical non-CPL reanalysis. A coupled-sector model *is* non-CPL and *keeps* an apparent crossing. If DESI-Y5 prefers this class, the registration does not say whether F1 fires — yet the spine (A uncoupled, DM an independent relic) would still need a new DM–A coupling. [Hypo] (reading of the wording). Candidate action: record an interpretation note **before** Y5 data. Do not touch the OSF thresholds (R6). Deferred until instructed.
+- **DES Y6 3x2pt** (results webinar 2026-01-22; framework paper arXiv:2601.14859): S8 = 0.789 ± 0.012; wCDM w = −1.12 (+0.26/−0.20), consistent with −1; w0wa deferred to later papers. Neutral for F1. [Fact] (numbers via Astronomy.com + DES Y6 papers page).
+
+**(c) F2 — black-hole spin**
+- **Wong, Palumbo, Gelles & Chael, arXiv:2607.14218 (2026-07-15)** — current EHT polarimetry constrains magnetic-field geometry, variability, orientation and flux state more robustly than spin magnitude or sense. Effect on the M87 row: the "polarimetry disfavours high spin (Wong et al. 2025)" side weakens. The row moves from "two methods disagree" toward "no robust spin measurement yet". Still [Open — contested]. **R9 check pending:** confirm this G. N. Wong is the "Wong et al. 2025" first author before merging the two in prose. [Fact] (preprint).
+- **García, Connors, Brenneman & Steiner, arXiv:2607.14368 (2026-07-15)** — community quality criteria for X-ray-reflection spins: detectability / uniqueness / robustness, giving a robust / provisional / not-assessable classification and a reporting checklist; calibration deferred to a companion paper. F2 is decided by this method, so any future relic-spin claim should be graded against these criteria. [Fact].
+
+**(d) F6 — endgame sign**
+- **Luu, Qiu & Tye, "The Lifespan of our Universe", arXiv:2506.24011 (v2 2025-08-26)** — ultralight-axion DE plus Λ; "high probability Λ < 0", leading to a big crunch with total lifespan ~33 Gyr; uses DES + DESI. Journal ref per press = JCAP 2025(09) 055 [unverified on the arXiv page]. The docs carry only Gialamas et al. 93.8%, so this is a **second named group on the future-AdS side**. [Fact] they claim it / [Hypo] the Λ < 0 inference (model adds a field). F6 stays a watch-line, leaning rival.
+
+**(e) Timelines (supersede item 12 where they overlap)**
+- **Euclid slipped:** DR-Foundation (LE1 + LE2) in Nov 2026; full DR1 (adds LE3) ~mid-2027 (probably June); **no official Euclid cosmology before mid-2027** (original DR1 date: Oct 2026). Source: P. Coles' blog, 2026-06-16 (secondary); ESA DR1 timeline page. The F6 decider "DESI DR3 / Euclid / Roman" now arrives roughly together, ~2027.
+- **LVK IR1:** six-month run starting **early–mid Nov 2026**; Virgo joins with possible interruptions; KAGRA later; O5 timeline still under discussion. Source: plan page update of 2026-09-03 (next update due 2026-10-15). Supersedes item 12's "late-Oct–mid-Nov".
+
+**(f) Anchors / consistency**
+- **Iani et al., arXiv:2603.17967** — two over-massive BH candidates (Pelias z ≈ 0.71; Neleus z ≈ 0.75) in ~10⁷ M☉ dwarfs; log M_BH ≈ 5.7–6.7; M_BH/M* ≈ 6–60%. Masses come from SED fitting plus an Eddington-limited assumption, with no X-ray detection. **Not anchor-grade** under the docs' dynamical-mass rule. [Fact] candidates / [Hypo] masses.
+- **InPTA DR2 GWB, arXiv:2608.02808 (2026-08-03)** — weak common red process (Bayes factor 2.5); A_GWB < 3.4×10⁻¹⁴ (γ = 13/3); no Hellings–Downs detection. Consistency-only; PTA stays anchor-grade via NANOGrav/EPTA.
+- **H0 Distance Network** (A&A, 2026-04-10, DOI 10.1051/0004-6361/202557993): H0 = 73.50 ± 0.81. Against Planck 2018 (67.36 ± 0.54): Δ = 6.14, σ = √(0.81² + 0.54²) = 0.97, so ≈ 6.3σ. [Fact-eq]. KBC watch-line only, not LMU-core.
+
+**(g) Swept, nothing new**
+- Meissner–Penrose 2503.24263: still v1, no journal ref (checked 2026-10-14). F5 unchanged.
+- Barontini: no follow-up beyond press.
+- No new r bound.
+- DESI: no new cosmology release. The planned survey map was completed per the Apr 2026 FNAL/DESI news (headline-level only); DR3 BAO ~2027.
+- CCBH: two theory papers only, both exact solutions with no new observational k — context only (Λ/A spine does not lean on CCBH):
+  - Cadoni, de Lima, Pitzalis, Rodrigues & Sanna, 2601.03296 — regular-horizon CCBH.
+  - Wu, Chu & Hu, 2603.24609 — CCBH in an anisotropic dark sector.
+
+---
+
+### 15b) User idea (2026-10-14): "thawing no longer looks right — each universe collapses itself by twisting spacetime, then expands by gathering the surrounding energy" — graded
+
+Solo, conversational grading. The idea is [Hypo]. Brakes carry labels.
+
+1. **Data do not kill thawing.** Per (b), Dinda–Maartens–Saito find thawing ≡ ΛCDM ≡ w0wa statistically. There is no measured push to drop it. [Fact]
+2. **Different epochs.** The idea addresses *birth* (collapse → bounce → expansion). Thawing addresses *today's* acceleration. Observed acceleration (Riess et al. 1998; Perlmutter et al. 1999) needs a component with w < −1/3 now, whatever happened at birth. If thawing is dropped, the fallback is constant Λ (the V2.0 axiom). F1's kill line (a genuine crossing below −1) is unchanged under Λ, but Λ is *more* exposed: a non-crossing evolving w would pass thawing and tension Λ. [Fact-eq] (logic on the registered wording)
+3. **"Expands by gathering energy" — contradicts GR at ordinary densities.** The acceleration equation is ä/a = −(4πG/3)(ρ + 3p). Gathered matter adds +ρ, and radiation adds +2ρ, so both decelerate; acceleration needs w < −1/3. [Fact-eq]
+   - It is valid only near critical density with quantum corrections. LQC: H² = (8πG/3)ρ(1 − ρ/ρ_c) (Ashtekar–Pawlowski–Singh, PRL 96, 141301 (2006)); the docs already compute the (ρ + 3p)_eff sign flip (K7, closed-box handoff). Torsion: Popławski, PLB 694, 181 (2010); PRD 85, 107502 (2012).
+   - So it is legitimate *as a bounce mechanism* (owned, already the K8 fork) and **not** as a replacement for late-time dark energy.
+4. **"Collapses by twisting" — sign is inverted if "twist" means rotation or torsion.** Raychaudhuri (1955): dθ/dτ = −θ²/3 − σ_abσ^ab + ω_abω^ab − R_ab u^a u^b. Vorticity ω² enters with a **+** sign and *resists* focusing. What drives collapse is ρ + 3p and shear. [Fact-eq]
+   - Torsion (Einstein–Cartan; Kibble 1961, Sciama 1964; Popławski) gives *repulsion* at extreme density — the bounce agent, not the collapse agent.
+   - Global rotation of our aeon is already dead-end A2 (Saadeh et al. 2016). [Fact]
+   - If "twist" means curvature (warping), it is ordinary gravitational collapse (Oppenheimer–Snyder 1939): standard, fine. → Clarification asked of the user.
+5. **Ownership of the skeleton** ("a region collapses → bounces → becomes a new expanding universe"):
+   - Black-hole cosmology: Pathria, Nature 240, 298 (1972); Smolin, CQG 9, 173 (1992); Popławski 2010/2012.
+   - LMU's L0 "tiny-region collapse" picture is the Pitarn layer on top → **hybrid**.
+   - Nothing here is a new Pitarn origination yet.
+
+**Net:** no doc change. Thawing stays the spine (F1 as registered). The idea's live content (energy → bounce at ρ_c) already exists in the K7/K8 fork. Open question to the user: what "บิด" (twist) means.
+
+---
+
+### 15c) Clarification + correction (2026-10-14, same sitting) — NO bounce anywhere; L0 is not a Λ background
+
+**User clarification (supersedes the bounce reading in 15b items 3–4):** there is **no rebound anywhere** in the infinite system. Picture:
+- a region of L0 collapses;
+- our universe's mass is enclosed in a rotating ellipsoid ("twist") that travels through L0;
+- the object slowly dissolves back into L0, with no rebound.
+
+[Hypo]
+
+**Ownership map (hybrid):**
+- **Universe = collapsed object seen from outside:** Pathria, Nature 240, 298 (1972). The Hubble-volume mass M_H = c³/(2GH₀) ≈ 9.2×10⁵² kg ≈ 4.65×10²² M☉ has r_S = c/H₀ exactly. [Fact-eq]
+- **"Expanding inside its own Schwarzschild radius, after a cloud collapsed":** Gaztañaga, *The Cosmological Constant as Event Horizon*, Symmetry 14, 300 (2022), arXiv:2202.00641 — nearest owner of the whole picture. The later PRD version (2505.23877, LOG item 11) derives a bounce radius; the user's no-bounce reading departs from that.
+- **Outside collapsed, inside expanding, no bounce:** false-vacuum bubble / baby universe — Sato–Sasaki–Kodama–Maeda, PTP 65, 1443 (1981); Blau–Guendelman–Guth, PRD 35, 1747 (1987); Garriga–Vilenkin–Zhang, JCAP 02 (2016) 064. Inside expansion is driven by w = −1 vacuum; the exterior is a BH that evaporates with no rebound.
+- **Rotating ellipsoid:** Kerr (1963); oblate horizon geometry, Smarr, PRD 7, 289 (1973).
+- **Observational status of rotation:**
+  - Saadeh et al. 2016: no global vorticity. [Fact]
+  - Shamir, MNRAS (2025; DOI 10.1093/mnras/staf292): 263 JADES galaxies, ~2/3 clockwise. [Fact] count; cause contested (Doppler bias possible).
+  - Szigeti–Szapudi–Barna–Barnaföldi, arXiv:2503.13525: ω₀ ≈ 2×10⁻³ Gyr⁻¹ claimed to ease H₀. [Hypo], preprint.
+- **Pitarn layer:** the arrangement — a universe-object travelling in L0 and dissolving back, with no bounce anywhere in the system.
+
+**Auditor error — Λ-import, second occurrence** (first: V3.5 "Correction 1"):
+- In this sitting the auditor assumed L0 carries our Λ and braked with the Nariai / M_eq limits (M_H/M_eq = 2√Ω_Λ = 1.66; M_H/M_Nariai = 2.15).
+- Per the docs, A is **per-zone**, and L0 is the A ≈ 0 baseline (glossary). **Brake withdrawn.**
+- In an A ≈ 0 background there is no Nariai ceiling and T_bath ≈ 0, so the object evaporates. Numbers: T_H(M_H) ≈ 1.3×10⁻³⁰ K; t_evap ≈ 2.1×10⁶⁷ yr·(M/M☉)³ ≈ 2.1×10¹³⁵ yr (photon + graviton scaling). [Fact-eq]
+- The brake returns only if the exterior zone carries A ≥ 0.37 × ours.
+- Doc tension noted, not touched: the F6 tiny-dS floor (V_min = ρ_Λ, a zone endgame) vs the glossary's L0 = A ≈ 0. [Open]
+
+**"A at each point scales with the universe's mass":**
+- The owned relation is Gaztañaga's Λ = 3/r_S² = 3c⁴/(2GM)², i.e. **Λ ∝ 1/M²** (bigger universe → smaller A).
+- Check with M_H: it gives Ω_Λ = 1.00 vs measured 0.685 — an order-unity match. [Fact-eq]
+- Direction pending from the user. If they mean A ∝ M (bigger → more), the nearest owner is CCBH-type sourcing (Croker–Weiner–Farrah), which the docs log as retired Fork X / Dead "BH by-product is the source of A".
+
+**Still standing:**
+- (i) Spin alone cannot translate the object (linear-momentum conservation). Travel needs asymmetric emission — merger superkicks: Campanelli et al., ApJL 659, L5 (2007); González et al., PRL 98, 231101 (2007). Uniform motion through L0 is unobservable from inside. [Fact-eq]
+- (ii) Spin is shed faster than mass (Page, PRD 14, 3260 (1976)), so the ellipsoid rounds off before dissolution. [Fact-th]
+
+**Net:** no doc change. The no-bounce universe-object picture is coherent in an A ≈ 0 L0. Its nearest single owner is Gaztañaga 2022 (BHU) plus the baby-universe family. Open to the user: the direction of A vs mass.
+
+### 15d) Resolution (2026-10-14, same sitting): "A runs on the time of its own spacetime"
+
+**User statement:** A at each place differs because A evolves on that spacetime's own clock. [Hypo → maps onto the existing spine]
+
+**Mapping:** this *is* per-zone thawing. The Klein–Gordon equation Ä + 3HȦ + V′(A) = 0 is driven by the zone's own H(t) and proper time:
+- A stays frozen while H ≫ m;
+- it rolls once H ≲ m (Scherrer–Sen 2008; Caldwell–Linder 2005; field equation Ratra–Peebles 1988 / Wetterich 1988; per-zone choice = LMU linkage).
+
+[Fact-eq]
+
+**Mass dependence comes out by itself, through the clock.** H² = (8πG/3)ρ, so a denser zone keeps H above m longer and thaws later. Different zones therefore sit at different A at the same L0 moment, ordered by their mass/density history. No direct A(M) formula is needed, and the 15c direction question (Gaztañaga's Λ ∝ 1/M² vs CCBH-type ∝ M) is **moot**.
+
+**Consequence for 15b:** the user's doubt about thawing dissolves — the picture *requires* thawing, run per zone. The spine and F1 are unchanged.
+
+**Caveat:** comparing A across zones "at the same moment" uses the L0 foliation, which is a postulated clock, not an observable (ledger). [Hypo]
+
+**L0 = A ≈ 0** is consistent: a zone's A has run down once its clock ends, which is also what lets the universe-object of 15c evaporate.
+
+### 15e) A central A_L0 (2026-10-14, same sitting) — and a correction to 15c
+
+**User statement:** L0 carries one central value A_L0. Every zone's A — which was compressed and stretched until its clock slowed — recovers and speeds back up as the universe-object dissolves, and merges into A_L0 exactly. [Hypo, hybrid]
+
+**What holds:**
+- **"Merges exactly" needs no tuning.** If every zone shares one potential V(A), the Klein–Gordon equation with Hubble friction carries each A to the same V_min — an attractor. The nearest owner for "different starting A end on one common track" is Zlatev–Wang–Steinhardt, PRL 82, 896 (1999). [Fact-eq]
+- **A_L0 is already named in the SSOT:** V_min = ρ_Λ = (2.3 meV)⁴, the 3.27 tiny-de-Sitter floor.
+- **"Clock speeds back up":** the dilation factor relative to L0 is √(1 − r_s/r) → 1 as M → 0, and evaporation runs away (dM/dt ∝ −1/M²) (Schwarzschild 1916; Hawking 1974). Dilation is a relation between clocks; local clocks inside tick normally. [Fact-eq]
+
+**Correction to 15c:**
+- 15c withdrew the M_eq / Nariai brake using the glossary's "L0 = A ≈ 0". That reading is **superseded** by the SSOT's 3.27 tiny-dS floor. With A_L0 = floor, L0 has H_L0 = H₀√Ω_Λ, so the brake is re-evaluated.
+- **Mass accounting corrected:** the Kottler (Schwarzschild–de Sitter, 1918) mass parameter counts only the excess over the background vacuum. If the inside vacuum equals A_L0, only matter counts: M = Ω_m × 4.65×10²² ≈ 1.47×10²² M☉.
+- Then M/M_Nariai = 0.68 and M/M_eq = 0.52, so T_H ≈ 1.9 T_dS: the object **exists and evaporates**. [Fact-eq]
+- **Size limit:** the enclosed matter region must stay ≲ 1.14 Hubble radii (today's density). That is just inside L0's dS horizon, c/H∞ = 1.21 R_H. Anything larger cannot dissolve. [Fact-eq]
+
+**Tension raised:**
+- A_L0 > 0 means L0 itself expands (H∞ > 0). Debris beyond the zero-gravity radius r₀ = (3GM/Λc²)^{1/3} ≈ 1.1 Mpc (for 10¹² M☉; Chernin 2001) never gathers — the doc's own dead-end B.
+- The glossary's "L0 has no deadline, any density clusters given time" required A ≈ 0.
+- So A_L0 = floor buys the dissolve-back step but taxes the gathering step. [Fact-eq]
+- Decision pending from the user.
+
+### 15f) User's simplification (2026-10-14, same sitting): "L0 is empty space where things pile up — like dry leaves: pile, decompose, compact into soil"
+
+**User statement:** L0 is plain empty space. Things dissolve wherever they are; where dissolutions overlap enough, the region collapses. [Hypo]
+
+This matches the SSOT's "remnants pile into a shallow L0 well" and the stated intent that a new universe forms where debris gathers to threshold. It answers 15e: **A_L0 ≈ 0 (empty)**.
+
+**Ownership (hybrid):**
+- Collapse threshold: Jeans, Phil. Trans. A 199, 1 (1902).
+- An infinite space with patchy piles and mean density → 0 (avoids Seeliger's 1895 gravitational paradox and Olbers): Charlier (1908, 1922).
+- Pitarn layer: the dissolve → pile → collapse loop in L0.
+
+**Brakes:**
+1. **Radiation does not pile like leaves.** [Fact-eq] Evaporation output is almost all radiation; it moves at c and overlapping streams pass through each other (γγ crossfire negligible — LOG item 9). Radiation collapses only with overdensity δ ≳ 0.3–0.5 on its own Schwarzschild scale (Carr, ApJ 201, 1 (1975)) — not by gentle accumulation. The "soil" must come from **slow massive debris** (ejected stars, gas, DM) lost before the zone dies.
+2. **A uniform static infinite pile is not allowed in GR without Λ.** [Fact-eq] The Einstein static solution needs Λ and is unstable (Eddington 1930); a uniform medium collapses globally. The way through is that piles stay patchy with mean density → 0 (Charlier), which is exactly the leaf-pile picture. Consistent with the SSOT's "shallow, non-collapsing L0 well".
+
+**Consequence of A_L0 ≈ 0:**
+- Gathering has no deadline: no zero-gravity radius in L0.
+- Dissolve-back works: no Nariai cap, T_bath ≈ 0 (15c numbers).
+- **Cost — a doc change, pre-data:** the SSOT/F6 floor V_min = ρ_Λ must be re-read as a quasi-floor inside zones, with the true minimum V = 0 being L0.
+  - The CCC/flash reset still has H > 0 inside the dying zone (the reason the SSOT chose dS), provided A's roll from ρ_Λ to 0 is slower than the survivor's ~10¹⁰⁰ yr evaporation. [Hypo]
+  - F6's kill line (V_min < 0) is unaffected, but its "not to zero" wording would change. This is a model change and must be logged as such.
+
+**Not applied to any doc.** Awaiting the user's decision on rewording the SSOT/F6 floor.
+
+### 15g) "Dissolved universes radiate in all directions non-stop; the streams cross again and again until, by chance, something builds itself" (2026-10-14, same sitting)
+
+[Hypo, hybrid]
+
+**What changes with A_L0 ≈ 0:**
+- In a static L0, photons no longer redshift, so they accumulate instead of being erased.
+- LOG item 9's Gate 3 (dS erasure) is gone. Repeated crossing is real. [Fact-eq]
+
+**Owned mechanism — "a bath builds an object by chance":** thermal black-hole nucleation in hot flat space, Gross–Perry–Yaffe, PRD 25, 330 (1982). The rate goes as exp(−B) with B = (T_P/T)²/16π, and the nucleated BH has M = ħc³/(8πGkT).
+
+**Numbers [Fact-eq]:**
+- A 1.47×10²² M☉ object radiates at T_H ≈ 4.2×10⁻³⁰ K.
+- The energy-weighted mean over its whole evaporation is ×ln(M₀/M_P) = ×138, giving ≈ 5.8×10⁻²⁸ K.
+- At that temperature, B ≈ 10¹¹⁷ and the nucleated BH has M ≈ 1×10²⁰ M☉.
+- In an eternal, infinite L0 any nonzero rate happens somewhere, so "by chance" is legitimate in principle.
+
+**Brakes:**
+1. **No matter from the crossings themselves.** [Fact-eq] kT ≈ 5×10⁻³² eV, which is 10³⁷× below m_e c². Repeated crossing never raises per-photon energy (LOG 9 Gate 1 holds without expansion). Only gravity, acting on total energy, can do it — so what forms is a **black hole** (GPY), not matter directly.
+2. **A black hole is not yet an expanding universe.** [Fact-eq] The interior needs a w = −1 region to inflate. Getting one from a BH or fluctuation is Farhi–Guth–Guven tunnelling, NPB 339, 417 (1990) — also exponentially suppressed. The full chain is bath → BH (GPY) → baby universe (FGG), and both steps are owned.
+3. **A uniform non-stop bath filling infinite L0 cannot stay static.** [Fact-eq] For radiation, ä/a = −(8πG/3)ρ. The dead-universe population must stay sparse and hierarchical (Charlier, 15f), so "from all directions" holds only up to some scale.
+4. **WARNING — the Boltzmann problem** (Dyson–Kleban–Susskind 2002; Albrecht–Sorbo 2004).
+   - If "chance" means an equilibrium fluctuation, a 1 kg fluctuation costs e^(−10⁶⁷) while a GPY universe-scale object costs e^(−10¹¹⁷). Small objects are favoured by a factor of e^(10¹¹⁷). [Fact-eq] (both exponents)
+   - That this makes our kind of observer atypical is [Hypo]: it depends on the measure, and on whether equilibrium statistics apply to a collisionless bath.
+   - **Way out within the user's own picture:** let "chance" be only the seed. Random overdensities from overlapping non-equilibrium streams plus slow debris, then amplified **deterministically** by gravity (Jeans growth, as in 15f), which favours large scales.
+   - That is structure formation, not an equilibrium fluctuation, so the Boltzmann weighting does not apply.
+
+**Net:** coherent if "chance" means a seed and gravity grows it; exposed to the Boltzmann problem if "chance" means an equilibrium fluctuation. No doc change.
+
+### 15h) User adopts the seed reading (2026-10-14, same sitting): "butterfly effect — one small nudge knocks it out of stable / formless energy"
+
+**Term precision:**
+- The butterfly effect (Lorenz 1963) is sensitive dependence of a chaotic flow on initial conditions.
+- What acts here is **gravitational instability** (Jeans 1902). The uniform "formless" state was never stable: above the Jeans scale any nudge grows exponentially. [Fact]
+
+**Why "formless" is not the resting state:** self-gravitating systems have negative heat capacity, so clumping *raises* entropy (Antonov 1962; Lynden-Bell & Wood, MNRAS 138, 495 (1968)). Formless → form is the gravitational arrow, not a violation of it. [Fact]
+
+**Numbers [Fact-eq]:**
+- Growth e-folding time is t ≈ 1/√(4πGρ). At today's mean matter density (2.7×10⁻²⁷ kg/m³) this gives ≈ 2×10¹⁰ yr, and it scales as ρ^(−1/2).
+- A nudge of δ₀ = 10⁻⁵⁰ needs only ln(10⁵⁰) ≈ 115 e-folds to reach order unity, which is trivial on L0's unbounded clock. So "just a small nudge" is quantitatively right.
+
+**Caveats:**
+- In a radiation-dominated bath, pressure stabilises everything below λ_J ~ c/√(Gρ). Only near-horizon-scale nudges grow, and the end product is a BH; the interior still needs a w = −1 region (FGG, 15g).
+- Holds only with patchy L0 (15f).
+
+**Ownership:** hybrid — Jeans / Antonov / Lynden-Bell–Wood for the mechanism; Pitarn for the L0 loop (dissolve → stream → seed → gravitational growth → new universe-object). No doc change.
+
+### 15i) Small-lump path (2026-10-14, same sitting): "small masses curve spacetime a little, attract passers-by like magnetic beads, accumulate, flow faster — but never reach universe-making; they just grow and flow faster"
+
+[Hypo]
+
+**What holds:**
+- **Bigger grows faster:** Bondi–Hoyle–Lyttleton accretion, Ṁ ∝ M²/(v² + c_s²)^{3/2} (Hoyle–Lyttleton 1939; Bondi–Hoyle 1944; Bondi 1952). Gravitational focusing gives runaway growth (Safronov 1969; Wetherill–Stewart 1989). [Fact-eq]
+- **More mass alone never makes a universe.** Compacting to r_s gives a black hole of any mass; an expanding interior needs a w = −1 region (15g). The small-lump path is therefore the L4 → L1 ladder re-forming inside L0. [Fact-eq]
+
+**Brake — magnetic-bead analogy:**
+- Beads stick because contact dissipates energy.
+- Under gravity alone, two bodies passing on an unbound orbit (E = ½μv² − Gm₁m₂/r > 0) stay unbound, since energy is conserved. [Fact-eq]
+- Capture needs a sink:
+  - gas collisions plus radiative cooling (baryons);
+  - a third body;
+  - dynamical friction (Chandrasekhar 1943);
+  - gravitational-wave capture (compact objects only).
+- Collisionless DM cannot stick pairwise; it binds only through collective collapse (violent relaxation, Lynden-Bell 1967).
+
+**Minor clarification [Fact]:** attraction is not "built up gradually". A mass's field is set by the mass present, propagating at c; what grows gradually is the accumulated mass.
+
+**Ownership:** hybrid (accretion and dynamics owned; the L0 small-lump reading is Pitarn's). No doc change.
+
+### 15j) Evidence tiering of the 15c–15i loop (2026-10-14, same sitting) — "is it doable, by the evidence?"
+
+**Verdict:** after the brakes above, no step is forbidden by known physics. Evidence covers only the within-aeon steps; the L0 steps are theory-allowed but unmeasured, and mostly unmeasurable in principle (beyond our horizon).
+
+**Tier 1 — measured [Fact]:**
+- Tiny seeds grow into structure under gravity: CMB δ ~ 10⁻⁵ (Planck 2018) → galaxies and BAO.
+- Hierarchical merging and BH growth: LVK mergers incl. GW231123; PTA background (NANOGrav 2023 and partners); JWST over-massive BHs.
+- Accretion onto SMBHs (AGN).
+
+**Tier 2 — established theory, never measured directly [Fact-eq / theory]:**
+- Hawking evaporation. Only lab analogues exist: Steinhauer, Nat. Phys. 12, 959 (2016); Muñoz de Nova et al., Nature 569, 688 (2019).
+- Thermal BH nucleation (Gross–Perry–Yaffe 1982).
+- Baby universes behind BH horizons (Sato et al. 1981; Blau–Guendelman–Guth 1987; Farhi–Guth–Guven 1990).
+- Per-zone thawing A: the field equations are standard. Data are consistent but not confirmatory — DESI DR2 2.8–4.2σ evolving-DE hint; thawing ≡ ΛCDM in evidence terms (Dinda–Maartens–Saito 2026).
+
+**Tier 3 — hypothesis, no evidence [Hypo]:**
+- Our universe as a rotating collapsed object seen from L0. No rotation has been detected (Saadeh 2016); the Shamir 2025 spin asymmetry is contested.
+- Travel and dissolution in L0.
+- L0 as empty space with patchy piles.
+
+**Not evidence (honesty pin):** the Pathria coincidence r_s(M_H) = c/H is an identity of any flat FRW universe at every epoch, since ρ = ρ_c = 3H²/8πG. [Fact-eq]
+
+**Testable doors remain the within-aeon falsifiers** (F1, F2, F4, F5), per OPEN_PROBLEMS §4.
+
+---
+
+## 16) Watch sweep + user-idea grading (2026-11-15): window 2026-10-14 → 11-15 — one F1 pressure item, one contested anchor, five missed papers; no falsifier moved. Then the "U1 expands through a collapse along the 4th spatial dimension of U0" picture, graded
+
+Solo sweep (head only; WebSearch/WebFetch). Absence from the docs grep-verified against the V3.29 text + LOG items 1–14. Claims checked at abstract / press / search-snippet level; **journal status of preprints NOT checked** — pin before any `.tex` use. Naming: this item uses **U0** (V3.30); items ≤ 15 say L0 for the same object.
+
+**(a) F1 — dark energy**
+- **Özülker, Di Valentino & Giarè, "Quantifying and testing the evidence for a phantom crossing"**, Phys. Rev. D, *accepted 2026-10-29* (DOI 10.1103/x55b-1cfv; the accepted-paper page could not be fetched — read from the abstract in the search result). CPL fits to CMB + BAO + SNe Ia exclude ΛCDM at ≳ 3σ; **"no crossing anywhere in the expansion history" is excluded at 3.1σ–5.2σ**; two crossing-forbidden CPL variants (CPL>a_c, CPL<a_c — thawing-like and freezing-like) are tested: the thawing-like one does not match CPL, a freezing phantom-like one comes close only in a few combinations; standard CPL is best everywhere. **R9 pending:** probably the journal version of arXiv:2506.19053 (Giarè et al., "Dark Energy Crosses the Line…") — not confirmed. [Fact] the numbers / [Hypo] that the crossing is physical.
+  - *Doc impact:* the most adverse F1-side result so far for the thawing spine. **F1 does not fire** on the registered wording: (i) DR2, not DESI-Y5; (ii) the alternatives are still CPL-family parametrisations, not a physical non-CPL reanalysis; (iii) the SN-compilation spread is unresolved (next bullet). Pressure up, threshold untouched.
+- **Zhang (single author, independent), MNRAS 552, stag1868 (published 2026-09-30)** — truncation test: drop SNe below z_cut, refit CPL with DESI DR2 BAO + Planck 2018. DES-Dovekie 2.9σ → ~1.1–1.6σ for z_cut ≥ 0.08; DESY5 4.0σ → ~1.4–1.9σ; Pantheon+ flat at ~2.0–2.5σ. Decomposition: Δχ² ≈ 7.6 photometric calibration, ≈ 7.4 other low-z effects, ≈ 4 residual surviving removal of all z ≤ 0.12 SNe. Conclusion: not calibration alone; the ~2σ remainder is either real evolution or a shared SN-standardisation systematic. Does not analyse crossing. Neutral for F1; weakens "it is all SN calibration". [Fact] (published; in the item-15 window, missed there).
+- Rippentrop, Ishak & Gonzalez, arXiv:2608.25278 — already logged (item 13).
+- **Timelines.** DESI finished its planned five-year survey 2026-04-15; first five-year dark-energy results "expected in 2027" (LBNL release via phys.org); DR3 public release late 2026 / early 2027 (DOE HEP slide, Dec 2025). **Euclid DR1-Foundation was released ~2026-11-11/12 with no cosmology; no official Euclid cosmology before mid-2027** (P. Coles' blog, 2026-11-12) — confirms 15(e). F1 and the F6 watch-line stay pending.
+
+**(b) Anchor — high-z over-massive BHs (the read-across at V3.30 `tex:1559`)**
+- **Sun, Naidu et al., arXiv:2609.09274 (2026-09-08, v1 preprint), "Overmassive No More…"** — LRD continua modelled as a pseudo-photosphere ("BH*"); four non-virial mass estimates (surface gravity, super-Eddington analogy, escape velocity, variability bound) agree on **~10⁴–10⁵ M☉** for the typical object, inside the scatter of the local M_BH–M_* relation; offered as the alternative to "2–3 dex over-massive". [Fact] they claim it / [Hypo] which mass scale is right.
+- **Nature (2026), s41586-025-09900-4, "Little red dots as young supermassive black holes in dense ionized cocoons"** (first author Rusakov per press coverage — **not pinned on the paper page**): broad lines are electron-scattering wings on narrow cores → M_BH ~10⁵–10⁷ M☉, ~100× below earlier virial values. Not in the docs before this item.
+- **Counterweight:** a direct (gas-dynamical) mass in an LRD seen ~700 Myr after the bang, Nature 2026-05-27, agreeing with the earlier indirect estimate (Live Science summary). **R9 pending:** very likely the Juodžbalis et al. 2026 (A2744-QSO1) paper the docs already cite — not confirmed this sitting.
+- *Doc impact:* the **population-level** over-massive claim (Maiolino et al. 2024 row) is now contested by two independent mass re-derivations; what stands is **one** direct measurement (R2: n too small for a cross-cosmic-time pattern). The relic-six local anchor (dynamical masses) is untouched. **Candidate action, NOT applied:** flag the row "contested (virial scale)" and rest the read-across on the direct measurement only.
+
+**(c) F2 — M87 row.** Conroy, Bauböck, Bernshteyn, Tiede, Joshi, Prather & Gammie, arXiv:2606.11322 (v2 2026-09-30; journal status not shown): ring brightness-asymmetry position angle + magnitude "mildly disfavor low-magnitude spins" and "strongly disfavor" spin vectors pointing toward Earth; no σ quoted. A third method next to Drew et al. 2025 and the polarimetry line (15c). Row stays [Open — contested]. [Fact] (preprint).
+
+**(d) Ladder / GW231123 (looked-at, not load-bearing).** Plunkett, Callister, Zevin & Vitale, PRL 137, 021404 (2026-07-06): decisive evidence for a transition at m₁ = 46.2 (+12.6/−7.2) M☉ above which the BBH population is almost entirely hierarchical; companion Banagiri, Thrane & Lasky, PRL 137, 021403. Supports the "merger-built" tag. Stellar-mass scale only — the read-across to the SMBH ladder is [Hypo]. Published before 3.29 shipped; missed until now.
+
+**(e) CCBH — context only.** Calzà, Pedrotti, Rinaldi & Vagnozzi, "Evaporating cosmologically coupled black holes", PRD 114, 084014 (2026-10-05), arXiv:2607.13857: cosmological coupling keeps a hole away from the evaporation end-point for longer. Consistent with the Fork-Y finding (V3.3/V3.4 era) that the coupling has to be off before the flash; in the current text CCBH is "the rival strengthened, still scoped off" (V3.30 `tex:1573`). Missed by item 15(g), which listed two CCBH theory papers only. No doc change.
+
+**(f) Swept, nothing new found:** no new r bound (F4); nothing new on Hawking points (F5); no new DESI cosmology release.
+
+**(g) Housekeeping.** V3.30 (L0 → U0) built on 2026-11-01 had not been pushed; it enters the repo with this item. The 2026-10-14 block was written as "item 13" against a project copy that lacked items 13–14; it is filed above as **item 15**. Still open from 15f / 15b, unchanged: the F6 wording vs the author's A-U0 = 0, and the F1 scoring note for coupled-sector crossings — both await the author. The first is a wording-consistency note on a field-wide question (SSOT), not a new LMU knot.
+
+---
+
+### 16b) User ideas (2026-11-15, one sitting), graded. Numbers: `code/u0_collapse_checks.py` (runnable)
+
+Citations marked † were given from recall and **not re-verified at a primary source this sitting** — pin before any `.tex` use. Unmarked ones were checked (abstract / publisher page).
+
+**1. "Our sub-universe expands *through* the collapse — that is why most things run the same way; the few running against it come from another collapse passing through; close passers merge and the stronger one sets the direction."** [Hypo]
+- *Brake, in-space reading [Fact-eq]:* if the collapse direction lies inside our three dimensions the sky pattern is wrong. Free-fall flow v = √(2GM/r) gives H_radial = +½√(2GM/r³), H_transverse = −√(2GM/r³) = −2 H_radial: redshift only within 35.3° of the infall axis = **18.4% of the sky**, blueshift on the other 81.6%. A self-collapsing uniform ball (Oppenheimer–Snyder 1939†) is isotropic but has H < 0. Measured: redshift in every direction; anisotropic expansion disfavoured 121,000:1 (Saadeh et al., PRL 117, 131302 (2016)).
+- *"Most run the same way", as measured [Fact]:* bulk flow 395 ± 29 km/s in a 150 h⁻¹ Mpc sphere vs 139 km/s expected (Watkins et al., MNRAS 524, 1885 (2023)) = **2.6%** of the Hubble velocity at that depth; contested downward (315 ± 40 km/s, ~1.7σ: Courtois et al. 2025, as summarised in arXiv:2608.14265). A small correction on isotropic recession, and it has ordinary competitors (Shapley; the KBC/HBK void watch-line).
+- *User's resolution: the motion is along the **4th spatial dimension** of U0* (U0 = 4+1). Then no direction is picked out on our sky and the brake does not apply. **Owner:** Pourhasan, Afshordi & Mann, JCAP 04 (2014) 005 (arXiv:1309.1487) — a 4D star collapses to a black hole and our universe is a spherical 3-brane outside its 3D horizon. The U0/U1 arrangement is the author's → **hybrid**.
+- *Condition it must meet [Fact]:* gravity is not seen leaking off three dimensions — D = 4.02 (+0.07/−0.10) or 3.98 (+0.07/−0.09) from GW170817, screening scale ≳ 20 Mpc (Pardo, Fishbach, Holz & Spergel, JCAP 07 (2018) 048); inverse-square law holds from 52 µm to 3 mm (Lee et al., PRL 124, 101101 (2020)). So the 4th spatial dimension needs a confinement mechanism with an owner: Randall–Sundrum 1999† (warped) or Dvali–Gabadadze–Porrati 2000† (the one PAM uses).
+- *"Counter-movers come from another collapse":* nearest owners are the bubble-collision searches — none found (N̄_s < 1.6 at 68%: Feeney, Johnson, Mortlock & Peiris, PRL 107, 071301 (2011)) — and Gpc-scale bulk flow — none found, < 254 km/s at 95% (Planck intermediate results XIII, A&A 561, A97 (2014)). Blueshifted galaxies are local and gravitationally explained. [Hypo], no evidence.
+- *Merge direction:* momentum conservation, v = (m₁v₁ + m₂v₂)/(m₁ + m₂). [Fact-eq]
+
+**2. "Every mass in U0, sub-universes included, bends spacetime, more or less by its mass; small ones barely feel the collapse and ride the big one's."** Standard GR + the equivalence principle (Einstein 1915†) — [Fact], no new origination. Two precisions: what a body *feels* in free fall is the tide, Δa = 2GM·d/r³, set by its **size** d, not its mass [Fact-eq]; and if "twist" means frame dragging it scales with angular momentum, not mass (Lense–Thirring 1918†; Gravity Probe B 2011†).
+
+**3. "Every object has its own timeline; the last level is the time inside atoms or smaller; the central time is U0's."**
+- Proper time per worldline — [Fact].
+- "Last level" has an owner: a massive particle is a clock, ν = mc²/h (de Broglie 1924†); electron 1.236×10²⁰ Hz [Fact-eq]. **Precision:** massless quanta have dτ = 0 — no timeline; write "every *massive* object".
+- Link to the U1 end-state: Penrose's CCC argument (no mass → no clock)† is the owner of "the internal time of U1 lapses and only U0's remains". Known weak spot inherited with it: protons and electrons have never been seen to decay (Super-Kamiokande proton-lifetime limits > 10³⁴ yr† — exact figure not pinned).
+- U0 central time = the postulated foliation already in the ledger [Hypo]; unmeasurable, as the author states. Tie; proceeds.
+
+**4. "The 11 dimensions physicists talk about — are they collapse dimensions inside nested black holes?"** No. 11 = 10 space + 1 time from 11-dimensional supergravity (Cremmer, Julia & Scherk 1978†) and M-theory (Witten 1995†); 11 is the supergravity ceiling (Nahm 1978†); the extra ones are compactified at every point (Kaluza 1921†; Klein 1926†). [Hypo] status — no measurement. Nested black-hole universes are a separate literature (Pathria 1972; Smolin 1992; Popławski 2010) and stay 3+1 at every level. "One nesting = one more dimension" has no owner known to the auditor; if kept it is the author's own [Hypo] and must not be presented as the string-theory count.
+
+**5. Analogy: "a bubble skin pressed until it dimples, pops through, rounds into a sphere, then spreads in all directions like a drop in a pond."** Step-by-step owners: neck pinch-off = Rayleigh–Plateau (Plateau 1873†; Rayleigh 1878†) and its gravitational twin, the Gregory–Laflamme instability (1993†; shown to be the same instability by Cardoso & Dias 2006†; simulated to a chain of spherical black holes by Lehner & Pretorius 2010†); the pinched-off baby universe = Blau, Guendelman & Guth 1987; "rounds into a sphere" = Young–Laplace, Δp = 2γ/R, in GR the Israel junction conditions (1966†); "a growing brane radius is isotropic expansion for those inside" = Kraus 1999†; Kehagias & Kiritsis 1999† (mirage cosmology). The term the author was missing for "surface tension of spacetime": **brane tension**.
+- *Brake [Fact-eq]:* tension only pulls inward (Δp = 2γ/R). A pond ripple is a surface wave, not the drop growing. Expansion needs the inside to out-push the wall.
+
+**6. "U0 itself has no surface tension — when enough energy gathers it simply collapses."** Accepted; simpler. Owners: hoop conjecture (Thorne 1972†); 4+1 horizon radius r_s² = 8G₅M/(3πc²) (Tangherlini 1963†); threshold behaviour with a massless field (Choptuik 1993†).
+- *The tension does not leave the model, it moves to the wall of U1 [Fact-eq]:* any boundary across which A differs carries σ = ∫√(2V(A)) dA > 0 (Coleman 1977†). With A(U1) > 0 and A-U0 = 0 the wall tension is automatic, and the author's end-state ("U1 dissolves once its inner energy loses to the tension") stands with the tension re-assigned from U0 to U1's wall.
+- *Brake [Fact-eq]:* pure 4+1 collapse does give an isotropic 3-space (the S³ of radius r inside a Tangherlini horizon) but it **shrinks**, r_s → 0 in proper time τ = r_s/c — blueshift everywhere. The expanding twin is the time-reversed (white-hole) branch, unreachable from collapse without a bounce. So the expansion must come from A > 0 inside. **[Open]: how the collapse loads A > 0.** Quantum-side owners for that slot: Frolov, Markov & Mukhanov, PRD 41, 383 (1990) (limiting curvature → de Sitter interior; passes through a deflation stage — the author must rule whether that counts as the forbidden bounce) and Farhi, Guth & Guven 1990 (tunnelling; item 15g). Farhi & Guth 1987† (no classical route from non-singular data) is proved in 3+1; its transfer to a brane in 4+1 was not checked → [Hypo], no brake.
+
+**7. "What if, once collapsed, it travels as a spinning doughnut?"** It exists, and only in 4+1: the black ring (Emparan & Reall 2002†); a ring horizon is forbidden in 3+1 (Hawking 1972†). The pond analogy is literal — a drop falling into water becomes a travelling vortex ring (Thomson & Newall 1885†). Hybrid.
+- *Item 14 still closes rotation as the engine:* ω/H₀ = 1.43 needed vs (σ_V/H)₀ < 4.7×10⁻¹¹; and ω ∝ a⁻² puts it at the wrong epoch. The same scaling helps the shape-only reading: birth spin dilutes below every bound and is unobservable from inside — the existing C5 line.
+- Item 14(ii) (accumulation cannot reach collapse) was priced on the de Sitter floor; under A-U0 = 0 that wall lifts (15f) — pending the F6 wording decision, not re-derived here.
+- *Brakes on the ring itself:* unstable — thin rings pinch into beads, fat ones collapse to a sphere (Santos & Way 2015†; Figueras, Kunesch & Tunyasuvunakool 2016†) [Fact, numerical]; lifetime relative to U1's age not computed. Spin does not propel it (linear momentum is conserved; 15c). It does not address the expansion problem.
+
+**8. "The doughnut is only the starter: it sets the sub-universe expanding in all directions and then dissolves."** Coherent with the instability above. Chain with owners: ring (Emparan–Reall†) → pinch-off, where curvature grows without bound in finite time (Figueras et al. 2016†; Lehner–Pretorius 2010†) [Fact, numerical] → the pinch as a candidate ignition point, where classical GR ends and FMM's de Sitter transition could set A > 0 [Hypo — this is the open slot of idea 6, now with a location] → isotropy from the A > 0 phase, not from the ring (cosmic no-hair, Wald 1983 — already cited in the docs; proved for 3+1 homogeneous models, transfer to 4+1 unchecked) → fragments round off and evaporate. Hybrid; the "ring = igniter" wiring is the author's.
+
+**9. "The flash is part of the ignition — mass has to be made before it starts to collapse."** Re-worded, it holds: the flash is the fuel supply, not something the U0 route replaces.
+- *Precision 1 [Fact-eq]:* the flash makes almost no rest mass. kT_H = ħc³/(8πGM) reaches m_e c² only at M ≈ 2.07×10¹⁶ g; for a 10¹¹ M☉ survivor that is the last **1.0×10⁻²⁸** of its energy. Everything earlier leaves as radiation, and radiation crossing itself in U0 does not mint matter (item 9).
+- *Precision 2 [Fact-eq]:* collapse does not need rest mass — all energy gravitates; Choptuik's threshold collapse used a massless field. Correct sentence: "the flash feeds energy into U0; once enough has gathered, collapse starts".
+- *Standing conditions (15f–15h):* radiation does not pile like leaves — it needs δ ≳ 0.3–0.5 on its own horizon scale (Carr 1975†); A-U0 = 0 removes the redshift erasure so accumulation has no deadline; U0 must stay patchy (Charlier†) or it collapses as a whole.
+
+**Chain as it stands after this sitting** (all [Hypo]; mechanism = owners', wiring = author's): L1 evaporates → flash → energy into U0 → gathers to threshold → collapse along the 4th spatial dimension → transient spinning ring → pinch-off = ignition (A > 0) → U1 expands isotropically, wall tension σ > 0 → A thaws → tension wins → U1 dissolves back into U0.
+
+**Doc consequence — recorded, NOT applied.** Intra-U1 physics (ladder, F1, F2, F4, F5) is untouched and the flash is kept. What this route would change is the joint *after* the flash: the registered reset (deterministic flash acting on the plateau, with ω = the prior aeon's conformal factor as the inflaton) would become one joint option beside "flash → U0 → collapse → ignition", and the conformal-gluing items (G1/G2) would attach to the former only. `LMU_V4_0_BUILD_SPEC.md` already drafts a selectable-joint layer that could host it. That is an architecture decision for the author, not a wording edit; no `.tex`, falsifier, or SSOT line was changed.
+
+**Net:** no falsifier moved; F1 pressure up (Özülker et al.); one anchor row to flag (LRD mass scale); five papers added to the watch record; the U0-collapse birth picture is coherent as a hybrid with one open slot (how collapse loads A > 0) and one hard condition (gravity confined to three dimensions).
